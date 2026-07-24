@@ -525,6 +525,148 @@ function similarity(a,b){
   return maxLen===0?1:1-dist/maxLen;
 }
 
+// ===== SEGMENT-LEVEL FEEDBACK (word mode) =====
+// مهم: مفيش عندنا موديل يقدر يسمع/يحلل 3 مقاطع صوتية منفصلة فعلياً من التسجيل
+// (ده يحتاج "forced alignment" صوتي حقيقي، وWhisper-tiny في المتصفح مبيرجعش
+// توقيتات على مستوى المقطع بشكل موثوق). البديل العملي اللي عملناه هنا:
+// 1) نقسم شكل الكلمة نفسها لـ3 مقاطع تقريبية (V/CV heuristic).
+// 2) نقارن حروف الكلمة اللي المستخدم قالها (بعد التفريغ النصي) بحروف الكلمة
+//    الأصلية حرف بحرف (Levenshtein alignment) عشان نعرف أنهي حروف "ضاعت"
+//    أو اتقالت غلط.
+// 3) أي مقطع يقع فيه أغلب الحروف الغلط بيتحدد بالأحمر، والمستخدم بيتقال له
+//    يركّز فيه وهو بيعيد قول الكلمة كاملة تاني.
+// ده تقريب مفيد لتوجيه الانتباه، مش تحليل نطق دقيق 100% لكل حرف.
+
+function rawSyllables(word){
+  const isVowel=c=>/[aeiouàèéìòù]/i.test(c);
+  const vowelIdx=[];
+  for(let i=0;i<word.length;i++) if(isVowel(word[i])) vowelIdx.push(i);
+  if(vowelIdx.length===0) return [word];
+  const nuclei=[];
+  let start=vowelIdx[0],prev=vowelIdx[0];
+  for(let k=1;k<vowelIdx.length;k++){
+    if(vowelIdx[k]===prev+1){prev=vowelIdx[k];}
+    else{nuclei.push([start,prev]);start=vowelIdx[k];prev=vowelIdx[k];}
+  }
+  nuclei.push([start,prev]);
+  const bounds=[0];
+  for(let i=0;i<nuclei.length-1;i++){
+    const consStart=nuclei[i][1]+1,consEnd=nuclei[i+1][0]-1;
+    const consLen=consEnd-consStart+1;
+    let splitAt;
+    if(consLen<=0) splitAt=consStart;
+    else if(consLen===1) splitAt=consStart;
+    else{
+      const cluster=word.slice(consStart,consEnd+1).toLowerCase();
+      const lastTwo=cluster.slice(-2);
+      const lastChar=cluster.slice(-1);
+      if(['gl','gn','sc','ch','gh','qu'].includes(lastTwo)||((lastChar==='l'||lastChar==='r')&&consLen===2)){
+        splitAt=consStart;
+      } else {
+        splitAt=consEnd;
+      }
+    }
+    bounds.push(splitAt);
+  }
+  bounds.push(word.length);
+  const syl=[];
+  for(let i=0;i<bounds.length-1;i++) syl.push(word.slice(bounds[i],bounds[i+1]));
+  return syl.filter(s=>s.length>0);
+}
+
+function syllabify3(word){
+  let syl=rawSyllables(word);
+  if(syl.length===0) syl=[word];
+  while(syl.length>3){
+    let bestIdx=0,bestLen=Infinity;
+    for(let i=0;i<syl.length-1;i++){
+      const len=syl[i].length+syl[i+1].length;
+      if(len<bestLen){bestLen=len;bestIdx=i;}
+    }
+    syl.splice(bestIdx,2,syl[bestIdx]+syl[bestIdx+1]);
+  }
+  while(syl.length<3){
+    let bestIdx=0,bestLen=-1;
+    for(let i=0;i<syl.length;i++) if(syl[i].length>bestLen){bestLen=syl[i].length;bestIdx=i;}
+    const s=syl[bestIdx];
+    if(s.length<2) break;
+    const mid=Math.ceil(s.length/2);
+    syl.splice(bestIdx,1,s.slice(0,mid),s.slice(mid));
+  }
+  return syl;
+}
+
+function normChar(ch){
+  let c=ch.toLowerCase();
+  c=c.replace('à','a').replace('á','a').replace('è','e').replace('é','e').replace('ê','e')
+    .replace('ì','i').replace('í','i').replace('ò','o').replace('ó','o').replace('ù','u').replace('ú','u');
+  return /[a-z\s]/.test(c)?c:'';
+}
+function mapToNormIndices(word){
+  const map=new Array(word.length).fill(-1);
+  let ni=0;
+  for(let k=0;k<word.length;k++){
+    if(normChar(word[k]).length>0){map[k]=ni;ni++;}
+  }
+  return map;
+}
+
+// بيرجع مصفوفة boolean بطول norm(target) — true يعني الحرف ده اتقال صح
+// (طابق حاجة في المسموع)، false يعني ضاع أو اتبدل بحرف مختلف.
+function alignMismatches(target,heard){
+  const a=norm(target),b=norm(heard);
+  const m=a.length,n=b.length;
+  if(m===0) return [];
+  const dp=Array.from({length:m+1},()=>new Array(n+1).fill(0));
+  for(let i=0;i<=m;i++)dp[i][0]=i;
+  for(let j=0;j<=n;j++)dp[0][j]=j;
+  for(let i=1;i<=m;i++){
+    for(let j=1;j<=n;j++){
+      dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1]);
+    }
+  }
+  const matched=new Array(m).fill(false);
+  let i=m,j=n;
+  while(i>0&&j>0){
+    if(a[i-1]===b[j-1]&&dp[i][j]===dp[i-1][j-1]){matched[i-1]=true;i--;j--;}
+    else if(dp[i][j]===dp[i-1][j-1]+1){matched[i-1]=false;i--;j--;}
+    else if(dp[i][j]===dp[i-1][j]+1){matched[i-1]=false;i--;}
+    else{j--;}
+  }
+  while(i>0){matched[i-1]=false;i--;}
+  return matched;
+}
+
+// بيقسّم الكلمة لـ3 مقاطع وبيحدد كل مقطع "سليم" أو "محتاج تركيز" بناءً على
+// نسبة الحروف الغلط فيه مقارنة بأسوأ مقطع في الكلمة.
+function computeSegmentResults(word,heard){
+  const segments=syllabify3(word);
+  const matched=alignMismatches(word,heard);
+  const charMap=mapToNormIndices(word);
+  let charPos=0;
+  const raw=segments.map(seg=>{
+    const startChar=charPos,endChar=charPos+seg.length;
+    charPos=endChar;
+    let total=0,bad=0;
+    for(let k=startChar;k<endChar;k++){
+      const ni=charMap[k];
+      if(ni===-1||ni>=matched.length) continue;
+      total++;
+      if(!matched[ni])bad++;
+    }
+    return {text:seg,ratio:total?bad/total:0};
+  });
+  const maxRatio=Math.max(0,...raw.map(r=>r.ratio));
+  return raw.map(r=>({text:r.text,ok:!(r.ratio>0&&r.ratio>=maxRatio*0.6)}));
+}
+
+function escHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function renderWordSegmentsHtml(results){
+  return results.map(r=>r.ok?escHtml(r.text):'<span style="color:#e74c3c;text-decoration:underline wavy;font-weight:800;">'+escHtml(r.text)+'</span>').join('');
+}
+
 // ===== UNIFIED MIC ENGINE =====
 // Primary: Whisper-tiny running fully in-browser via WebAssembly (transformers.js) —
 // free, no API key, works fully offline once the model is downloaded+cached once.
@@ -552,7 +694,7 @@ async function ensureWhisperLoaded(){
       // بنفرض النسخة المصغّرة (int8) بشكل صريح عشان نضمن نفس الحجم/السرعة اللي
       // رسالة الحالة فوق واعدة بيها (~40-75 ميجا)، بدل الاعتماد على قيمة
       // افتراضية ممكن تتغيّر بين إصدارات المكتبة وتنزّل نسخة fp32 أكبر
-      // وأبطأ بكتير في التحليل، خصوصًا على الموبايل.
+      // وأبطأ بكتير في التحليل، خ��وصًا على الموبايل.
       quantized:true,
       progress_callback:(p)=>{
         if(p&&p.status==='progress'&&typeof p.progress==='number'){
@@ -672,6 +814,33 @@ async function recordAudioVAD(maxMs,silenceMs){
   });
 }
 
+// صفارة قصيرة (Beep) بتتشغل قبل ما التسجيل يبدأ فعلياً، عشان يبقى واضح
+// للمستخدم إمتى يتكلم بالضبط. قصيرة عن قصد (120ms) بدل صفارة طويلة مزعجة.
+function playBeep(){
+  return new Promise(resolve=>{
+    try{
+      const AC=window.AudioContext||window.webkitAudioContext;
+      const ctx=new AC();
+      const osc=ctx.createOscillator();
+      const gain=ctx.createGain();
+      osc.type='sine';
+      osc.frequency.value=1000;
+      gain.gain.value=0;
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      const now=ctx.currentTime;
+      const dur=0.12;
+      gain.gain.linearRampToValueAtTime(0.22,now+0.012);
+      gain.gain.linearRampToValueAtTime(0,now+dur);
+      osc.start(now);
+      osc.stop(now+dur+0.02);
+      const done=()=>{try{ctx.close();}catch(e){}resolve();};
+      osc.onended=done;
+      setTimeout(done,(dur+0.05)*1000+150);
+    }catch(e){resolve();}
+  });
+}
+
 async function whisperTranscribe(float32Audio){
   const out=await whisperPipeline(float32Audio,{language:'italian',task:'transcribe'});
   return (out&&out.text?out.text:'').trim();
@@ -688,7 +857,7 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
   micBusy=true;
   btn.classList.add('on');
   lbl.classList.add('on');
-  lbl.textContent='🔴 بيسمعك...';
+  lbl.textContent='🔔 استعد...';
 
   if(!whisperReady&&!whisperLoading)ensureWhisperLoaded();
 
@@ -705,6 +874,12 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
   // طول الصوت وبيبقى أبطأ على الأجهزة ��لضعيفة) — 20 ثانية ثابتة كانت بتنتهي
   // في نص التحليل لجمل طويلة وتلغي نتيجة كانت شكلها هتوصل لو استنينا شوية.
   const watchdogMs=isSentence?45000:25000;
+
+  // صفارة قصيرة (Beep) قبل ما التسجيل يبدأ فعلياً، عشان يبقى واضح ومتفق عليه
+  // إمتى المستخدم يتكلم بالظبط — بعد الصفارة على طول — بدل ما يتردد أو
+  // يبدأ الكلام قبل ما التسجيل يكون شغال فعلاً.
+  lbl.textContent='🔴 بيسمعك...';
+  await playBeep();
 
   let finished=false;
   let watchdog=null;
@@ -881,10 +1056,10 @@ function judge(alts,conf){
   // real phoneme-level accent analysis (that needs server-side ML) — it's a
   // free, on-device proxy based on how close the transcribed word is to the
   // target spelling.
-  let bestSim=0;
+  let bestSim=0,bestAlt=heard;
   alts.forEach(a=>{
     const sim=similarity(norm(a),target);
-    if(sim>bestSim)bestSim=sim;
+    if(sim>bestSim){bestSim=sim;bestAlt=a;}
   });
   const confVal=(typeof conf==='number'&&conf>0)?conf:0.85;
   let score=Math.round((bestSim*0.85+confVal*0.15)*100);
@@ -910,6 +1085,8 @@ function judge(alts,conf){
     skipBtn.style.display='none';
     nb.className='next-btn show';
     nb.textContent=idx+1>=deck.length?'النتيجة 🏆':'التالي ←';
+    // مسح أي تظليل مقاطع من محاولة فاشلة سابقة، الكلمة عديت تمام.
+    document.getElementById('wIt').textContent=w.it;
   } else {
     // Below 80% — must retry this same word, mic stays active.
     failCount++;
@@ -922,12 +1099,20 @@ function judge(alts,conf){
       floatEmoji('⏭️');
       document.getElementById('micBtn').disabled=true;
       skipBtn.style.display='none';
+      document.getElementById('wIt').textContent=w.it;
       setTimeout(next,1200);
     } else {
       answered=false;
+      // بنقسم الكلمة لـ3 مقاطع تقريبية ونحدد أنهي مقطع فيه أغلب الفرق بين
+      // اللي المستخدم قاله واللي المفروض، عشان يركّز عليه بس وهو بيعيد قول
+      // الكلمة كاملة تاني (مش تحليل صوتي حقيقي لكل مقطع، ده تقريب نصّي).
+      const segResults=computeSegmentResults(w.it,bestAlt);
+      const badSegs=segResults.filter(r=>!r.ok).map(r=>r.text);
+      document.getElementById('wIt').innerHTML=renderWordSegmentsHtml(segResults);
       let cls,emoji,msg;
-      if(score>=55){cls='mid';emoji='💪';msg='قريب! حاول تاني عشان تعدي 80%';}
-      else{cls='bad';emoji='🔁';msg='بعيد عن النطق الصح — اسمع وحاول تاني';}
+      const focusHint=badSegs.length?(' — ركّز في الجزء المحدد بالأحمر: "'+badSegs.join('')+'"'):'';
+      if(score>=55){cls='mid';emoji='💪';msg='قريب! حاول تاني عشان تعدي 80%'+focusHint;}
+      else{cls='bad';emoji='🔁';msg='بعيد عن النطق الصح — اسمع وحاول تاني'+focusHint;}
       badge.innerHTML=emoji+' <b>'+score+'%</b> — '+msg;
       badge.className='badge '+cls+' show';
       card.className='card '+cls;
