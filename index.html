@@ -597,6 +597,17 @@ async function recordAudioVAD(maxMs,silenceMs){
     const startTime=Date.now();
     let stopped=false;
 
+    // ثابت 0.02 كان بيفتكر إن في كلام طول ما ضجيج المايك/المكان فوق القيمة
+    // دي (شائع في مايكات الموبايل بسبب AGC)، فمكانش بيوصل لحالة "سكوت"
+    // خالص وكان بيستنى للـ maxMs كامل كل مرة حتى لو المستخدم سكت فعلاً بدري.
+    // هنا بنقيس "أرضية الضجيج" الفعلية أول ~250ms قبل ما الكلام يبدأ،
+    // وبعدين نبني عليها عتبتين: عتبة أعلى عشان نتأكد إن ده كلام فعلاً،
+    // وعتبة أوطى (أقرب لأرضية الضجيج) عشان نعتبره سكوت فور ما الصوت يرجع
+    // قريب من الضجيج الطبيعي، مش لازم يوصل لصفر.
+    const CALIBRATE_MS=250;
+    let calibSum=0,calibCount=0,noiseFloor=0.006,calibrated=false;
+    let speechThresh=0.02,silenceThresh=0.02;
+
     function finishUp(){
       stream.getTracks().forEach(t=>t.stop());
       try{liveCtx.close();}catch(e){}
@@ -609,8 +620,25 @@ async function recordAudioVAD(maxMs,silenceMs){
       for(let i=0;i<dataArr.length;i++){const v=(dataArr[i]-128)/128;sum+=v*v;}
       const rms=Math.sqrt(sum/dataArr.length);
       const now=Date.now();
-      if(rms>0.02){speechStarted=true;silenceStart=null;}
-      else if(speechStarted){if(silenceStart===null)silenceStart=now;}
+
+      if(!calibrated){
+        if(now-startTime<CALIBRATE_MS){
+          calibSum+=rms;calibCount++;
+        } else {
+          if(calibCount>0)noiseFloor=calibSum/calibCount;
+          // عتبة الكلام: واضح فوق أرضية الضجيج، بحد أدنى 0.02 عشان مايكات
+          // نضيفة جداً (أرضية ضجيج شبه صفرية) لسه محتاجة صوت حقيقي مش همس.
+          speechThresh=Math.max(0.02,noiseFloor*2.5+0.008);
+          // عتبة السكوت: أقرب لأرضية الضجيج نفسها (هستيريسيس) عشان نلحق
+          // لحظة السكوت فعلياً بدل ما نستنى الصوت يوصل صفر تمام.
+          silenceThresh=Math.max(0.012,noiseFloor*1.5+0.004);
+          calibrated=true;
+        }
+      }
+
+      if(rms>speechThresh){speechStarted=true;silenceStart=null;}
+      else if(speechStarted&&rms<=silenceThresh){if(silenceStart===null)silenceStart=now;}
+      else if(speechStarted&&rms>silenceThresh){silenceStart=null;}
       const timedOut=now-startTime>maxMs;
       const wentQuiet=speechStarted&&silenceStart&&(now-silenceStart>silenceMs);
       if(timedOut||wentQuiet){
@@ -674,7 +702,7 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
   const recMaxMs=isSentence?16000:6000;
   const recSilenceMs=isSentence?1400:900;
   // الـ watchdog لازم يغطي وقت التسجيل + وقت تحليل Whisper (اللي بيكبر مع
-  // طول الصوت وبيبقى أبطأ على الأجهزة الضعيفة) — 20 ثانية ثابتة كانت بتنتهي
+  // طول الصوت وبيبقى أبطأ على الأجهزة ��لضعيفة) — 20 ثانية ثابتة كانت بتنتهي
   // في نص التحليل لجمل طويلة وتلغي نتيجة كانت شكلها هتوصل لو استنينا شوية.
   const watchdogMs=isSentence?45000:25000;
 
