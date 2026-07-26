@@ -140,7 +140,7 @@ const GRAMMAR = [
  it:"I pronomi indefiniti",
  ar:"الضمائر غير المحددة (المجهولة)",
  icon:"🔹",
- triggers:["qualcosa","qualcuno","chiunque","ognuno","nulla","niente","tutto","tutta","tutti","tutte","nessuno","nessuna","alcuno","alcuna","alcuni","alcune","molto","molta","molti","molte","poco","poca","pochi","poche","troppo","troppa","troppi","troppe","tanto","tanta","tanti","tante","parecchio","parecchia","parecchi","parecche","altro","altra","altri","altre","certo","certa","certi","certe"],
+ triggers:["qualcosa","qualcuno","chiunque","ognuno","nulla","niente","tutto","tutta","tutti","tutte","nessuno","nessuna","alcuno","alcuna","alcuni","alcune","molto","molta","molti","molte","poco","poca","pochi","poche","troppa","troppi","troppe","tanto","tanta","tanti","tante","parecchio","parecchia","parecchi","parecche","altro","altra","altri","altre","certo","certa","certi","certe"],
  blocks:[
   {type:"item", it:"أولاً — ضمائر ثابتة (ما بتتغيرش)", ar:"", examples:[
    {it:"Qualcosa (حاجة ما)", ar:"Ho comprato qualcosa per te — اشتريت حاجة عشانك"},
@@ -329,6 +329,206 @@ const GRAMMAR = [
    ["Tra / Fra","بين / خلال (نفس المعنى، بيتختاروا حسب سهولة النطق)","Tra dieci minuti — بعد عشر دقايق"]
   ]},
   {type:"note", ar:"⚠️ لما حرف الجر (زي a, di, da, in, su) يقابل أداة تعريف (il, lo, la, i, gli, le) بيندمجوا في كلمة واحدة، زي: a+il=al, di+la=della, in+il=nel, su+il=sul... دي بتتسمى Preposizioni articolate."}
+ ]
+},
+{
+ id:"articoli_determinativi",
+ it:"Articoli determinativi",
+ ar:"أدوات التعريف",
+ icon:"🔤",
+ triggers:["il","lo","la","i","gli","le"],
+ blocks:[
+  {type:"table", title:"أدوات التعريف", headers:["الأداة","تستخدم مع","الجمع"], rows:[
+   ["Il","مذكر مفرد (الحالة العادية)","I"],
+   ["Lo","مذكر مفرد بيبدأ بـ s+ساكن / z / gn / ps","Gli"],
+   ["La","مؤنث مفرد (الحالة العادية)","Le"],
+   ["L'","مفرد (مذكر أو مؤنث) بيبدأ بحرف متحرك (a,e,i,o,u)","Gli (مذكر) / Le (مؤنث)"]
+  ]},
+  {type:"note", ar:"القاعدة الأساسية: نوع وشكل الأداة بيتحدد حسب أول حرف في الكلمة اللي جاية بعدها مباشرة، مش حسب معنى الكلمة."}
+ ]
+},
+{
+ id:"avverbio_modo",
+ it:"Avverbio di modo",
+ ar:"ظرف الحال (كيف حصل الفعل)",
+ icon:"⚡",
+ triggers:["velocemente","lentamente"],
+ blocks:[
+  {type:"note", ar:"ظرف الحال بيوصف طريقة أداء الفعل (حصل إزاي؟)، وشكله ثابت مش بيتأثر بجنس ولا عدد ولا زمن. بيتكوّن غالباً بإضافة mente لآخر الصفة."},
+  {type:"item", it:"أمثلة", ar:"", examples:[
+   {it:"Lui guida velocemente", ar:"هو بيسوق بسرعة"},
+   {it:"Lei parla lentamente", ar:"هي بتتكلم ببطء"},
+   {it:"Ho fatto colazione in fretta", ar:"أكلت فطار على عجلة"}
+  ]},
+  {type:"note", ar:"💡 في الكلام العامي كتير بيستخدموا الصفة نفسها كظرف بدل الصيغة الرسمية: Fai veloce! (أنجز/أسرع!) بدل Fai velocemente. وفي صيغ المقارنة: più velocemente di... (بسرعة أكتر من...)، والتفضيل: il più velocemente possibile (بأسرع ما يمكن)."}
+ ]
+},
+{
+ id:"avverbi_tempo",
+ it:"Gli avverbi di tempo",
+ ar:"ظروف الزمن",
+ icon:"⏰",
+ triggers:["già","ancora","appena","mai","sempre","più"],
+ blocks:[
+  {type:"table", title:"المعنى الأساسي لكل ظرف", headers:["الظرف","المعنى","مثال"], rows:[
+   ["Già","بالفعل / خلاص","Ho già fatto i compiti — انهيت الواجب بالفعل"],
+   ["Ancora (+Non)","لسة (لو جت مع النفي)","Non ho ancora finito — لسة مخلصتش"],
+   ["Appena (وسط الجملة)","أول ما / حالاً","Appena arrivo, ti chiamo — أول ما أوصل هكلمك"],
+   ["Mai (+Non)","أبداً (لو جت مع النفي)","Non sono mai stato lì — عمري ما رحت هناك"],
+   ["Sempre","دائماً","Ho sempre detto la verità — كنت باقول الحقيقة دايماً"],
+   ["Più (+Non)","مبقاش / لم يعد (لو جت مع النفي)","Non voglio più fumare — مبقتش عايز أدخن"]
+  ]},
+  {type:"table", title:"نفس الظرف من غير نفي — معنى مختلف", headers:["الظرف","المعنى","مثال"], rows:[
+   ["Già","صح / فعلاً (كتعبير)","Già, hai ragione — صح، عندك حق"],
+   ["Ancora (من غير نفي)","لسة / كمان","Studio ancora — لسه بادرس / Vuoi ancora caffè? — عايز قهوة كمان؟"],
+   ["Appena (بعد الفعل الماضي)","لسه حالاً / للتو","Ahmed è appena arrivato — أول ما أحمد وصل"],
+   ["Più (من غير نفي)","أكتر / زيادة","Voglio più tempo — عايز وقت أكتر"]
+  ]},
+  {type:"note", ar:"⚠️ الكلمات دي (già / ancora / appena / mai / sempre / più) لما بتيجي في الـ Passato Prossimo بتتحشر بالظبط بين الفعل المساعد (Avere/Essere) والـ Participio Passato: Ho già mangiato — مش Ho mangiato già."}
+ ]
+},
+{
+ id:"nomi_sostantivi",
+ it:"I nomi e i sostantivi",
+ ar:"كلمات أسماء متفرقة",
+ icon:"📦",
+ triggers:["inizio","fine","volta"],
+ blocks:[
+  {type:"item", it:"كلمات مهمة", ar:"", examples:[
+   {it:"Inizio", ar:"البداية"},
+   {it:"Fine", ar:"النهاية"},
+   {it:"Volta", ar:"مرة (زي: una volta = مرة واحدة، due volte = مرتين)"}
+  ]}
+ ]
+},
+{
+ id:"giorni_settimana",
+ it:"I giorni della settimana",
+ ar:"أيام الأسبوع",
+ icon:"📅",
+ triggers:["lunedì","martedì","mercoledì","giovedì","venerdì","sabato","domenica"],
+ blocks:[
+  {type:"table", title:"أيام الأسبوع", headers:["Italiano","بالعربي"], rows:[
+   ["Lunedì","الإثنين"],["Martedì","الثلاثاء"],["Mercoledì","الأربعاء"],
+   ["Giovedì","الخميس"],["Venerdì","الجمعة"],["Sabato","السبت"],["Domenica","الحد"]
+  ]},
+  {type:"note", ar:"للعادة المتكررة: Ogni + اليوم (Ogni lunedì = كل إثنين). للمدى الزمني من يوم لآخر: Dal...alla (Studio dal lunedì alla domenica = بدرس من الإثنين للحد)."}
+ ]
+},
+{
+ id:"momenti_giornata",
+ it:"I momenti della giornata",
+ ar:"أوقات اليوم",
+ icon:"🌅",
+ triggers:["alba","mattina","mattino","mezzogiorno","pomeriggio","tramonto","sera","notte","mezzanotte"],
+ blocks:[
+  {type:"table", title:"أوقات اليوم", headers:["Italiano","بالعربي"], rows:[
+   ["L'alba","الفجر"],
+   ["La mattina","الصباح"],
+   ["Il mattino","الصباح الباكر (زي la mattina بس أكتر أدبية)"],
+   ["Il mezzogiorno","الظهر"],
+   ["Il pomeriggio","بعد الظهر / العصر"],
+   ["Il tramonto","الغروب"],
+   ["La sera","المساء"],
+   ["La notte","الليل"],
+   ["La mezzanotte","منتصف الليل"]
+  ]},
+  {type:"note", ar:"للعادة: Ogni + الوقت (Ogni mattina = كل صباح). للمدى الزمني: Dalla...alla (Dalla mattina alla sera = من الصبح للمسا)."}
+ ]
+},
+{
+ id:"pronomi_complemento",
+ it:"Pronomi diretti, indiretti, riflessivi e tonici",
+ ar:"ضمائر المفعول (مباشر/غير مباشر/انعكاسي/توكيد)",
+ icon:"📥",
+ triggers:["mi","ti","ci","vi","si","li","me","te"],
+ blocks:[
+  {type:"note", ar:"دي ضمائر بتحل محل المفعول به عشان الكلام يبقى طبيعي أكتر: Vedo la ragazza (أشاهد الفتاة) ← La vedo (أشاهدها) أطبع من تكرار الاسم."},
+  {type:"table", title:"ضمائر المفعول المباشر الضعيفة (Pronomi diretti)", headers:["مفرد","الجمع"], rows:[
+   ["Mi (ـني)","Ci (ـنا)"],
+   ["Ti (ـك)","Vi (ـكم)"],
+   ["Lo (ه) / La (ها)","Li (هم) / Le (هن)"]
+  ]},
+  {type:"note", ar:"⚠️ الضمير الضعيف بييجي قبل الفعل (مش زي العربي): Ogni mattina il professore mi vede (كل يوم الأستاذ يشوفني)، مش vede me."},
+  {type:"table", title:"ضمائر المفعول الغير مباشر (Pronomi indiretti)", headers:["مفرد","الجمع"], rows:[
+   ["Mi (لي)","Ci (لنا)"],
+   ["Ti (لك)","Vi (لكم)"],
+   ["Gli (له) / Le (لها)","Gli / Loro (لهم)"]
+  ]},
+  {type:"table", title:"الضمائر الانعكاسية (Pronomi riflessivi) — لما الفاعل هو المفعول به", headers:["Io","Tu","Lui/Lei","Noi","Voi","Loro"], rows:[
+   ["Mi (نفسي)","Ti (نفسك)","Si (نفسه/نفسها)","Ci (أنفسنا)","Vi (أنفسكم)","Si (أنفسهم)"]
+  ]},
+  {type:"item", it:"أمثلة على الانعكاسي", ar:"", examples:[
+   {it:"Ti svegli", ar:"بتصحى (بتصحي نفسك)"},
+   {it:"Si veste", ar:"هو بيلبس / هي بتلبس"},
+   {it:"Vi sedete", ar:"بتقعدوا"}
+  ]},
+  {type:"table", title:"ضمائر التوكيد Tonici/Forti (بعد حروف الجر: di, a, da, con, per, su...)", headers:["مفرد","الجمع"], rows:[
+   ["Me (أنا)","Noi (احنا)"],
+   ["Te (انت)","Voi (انتو)"],
+   ["Lui / Lei / Sé","Loro / Sé"]
+  ]},
+  {type:"note", ar:"⚠️ التبعية الجنسية في الماضي: لو الضمير lo/la/li/le جه قبل فعل بالـ Passato Prossimo (حتى مع Avere)، الـ Participio بيتفق معاه في الجنس والعدد: Ho comprato il libro → L'ho comprato / Ho comprato la borsa → L'ho comprata / Li ho comprati / Le ho comprate."}
+ ]
+},
+{
+ id:"congiunzioni",
+ it:"Le congiunzioni",
+ ar:"أدوات الربط",
+ icon:"🔀",
+ triggers:["ed","inoltre","né","ma"],
+ blocks:[
+  {type:"table", title:"1) Copulative — للربط والإضافة", headers:["الحرف","المعنى","مثال"], rows:[
+   ["E / Ed","و","Mi sono svegliato tardi ed ho fatto colazione — صحيت متأخر وعملت فطار"],
+   ["Inoltre","علاوة على ذلك","È bravo, inoltre è simpatico — هو شاطر وكمان ظريف"],
+   ["Né...né","لا...ولا","Non mangio né carne né pesce — لا باكل لحمة ولا سمك"]
+  ]},
+  {type:"note", ar:"💡 Anche و Pure (كمان/أيضاً) بردو من أدوات الربط الإضافية — تفاصيلهم في موضوع منفصل (📘 Anche / Pure) لأنهم محتاجين شرح أوسع."},
+  {type:"item", it:"2) Avversative — التضاد والاستدراك", ar:"", examples:[
+   {it:"Ma", ar:"بس / لكن"}
+  ]}
+ ]
+},
+{
+ id:"parole_multitasking",
+ it:"Parole multitasking",
+ ar:"كلمات بمعاني/استخدامات متعددة",
+ icon:"🧩",
+ triggers:["troppo","mezzo"],
+ blocks:[
+  {type:"item", it:"Troppo", ar:"كتير جداً — تعبير أقوى من Molto", note:"لو جت قبل صفة أو فعل، شكلها ثابت وبتبقى بمعنى 'جداً': Io sono troppo stanco (أنا تعبان جداً جداً). لو جت قبل اسم، بتتصرف كصفة مبهمة وتتبع الاسم في الجنس والعدد: Troppi compiti (واجبات كتير جداً)", examples:[
+   {it:"Io sono troppo stanco", ar:"أنا تعبان جداً جداً"},
+   {it:"Troppi compiti", ar:"واجبات كتير جداً"}
+  ]},
+  {type:"item", it:"Mezzo", ar:"نصف / منتصف / وسيلة — كلمة بتلاقيها بأكتر من معنى", note:"1) بمعنى نصف: لو جت قبل اسم بتتبعه في الجنس والعدد (Un mezzo chilo = نصف كيلو، Una mezza ora = نص ساعة). 2) بمعنى وسيلة: زي mezzi di trasporto (وسائل المواصلات). 3) بمعنى المنتصف: زي nel mezzo (في النص).", examples:[
+   {it:"Un mezzo chilo", ar:"نصف كيلو"},
+   {it:"Una mezza ora", ar:"نص ساعة"},
+   {it:"Mezzi di trasporto", ar:"وسائل المواصلات"},
+   {it:"Nel mezzo", ar:"في النص"}
+  ]}
+ ]
+},
+{
+ id:"aggettivi_vari",
+ it:"Aggettivi qualificativi متفرقة",
+ ar:"صفات مهمة (مقارنة/تفضيل)",
+ icon:"⭐",
+ triggers:["migliore","veloce","diverso"],
+ blocks:[
+  {type:"item", it:"Migliore", ar:"أفضل", note:"صفة مريحة (بتنتهي بـ e) — ما بتتغيرش في الجنس، بس بتتغير في الجمع: Migliori. لو جت بعد أداة تعريف + صفة ملكية بتبقى Superlativo relativo (الأفضل/الأعز): il mio migliore amico", examples:[
+   {it:"Il mio migliore amico", ar:"أعز أصدقائي"}
+  ]},
+  {type:"item", it:"Veloce", ar:"سريع", note:"من المجموعة اللي بتنتهي بـ e، وبتوصف الاسم وبتيجي بعده. بتتستخدم كمان كظرف بمعنى 'بسرعة' بدل Velocemente في الكلام العامي (Fai veloce! = أسرع!)", examples:[
+   {it:"Un treno veloce", ar:"قطر سريع"},
+   {it:"Macchine veloci", ar:"عربيات سريعة (جمع)"},
+   {it:"Più veloce di...", ar:"أسرع من... (مقارنة)"},
+   {it:"Il più veloce", ar:"الأسرع (تفضيل)"}
+  ]},
+  {type:"item", it:"Diverso", ar:"مختلف / متنوع / آخر", note:"من المجموعة اللي بتنتهي بـ o، فبتتغير حسب الجنس والعدد. لو جت قبل الاسم في صيغة الجمع بتاخد معنى 'عدة/عديد من' بدل 'مختلف'", examples:[
+   {it:"Un modo diverso", ar:"طريقة مختلفة"},
+   {it:"Qualcosa di diverso", ar:"حاجة مختلفة (تعبير شائع)"},
+   {it:"Diverse cose", ar:"عدة حاجات (مش 'حاجات مختلفة')"}
+  ]}
  ]
 }
 ];
