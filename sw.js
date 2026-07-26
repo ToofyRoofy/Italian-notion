@@ -1,11 +1,11 @@
 // Parla Italiano — Service Worker v4
-const SHELL_CACHE = 'parla-shell-v5';  // يتغير مع كل إصدار جديد
+const SHELL_CACHE = 'parla-shell-v7';  // يتغير مع كل إصدار جديد
 const MODEL_CACHE = 'parla-models-v1'; // ثابت — مش بيتمسح أبدًا
 
 // ⚠️ باگ: كان مكتوب هنا 'parla.html' بس اسم الملف الفعلي 'index.html' —
 // caches.open(...).add() كان بيفشل بصمت (بسبب .catch(()=>{}) تحت) ومايخزّنش
 // صفحة الشِل الأساسية في أول تثبيت، وده كان بيضعف ضمان الأوفلاين الحقيقي.
-const CORE_FILES = ['./index.html', './sentences.js'];
+const CORE_FILES = ['./index.html', './sentences.js', './verbs.js', './grammar.js'];
 const CDN = ['cdn.jsdelivr.net', 'huggingface.co', 'fonts.googleapis.com', 'fonts.gstatic.com'];
 
 // ===== INSTALL: خزّن الملفات الأساسية =====

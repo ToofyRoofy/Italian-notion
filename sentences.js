@@ -179,1119 +179,1243 @@ const WORDS = [
 // ===== INFINITE LESSON BANK =====
 const LESSON_SENTENCES = [
 
-// ══════════════ الأفعال (Andare-Avere-Essere-Fare-Capire-Funzionare) ══════════════
-
-{it:"Ieri sono andato in centro a piedi, perché la mia macchina non funzionava bene", ar:"امبارح رحت وسط البلد مشي، لأن عربيتي مكانتش شغالة كويس.", en:"Yesterday I went downtown on foot because my car wasn't working well.", pronoun:"Io (أنا)",
- words:[
-  {it:"Ieri",ar:"امبارح",note:null},
-  {it:"sono",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"andato",ar:"رحت",note:"Andare، Passato Prossimo مع Io (فعل شاذ)"},
-  {it:"in",ar:"في",note:null},
-  {it:"centro",ar:"وسط البلد",note:null},
-  {it:"a",ar:"على",note:"جزء من تعبير ثابت a piedi"},
-  {it:"piedi",ar:"الأقدام",note:"a piedi = مشياً على الأقدام"},
-  {it:"perché",ar:"لأن",note:null},
-  {it:"la mia",ar:"بتاعتي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — صفة ملكية مؤنث مفرد"},
-  {it:"macchina",ar:"العربية",note:null},
-  {it:"non",ar:"مش",note:null},
-  {it:"funzionava",ar:"كانت شغالة",note:"Funzionare، Imperfetto (فعل منتظم)"},
-  {it:"bene",ar:"كويس",note:null}
- ], conj:{verb:"Andare",tense:"Passato Prossimo",regular:false,rows:[
-  {person:"Io (أنا)",form:"Sono andato/a"},{person:"Tu (أنت)",form:"Sei andato/a"},
-  {person:"Lui (هو)",form:"È andato"},{person:"Lei (هي)",form:"È andata"},
-  {person:"Noi (احنا)",form:"Siamo andati/e"},{person:"Voi (انتم)",form:"Siete andati/e"},
-  {person:"Loro (هم)",form:"Sono andati/e"}]}},
-
-{it:"Quando eri piccolo, andavi a scuola con tuo fratello ogni mattina", ar:"لما كنت صغير، كنت بتروح المدرسة مع أخوك كل صبح.", en:"When you were little, you used to go to school with your brother every morning.", pronoun:"Tu (أنت)",
- words:[
-  {it:"Quando",ar:"لما",note:"أداة استفهام/ربط زمنية"},
-  {it:"eri",ar:"كنت",note:"Essere، Imperfetto مع Tu (فعل شاذ)"},
-  {it:"piccolo",ar:"صغير",note:null},
-  {it:"andavi",ar:"كنت بتروح",note:"Andare، Imperfetto مع Tu"},
-  {it:"a",ar:"لـ",note:null},
-  {it:"scuola",ar:"المدرسة",note:null},
-  {it:"con",ar:"مع",note:null},
-  {it:"tuo",ar:"أخوك",note:"صفة ملكية، بدون أداة تعريف مع فرد عائلة مفرد"},
-  {it:"fratello",ar:"أخ",note:null},
-  {it:"ogni",ar:"كل",note:null},
-  {it:"mattina",ar:"صبح",note:null}
- ], conj:{verb:"Andare",tense:"Imperfetto",regular:false,rows:[
-  {person:"Io (أنا)",form:"Andavo"},{person:"Tu (أنت)",form:"Andavi"},
-  {person:"Lui (هو)",form:"Andava"},{person:"Lei (هي)",form:"Andava"},
-  {person:"Noi (احنا)",form:"Andavamo"},{person:"Voi (انتم)",form:"Andavate"},
-  {person:"Loro (هم)",form:"Andavano"}]}},
-
-{it:"Marco ha avuto molta pazienza con i suoi studenti durante la lezione", ar:"ماركو كان عنده صبر كتير مع طلابه أثناء الحصة.", en:"Marco had a lot of patience with his students during the lesson.", pronoun:"Lui (هو)",
- words:[
-  {it:"Marco",ar:"ماركو",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"avuto",ar:"كان عنده",note:"Avere، Passato Prossimo مع Lui (فعل شاذ)"},
-  {it:"molta",ar:"كتير",note:"صفة كمية مؤنث مفرد"},
-  {it:"pazienza",ar:"صبر",note:null},
-  {it:"con",ar:"مع",note:null},
-  {it:"i suoi",ar:"بتوعه",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — صفة ملكية جمع مذكر"},
-  {it:"studenti",ar:"طلاب",note:null},
-  {it:"durante",ar:"أثناء",note:"حرف جر غير أصلي (زمن)"},
-  {it:"la lezione",ar:"الحصة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
- ], conj:{verb:"Avere",tense:"Passato Prossimo",regular:false,rows:[
-  {person:"Io (أنا)",form:"Ho avuto"},{person:"Tu (أنت)",form:"Hai avuto"},
-  {person:"Lui (هو)",form:"Ha avuto"},{person:"Lei (هي)",form:"Ha avuto"},
-  {person:"Noi (احنا)",form:"Abbiamo avuto"},{person:"Voi (انتم)",form:"Avete avuto"},
-  {person:"Loro (هم)",form:"Hanno avuto"}]}},
-
-{it:"Lei aveva sempre fame dopo la palestra, quindi mangiava qualcosa di dolce", ar:"هي كانت دايماً جعانة بعد الجيم، فعشان كده كانت بتاكل حاجة حلوة.", en:"She was always hungry after the gym, so she used to eat something sweet.", pronoun:"Lei (هي)",
- words:[
-  {it:"Lei",ar:"هي",note:null},
-  {it:"aveva",ar:"كانت عندها",note:"Avere، Imperfetto مع Lei (فعل شاذ)"},
-  {it:"sempre",ar:"دايماً",note:null},
-  {it:"fame",ar:"جوع",note:null},
-  {it:"dopo",ar:"بعد",note:"حرف جر غير أصلي (زمن)"},
-  {it:"la palestra",ar:"الجيم",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"quindi",ar:"فعشان كده",note:null},
-  {it:"mangiava",ar:"كانت بتاكل",note:"Mangiare، Imperfetto مع Lei"},
-  {it:"qualcosa",ar:"حاجة ما",note:"ضمير غير محدد ثابت"},
-  {it:"di",ar:"",note:"جزء من qualcosa di + صفة"},
-  {it:"dolce",ar:"حلوة",note:null}
- ], conj:{verb:"Avere",tense:"Imperfetto",regular:false,rows:[
-  {person:"Io (أنا)",form:"Avevo"},{person:"Tu (أنت)",form:"Avevi"},
-  {person:"Lui (هو)",form:"Aveva"},{person:"Lei (هي)",form:"Aveva"},
-  {person:"Noi (احنا)",form:"Avevamo"},{person:"Voi (انتم)",form:"Avevate"},
-  {person:"Loro (هم)",form:"Avevano"}]}},
-
-{it:"Siamo stati a Roma per due giorni, e la città era bellissima di notte", ar:"احنا كنا في روما ليومين، والمدينة كانت جميلة جداً بالليل.", en:"We were in Rome for two days, and the city was beautiful at night.", pronoun:"Noi (احنا)",
- words:[
-  {it:"Siamo",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"stati",ar:"كنا",note:"Essere، Passato Prossimo مع Noi (فعل شاذ)"},
-  {it:"a",ar:"في",note:null},
-  {it:"Roma",ar:"روما",note:null},
-  {it:"per",ar:"لمدة",note:null},
-  {it:"due",ar:"يومين",note:null},
-  {it:"giorni",ar:"أيام",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"la città",ar:"المدينة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"era",ar:"كانت",note:"Essere، Imperfetto"},
-  {it:"bellissima",ar:"جميلة جداً",note:null},
-  {it:"di",ar:"بـ",note:"جزء من di notte"},
-  {it:"notte",ar:"الليل",note:null}
- ], conj:{verb:"Essere",tense:"Passato Prossimo",regular:false,rows:[
-  {person:"Io (أنا)",form:"Sono stato/a"},{person:"Tu (أنت)",form:"Sei stato/a"},
-  {person:"Lui (هو)",form:"È stato"},{person:"Lei (هي)",form:"È stata"},
-  {person:"Noi (احنا)",form:"Siamo stati/e"},{person:"Voi (انتم)",form:"Siete stati/e"},
-  {person:"Loro (هم)",form:"Sono stati/e"}]}},
-
-{it:"Voi eravate stanchi ogni sera, perché lavoravate troppo in ufficio", ar:"انتوا كنتوا تعبانين كل مساء، لأنكوا كنتوا بتشتغلوا أكتر من اللازم في المكتب.", en:"You (pl.) were tired every evening because you worked too much in the office.", pronoun:"Voi (انتم)",
- words:[
-  {it:"Voi",ar:"انتوا",note:null},
-  {it:"eravate",ar:"كنتوا",note:"Essere، Imperfetto مع Voi (فعل شاذ)"},
-  {it:"stanchi",ar:"تعبانين",note:null},
-  {it:"ogni",ar:"كل",note:null},
-  {it:"sera",ar:"مساء",note:null},
-  {it:"perché",ar:"لأن",note:null},
-  {it:"lavoravate",ar:"كنتوا بتشتغلوا",note:"Lavorare، Imperfetto مع Voi"},
-  {it:"troppo",ar:"أكتر من اللازم",note:"ضمير كمية مبهمة"},
-  {it:"in",ar:"في",note:null},
-  {it:"ufficio",ar:"المكتب",note:null}
- ], conj:{verb:"Essere",tense:"Imperfetto",regular:false,rows:[
-  {person:"Io (أنا)",form:"Ero"},{person:"Tu (أنت)",form:"Eri"},
-  {person:"Lui (هو)",form:"Era"},{person:"Lei (هي)",form:"Era"},
-  {person:"Noi (احنا)",form:"Eravamo"},{person:"Voi (انتم)",form:"Eravate"},
-  {person:"Loro (هم)",form:"Erano"}]}},
-
-{it:"Loro hanno fatto colazione insieme prima di andare al lavoro", ar:"هم فطروا مع بعض قبل ما يروحوا الشغل.", en:"They had breakfast together before going to work.", pronoun:"Loro (هم)",
- words:[
-  {it:"Loro",ar:"هم",note:null},
-  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"fatto",ar:"عملوا",note:"Fare، Passato Prossimo مع Loro (فعل شاذ جداً)"},
-  {it:"colazione",ar:"فطار",note:null},
-  {it:"insieme",ar:"مع بعض",note:null},
-  {it:"prima",ar:"قبل",note:"جزء من prima di"},
-  {it:"di",ar:"",note:"جزء من prima di (حرف جر غير أصلي زمني)"},
-  {it:"andare",ar:"يروحوا",note:null},
-  {it:"al",ar:"للـ",note:"حرف جر مدمج = a + il"},
-  {it:"lavoro",ar:"الشغل",note:null}
- ], conj:{verb:"Fare",tense:"Passato Prossimo",regular:false,rows:[
-  {person:"Io (أنا)",form:"Ho fatto"},{person:"Tu (أنت)",form:"Hai fatto"},
-  {person:"Lui (هو)",form:"Ha fatto"},{person:"Lei (هي)",form:"Ha fatto"},
-  {person:"Noi (احنا)",form:"Abbiamo fatto"},{person:"Voi (انتم)",form:"Avete fatto"},
-  {person:"Loro (هم)",form:"Hanno fatto"}]}},
-
-{it:"Da bambino, facevo sempre i compiti prima di cena, senza lamentarmi", ar:"من وأنا صغير، كنت بعمل الواجب دايماً قبل العشا، من غير ما اتشكى.", en:"As a child, I always used to do my homework before dinner, without complaining.", pronoun:"Io (أنا)",
- words:[
-  {it:"Da",ar:"من",note:"حرف جر (بمعنى: منذ/في فترة)"},
-  {it:"bambino",ar:"الطفولة",note:null},
-  {it:"facevo",ar:"كنت بعمل",note:"Fare، Imperfetto مع Io"},
-  {it:"sempre",ar:"دايماً",note:null},
-  {it:"i compiti",ar:"الواجبات",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"prima",ar:"قبل",note:null},
-  {it:"di",ar:"",note:"جزء من prima di"},
-  {it:"cena",ar:"العشا",note:null},
-  {it:"senza",ar:"من غير",note:"حرف جر غير أصلي"},
-  {it:"lamentarmi",ar:"اشكي نفسي",note:null}
- ], conj:{verb:"Fare",tense:"Imperfetto",regular:false,rows:[
-  {person:"Io (أنا)",form:"Facevo"},{person:"Tu (أنت)",form:"Facevi"},
-  {person:"Lui (هو)",form:"Faceva"},{person:"Lei (هي)",form:"Faceva"},
-  {person:"Noi (احنا)",form:"Facevamo"},{person:"Voi (انتم)",form:"Facevate"},
-  {person:"Loro (هم)",form:"Facevano"}]}},
-
-{it:"Finalmente hai capito la regola dopo tanti esempi", ar:"أخيراً فهمت القاعدة بعد أمثلة كتير.", en:"You finally understood the rule after many examples.", pronoun:"Tu (أنت)",
- words:[
-  {it:"Finalmente",ar:"أخيراً",note:null},
-  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"capito",ar:"فهمت",note:"Capire، Passato Prossimo مع Tu (فعل منتظم -isc)"},
-  {it:"la regola",ar:"القاعدة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"dopo",ar:"بعد",note:"حرف جر غير أصلي"},
-  {it:"tanti",ar:"كتير جداً",note:"ضمير كمية جمع"},
-  {it:"esempi",ar:"أمثلة",note:null}
- ], conj:{verb:"Capire",tense:"Passato Prossimo",regular:true,rows:[
-  {person:"Io (أنا)",form:"Ho capito"},{person:"Tu (أنت)",form:"Hai capito"},
-  {person:"Lui (هو)",form:"Ha capito"},{person:"Lei (هي)",form:"Ha capito"},
-  {person:"Noi (احنا)",form:"Abbiamo capito"},{person:"Voi (انتم)",form:"Avete capito"},
-  {person:"Loro (هم)",form:"Hanno capito"}]}},
-
-{it:"Lui non capiva mai le battute in italiano, anche se studiava ogni giorno", ar:"هو مكانش يفهم أبداً النكت بالإيطالي، حتى لو كان بيذاكر كل يوم.", en:"He never used to understand jokes in Italian, even though he studied every day.", pronoun:"Lui (هو)",
- words:[
-  {it:"Lui",ar:"هو",note:null},
-  {it:"non",ar:"مش",note:null},
-  {it:"capiva",ar:"كان بيفهم",note:"Capire، Imperfetto مع Lui"},
-  {it:"mai",ar:"أبداً",note:"ظرف زمن، بييجي مع النفي"},
-  {it:"le battute",ar:"النكت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"in",ar:"بالـ",note:null},
-  {it:"italiano",ar:"الإيطالي",note:null},
-  {it:"anche",ar:"حتى",note:"جزء من anche se"},
-  {it:"se",ar:"لو",note:"جزء من anche se"},
-  {it:"studiava",ar:"كان بيذاكر",note:"Studiare، Imperfetto مع Lui"},
-  {it:"ogni",ar:"كل",note:null},
-  {it:"giorno",ar:"يوم",note:null}
- ], conj:{verb:"Capire",tense:"Imperfetto",regular:true,rows:[
-  {person:"Io (أنا)",form:"Capivo"},{person:"Tu (أنت)",form:"Capivi"},
-  {person:"Lui (هو)",form:"Capiva"},{person:"Lei (هي)",form:"Capiva"},
-  {person:"Noi (احنا)",form:"Capivamo"},{person:"Voi (انتم)",form:"Capivate"},
-  {person:"Loro (هم)",form:"Capivano"}]}},
-
-{it:"Il telefono non ha funzionato per due ore, e lei era molto nervosa", ar:"التليفون ماكانش شغال لمدة ساعتين، وهي كانت متعصبة جداً.", en:"The phone didn't work for two hours, and she was very nervous.", pronoun:"Lei (هي)",
- words:[
-  {it:"Il telefono",ar:"التليفون",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"non",ar:"مش",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"funzionato",ar:"شغل",note:"Funzionare، Passato Prossimo (فعل منتظم)"},
-  {it:"per",ar:"لمدة",note:null},
-  {it:"due",ar:"ساعتين",note:null},
-  {it:"ore",ar:"ساعات",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"lei",ar:"هي",note:null},
-  {it:"era",ar:"كانت",note:"Essere، Imperfetto"},
-  {it:"molto",ar:"جداً",note:null},
-  {it:"nervosa",ar:"متعصبة",note:null}
- ], conj:{verb:"Funzionare",tense:"Passato Prossimo",regular:true,rows:[
-  {person:"Io (أنا)",form:"Ho funzionato"},{person:"Tu (أنت)",form:"Hai funzionato"},
-  {person:"Lui (هو)",form:"Ha funzionato"},{person:"Lei (هي)",form:"Ha funzionato"},
-  {person:"Noi (احنا)",form:"Abbiamo funzionato"},{person:"Voi (انتم)",form:"Avete funzionato"},
-  {person:"Loro (هم)",form:"Hanno funzionato"}]}},
-
-{it:"Il computer non funzionava mai bene di mattina, quindi aspettavamo un'ora", ar:"الكمبيوتر مكانش بيشتغل كويس أبداً الصبح، فعشان كده كنا بننتظر ساعة.", en:"The computer never used to work well in the morning, so we would wait an hour.", pronoun:"Noi (احنا)",
- words:[
-  {it:"Il computer",ar:"الكمبيوتر",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"non",ar:"مش",note:null},
-  {it:"funzionava",ar:"كان شغال",note:"Funzionare، Imperfetto"},
-  {it:"mai",ar:"أبداً",note:null},
-  {it:"bene",ar:"كويس",note:null},
-  {it:"di",ar:"في",note:"جزء من di mattina"},
-  {it:"mattina",ar:"الصبح",note:null},
-  {it:"quindi",ar:"فعشان كده",note:null},
-  {it:"aspettavamo",ar:"كنا بننتظر",note:"Aspettare، Imperfetto مع Noi"},
-  {it:"un'ora",ar:"ساعة",note:null}
- ], conj:{verb:"Funzionare",tense:"Imperfetto",regular:true,rows:[
-  {person:"Io (أنا)",form:"Funzionavo"},{person:"Tu (أنت)",form:"Funzionavi"},
-  {person:"Lui (هو)",form:"Funzionava"},{person:"Lei (هي)",form:"Funzionava"},
-  {person:"Noi (احنا)",form:"Funzionavamo"},{person:"Voi (انتم)",form:"Funzionavate"},
-  {person:"Loro (هم)",form:"Funzionavano"}]}},
-
-// ══════════════ حروف الجر البسيطة (Da-Di-A-Con) ══════════════
-
-{it:"Vivo in questa città da tre anni, da quando sono venuto dall'Egitto", ar:"عايش في المدينة دي من تلات سنين، من لما جيت من مصر.", en:"I've lived in this city for three years, since I came from Egypt.", pronoun:"Io (أنا)",
- words:[
-  {it:"Vivo",ar:"عايش",note:null},
-  {it:"in",ar:"في",note:null},
-  {it:"questa",ar:"دي",note:"صفة اشارة مؤنث مفرد"},
-  {it:"città",ar:"المدينة",note:null},
-  {it:"da",ar:"من",note:"حرف جر Da — مدة زمنية مستمرة"},
-  {it:"tre",ar:"تلات",note:null},
-  {it:"anni",ar:"سنين",note:null},
-  {it:"da",ar:"من",note:"جزء من da quando"},
-  {it:"quando",ar:"لما",note:null},
-  {it:"sono",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"venuto",ar:"جيت",note:"Venire، Passato Prossimo"},
-  {it:"dall'",ar:"من الـ",note:"حرف جر مدمج = da + l' (قبل حرف متحرك)"},
-  {it:"Egitto",ar:"مصر",note:null}
- ], conj:null},
-
-{it:"Hai comprato quegli occhiali da sole scritti da un designer famoso", ar:"شريت النظارة الشمس دي المصممة من مصمم مشهور؟", en:"Did you buy those sunglasses designed by a famous designer?", pronoun:"Tu (أنت)",
- words:[
-  {it:"Hai",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"comprato",ar:"شريت",note:"Comprare، Passato Prossimo"},
-  {it:"quegli",ar:"دول",note:"صفة اشارة مذكر جمع قبل حرف متحرك"},
-  {it:"occhiali",ar:"نظارة",note:null},
-  {it:"da",ar:"للـ",note:"حرف جر Da — الغرض/الاستخدام"},
-  {it:"sole",ar:"الشمس",note:null},
-  {it:"scritti",ar:"مصممة/مكتوبة",note:"اسم مفعول جمع مذكر"},
-  {it:"da",ar:"من",note:"حرف جر Da — المبني للمجهول (الفاعل الحقيقي)"},
-  {it:"un designer",ar:"مصمم",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"famoso",ar:"مشهور",note:null}
- ], conj:null},
-
-{it:"Il tavolo di legno di suo nonno è più vecchio della casa", ar:"طرابيزة جده الخشبية أقدم من البيت.", en:"His grandfather's wooden table is older than the house.", pronoun:"Lui (هو)",
- words:[
-  {it:"Il tavolo",ar:"الطرابيزة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"di",ar:"من",note:"حرف جر Di — الخامة"},
-  {it:"legno",ar:"الخشب",note:null},
-  {it:"di",ar:"بتاع",note:"حرف جر Di — الملكية"},
-  {it:"suo",ar:"بتاعه",note:"صفة ملكية"},
-  {it:"nonno",ar:"الجد",note:null},
-  {it:"è",ar:"هي",note:"Essere، Presente"},
-  {it:"più",ar:"أكتر",note:null},
-  {it:"vecchio",ar:"قديم",note:null},
-  {it:"della",ar:"من الـ",note:"حرف جر مدمج = di + la"},
-  {it:"casa",ar:"البيت",note:null}
- ], conj:null},
-
-{it:"Di notte, lei parla sempre di calcio con i suoi amici", ar:"بالليل، هي دايماً بتتكلم عن كورة مع صحابها.", en:"At night, she always talks about football with her friends.", pronoun:"Lei (هي)",
- words:[
-  {it:"Di",ar:"في",note:"جزء من di notte (التعبير الزمني)"},
-  {it:"notte",ar:"الليل",note:null},
-  {it:"lei",ar:"هي",note:null},
-  {it:"parla",ar:"بتتكلم",note:"Parlare، Presente"},
-  {it:"sempre",ar:"دايماً",note:null},
-  {it:"di",ar:"عن",note:"حرف جر Di — الموضوع"},
-  {it:"calcio",ar:"كورة",note:null},
-  {it:"con",ar:"مع",note:null},
-  {it:"i suoi",ar:"بتوعها",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"amici",ar:"صحاب",note:null}
- ], conj:null},
-
-{it:"Siamo andati a Milano alle tre, e siamo arrivati a mezzanotte", ar:"رحنا ميلانو الساعة تلاتة، ووصلنا نص الليل.", en:"We went to Milan at three, and we arrived at midnight.", pronoun:"Noi (احنا)",
- words:[
-  {it:"Siamo",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"andati",ar:"رحنا",note:"Andare، Passato Prossimo مع Noi"},
-  {it:"a",ar:"لـ",note:"حرف جر A — الاتجاه لمدينة"},
-  {it:"Milano",ar:"ميلانو",note:null},
-  {it:"alle",ar:"في الساعة",note:"حرف جر مدمج = a + le"},
-  {it:"tre",ar:"تلاتة",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"siamo",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"arrivati",ar:"وصلنا",note:"Arrivare، Passato Prossimo مع Noi"},
-  {it:"a",ar:"في",note:"جزء من a mezzanotte"},
-  {it:"mezzanotte",ar:"نص الليل",note:null}
- ], conj:null},
-
-{it:"Avete telefonato a vostro padre, o siete andati a piedi da lui", ar:"اتصلتوا بأبوكوا، ولا رحتوا عنده مشي؟", en:"Did you call your father, or did you walk to his place?", pronoun:"Voi (انتم)",
- words:[
-  {it:"Avete",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"telefonato",ar:"اتصلتوا",note:"Telefonare، Passato Prossimo"},
-  {it:"a",ar:"بـ",note:"حرف جر A — المفعول غير المباشر"},
-  {it:"vostro",ar:"أبوكوا",note:"صفة ملكية"},
-  {it:"padre",ar:"أب",note:null},
-  {it:"o",ar:"ولا",note:null},
-  {it:"siete",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"andati",ar:"رحتوا",note:"Andare، Passato Prossimo مع Voi"},
-  {it:"a",ar:"على",note:"جزء من a piedi"},
-  {it:"piedi",ar:"الأقدام",note:null},
-  {it:"da",ar:"عند",note:"حرف جر Da — الذهاب لشخص"},
-  {it:"lui",ar:"هو",note:null}
- ], conj:null},
-
-{it:"Loro hanno viaggiato con il treno e hanno parlato con gentilezza con tutti", ar:"هم سافروا بالقطر وكانوا يتكلموا بلطف مع الكل.", en:"They traveled by train and spoke kindly with everyone.", pronoun:"Loro (هم)",
- words:[
-  {it:"Loro",ar:"هم",note:null},
-  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"viaggiato",ar:"سافروا",note:"Viaggiare، Passato Prossimo"},
-  {it:"con",ar:"بـ",note:"حرف جر Con — الوسيلة"},
-  {it:"il treno",ar:"القطر",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"e",ar:"و",note:null},
-  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"parlato",ar:"اتكلموا",note:"Parlare، Passato Prossimo"},
-  {it:"con",ar:"بـ",note:"حرف جر Con — الكيفية"},
-  {it:"gentilezza",ar:"لطف",note:null},
-  {it:"con",ar:"مع",note:"حرف جر Con — المصاحبة"},
-  {it:"tutti",ar:"الكل",note:null}
- ], conj:null},
-
-{it:"Ho incontrato una ragazza con i capelli neri, e abbiamo camminato lungo il fiume", ar:"قابلت بنت شعرها اسود، ومشينا على طول النهر.", en:"I met a girl with black hair, and we walked along the river.", pronoun:"Io (أنا)",
+{it:"Ho mangiato un panino mentre guardavo la TV", ar:"أكلت ساندويتش وأنا كنت باتفرج على التيفي.", en:"I ate a sandwich while I was watching TV.", pronoun:"Io (أنا)",
  words:[
   {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"incontrato",ar:"قابلت",note:"Incontrare، Passato Prossimo"},
-  {it:"una ragazza",ar:"بنت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"con",ar:"بـ",note:"حرف جر Con — الصفة/الميزة"},
-  {it:"i capelli",ar:"الشعر",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"neri",ar:"اسود",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"abbiamo",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"camminato",ar:"مشينا",note:"Camminare، Passato Prossimo"},
-  {it:"lungo",ar:"على طول",note:"حرف جر غير أصلي"},
-  {it:"il fiume",ar:"النهر",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
- ], conj:null},
-
-// ══════════════ حروف الجر غير الأصلية (Preposizioni improprie) ══════════════
-
-{it:"Hai girato a destra, poi a sinistra, e la farmacia era proprio dietro l'angolo", ar:"لفيت يمين، بعدين شمال، والصيدلية كانت ورا الناصية بالظبط.", en:"You turned right, then left, and the pharmacy was right behind the corner.", pronoun:"Tu (أنت)",
- words:[
-  {it:"Hai",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"girato",ar:"لفيت",note:"Girare، Passato Prossimo"},
-  {it:"a",ar:"لـ",note:null},
-  {it:"destra",ar:"يمين",note:"حرف جر غير أصلي (مكان)"},
-  {it:"poi",ar:"بعدين",note:null},
-  {it:"a",ar:"لـ",note:null},
-  {it:"sinistra",ar:"شمال",note:"حرف جر غير أصلي (مكان)"},
-  {it:"e",ar:"و",note:null},
-  {it:"la farmacia",ar:"الصيدلية",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"era",ar:"كانت",note:"Essere، Imperfetto"},
-  {it:"proprio",ar:"بالظبط",note:null},
-  {it:"dietro",ar:"ورا",note:"حرف جر غير أصلي (مكان)"},
-  {it:"l'angolo",ar:"الناصية",note:null}
- ], conj:null},
-
-{it:"Il gatto era sopra il letto, mentre il cane dormiva sotto il tavolo dentro casa, non fuori", ar:"القطة كانت فوق السرير، بينما الكلب كان نايم تحت الطرابيزة جوه البيت، مش برا.", en:"The cat was on the bed, while the dog was sleeping under the table inside the house, not outside.", pronoun:"Lui (هو)",
- words:[
-  {it:"Il gatto",ar:"القطة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"era",ar:"كانت",note:"Essere، Imperfetto"},
-  {it:"sopra",ar:"فوق",note:"حرف جر غير أصلي"},
-  {it:"il letto",ar:"السرير",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"mentre",ar:"بينما",note:null},
-  {it:"il cane",ar:"الكلب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"dormiva",ar:"كان نايم",note:"Dormire، Imperfetto"},
-  {it:"sotto",ar:"تحت",note:"حرف جر غير أصلي"},
-  {it:"il tavolo",ar:"الطرابيزة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"dentro",ar:"جوه",note:"حرف جر غير أصلي"},
-  {it:"casa",ar:"البيت",note:null},
-  {it:"non",ar:"مش",note:null},
-  {it:"fuori",ar:"برا",note:"حرف جر غير أصلي"}
- ], conj:null},
-
-{it:"Lei abitava davanti alla stazione, vicino al mercato, ma lontano dall'università", ar:"هي كانت ساكنة قدام المحطة، قريبة من السوق، بس بعيدة عن الجامعة.", en:"She used to live in front of the station, near the market, but far from the university.", pronoun:"Lei (هي)",
- words:[
-  {it:"Lei",ar:"هي",note:null},
-  {it:"abitava",ar:"كانت ساكنة",note:"Abitare، Imperfetto"},
-  {it:"davanti",ar:"قدام",note:"حرف جر غير أصلي"},
-  {it:"alla",ar:"للـ",note:"حرف جر مدمج = a + la"},
-  {it:"stazione",ar:"المحطة",note:null},
-  {it:"vicino",ar:"قريب",note:"حرف جر غير أصلي"},
-  {it:"al",ar:"من الـ",note:"حرف جر مدمج = a + il"},
-  {it:"mercato",ar:"السوق",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"lontano",ar:"بعيد",note:"حرف جر غير أصلي"},
-  {it:"dall'",ar:"من الـ",note:"حرف جر مدمج = da + l'"},
-  {it:"università",ar:"الجامعة",note:null}
- ], conj:null},
-
-{it:"Abbiamo studiato durante il weekend, prima di uscire, e dopo abbiamo riposato", ar:"ذاكرنا أثناء الويكند، قبل ما نخرج، وبعدين استرحنا.", en:"We studied during the weekend before going out, and afterwards we rested.", pronoun:"Noi (احنا)",
- words:[
-  {it:"Abbiamo",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"studiato",ar:"ذاكرنا",note:"Studiare، Passato Prossimo"},
-  {it:"durante",ar:"أثناء",note:"حرف جر غير أصلي"},
-  {it:"il weekend",ar:"الويكند",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"prima",ar:"قبل",note:null},
-  {it:"di",ar:"",note:"جزء من prima di"},
-  {it:"uscire",ar:"نخرج",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"dopo",ar:"بعدين",note:"حرف جر غير أصلي"},
-  {it:"abbiamo",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"riposato",ar:"استرحنا",note:"Riposare، Passato Prossimo"}
- ], conj:null},
-
-{it:"Siete arrivati verso le otto, e avete lavorato fino a mezzanotte", ar:"وصلتوا حوالي الساعة تمانية، وشغلتوا لحد نص الليل.", en:"You arrived around eight, and you worked until midnight.", pronoun:"Voi (انتم)",
- words:[
-  {it:"Siete",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"arrivati",ar:"وصلتوا",note:"Arrivare، Passato Prossimo"},
-  {it:"verso",ar:"حوالي",note:"حرف جر غير أصلي (زمن)"},
-  {it:"le otto",ar:"تمانية",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"e",ar:"و",note:null},
-  {it:"avete",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"lavorato",ar:"شغلتوا",note:"Lavorare، Passato Prossimo"},
-  {it:"fino",ar:"لحد",note:"جزء من fino a"},
-  {it:"a",ar:"",note:"جزء من fino a (حرف جر غير أصلي)"},
-  {it:"mezzanotte",ar:"نص الليل",note:null}
- ], conj:null},
-
-{it:"Loro sono usciti senza ombrello, anche se erano tutti contro questa idea", ar:"هم خرجوا من غير شمسية، حتى لو كانوا كلهم ضد الفكرة دي.", en:"They went out without an umbrella, even though they were all against this idea.", pronoun:"Loro (هم)",
- words:[
-  {it:"Loro",ar:"هم",note:null},
-  {it:"sono",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"usciti",ar:"خرجوا",note:"Uscire، Passato Prossimo"},
-  {it:"senza",ar:"من غير",note:"حرف جر غير أصلي"},
-  {it:"ombrello",ar:"شمسية",note:null},
-  {it:"anche",ar:"حتى",note:"جزء من anche se"},
-  {it:"se",ar:"لو",note:null},
-  {it:"erano",ar:"كانوا",note:"Essere، Imperfetto"},
-  {it:"tutti",ar:"كلهم",note:null},
-  {it:"contro",ar:"ضد",note:"حرف جر غير أصلي"},
-  {it:"questa",ar:"دي",note:null},
-  {it:"idea",ar:"الفكرة",note:null}
- ], conj:null},
-
-{it:"Secondo me, oltre il ponte c'è una scuola, e nonostante la pioggia siamo usciti", ar:"حسب رأيي، بعد الجسر في مدرسة، وعلى الرغم من المطر خرجنا.", en:"In my opinion, beyond the bridge there's a school, and despite the rain, we went out.", pronoun:"Io (أنا)",
- words:[
-  {it:"Secondo",ar:"حسب",note:"حرف جر غير أصلي"},
-  {it:"me",ar:"رأيي",note:null},
-  {it:"oltre",ar:"بعد",note:"حرف جر غير أصلي"},
-  {it:"il ponte",ar:"الجسر",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"c'è",ar:"في",note:null},
-  {it:"una scuola",ar:"مدرسة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"e",ar:"و",note:null},
-  {it:"nonostante",ar:"على الرغم من",note:"حرف جر غير أصلي"},
-  {it:"la pioggia",ar:"المطر",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"siamo",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"usciti",ar:"خرجنا",note:"Uscire، Passato Prossimo"}
- ], conj:null},
-
-{it:"Hai mangiato tutto tranne il pesce, eccetto la pizza, salvo un pezzo di pane", ar:"أكلت كل حاجة ما عدا السمك، بإستثناء البيتزا، إلا حتة عيش.", en:"You ate everything except the fish, except the pizza, save for a piece of bread.", pronoun:"Tu (أنت)",
- words:[
-  {it:"Hai",ar:"",note:"جزء من الفعل المساعد"},
   {it:"mangiato",ar:"أكلت",note:"Mangiare، Passato Prossimo"},
-  {it:"tutto",ar:"كل حاجة",note:"ضمير شامل"},
-  {it:"tranne",ar:"ما عدا",note:"حرف جر غير أصلي"},
-  {it:"il pesce",ar:"السمك",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"eccetto",ar:"باستثناء",note:"حرف جر غير أصلي"},
-  {it:"la pizza",ar:"البيتزا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"salvo",ar:"إلا",note:"حرف جر غير أصلي"},
-  {it:"un pezzo",ar:"حتة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"di",ar:"من",note:null},
-  {it:"pane",ar:"العيش",note:null}
- ], conj:null},
+  {it:"un panino",ar:"ساندويتش",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وأنا",note:null},
+  {it:"guardavo",ar:"كنت باتفرج",note:"Guardare، Imperfetto"},
+  {it:"la TV",ar:"التيفي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Mangiare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho mangiato"},
+  {person:"Tu (أنت)",form:"Hai mangiato"},
+  {person:"Lui (هو)",form:"Ha mangiato"},
+  {person:"Lei (هي)",form:"Ha mangiato"},
+  {person:"Noi (احنا)",form:"Abbiamo mangiato"},
+  {person:"Voi (انتم)",form:"Avete mangiato"},
+  {person:"Loro (هم)",form:"Hanno mangiato"}]}},
 
-{it:"Lui ha pagato mediante bonifico e ha mandato il file tramite email", ar:"هو دفع بواسطة تحويل بنكي وبعت الملف عن طريق الإيميل.", en:"He paid via bank transfer and sent the file through email.", pronoun:"Lui (هو)",
+{it:"Mangiavo la pasta mentre ho guardato il telefono", ar:"كنت باكل المكرونة وأنا بصيت في التيليفون.", en:"I was eating pasta when I looked at my phone.", pronoun:"Io (أنا)",
  words:[
-  {it:"Lui",ar:"هو",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"pagato",ar:"دفع",note:"Pagare، Passato Prossimo"},
-  {it:"mediante",ar:"بواسطة",note:"حرف جر غير أصلي"},
-  {it:"bonifico",ar:"تحويل بنكي",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"mandato",ar:"بعت",note:"Mandare، Passato Prossimo"},
-  {it:"il file",ar:"الملف",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"tramite",ar:"عن طريق",note:"حرف جر غير أصلي"},
-  {it:"email",ar:"الإيميل",note:null}
- ], conj:null},
-
-// ══════════ الصفات والضمائر الملكية (Aggettivi possessivi) ══════════
-
-{it:"Il mio amico è simpatico, ma i tuoi amici sono più simpatici", ar:"صاحبي لطيف، بس صحابك ألطف.", en:"My friend is nice, but your friends are nicer.", pronoun:"Io (أنا)",
- words:[
-  {it:"Il mio",ar:"صاحبي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — صفة ملكية مذكر مفرد"},
-  {it:"amico",ar:"صديق",note:null},
-  {it:"è",ar:"هو",note:"Essere، Presente"},
-  {it:"simpatico",ar:"لطيف",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"i tuoi",ar:"صحابك",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — صفة ملكية مذكر جمع"},
-  {it:"amici",ar:"أصحاب",note:null},
-  {it:"sono",ar:"هم",note:"Essere، Presente"},
-  {it:"più",ar:"أكتر",note:null},
-  {it:"simpatici",ar:"لطفاء",note:null}
- ], conj:null},
-
-{it:"Suo fratello e sua sorella sono venuti a trovare i suoi nonni ieri", ar:"أخوه وأخته جم يزوروا جدوده امبارح.", en:"His brother and his sister came to visit his grandparents yesterday.", pronoun:"Lui (هو)",
- words:[
-  {it:"Suo",ar:"أخوه",note:"صفة ملكية، بدون أداة تعريف مع أفراد العائلة بالمفرد"},
-  {it:"fratello",ar:"أخ",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"sua",ar:"أخته",note:"صفة ملكية مؤنث مفرد"},
-  {it:"sorella",ar:"أخت",note:null},
-  {it:"sono",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"venuti",ar:"جم",note:"Venire، Passato Prossimo"},
-  {it:"a",ar:"لـ",note:null},
-  {it:"trovare",ar:"يزوروا",note:null},
-  {it:"i suoi",ar:"جدوده",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — صفة ملكية جمع — ترجع الأداة مع الجمع حتى مع العائلة"},
-  {it:"nonni",ar:"الجدود",note:null},
-  {it:"ieri",ar:"امبارح",note:null}
- ], conj:null},
-
-{it:"La nostra scuola è più grande della vostra, e i nostri libri sono nuovi", ar:"مدرستنا أكبر من بتاعتكوا، وكتبنا جداد.", en:"Our school is bigger than yours, and our books are new.", pronoun:"Noi (احنا)",
- words:[
-  {it:"La nostra",ar:"مدرستنا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — صفة ملكية مؤنث مفرد"},
-  {it:"scuola",ar:"مدرسة",note:null},
-  {it:"è",ar:"هي",note:null},
-  {it:"più",ar:"أكتر",note:null},
-  {it:"grande",ar:"كبيرة",note:null},
-  {it:"della",ar:"من الـ",note:"حرف جر مدمج = di + la"},
-  {it:"vostra",ar:"بتاعتكوا",note:"صفة ملكية مؤنث"},
-  {it:"e",ar:"و",note:null},
-  {it:"i nostri",ar:"كتبنا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — صفة ملكية مذكر جمع"},
-  {it:"libri",ar:"كتب",note:null},
-  {it:"sono",ar:"هم",note:null},
-  {it:"nuovi",ar:"جداد",note:null}
- ], conj:null},
-
-{it:"Le loro idee erano ottime, e il loro progetto ha funzionato benissimo", ar:"أفكارهم كانت ممتازة، ومشروعهم شغل كويس جداً.", en:"Their ideas were excellent, and their project worked very well.", pronoun:"Loro (هم)",
- words:[
-  {it:"Le loro",ar:"أفكارهم",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — صفة ملكية ثابتة الشكل مع كل الحالات"},
-  {it:"idee",ar:"أفكار",note:null},
-  {it:"erano",ar:"كانت",note:"Essere، Imperfetto"},
-  {it:"ottime",ar:"ممتازة",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"il loro",ar:"مشروعهم",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — صفة ملكية ثابتة"},
-  {it:"progetto",ar:"مشروع",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"funzionato",ar:"شغل",note:"Funzionare، Passato Prossimo"},
-  {it:"benissimo",ar:"كويس جداً",note:null}
- ], conj:null},
-
-// ══════════ أدوات التعريف والتنكير (Articoli determinativi e partitivi) ══════════
-
-{it:"Ho comprato il pane, la frutta, l'acqua e lo zucchero al mercato", ar:"شريت العيش، الفاكهة، المية، والسكر من السوق.", en:"I bought bread, fruit, water, and sugar at the market.", pronoun:"Io (أنا)",
- words:[
-  {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"comprato",ar:"شريت",note:"Comprare، Passato Prossimo"},
-  {it:"il pane",ar:"العيش",note:"أداة تعريف مذكر مفرد — الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"la frutta",ar:"الفاكهة",note:"أداة تعريف مؤنث مفرد — الأداة ��ي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"l'acqua",ar:"المية",note:"أداة تعريف قبل حرف متحرك — الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"e",ar:"و",note:null},
-  {it:"lo zucchero",ar:"السكر",note:"أداة تعريف قبل s+ساكن — الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"al",ar:"في الـ",note:"حرف جر مدمج = a + il"},
-  {it:"mercato",ar:"السوق",note:null}
- ], conj:null},
-
-{it:"Hai visto gli studenti e le studentesse nella nuova classe", ar:"شفت الطلاب والطالبات في الفصل الجديد؟", en:"Did you see the students (m. and f.) in the new class?", pronoun:"Tu (أنت)",
- words:[
-  {it:"Hai",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"visto",ar:"شفت",note:"Vedere، Passato Prossimo"},
-  {it:"gli studenti",ar:"طلاب",note:"أداة تعريف جمع مذكر — الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"e",ar:"و",note:null},
-  {it:"le studentesse",ar:"طالبات",note:"أداة تعريف جمع مؤنث — الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"nella",ar:"في الـ",note:"حرف جر مدمج = in + la"},
-  {it:"nuova",ar:"جديدة",note:null},
-  {it:"classe",ar:"فصل",note:null}
- ], conj:null},
-
-{it:"Lui ha comprato dei libri, degli zaini e delle penne per la scuola", ar:"هو شرى شوية كتب، وشوية شنط، وشوية أقلام للمدرسة.", en:"He bought some books, some backpacks, and some pens for school.", pronoun:"Lui (هو)",
- words:[
-  {it:"Lui",ar:"هو",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"comprato",ar:"شرى",note:"Comprare، Passato Prossimo"},
-  {it:"dei",ar:"شوية",note:"أداة تنكير جزء (partitivo) جمع مذكر"},
-  {it:"libri",ar:"كتب",note:null},
-  {it:"degli",ar:"شوية",note:"partitivo جمع مذكر قبل حرف متحرك أو s+ساكن"},
-  {it:"zaini",ar:"شنط",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"delle",ar:"شوية",note:"partitivo جمع مؤنث"},
-  {it:"penne",ar:"أقلام",note:null},
-  {it:"per",ar:"لـ",note:null},
-  {it:"la scuola",ar:"المدرسة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
- ], conj:null},
-
-{it:"Lei ha mangiato una mela e un panino prima di uscire", ar:"هي أكلت تفاحة وساندويتش قبل ما تخرج.", en:"She ate an apple and a sandwich before going out.", pronoun:"Lei (هي)",
- words:[
-  {it:"Lei",ar:"هي",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"mangiato",ar:"أكلت",note:"Mangiare، Passato Prossimo"},
-  {it:"una mela",ar:"تفاحة",note:"أداة تنكير مؤنث — الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"e",ar:"و",note:null},
-  {it:"un panino",ar:"ساندويتش",note:"أداة تنكير مذكر — الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"prima",ar:"قبل",note:null},
-  {it:"di",ar:"",note:null},
-  {it:"uscire",ar:"تخرج",note:null}
- ], conj:null},
-
-// ══════════ صفات وضمائر الإشارة (Aggettivi e pronomi dimostrativi) ══════════
-
-{it:"Questo libro è interessante, ma questi ragazzi non hanno letto queste pagine", ar:"الكتاب ده مشوق، بس الشباب دول مقروش الصفحات دي.", en:"This book is interesting, but these guys haven't read these pages.", pronoun:"Io (أنا)",
- words:[
-  {it:"Questo",ar:"ده",note:"صفة إشارة مذكر مفرد"},
-  {it:"libro",ar:"كتاب",note:null},
-  {it:"è",ar:"هو",note:null},
-  {it:"interessante",ar:"مشوق",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"questi",ar:"دول",note:"صفة إشارة مذكر جمع"},
-  {it:"ragazzi",ar:"شباب",note:null},
-  {it:"non",ar:"",note:"جزء من النفي"},
-  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"letto",ar:"مقروش",note:"Leggere، Passato Prossimo بالنفي"},
-  {it:"queste",ar:"دي",note:"صفة إشارة مؤنث جمع"},
-  {it:"pagine",ar:"صفحات",note:null}
- ], conj:null},
-
-{it:"Conosci quest'uomo? È l'amico di quest'amica di mia sorella", ar:"تعرف الراجل ده؟ هو صاحب الصديقة دي بتاعة أختي.", en:"Do you know this man? He's the friend of this friend of my sister.", pronoun:"Tu (أنت)",
- words:[
-  {it:"Conosci",ar:"تعرف",note:null},
-  {it:"quest'",ar:"ده",note:"انكماش questo قبل حرف متحرك"},
-  {it:"uomo",ar:"راجل",note:null},
-  {it:"È",ar:"هو",note:null},
-  {it:"l'amico",ar:"صاحب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"di",ar:"بتاع",note:null},
-  {it:"quest'",ar:"دي",note:"انكماش questa قبل حرف متحرك"},
-  {it:"amica",ar:"صديقة",note:null},
-  {it:"di",ar:"بتاعة",note:null},
-  {it:"mia",ar:"أختي",note:null},
-  {it:"sorella",ar:"أخت",note:null}
- ], conj:null},
-
-{it:"Quel ragazzo è alto, quella ragazza è bella, e quegli studenti studiano sempre", ar:"الشاب ده طويل، البنت دي جميلة، والطلاب دول بيذاكروا دايماً.", en:"That guy is tall, that girl is beautiful, and those students always study.", pronoun:"Lui (هو)",
- words:[
-  {it:"Quel",ar:"ده",note:"quello قبل ساكن"},
-  {it:"ragazzo",ar:"شاب",note:null},
-  {it:"è",ar:"هو",note:null},
-  {it:"alto",ar:"طويل",note:null},
-  {it:"quella",ar:"دي",note:null},
-  {it:"ragazza",ar:"بنت",note:null},
-  {it:"bella",ar:"جميلة",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"quegli",ar:"دول",note:"quello قبل حرف متحرك أو s+ساكن/z/gn/ps"},
-  {it:"studenti",ar:"طلاب",note:null},
-  {it:"studiano",ar:"بيذاكروا",note:null},
-  {it:"sempre",ar:"دايماً",note:null}
- ], conj:null},
-
-{it:"Quale preferisci, questo o quello? Io prendo quella, è più bella", ar:"تحب إيه، ده أو ده؟ أنا هاخد دي، هي أحلى.", en:"Which do you prefer, this or that? I'll take that one, it's nicer.", pronoun:"Noi (احنا)",
- words:[
-  {it:"Quale",ar:"أي",note:null},
-  {it:"preferisci",ar:"تحب",note:null},
-  {it:"questo",ar:"ده",note:"ضمير إشارة"},
-  {it:"o",ar:"أو",note:null},
-  {it:"quello",ar:"ده",note:"ضمير إشارة"},
-  {it:"Io",ar:"أنا",note:null},
-  {it:"prendo",ar:"هاخد",note:null},
-  {it:"quella",ar:"دي",note:"ضمير إشارة مؤنث"},
-  {it:"è",ar:"هي",note:null},
-  {it:"più",ar:"أكتر",note:null},
-  {it:"bella",ar:"حلوة",note:null}
- ], conj:null},
-
-// ══════════ أسماء وضمائر الاستفهام (Aggettivi e pronomi interrogativi) ══════════
-
-{it:"Quando lavoravo in quel negozio, non sapevo quanto costava tutto", ar:"لما كنت بشتقل في المحل ده، مكنتش عارف كل حاجة بكام.", en:"When I used to work in that shop, I didn't know how much everything cost.", pronoun:"Io (أنا)",
- words:[
-  {it:"Quando",ar:"لما/متى",note:"أداة استفهام/ربط زمنية"},
-  {it:"lavoravo",ar:"كنت بشتقل",note:"Lavorare، Imperfetto مع Io"},
-  {it:"in",ar:"في",note:null},
-  {it:"quel",ar:"ده",note:null},
-  {it:"negozio",ar:"محل",note:null},
-  {it:"non",ar:"مش",note:null},
-  {it:"sapevo",ar:"كنت عارف",note:"Sapere، Imperfetto مع Io"},
-  {it:"quanto",ar:"كم",note:"أداة استفهام للكمية"},
-  {it:"costava",ar:"كان بيكلف",note:"Costare، Imperfetto"},
-  {it:"tutto",ar:"كل حاجة",note:null}
- ], conj:null},
-
-{it:"Di chi è questo telefono? A chi hai scritto ieri sera", ar:"التليفون ده بتاع مين؟ كتبت لمين امبارح بالليل؟", en:"Whose phone is this? Who did you write to last night?", pronoun:"Tu (أنت)",
- words:[
-  {it:"Di",ar:"بتاع",note:"جزء من di chi"},
-  {it:"chi",ar:"مين",note:"أداة استفهام للعاقل"},
-  {it:"è",ar:"هو",note:null},
-  {it:"questo",ar:"ده",note:null},
-  {it:"telefono",ar:"التليفون",note:null},
-  {it:"A",ar:"لـ",note:"جزء من a chi"},
-  {it:"chi",ar:"مين",note:null},
-  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"scritto",ar:"كتبت",note:"Scrivere، Passato Prossimo"},
-  {it:"ieri",ar:"امبارح",note:null},
-  {it:"sera",ar:"بالليل",note:null}
- ], conj:null},
-
-{it:"Quale strada ha preso, e quali negozi ha visitato in centro", ar:"أخد أي شارع، وزار أي محلات في وسط البلد؟", en:"Which street did he take, and which shops did he visit downtown?", pronoun:"Lui (هو)",
- words:[
-  {it:"Quale",ar:"أي",note:"مفرد"},
-  {it:"strada",ar:"شارع",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"preso",ar:"أخد",note:"Prendere، Passato Prossimo"},
-  {it:"e",ar:"و",note:null},
-  {it:"quali",ar:"أي",note:"جمع"},
-  {it:"negozi",ar:"محلات",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"visitato",ar:"زار",note:"Visitare، Passato Prossimo"},
-  {it:"in",ar:"في",note:null},
-  {it:"centro",ar:"وسط البلد",note:null}
- ], conj:null},
-
-{it:"Che cosa hai fatto ieri? Cosa hai mangiato a pranzo", ar:"عملتي إيه امبارح؟ أكلتي إيه في الفطار؟", en:"What did you do yesterday? What did you have for lunch?", pronoun:"Lei (هي)",
- words:[
-  {it:"Che",ar:"إيه",note:"جزء من che cosa"},
-  {it:"cosa",ar:"",note:"جزء من che cosa — أداة استفهام مشتركة"},
-  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"fatto",ar:"عملتي",note:"Fare، Passato Prossimo"},
-  {it:"ieri",ar:"امبارح",note:null},
-  {it:"Cosa",ar:"إيه",note:null},
-  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"mangiato",ar:"أكلتي",note:"Mangiare، Passato Prossimo"},
-  {it:"a",ar:"في",note:null},
-  {it:"pranzo",ar:"الفطار",note:null}
- ], conj:null},
-
-// ══════════ الضمائر (المباشرة والمنعكسة) ══════════
-
-{it:"Ogni domenica i nostri amici ci invitano a pranzo, e noi li ringraziamo sempre", ar:"كل حد، صحابنا بيعزمونا على الفطار، واحنا بنشكرهم دايماً.", en:"Every Sunday our friends invite us to lunch, and we always thank them.", pronoun:"Noi (احنا)",
- words:[
-  {it:"Ogni",ar:"كل",note:null},
-  {it:"domenica",ar:"حد",note:null},
-  {it:"i nostri",ar:"بتوعنا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"amici",ar:"صحاب",note:null},
-  {it:"ci",ar:"ــنا",note:"ضمير مفعول به مباشر لـ Noi"},
-  {it:"invitano",ar:"بيعزموا",note:null},
-  {it:"a",ar:"لـ",note:null},
-  {it:"pranzo",ar:"الفطار",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"noi",ar:"احنا",note:null},
-  {it:"li",ar:"هم",note:"ضمير مفعول به مباشر مذكر جمع"},
-  {it:"ringraziamo",ar:"بنشكر",note:null},
-  {it:"sempre",ar:"دايماً",note:null}
- ], conj:null},
-
-{it:"Il professore mi vede sempre perché arrivo presto, e ti cerca dopo la lezione", ar:"الأستاذ بيشوفني دايماً لأني بوصل بدري، وبيدور عليك بعد الحصة.", en:"The professor always sees me because I arrive early, and looks for you after class.", pronoun:"Io (أنا)",
- words:[
-  {it:"Il professore",ar:"الأستاذ",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"mi",ar:"ـني",note:"ضمير مفعول به مباشر"},
-  {it:"vede",ar:"بيشوف",note:null},
-  {it:"sempre",ar:"دايماً",note:null},
-  {it:"perché",ar:"لأن",note:null},
-  {it:"arrivo",ar:"بوصل",note:null},
-  {it:"presto",ar:"بدري",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"ti",ar:"ـك",note:"ضمير مفعول به مباشر"},
-  {it:"cerca",ar:"بيدور على",note:null},
-  {it:"dopo",ar:"بعد",note:null},
-  {it:"la lezione",ar:"الحصة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
- ], conj:null},
-
-{it:"Lui si sveglia presto, si veste velocemente, e voi vi sedete per fare colazione", ar:"هو بيصحى بدري، بيلبس بسرعة، وانتوا بتقعدوا تفطروا.", en:"He wakes up early, gets dressed quickly, and you (pl.) sit down to have breakfast.", pronoun:"Lui (هو)",
- words:[
-  {it:"Lui",ar:"هو",note:null},
-  {it:"si",ar:"نفسه",note:"ضمير انعكاسي"},
-  {it:"sveglia",ar:"بيصحى",note:"Svegliarsi"},
-  {it:"presto",ar:"بدري",note:null},
-  {it:"si",ar:"نفسه",note:"ضمير انعكاسي"},
-  {it:"veste",ar:"بيلبس",note:"Vestirsi"},
-  {it:"velocemente",ar:"بسرعة",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"voi",ar:"انتوا",note:null},
-  {it:"vi",ar:"أنفسكم",note:"ضمير انعكاسي مع Voi"},
-  {it:"sedete",ar:"بتقعدوا",note:"Sedersi"},
-  {it:"per",ar:"عشان",note:null},
-  {it:"fare",ar:"تعملوا",note:null},
-  {it:"colazione",ar:"فطار",note:null}
- ], conj:null},
-
-// ══════════ الضمائر المبهمة (Pronomi indefiniti) ══════════
-
-{it:"Ho comprato qualcosa per te, e qualcuno ha bussato alla porta proprio ora", ar:"اشتريت حاجة ليك، وحد خبط على الباب دلوقتي بالظبط.", en:"I bought something for you, and someone knocked on the door just now.", pronoun:"Io (أنا)",
- words:[
-  {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"comprato",ar:"اشتريت",note:"Comprare، Passato Prossimo"},
-  {it:"qualcosa",ar:"حاجة ما",note:"ضمير مبهم للأشياء"},
-  {it:"per",ar:"لـ",note:null},
-  {it:"te",ar:"انت",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"qualcuno",ar:"حد",note:"ضمير مبهم للعاقل"},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"bussato",ar:"خبط",note:"Bussare، Passato Prossimo"},
-  {it:"alla",ar:"على الـ",note:null},
-  {it:"porta",ar:"الباب",note:null},
-  {it:"proprio",ar:"بالظبط",note:null},
-  {it:"ora",ar:"دلوقتي",note:null}
- ], conj:null},
-
-{it:"Chiunque può sbagliare, ma ognuno deve capire il proprio errore", ar:"أي حد ممكن يفشل، بس كل واحد لازم يفهم فشلته.", en:"Anyone can make a mistake, but everyone must understand their own error.", pronoun:"Tu (أنت)",
- words:[
-  {it:"Chiunque",ar:"أي حد",note:"للعاقل فقط، الفعل بعدها مفرد دايماً"},
-  {it:"può",ar:"ممكن",note:null},
-  {it:"sbagliare",ar:"يفشل",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"ognuno",ar:"كل واحد",note:"ضمير مبهم"},
-  {it:"deve",ar:"لازم",note:null},
-  {it:"capire",ar:"يفهم",note:null},
-  {it:"il proprio",ar:"الخاص بيه",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"errore",ar:"الفشلة",note:null}
- ], conj:null},
-
-{it:"Lui non ha detto niente ieri, ma ha capito tutto della lezione", ar:"هو ماقالش حاجة امبارح، بس فهم كل حاجة من الحصة.", en:"He didn't say anything yesterday, but he understood everything in the lesson.", pronoun:"Lui (هو)",
- words:[
-  {it:"Lui",ar:"هو",note:null},
-  {it:"non",ar:"ما",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"detto",ar:"قال",note:"Dire، Passato Prossimo"},
-  {it:"niente",ar:"حاجة",note:"ضمير مبهم للنفي، يلازم non"},
-  {it:"ieri",ar:"امبارح",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"capito",ar:"فهم",note:"Capire، Passato Prossimo"},
-  {it:"tutto",ar:"كل حاجة",note:null},
-  {it:"della",ar:"من الـ",note:null},
-  {it:"lezione",ar:"الحصة",note:null}
- ], conj:null},
-
-{it:"Nessuno è venuto alla festa, anche se alcuni amici avevano promesso di venire", ar:"محدش جه الحفلة، حتى لو بعض الصحاب كانوا وعدوا إنهم هيجوا.", en:"No one came to the party, even though some friends had promised to come.", pronoun:"Lei (هي)",
- words:[
-  {it:"Nessuno",ar:"محدش",note:"لا أحد"},
-  {it:"è",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"venuto",ar:"جه",note:"Venire، Passato Prossimo"},
-  {it:"alla",ar:"للـ",note:null},
-  {it:"festa",ar:"الحفلة",note:null},
-  {it:"anche",ar:"حتى",note:null},
-  {it:"se",ar:"لو",note:null},
-  {it:"alcuni",ar:"بعض",note:"ضمير كمية مبهمة"},
-  {it:"amici",ar:"الصحاب",note:null},
-  {it:"avevano",ar:"كانوا",note:"Avere، Trapassato/Imperfetto مع Loro"},
-  {it:"promesso",ar:"وعدوا",note:null},
-  {it:"di",ar:"إنهم",note:null},
-  {it:"venire",ar:"يجوا",note:null}
- ], conj:null},
-
-{it:"Abbiamo molti amici in Italia, ma poco tempo libero, perché lavoriamo troppo e studiamo tanto", ar:"عندنا صحاب كتير في إيطاليا، بس وقت فاضي قليل، لأننا بنشتفل أكتر من اللازم وبنذاكر كتير جداً.", en:"We have many friends in Italy, but little free time, because we work too much and study a lot.", pronoun:"Noi (احنا)",
- words:[
-  {it:"Abbiamo",ar:"عندنا",note:"Avere، Presente"},
-  {it:"molti",ar:"كتير",note:"ضمير كمية جمع مذكر"},
-  {it:"amici",ar:"صحاب",note:null},
-  {it:"in",ar:"في",note:null},
-  {it:"Italia",ar:"إيطاليا",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"poco",ar:"قليل",note:"ضمير كمية مفرد"},
-  {it:"tempo",ar:"وقت",note:null},
-  {it:"libero",ar:"فاضي",note:null},
-  {it:"perché",ar:"لأن",note:null},
-  {it:"lavoriamo",ar:"بنشتفل",note:null},
-  {it:"troppo",ar:"أكتر من اللازم",note:"ضمير كمية مبهم"},
-  {it:"e",ar:"و",note:null},
-  {it:"studiamo",ar:"بنذاكر",note:null},
-  {it:"tanto",ar:"كتير جداً",note:"ضمير كمية مبهم"}
- ], conj:null},
-
-{it:"Avete studiato parecchio oggi, ma volete un'altra lezione, perché certi argomenti sono difficili", ar:"ذاكرتوا كتير بشكل ملحوظ النهاردة، بس عايزين حصة تانية، لأن بعض المواضيع صعبة.", en:"You studied quite a lot today, but you want another lesson, because certain topics are difficult.", pronoun:"Voi (انتم)",
- words:[
-  {it:"Avete",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"studiato",ar:"ذاكرتوا",note:"Studiare، Passato Prossimo"},
-  {it:"parecchio",ar:"كتير بشكل ملحوظ",note:"ضمير/ظرف كمية"},
-  {it:"oggi",ar:"النهاردة",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"volete",ar:"عايزين",note:null},
-  {it:"un'altra",ar:"تانية",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها — ضمير/صفة مبهمة"},
-  {it:"lezione",ar:"حصة",note:null},
-  {it:"perché",ar:"لأن",note:null},
-  {it:"certi",ar:"بعض/معينين",note:"ضمير/صفة مبهمة"},
-  {it:"argomenti",ar:"المواضيع",note:null},
-  {it:"sono",ar:"هم",note:null},
-  {it:"difficili",ar:"صعبة",note:null}
- ], conj:null},
-
-// ══════════ الأدوات (الطريقة والزمان) Avverbi di modo e tempo ══════════
-
-{it:"Ho già finito i compiti, ma non ho ancora mangiato niente", ar:"انهيت الواجب فعلاً، بس لسة ماكلت حاجة.", en:"I've already finished my homework, but I haven't eaten anything yet.", pronoun:"Io (أنا)",
- words:[
-  {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"già",ar:"فعلاً",note:"ظرف زمان"},
-  {it:"finito",ar:"انهيت",note:"Finire، Passato Prossimo"},
-  {it:"i compiti",ar:"الواجب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"ma",ar:"بس",note:null},
-  {it:"non",ar:"ما",note:null},
+  {it:"Mangiavo",ar:"كنت باكل",note:"Mangiare، Imperfetto"},
+  {it:"la pasta",ar:"المكرونة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وأنا",note:null},
   {it:"ho",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"ancora",ar:"لسة/بعد",note:"ظرف زمان"},
-  {it:"mangiato",ar:"ماكلت",note:"Mangiare، Passato Prossimo"},
-  {it:"niente",ar:"حاجة",note:null}
- ], conj:null},
+  {it:"guardato",ar:"بصيت",note:"Guardare، Passato Prossimo"},
+  {it:"il telefono",ar:"التيليفون",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Guardare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho guardato"},
+  {person:"Tu (أنت)",form:"Hai guardato"},
+  {person:"Lui (هو)",form:"Ha guardato"},
+  {person:"Lei (هي)",form:"Ha guardato"},
+  {person:"Noi (احنا)",form:"Abbiamo guardato"},
+  {person:"Voi (انتم)",form:"Avete guardato"},
+  {person:"Loro (هم)",form:"Hanno guardato"}]}},
 
-{it:"Sei arrivato appena ora, e non hai mai visto questo film", ar:"وصلت لسة دلوقتي، ومشوفتش الفيلم ده أبداً.", en:"You just arrived, and you've never watched this movie.", pronoun:"Tu (أنت)",
+{it:"Hai studiato la lezione mentre ascoltavi la radio", ar:"ذاكرت الدرس وانت كنت سامع الراديو.", en:"You studied the lesson while you were listening to the radio.", pronoun:"Tu (أنت)",
  words:[
-  {it:"Sei",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"arrivato",ar:"وصلت",note:"Arrivare، Passato Prossimo"},
-  {it:"appena",ar:"لسة فقط",note:"ظرف زمان"},
-  {it:"ora",ar:"دلوقتي",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"non",ar:"ما",note:null},
-  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"mai",ar:"أبداً",note:"ظرف زمان، يلازم non"},
-  {it:"visto",ar:"شوفت",note:"Vedere، Passato Prossimo"},
-  {it:"questo",ar:"ده",note:null},
-  {it:"film",ar:"الفيلم",note:null}
- ], conj:null},
+  {it:"Hai",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"studiato",ar:"ذاكرت",note:"Studiare، Passato Prossimo"},
+  {it:"la lezione",ar:"الدرس",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وانت",note:null},
+  {it:"ascoltavi",ar:"كنت سامع",note:"Ascoltare، Imperfetto"},
+  {it:"la radio",ar:"الراديو",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Studiare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho studiato"},
+  {person:"Tu (أنت)",form:"Hai studiato"},
+  {person:"Lui (هو)",form:"Ha studiato"},
+  {person:"Lei (هي)",form:"Ha studiato"},
+  {person:"Noi (احنا)",form:"Abbiamo studiato"},
+  {person:"Voi (انتم)",form:"Avete studiato"},
+  {person:"Loro (هم)",form:"Hanno studiato"}]}},
 
-{it:"Lui parlava lentamente all'inizio, ma ora parla velocemente e capisce tutto facilmente", ar:"هو كان بيكلم ببطء في الأول، بس دلوقتي بيكلم بسرعة وبيفهم كل حاجة بسهولة.", en:"He used to speak slowly at the beginning, but now he speaks quickly and understands everything easily.", pronoun:"Lui (هو)",
+{it:"Studiavi la lezione mentre hai ascoltato un rumore fuori", ar:"كنت بتذاكر الدرس وانت سمعت صوت في برّا.", en:"You were studying the lesson when you heard a strange noise outside.", pronoun:"Tu (أنت)",
+ words:[
+  {it:"Studiavi",ar:"كنت بتذاكر",note:"Studiare، Imperfetto"},
+  {it:"la lezione",ar:"الدرس",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وانت",note:null},
+  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"ascoltato",ar:"سمعت",note:"Ascoltare، Passato Prossimo"},
+  {it:"un rumore",ar:"صوت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"fuori",ar:"برّا",note:null}
+ ], conj:{verb:"Ascoltare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho ascoltato"},
+  {person:"Tu (أنت)",form:"Hai ascoltato"},
+  {person:"Lui (هو)",form:"Ha ascoltato"},
+  {person:"Lei (هي)",form:"Ha ascoltato"},
+  {person:"Noi (احنا)",form:"Abbiamo ascoltato"},
+  {person:"Voi (انتم)",form:"Avete ascoltato"},
+  {person:"Loro (هم)",form:"Hanno ascoltato"}]}},
+
+{it:"Lui ha lavorato tutta la mattina mentre aspettava una chiamata importante", ar:"هو شغل الصبح كله وهو كان مستني مكالمة مهمة.", en:"He worked all morning while he was waiting for an important call.", pronoun:"Lui (هو)",
  words:[
   {it:"Lui",ar:"هو",note:null},
-  {it:"parlava",ar:"كان بيكلم",note:"Parlare، Imperfetto"},
-  {it:"lentamente",ar:"ببطء",note:"الـ -mente تولد الأدوات من الصفات"},
-  {it:"all'",ar:"في الـ",note:null},
-  {it:"inizio",ar:"الأول",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"ora",ar:"دلوقتي",note:null},
-  {it:"parla",ar:"بيكلم",note:null},
-  {it:"velocemente",ar:"بسرعة",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"capisce",ar:"بيفهم",note:null},
-  {it:"tutto",ar:"كل حاجة",note:null},
-  {it:"facilmente",ar:"بسهولة",note:null}
- ], conj:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"lavorato",ar:"شغل",note:"Lavorare، Passato Prossimo"},
+  {it:"tutta la mattina",ar:"الصبح كله",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهو",note:null},
+  {it:"aspettava",ar:"كان مستني",note:"Aspettare، Imperfetto"},
+  {it:"una chiamata",ar:"مكالمة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"importante",ar:"مهمة",note:null}
+ ], conj:{verb:"Lavorare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho lavorato"},
+  {person:"Tu (أنت)",form:"Hai lavorato"},
+  {person:"Lui (هو)",form:"Ha lavorato"},
+  {person:"Lei (هي)",form:"Ha lavorato"},
+  {person:"Noi (احنا)",form:"Abbiamo lavorato"},
+  {person:"Voi (انتم)",form:"Avete lavorato"},
+  {person:"Loro (هم)",form:"Hanno lavorato"}]}},
 
-{it:"Lei era veloce a scuola, e studiava sempre bene prima degli esami", ar:"هي كانت سريعة في المدرسة، وكانت بتذاكر دايماً كويس قبل الامتحانات.", en:"She was fast at school, and always used to study well before exams.", pronoun:"Lei (هي)",
+{it:"Lui lavorava in ufficio mentre il cliente ha aspettato in sala", ar:"هو كان بيشتغل في المكتب لما العميل استنى في الصالة.", en:"He was working in the office when the client waited in the lobby.", pronoun:"Lui (هو)",
+ words:[
+  {it:"Lui",ar:"هو",note:null},
+  {it:"lavorava",ar:"كان بيشتغل",note:"Lavorare، Imperfetto"},
+  {it:"in",ar:"في",note:null},
+  {it:"ufficio",ar:"المكتب",note:null},
+  {it:"mentre",ar:"لما",note:null},
+  {it:"il cliente",ar:"العميل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"aspettato",ar:"استنى",note:"Aspettare، Passato Prossimo"},
+  {it:"in",ar:"في",note:null},
+  {it:"sala",ar:"الصالة",note:null}
+ ], conj:{verb:"Aspettare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho aspettato"},
+  {person:"Tu (أنت)",form:"Hai aspettato"},
+  {person:"Lui (هو)",form:"Ha aspettato"},
+  {person:"Lei (هي)",form:"Ha aspettato"},
+  {person:"Noi (احنا)",form:"Abbiamo aspettato"},
+  {person:"Voi (انتم)",form:"Avete aspettato"},
+  {person:"Loro (هم)",form:"Hanno aspettato"}]}},
+
+{it:"Lei è arrivata a casa mentre io cucinavo la cena", ar:"هي وصلت البيت وأنا كنت باعمل العشا.", en:"She arrived home while I was cooking dinner.", pronoun:"Lei (هي)",
  words:[
   {it:"Lei",ar:"هي",note:null},
-  {it:"era",ar:"كانت",note:"Essere، Imperfetto"},
-  {it:"veloce",ar:"سريعة",note:"صفة"},
-  {it:"a",ar:"في",note:null},
-  {it:"scuola",ar:"المدرسة",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"studiava",ar:"كانت بتذاكر",note:"Studiare، Imperfetto"},
-  {it:"sempre",ar:"دايماً",note:null},
-  {it:"bene",ar:"كويس",note:"ظرف طريقة شاذ"},
-  {it:"prima",ar:"قبل",note:null},
-  {it:"degli",ar:"",note:null},
-  {it:"esami",ar:"الامتحانات",note:null}
- ], conj:null},
+  {it:"è",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"arrivata",ar:"وصلت",note:"Arrivare، Passato Prossimo"},
+  {it:"a casa",ar:"البيت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وأنا",note:null},
+  {it:"cucinavo",ar:"كنت باعمل",note:"Cucinare، Imperfetto"},
+  {it:"la cena",ar:"العشا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Arrivare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Sono arrivato/a"},
+  {person:"Tu (أنت)",form:"Sei arrivato/a"},
+  {person:"Lui (هو)",form:"È arrivato"},
+  {person:"Lei (هي)",form:"È arrivata"},
+  {person:"Noi (احنا)",form:"Siamo arrivati/e"},
+  {person:"Voi (انتم)",form:"Siete arrivati/e"},
+  {person:"Loro (هم)",form:"Sono arrivati/e"}]}},
 
-{it:"Noi lavoravamo insieme ogni giorno, e domani lavoreremo di nuovo", ar:"احنا كنا بنشتفل مع بعض كل يوم، وبكرة حنشتفل تاني.", en:"We used to work together every day, and tomorrow we'll work again.", pronoun:"Noi (احنا)",
+{it:"Lei cucinava la pasta quando è arrivato suo fratello dall'aeroporto", ar:"هي كانت بتعمل المكرونة لما أخوها وصل من المطار.", en:"She was cooking pasta when her brother arrived from the airport.", pronoun:"Lei (هي)",
+ words:[
+  {it:"Lei",ar:"هي",note:null},
+  {it:"cucinava",ar:"كانت بتعمل",note:"Cucinare، Imperfetto"},
+  {it:"la pasta",ar:"المكرونة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"è",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"arrivato",ar:"وصل",note:"Arrivare، Passato Prossimo"},
+  {it:"suo fratello",ar:"أخوها",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"dall'",ar:"من الـ",note:null},
+  {it:"aeroporto",ar:"المطار",note:null}
+ ], conj:{verb:"Arrivare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Sono arrivato/a"},
+  {person:"Tu (أنت)",form:"Sei arrivato/a"},
+  {person:"Lui (هو)",form:"È arrivato"},
+  {person:"Lei (هي)",form:"È arrivata"},
+  {person:"Noi (احنا)",form:"Siamo arrivati/e"},
+  {person:"Voi (انتم)",form:"Siete arrivati/e"},
+  {person:"Loro (هم)",form:"Sono arrivati/e"}]}},
+
+{it:"Noi siamo usciti di casa mentre parlavamo al telefono", ar:"احنا خرجنا من البيت وكنا بنتكلم في التيليفون.", en:"We left home while we were talking on the phone.", pronoun:"Noi (احنا)",
  words:[
   {it:"Noi",ar:"احنا",note:null},
-  {it:"lavoravamo",ar:"كنا بنشتفل",note:"Lavorare، Imperfetto مع Noi"},
-  {it:"insieme",ar:"مع بعض",note:null},
-  {it:"ogni",ar:"كل",note:null},
-  {it:"giorno",ar:"يوم",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"domani",ar:"بكرة",note:null},
-  {it:"lavoreremo",ar:"حنشتفل",note:"Lavorare، مستقبل"},
-  {it:"di",ar:"",note:null},
-  {it:"nuovo",ar:"مرة تانية",note:null}
- ], conj:null},
+  {it:"siamo",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"usciti",ar:"خرجنا",note:"Uscire، Passato Prossimo"},
+  {it:"di casa",ar:"من البيت",note:null},
+  {it:"mentre",ar:"وكنا",note:null},
+  {it:"parlavamo",ar:"بنتكلم",note:"Parlare، Imperfetto"},
+  {it:"al telefono",ar:"في التيليفون",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Uscire",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Sono uscito/a"},
+  {person:"Tu (أنت)",form:"Sei uscito/a"},
+  {person:"Lui (هو)",form:"È uscito"},
+  {person:"Lei (هي)",form:"È uscita"},
+  {person:"Noi (احنا)",form:"Siamo usciti/e"},
+  {person:"Voi (انتم)",form:"Siete usciti/e"},
+  {person:"Loro (هم)",form:"Sono usciti/e"}]}},
 
-{it:"Loro escono spesso la sera, ma qualche volta restano a casa a guardare la TV", ar:"هم بيخرجوا كتير بالليل، بس بعض المرات بيفضلوا في البيت يتفرجوا على التلفزيون.", en:"They often go out in the evening, but sometimes they stay home to watch TV.", pronoun:"Loro (هم)",
+{it:"Noi parlavamo di lavoro quando è uscito il direttore dall'ufficio", ar:"احنا كنا بنتكلم عن الشغل لما المدير خرج من المكتب.", en:"We were talking about work when the manager left the office.", pronoun:"Noi (احنا)",
+ words:[
+  {it:"Noi",ar:"احنا",note:null},
+  {it:"parlavamo",ar:"كنا بنتكلم",note:"Parlare، Imperfetto"},
+  {it:"di lavoro",ar:"عن الشغل",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"è",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"uscito",ar:"خرج",note:"Uscire، Passato Prossimo"},
+  {it:"il direttore",ar:"المدير",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"dall'",ar:"من الـ",note:null},
+  {it:"ufficio",ar:"المكتب",note:null}
+ ], conj:{verb:"Uscire",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Sono uscito/a"},
+  {person:"Tu (أنت)",form:"Sei uscito/a"},
+  {person:"Lui (هو)",form:"È uscito"},
+  {person:"Lei (هي)",form:"È uscita"},
+  {person:"Noi (احنا)",form:"Siamo usciti/e"},
+  {person:"Voi (انتم)",form:"Siete usciti/e"},
+  {person:"Loro (هم)",form:"Sono usciti/e"}]}},
+
+{it:"Avete letto i messaggi mentre telefonavate a un amico", ar:"انتوا قريتوا الرسايل وانتوا كنتوا بتتكلموا في التيليفون مع صاحبكوا.", en:"You (pl.) read the messages while you were on the phone with a friend.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Avete",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"letto",ar:"قريتوا",note:"Leggere، Passato Prossimo"},
+  {it:"i messaggi",ar:"الرسايل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وانتوا",note:null},
+  {it:"telefonavate",ar:"كنتوا بتتكلموا",note:"Telefonare، Imperfetto"},
+  {it:"a",ar:"مع",note:null},
+  {it:"un amico",ar:"صاحبكوا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Leggere",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho letto"},
+  {person:"Tu (أنت)",form:"Hai letto"},
+  {person:"Lui (هو)",form:"Ha letto"},
+  {person:"Lei (هي)",form:"Ha letto"},
+  {person:"Noi (احنا)",form:"Abbiamo letto"},
+  {person:"Voi (انتم)",form:"Avete letto"},
+  {person:"Loro (هم)",form:"Hanno letto"}]}},
+
+{it:"Leggevate il giornale quando avete telefonato all'ufficio", ar:"كنتوا بتقروا الجورنال لما اتصلتوا بالمكتب.", en:"You (pl.) were reading the newspaper when you called the office.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Leggevate",ar:"كنتوا بتقروا",note:"Leggere، Imperfetto"},
+  {it:"il giornale",ar:"الجورنال",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"avete",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"telefonato",ar:"اتصلتوا",note:"Telefonare، Passato Prossimo"},
+  {it:"all'",ar:"بـ",note:null},
+  {it:"ufficio",ar:"المكتب",note:null}
+ ], conj:{verb:"Telefonare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho telefonato"},
+  {person:"Tu (أنت)",form:"Hai telefonato"},
+  {person:"Lui (هو)",form:"Ha telefonato"},
+  {person:"Lei (هي)",form:"Ha telefonato"},
+  {person:"Noi (احنا)",form:"Abbiamo telefonato"},
+  {person:"Voi (انتم)",form:"Avete telefonato"},
+  {person:"Loro (هم)",form:"Hanno telefonato"}]}},
+
+{it:"Loro hanno camminato per un'ora mentre pensavano al futuro", ar:"هم مشيوا لمدة ساعة وهم كانوا بيفكروا في المستقبل.", en:"They walked for an hour while they were thinking about the future.", pronoun:"Loro (هم)",
  words:[
   {it:"Loro",ar:"هم",note:null},
-  {it:"escono",ar:"بيخرجوا",note:null},
-  {it:"spesso",ar:"كتير",note:"ظرف زمان"},
-  {it:"la sera",ar:"بالليل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"ma",ar:"بس",note:null},
-  {it:"qualche",ar:"بعض",note:"صفة مبهمة تلازم المفرد دايماً"},
-  {it:"volta",ar:"مرة",note:null},
-  {it:"restano",ar:"بيفضلوا",note:null},
-  {it:"a",ar:"في",note:null},
-  {it:"casa",ar:"البيت",note:null},
-  {it:"a",ar:"لـ",note:null},
-  {it:"guardare",ar:"يتابعوا",note:null},
-  {it:"la TV",ar:"التيفي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
- ], conj:null},
+  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"camminato",ar:"مشيوا",note:"Camminare، Passato Prossimo"},
+  {it:"per un'ora",ar:"لمدة ساعة",note:null},
+  {it:"mentre",ar:"وهم",note:null},
+  {it:"pensavano",ar:"كانوا بيفكروا",note:"Pensare، Imperfetto"},
+  {it:"al futuro",ar:"في المستقبل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Camminare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho camminato"},
+  {person:"Tu (أنت)",form:"Hai camminato"},
+  {person:"Lui (هو)",form:"Ha camminato"},
+  {person:"Lei (هي)",form:"Ha camminato"},
+  {person:"Noi (احنا)",form:"Abbiamo camminato"},
+  {person:"Voi (انتم)",form:"Avete camminato"},
+  {person:"Loro (هم)",form:"Hanno camminato"}]}},
 
-// ══════════ أيام الأسبوع ولحاطات اليوم ══════════
-
-{it:"Lunedì e martedì ho lavorato molto, ma mercoledì sono rimasto a casa", ar:"الاتنين والتلات شلت كتير، بس الأربع فضلت في البيت.", en:"Monday and Tuesday I worked a lot, but Wednesday I stayed home.", pronoun:"Io (أنا)",
+{it:"Loro pensavano al problema quando hanno camminato fino al parco", ar:"هم كانوا بيفكروا في المشكلة لما مشيوا لحد الحديقة.", en:"They were thinking about the problem when they walked to the park.", pronoun:"Loro (هم)",
  words:[
-  {it:"Lunedì",ar:"الاتنين",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"martedì",ar:"الثلاتاء",note:null},
-  {it:"ho",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"lavorato",ar:"شلت",note:"Lavorare، Passato Prossimo"},
-  {it:"molto",ar:"كتير",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"mercoledì",ar:"الأربعاء",note:null},
-  {it:"sono",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"rimasto",ar:"فضلت",note:"Rimanere، Passato Prossimo"},
-  {it:"a",ar:"في",note:null},
-  {it:"casa",ar:"البيت",note:null}
- ], conj:null},
+  {it:"Loro",ar:"هم",note:null},
+  {it:"pensavano",ar:"كانوا بيفكروا",note:"Pensare، Imperfetto"},
+  {it:"al problema",ar:"في المشكلة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"camminato",ar:"مشيوا",note:"Camminare، Passato Prossimo"},
+  {it:"fino al parco",ar:"لحد الحديقة",note:null}
+ ], conj:{verb:"Camminare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho camminato"},
+  {person:"Tu (أنت)",form:"Hai camminato"},
+  {person:"Lui (هو)",form:"Ha camminato"},
+  {person:"Lei (هي)",form:"Ha camminato"},
+  {person:"Noi (احنا)",form:"Abbiamo camminato"},
+  {person:"Voi (انتم)",form:"Avete camminato"},
+  {person:"Loro (هم)",form:"Hanno camminato"}]}},
 
-{it:"Giovedì e venerdì eravamo occupati, ma sabato e domenica riposiamo", ar:"الخميس والجمعة كنا مشاولين، بس السبت والأحد بنرتاح.", en:"Thursday and Friday we were busy, but Saturday and Sunday we rest.", pronoun:"Noi (احنا)",
- words:[
-  {it:"Giovedì",ar:"الخميس",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"venerdì",ar:"الجمعة",note:null},
-  {it:"eravamo",ar:"كنا",note:"Essere، Imperfetto مع Noi"},
-  {it:"occupati",ar:"مشاولين",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"sabato",ar:"السبت",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"domenica",ar:"الأحد",note:null},
-  {it:"riposiamo",ar:"بنرتاح",note:null}
- ], conj:null},
-
-{it:"Di mattina studio, di pomeriggio lavoro, e di sera esco con gli amici", ar:"الصبح باذاكر، العصر باشتفل، والليل باخرج مع الأصحاب.", en:"In the morning I study, in the afternoon I work, and in the evening I go out with friends.", pronoun:"Io (أنا)",
- words:[
-  {it:"Di",ar:"في",note:null},
-  {it:"mattina",ar:"الصباح",note:null},
-  {it:"studio",ar:"باذاكر",note:null},
-  {it:"di",ar:"في",note:null},
-  {it:"pomeriggio",ar:"العصر",note:null},
-  {it:"lavoro",ar:"باشتفل",note:null},
-  {it:"e",ar:"و",note:null},
-  {it:"di",ar:"في",note:null},
-  {it:"sera",ar:"المساء",note:null},
-  {it:"esco",ar:"باخرج",note:null},
-  {it:"con",ar:"مع",note:null},
-  {it:"gli amici",ar:"الأصحاب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
- ], conj:null},
-
-{it:"Lui dormiva fino a mezzogiorno, ma ora si sveglia all'alba per andare al lavoro", ar:"هو كان بينام لحد الظهر، بس دلوقتي بيصحى مع الفجر عشان يروح الشقل.", en:"He used to sleep until noon, but now he wakes up at dawn to go to work.", pronoun:"Lui (هو)",
- words:[
-  {it:"Lui",ar:"هو",note:null},
-  {it:"dormiva",ar:"كان بينام",note:"Dormire، Imperfetto"},
-  {it:"fino",ar:"لحد",note:null},
-  {it:"a",ar:"",note:null},
-  {it:"mezzogiorno",ar:"الظهر",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"ora",ar:"دلوقتي",note:null},
-  {it:"si",ar:"",note:"ضمير انعكاسي"},
-  {it:"sveglia",ar:"بيصحى",note:null},
-  {it:"all'",ar:"مع",note:null},
-  {it:"alba",ar:"الفجر",note:null},
-  {it:"per",ar:"عشان",note:null},
-  {it:"andare",ar:"يروح",note:null},
-  {it:"al",ar:"لـ",note:null},
-  {it:"lavoro",ar:"الشقل",note:null}
- ], conj:null},
-
-// ══════════ الروابط وصفات متفرقة (Congiunzioni e aggettivi extra) ══════════
-
-{it:"Ho comprato pane e formaggio, ma non caffè, perché non mi piace", ar:"اشتريت عيش وجبنة، بس مش قهوة، لأني مابحبهاش.", en:"I bought bread and cheese, but not coffee, because I don't like it.", pronoun:"Io (أنا)",
+{it:"Ho comprato il pane mentre parlavo con il panettiere", ar:"شريت العيش وأنا كنت باتكلم مع الخباز.", en:"I bought the bread while I was talking with the baker.", pronoun:"Io (أنا)",
  words:[
   {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"comprato",ar:"اشتريت",note:"Comprare، Passato Prossimo"},
-  {it:"pane",ar:"عيش",note:null},
-  {it:"e",ar:"و",note:"رابط عاطف"},
-  {it:"formaggio",ar:"جبنة",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"non",ar:"مش",note:null},
-  {it:"caffè",ar:"قهوة",note:null},
-  {it:"perché",ar:"لأن",note:null},
-  {it:"non",ar:"ما",note:null},
-  {it:"mi",ar:"لي",note:null},
-  {it:"piace",ar:"بتعجبني",note:null}
- ], conj:null},
+  {it:"comprato",ar:"شريت",note:"Comprare، Passato Prossimo"},
+  {it:"il pane",ar:"العيش",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وأنا",note:null},
+  {it:"parlavo",ar:"كنت باتكلم",note:"Parlare، Imperfetto"},
+  {it:"con",ar:"مع",note:null},
+  {it:"il panettiere",ar:"الخباز",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Comprare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho comprato"},
+  {person:"Tu (أنت)",form:"Hai comprato"},
+  {person:"Lui (هو)",form:"Ha comprato"},
+  {person:"Lei (هي)",form:"Ha comprato"},
+  {person:"Noi (احنا)",form:"Abbiamo comprato"},
+  {person:"Voi (انتم)",form:"Avete comprato"},
+  {person:"Loro (هم)",form:"Hanno comprato"}]}},
 
-{it:"Lei ha comprato una macchina nuova, anche se costava troppo", ar:"هي اشترت عربية جديدة، حتى لو كانت مكلفة كتير.", en:"She bought a new car, even though it cost too much.", pronoun:"Lei (هي)",
+{it:"Parlavo con il vicino quando ho comprato il giornale", ar:"كنت باتكلم مع الجار لما شريت الجورنال.", en:"I was talking with the neighbor when I bought the newspaper.", pronoun:"Io (أنا)",
+ words:[
+  {it:"Parlavo",ar:"كنت باتكلم",note:"Parlare، Imperfetto"},
+  {it:"con",ar:"مع",note:null},
+  {it:"il vicino",ar:"الجار",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ho",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"comprato",ar:"شريت",note:"Comprare، Passato Prossimo"},
+  {it:"il giornale",ar:"الجورنال",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Comprare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho comprato"},
+  {person:"Tu (أنت)",form:"Hai comprato"},
+  {person:"Lui (هو)",form:"Ha comprato"},
+  {person:"Lei (هي)",form:"Ha comprato"},
+  {person:"Noi (احنا)",form:"Abbiamo comprato"},
+  {person:"Voi (انتم)",form:"Avete comprato"},
+  {person:"Loro (هم)",form:"Hanno comprato"}]}},
+
+{it:"Hai finito i compiti mentre guardavo la partita", ar:"خلصت الواجب وأنا كنت باتفرج على الماتش.", en:"You finished your homework while I was watching the match.", pronoun:"Tu (أنت)",
+ words:[
+  {it:"Hai",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"finito",ar:"خلصت",note:"Finire، Passato Prossimo"},
+  {it:"i compiti",ar:"الواجب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وأنا",note:null},
+  {it:"guardavo",ar:"كنت باتفرج",note:"Guardare، Imperfetto"},
+  {it:"la partita",ar:"الماتش",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Finire",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho finito"},
+  {person:"Tu (أنت)",form:"Hai finito"},
+  {person:"Lui (هو)",form:"Ha finito"},
+  {person:"Lei (هي)",form:"Ha finito"},
+  {person:"Noi (احنا)",form:"Abbiamo finito"},
+  {person:"Voi (انتم)",form:"Avete finito"},
+  {person:"Loro (هم)",form:"Hanno finito"}]}},
+
+{it:"Guardavi la partita quando ho finito di cucinare", ar:"كنت بتتفرج على الماتش لما خلصت الطبيخ.", en:"You were watching the match when I finished cooking.", pronoun:"Tu (أنت)",
+ words:[
+  {it:"Guardavi",ar:"كنت بتتفرج",note:"Guardare، Imperfetto"},
+  {it:"la partita",ar:"الماتش",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ho",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"finito",ar:"خلصت",note:"Finire، Passato Prossimo"},
+  {it:"di",ar:"",note:null},
+  {it:"cucinare",ar:"الطبيخ",note:null}
+ ], conj:{verb:"Finire",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho finito"},
+  {person:"Tu (أنت)",form:"Hai finito"},
+  {person:"Lui (هو)",form:"Ha finito"},
+  {person:"Lei (هي)",form:"Ha finito"},
+  {person:"Noi (احنا)",form:"Abbiamo finito"},
+  {person:"Voi (انتم)",form:"Avete finito"},
+  {person:"Loro (هم)",form:"Hanno finito"}]}},
+
+{it:"Lui ha visto un incidente mentre faceva la spesa", ar:"هو شاف حادثة وهو كان بيعمل التسوق.", en:"He saw an accident while he was doing the shopping.", pronoun:"Lui (هو)",
+ words:[
+  {it:"Lui",ar:"هو",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"visto",ar:"شاف",note:"Vedere، Passato Prossimo"},
+  {it:"un incidente",ar:"حادثة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهو",note:null},
+  {it:"faceva",ar:"كان بيعمل",note:"Fare، Imperfetto"},
+  {it:"la spesa",ar:"التسوق",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Vedere",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho visto"},
+  {person:"Tu (أنت)",form:"Hai visto"},
+  {person:"Lui (هو)",form:"Ha visto"},
+  {person:"Lei (هي)",form:"Ha visto"},
+  {person:"Noi (احنا)",form:"Abbiamo visto"},
+  {person:"Voi (انتم)",form:"Avete visto"},
+  {person:"Loro (هم)",form:"Hanno visto"}]}},
+
+{it:"Lui faceva la spesa quando ha visto il suo amico", ar:"هو كان بيعمل التسوق لما شاف صاحبه.", en:"He was doing the shopping when he saw his friend.", pronoun:"Lui (هو)",
+ words:[
+  {it:"Lui",ar:"هو",note:null},
+  {it:"faceva",ar:"كان بيعمل",note:"Fare، Imperfetto"},
+  {it:"la spesa",ar:"التسوق",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"visto",ar:"شاف",note:"Vedere، Passato Prossimo"},
+  {it:"il suo amico",ar:"صاحبه",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Vedere",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho visto"},
+  {person:"Tu (أنت)",form:"Hai visto"},
+  {person:"Lui (هو)",form:"Ha visto"},
+  {person:"Lei (هي)",form:"Ha visto"},
+  {person:"Noi (احنا)",form:"Abbiamo visto"},
+  {person:"Voi (انتم)",form:"Avete visto"},
+  {person:"Loro (هم)",form:"Hanno visto"}]}},
+
+{it:"Lei ha scritto una lettera mentre pensava a lui", ar:"هي كتبت جواب وهي كانت بتفكر فيه.", en:"She wrote a letter while she was thinking about him.", pronoun:"Lei (هي)",
  words:[
   {it:"Lei",ar:"هي",note:null},
   {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"comprato",ar:"اشترت",note:"Comprare، Passato Prossimo"},
-  {it:"una macchina",ar:"عربية",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"nuova",ar:"جديدة",note:null},
-  {it:"anche",ar:"حتى",note:null},
-  {it:"se",ar:"لو",note:null},
-  {it:"costava",ar:"كانت مكلفة",note:"Costare، Imperfetto"},
-  {it:"troppo",ar:"كتير",note:null}
- ], conj:null},
+  {it:"scritto",ar:"كتبت",note:"Scrivere، Passato Prossimo"},
+  {it:"una lettera",ar:"جواب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهي",note:null},
+  {it:"pensava",ar:"كانت بتفكر",note:"Pensare، Imperfetto"},
+  {it:"a",ar:"فيه",note:null},
+  {it:"lui",ar:"",note:null}
+ ], conj:{verb:"Scrivere",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho scritto"},
+  {person:"Tu (أنت)",form:"Hai scritto"},
+  {person:"Lui (هو)",form:"Ha scritto"},
+  {person:"Lei (هي)",form:"Ha scritto"},
+  {person:"Noi (احنا)",form:"Abbiamo scritto"},
+  {person:"Voi (انتم)",form:"Avete scritto"},
+  {person:"Loro (هم)",form:"Hanno scritto"}]}},
 
-{it:"Abbiamo fatto metà del lavoro, perciò domani finiamo il resto", ar:"عملنا نص الشقل، لذلك بكرة حنكمل الباقي.", en:"We did half of the work, so tomorrow we'll finish the rest.", pronoun:"Noi (احنا)",
+{it:"Lei pensava al viaggio quando ha scritto nel diario", ar:"هي كانت بتفكر في الرحلة لما كتبت في اليومية.", en:"She was thinking about the trip when she wrote in her diary.", pronoun:"Lei (هي)",
  words:[
-  {it:"Abbiamo",ar:"",note:"جزء من الفعل المساعد"},
-  {it:"fatto",ar:"عملنا",note:"Fare، Passato Prossimo"},
-  {it:"metà",ar:"نص",note:"صفة/اسم"},
-  {it:"del",ar:"من الـ",note:null},
-  {it:"lavoro",ar:"الشقل",note:null},
-  {it:"perciò",ar:"لذلك",note:"رابط"},
-  {it:"domani",ar:"بكرة",note:null},
-  {it:"finiamo",ar:"نكمل",note:null},
-  {it:"il resto",ar:"الباقي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
- ], conj:null},
+  {it:"Lei",ar:"هي",note:null},
+  {it:"pensava",ar:"كانت بتفكر",note:"Pensare، Imperfetto"},
+  {it:"al viaggio",ar:"في الرحلة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"scritto",ar:"كتبت",note:"Scrivere، Passato Prossimo"},
+  {it:"nel",ar:"في",note:null},
+  {it:"diario",ar:"اليومية",note:null}
+ ], conj:{verb:"Scrivere",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho scritto"},
+  {person:"Tu (أنت)",form:"Hai scritto"},
+  {person:"Lui (هو)",form:"Ha scritto"},
+  {person:"Lei (هي)",form:"Ha scritto"},
+  {person:"Noi (احنا)",form:"Abbiamo scritto"},
+  {person:"Voi (انتم)",form:"Avete scritto"},
+  {person:"Loro (هم)",form:"Hanno scritto"}]}},
 
-{it:"Il tuo tema era migliore del mio, ma il mio computer è più veloce del tuo", ar:"موضوعك كان أدٖتمن موضوعي، بس الكمبيوتر بتاعي أسرع من بتاعك.", en:"Your essay was better than mine, but my computer is faster than yours.", pronoun:"Tu (أنت)",
+{it:"Noi siamo andati in ufficio mentre lavoravano gli altri da casa", ar:"احنا رحنا المكتب والباقيين كانوا شغالين من البيت.", en:"We went to the office while the others were working from home.", pronoun:"Noi (احنا)",
  words:[
-  {it:"Il tuo",ar:"بتاعك",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"tema",ar:"موضوع",note:null},
-  {it:"era",ar:"كان",note:"Essere، Imperfetto"},
-  {it:"migliore",ar:"أحسن",note:"صفة تفضيل شاذة"},
-  {it:"del",ar:"من الـ",note:null},
-  {it:"mio",ar:"بتاعي",note:null},
-  {it:"ma",ar:"بس",note:null},
-  {it:"il mio",ar:"بتاعي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
-  {it:"computer",ar:"الكمبيوتر",note:null},
-  {it:"è",ar:"",note:null},
-  {it:"più",ar:"أسرع",note:null},
-  {it:"veloce",ar:"",note:null},
-  {it:"del",ar:"من الـ",note:null},
-  {it:"tuo",ar:"بتاعك",note:null}
- ], conj:null},
+  {it:"Noi",ar:"احنا",note:null},
+  {it:"siamo",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"andati",ar:"رحنا",note:"Andare، Passato Prossimo"},
+  {it:"in",ar:"",note:null},
+  {it:"ufficio",ar:"المكتب",note:null},
+  {it:"mentre",ar:"والباقيين",note:null},
+  {it:"lavoravano",ar:"كانوا شغالين",note:"Lavorare، Imperfetto"},
+  {it:"gli altri",ar:"",note:null},
+  {it:"da casa",ar:"من البيت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Andare",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Sono andato/a"},
+  {person:"Tu (أنت)",form:"Sei andato/a"},
+  {person:"Lui (هو)",form:"È andato"},
+  {person:"Lei (هي)",form:"È andata"},
+  {person:"Noi (احنا)",form:"Siamo andati/e"},
+  {person:"Voi (انتم)",form:"Siete andati/e"},
+  {person:"Loro (هم)",form:"Sono andati/e"}]}},
 
+{it:"Noi lavoravamo insieme quando sono andati via i colleghi", ar:"احنا كنا شغالين مع بعض لما الزمايل مشيوا.", en:"We were working together when the colleagues left.", pronoun:"Noi (احنا)",
+ words:[
+  {it:"Noi",ar:"احنا",note:null},
+  {it:"lavoravamo",ar:"كنا شغالين",note:"Lavorare، Imperfetto"},
+  {it:"insieme",ar:"مع بعض",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"sono",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"andati",ar:"مشيوا",note:"Andare، Passato Prossimo"},
+  {it:"via",ar:"",note:null},
+  {it:"i colleghi",ar:"الزمايل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Andare",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Sono andato/a"},
+  {person:"Tu (أنت)",form:"Sei andato/a"},
+  {person:"Lui (هو)",form:"È andato"},
+  {person:"Lei (هي)",form:"È andata"},
+  {person:"Noi (احنا)",form:"Siamo andati/e"},
+  {person:"Voi (انتم)",form:"Siete andati/e"},
+  {person:"Loro (هم)",form:"Sono andati/e"}]}},
+
+{it:"Voi siete tornati tardi mentre il bambino piangeva a casa", ar:"انتوا رجعتوا متأخر والطفل كان بيعيط في البيت.", en:"You (pl.) came back late while the child was crying at home.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Voi",ar:"انتوا",note:null},
+  {it:"siete",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"tornati",ar:"رجعتوا",note:"Tornare، Passato Prossimo"},
+  {it:"tardi",ar:"متأخر",note:null},
+  {it:"mentre",ar:"والطفل",note:null},
+  {it:"il bambino",ar:"الطفل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"piangeva",ar:"كان بيعيط",note:"Piangere، Imperfetto"},
+  {it:"a casa",ar:"في البيت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Tornare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Sono tornato/a"},
+  {person:"Tu (أنت)",form:"Sei tornato/a"},
+  {person:"Lui (هو)",form:"È tornato"},
+  {person:"Lei (هي)",form:"È tornata"},
+  {person:"Noi (احنا)",form:"Siamo tornati/e"},
+  {person:"Voi (انتم)",form:"Siete tornati/e"},
+  {person:"Loro (هم)",form:"Sono tornati/e"}]}},
+
+{it:"Voi piangevate di gioia quando è tornato il papà dal viaggio", ar:"انتوا كنتوا بتعيطوا من الفرحة لما بابا رجع من الرحلة.", en:"You (pl.) were crying with joy when dad came back from the trip.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Voi",ar:"انتوا",note:null},
+  {it:"piangevate",ar:"كنتوا بتعيطوا",note:"Piangere، Imperfetto"},
+  {it:"di gioia",ar:"من الفرحة",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"è",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"tornato",ar:"رجع",note:"Tornare، Passato Prossimo"},
+  {it:"il papà",ar:"بابا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"dal viaggio",ar:"من الرحلة",note:null}
+ ], conj:{verb:"Tornare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Sono tornato/a"},
+  {person:"Tu (أنت)",form:"Sei tornato/a"},
+  {person:"Lui (هو)",form:"È tornato"},
+  {person:"Lei (هي)",form:"È tornata"},
+  {person:"Noi (احنا)",form:"Siamo tornati/e"},
+  {person:"Voi (انتم)",form:"Siete tornati/e"},
+  {person:"Loro (هم)",form:"Sono tornati/e"}]}},
+
+{it:"Loro hanno giocato a calcio mentre i bambini ridevano nel parco", ar:"هم لعبوا كورة والأطفال كانوا بيضحكوا في الحديقة.", en:"They played football while the children were laughing in the park.", pronoun:"Loro (هم)",
+ words:[
+  {it:"Loro",ar:"هم",note:null},
+  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"giocato",ar:"لعبوا",note:"Giocare، Passato Prossimo"},
+  {it:"a calcio",ar:"كورة",note:null},
+  {it:"mentre",ar:"والأطفال",note:null},
+  {it:"i bambini",ar:"الأطفال",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"ridevano",ar:"كانوا بيضحكوا",note:"Ridere، Imperfetto"},
+  {it:"nel parco",ar:"في الحديقة",note:null}
+ ], conj:{verb:"Giocare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho giocato"},
+  {person:"Tu (أنت)",form:"Hai giocato"},
+  {person:"Lui (هو)",form:"Ha giocato"},
+  {person:"Lei (هي)",form:"Ha giocato"},
+  {person:"Noi (احنا)",form:"Abbiamo giocato"},
+  {person:"Voi (انتم)",form:"Avete giocato"},
+  {person:"Loro (هم)",form:"Hanno giocato"}]}},
+
+{it:"Loro ridevano forte quando hanno giocato a carte insieme", ar:"هم كانوا بيضحكوا بصوت عالي لما لعبوا ورق مع بعض.", en:"They were laughing loudly when they played cards together.", pronoun:"Loro (هم)",
+ words:[
+  {it:"Loro",ar:"هم",note:null},
+  {it:"ridevano",ar:"كانوا بيضحكوا",note:"Ridere، Imperfetto"},
+  {it:"forte",ar:"بصوت عالي",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"giocato",ar:"لعبوا",note:"Giocare، Passato Prossimo"},
+  {it:"a carte",ar:"ورق",note:null},
+  {it:"insieme",ar:"مع بعض",note:null}
+ ], conj:{verb:"Giocare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho giocato"},
+  {person:"Tu (أنت)",form:"Hai giocato"},
+  {person:"Lui (هو)",form:"Ha giocato"},
+  {person:"Lei (هي)",form:"Ha giocato"},
+  {person:"Noi (احنا)",form:"Abbiamo giocato"},
+  {person:"Voi (انتم)",form:"Avete giocato"},
+  {person:"Loro (هم)",form:"Hanno giocato"}]}},
+
+{it:"Sono partito presto mentre gli altri aspettavano il taxi", ar:"أنا مشيت بدري والباقيين كانوا مستنيين التاكسي.", en:"I left early while the others were waiting for the taxi.", pronoun:"Io (أنا)",
+ words:[
+  {it:"Sono",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"partito",ar:"مشيت",note:"Partire، Passato Prossimo"},
+  {it:"presto",ar:"بدري",note:null},
+  {it:"mentre",ar:"والباقيين",note:null},
+  {it:"gli altri",ar:"الباقيين",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"aspettavano",ar:"كانوا مستنيين",note:"Aspettare، Imperfetto"},
+  {it:"il taxi",ar:"التاكسي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Partire",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Sono partito/a"},
+  {person:"Tu (أنت)",form:"Sei partito/a"},
+  {person:"Lui (هو)",form:"È partito"},
+  {person:"Lei (هي)",form:"È partita"},
+  {person:"Noi (احنا)",form:"Siamo partiti/e"},
+  {person:"Voi (انتم)",form:"Siete partiti/e"},
+  {person:"Loro (هم)",form:"Sono partiti/e"}]}},
+
+{it:"Aspettavo il treno quando è partito il mio amico in macchina", ar:"كنت مستني القطر لما صاحبي مشى بالعربية.", en:"I was waiting for the train when my friend left by car.", pronoun:"Io (أنا)",
+ words:[
+  {it:"Aspettavo",ar:"كنت مستني",note:"Aspettare، Imperfetto"},
+  {it:"il treno",ar:"القطر",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"è",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"partito",ar:"مشى",note:"Partire، Passato Prossimo"},
+  {it:"il mio amico",ar:"صاحبي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"in macchina",ar:"بالعربية",note:null}
+ ], conj:{verb:"Partire",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Sono partito/a"},
+  {person:"Tu (أنت)",form:"Sei partito/a"},
+  {person:"Lui (هو)",form:"È partito"},
+  {person:"Lei (هي)",form:"È partita"},
+  {person:"Noi (احنا)",form:"Siamo partiti/e"},
+  {person:"Voi (انتم)",form:"Siete partiti/e"},
+  {person:"Loro (هم)",form:"Sono partiti/e"}]}},
+
+{it:"Hai incontrato un vecchio amico mentre camminavi in centro", ar:"قابلت صاحب قديم وانت كنت بتمشي في وسط البلد.", en:"You met an old friend while you were walking downtown.", pronoun:"Tu (أنت)",
+ words:[
+  {it:"Hai",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"incontrato",ar:"قابلت",note:"Incontrare، Passato Prossimo"},
+  {it:"un vecchio amico",ar:"صاحب قديم",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وانت",note:null},
+  {it:"camminavi",ar:"كنت بتمشي",note:"Camminare، Imperfetto"},
+  {it:"in centro",ar:"في وسط البلد",note:null}
+ ], conj:{verb:"Incontrare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho incontrato"},
+  {person:"Tu (أنت)",form:"Hai incontrato"},
+  {person:"Lui (هو)",form:"Ha incontrato"},
+  {person:"Lei (هي)",form:"Ha incontrato"},
+  {person:"Noi (احنا)",form:"Abbiamo incontrato"},
+  {person:"Voi (انتم)",form:"Avete incontrato"},
+  {person:"Loro (هم)",form:"Hanno incontrato"}]}},
+
+{it:"Camminavi lentamente quando hai incontrato il tuo professore", ar:"كنت بتمشي ببطء لما قابلت أستاذك.", en:"You were walking slowly when you met your teacher.", pronoun:"Tu (أنت)",
+ words:[
+  {it:"Camminavi",ar:"كنت بتمشي",note:"Camminare، Imperfetto"},
+  {it:"lentamente",ar:"ببطء",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"incontrato",ar:"قابلت",note:"Incontrare، Passato Prossimo"},
+  {it:"il tuo professore",ar:"أستاذك",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Incontrare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho incontrato"},
+  {person:"Tu (أنت)",form:"Hai incontrato"},
+  {person:"Lui (هو)",form:"Ha incontrato"},
+  {person:"Lei (هي)",form:"Ha incontrato"},
+  {person:"Noi (احنا)",form:"Abbiamo incontrato"},
+  {person:"Voi (انتم)",form:"Avete incontrato"},
+  {person:"Loro (هم)",form:"Hanno incontrato"}]}},
+
+{it:"Lui ha preso l'autobus mentre gli altri dormivano ancora", ar:"هو أخد الأتوبيس والباقيين كانوا لسة نايمين.", en:"He took the bus while the others were still sleeping.", pronoun:"Lui (هو)",
+ words:[
+  {it:"Lui",ar:"هو",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"preso",ar:"أخد",note:"Prendere، Passato Prossimo"},
+  {it:"l'autobus",ar:"الأتوبيس",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"والباقيين",note:null},
+  {it:"gli altri",ar:"الباقيين",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"dormivano",ar:"كانوا نايمين",note:"Dormire، Imperfetto"},
+  {it:"ancora",ar:"لسة",note:null}
+ ], conj:{verb:"Prendere",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho preso"},
+  {person:"Tu (أنت)",form:"Hai preso"},
+  {person:"Lui (هو)",form:"Ha preso"},
+  {person:"Lei (هي)",form:"Ha preso"},
+  {person:"Noi (احنا)",form:"Abbiamo preso"},
+  {person:"Voi (انتم)",form:"Avete preso"},
+  {person:"Loro (هم)",form:"Hanno preso"}]}},
+
+{it:"Lui dormiva sul divano quando ha preso una telefonata importante", ar:"هو كان نايم على الكنبة لما رد على مكالمة مهمة.", en:"He was sleeping on the couch when he took an important call.", pronoun:"Lui (هو)",
+ words:[
+  {it:"Lui",ar:"هو",note:null},
+  {it:"dormiva",ar:"كان نايم",note:"Dormire، Imperfetto"},
+  {it:"sul divano",ar:"على الكنبة",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"preso",ar:"رد على",note:"Prendere، Passato Prossimo"},
+  {it:"una telefonata",ar:"مكالمة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"importante",ar:"مهمة",note:null}
+ ], conj:{verb:"Prendere",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho preso"},
+  {person:"Tu (أنت)",form:"Hai preso"},
+  {person:"Lui (هو)",form:"Ha preso"},
+  {person:"Lei (هي)",form:"Ha preso"},
+  {person:"Noi (احنا)",form:"Abbiamo preso"},
+  {person:"Voi (انتم)",form:"Avete preso"},
+  {person:"Loro (هم)",form:"Hanno preso"}]}},
+
+{it:"Lei ha venduto la macchina mentre cercava un lavoro nuovo", ar:"هي باعت العربية وهي كانت بتدور على شغل جديد.", en:"She sold the car while she was looking for a new job.", pronoun:"Lei (هي)",
+ words:[
+  {it:"Lei",ar:"هي",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"venduto",ar:"باعت",note:"Vendere، Passato Prossimo"},
+  {it:"la macchina",ar:"العربية",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهي",note:null},
+  {it:"cercava",ar:"كانت بتدور",note:"Cercare، Imperfetto"},
+  {it:"un lavoro",ar:"شغل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"nuovo",ar:"جديد",note:null}
+ ], conj:{verb:"Vendere",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho venduto"},
+  {person:"Tu (أنت)",form:"Hai venduto"},
+  {person:"Lui (هو)",form:"Ha venduto"},
+  {person:"Lei (هي)",form:"Ha venduto"},
+  {person:"Noi (احنا)",form:"Abbiamo venduto"},
+  {person:"Voi (انتم)",form:"Avete venduto"},
+  {person:"Loro (هم)",form:"Hanno venduto"}]}},
+
+{it:"Lei cercava le chiavi quando ha venduto il vecchio divano", ar:"هي كانت بتدور على المفاتيح لما باعت الكنبة القديمة.", en:"She was looking for the keys when she sold the old couch.", pronoun:"Lei (هي)",
+ words:[
+  {it:"Lei",ar:"هي",note:null},
+  {it:"cercava",ar:"كانت بتدور",note:"Cercare، Imperfetto"},
+  {it:"le chiavi",ar:"المفاتيح",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"venduto",ar:"باعت",note:"Vendere، Passato Prossimo"},
+  {it:"il vecchio divano",ar:"الكنبة القديمة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Vendere",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho venduto"},
+  {person:"Tu (أنت)",form:"Hai venduto"},
+  {person:"Lui (هو)",form:"Ha venduto"},
+  {person:"Lei (هي)",form:"Ha venduto"},
+  {person:"Noi (احنا)",form:"Abbiamo venduto"},
+  {person:"Voi (انتم)",form:"Avete venduto"},
+  {person:"Loro (هم)",form:"Hanno venduto"}]}},
+
+{it:"Noi abbiamo pulito la casa mentre ascoltavamo la musica", ar:"احنا نضفنا البيت وكنا سامعين موسيقى.", en:"We cleaned the house while we were listening to music.", pronoun:"Noi (احنا)",
+ words:[
+  {it:"Noi",ar:"احنا",note:null},
+  {it:"abbiamo",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"pulito",ar:"نضفنا",note:"Pulire، Passato Prossimo"},
+  {it:"la casa",ar:"البيت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وكنا",note:null},
+  {it:"ascoltavamo",ar:"سامعين",note:"Ascoltare، Imperfetto"},
+  {it:"la musica",ar:"موسيقى",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Pulire",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho pulito"},
+  {person:"Tu (أنت)",form:"Hai pulito"},
+  {person:"Lui (هو)",form:"Ha pulito"},
+  {person:"Lei (هي)",form:"Ha pulito"},
+  {person:"Noi (احنا)",form:"Abbiamo pulito"},
+  {person:"Voi (انتم)",form:"Avete pulito"},
+  {person:"Loro (هم)",form:"Hanno pulito"}]}},
+
+{it:"Noi ascoltavamo le notizie quando abbiamo pulito la cucina", ar:"احنا كنا سامعين الأخبار لما نضفنا المطبخ.", en:"We were listening to the news when we cleaned the kitchen.", pronoun:"Noi (احنا)",
+ words:[
+  {it:"Noi",ar:"احنا",note:null},
+  {it:"ascoltavamo",ar:"كنا سامعين",note:"Ascoltare، Imperfetto"},
+  {it:"le notizie",ar:"الأخبار",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"abbiamo",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"pulito",ar:"نضفنا",note:"Pulire، Passato Prossimo"},
+  {it:"la cucina",ar:"المطبخ",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Pulire",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho pulito"},
+  {person:"Tu (أنت)",form:"Hai pulito"},
+  {person:"Lui (هو)",form:"Ha pulito"},
+  {person:"Lei (هي)",form:"Ha pulito"},
+  {person:"Noi (احنا)",form:"Abbiamo pulito"},
+  {person:"Voi (انتم)",form:"Avete pulito"},
+  {person:"Loro (هم)",form:"Hanno pulito"}]}},
+
+{it:"Avete chiamato il ristorante mentre mangiavate a casa", ar:"اتصلتوا بالمطعم وانتوا كنتوا باكلين في البيت.", en:"You (pl.) called the restaurant while you were eating at home.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Avete",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"chiamato",ar:"اتصلتوا",note:"Chiamare، Passato Prossimo"},
+  {it:"il ristorante",ar:"المطعم",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وانتوا",note:null},
+  {it:"mangiavate",ar:"كنتوا باكلين",note:"Mangiare، Imperfetto"},
+  {it:"a casa",ar:"في البيت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Chiamare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho chiamato"},
+  {person:"Tu (أنت)",form:"Hai chiamato"},
+  {person:"Lui (هو)",form:"Ha chiamato"},
+  {person:"Lei (هي)",form:"Ha chiamato"},
+  {person:"Noi (احنا)",form:"Abbiamo chiamato"},
+  {person:"Voi (انتم)",form:"Avete chiamato"},
+  {person:"Loro (هم)",form:"Hanno chiamato"}]}},
+
+{it:"Mangiavate la pizza quando avete chiamato i vostri genitori", ar:"كنتوا باكلين البيتزا لما اتصلتوا باهلكوا.", en:"You (pl.) were eating pizza when you called your parents.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Mangiavate",ar:"كنتوا باكلين",note:"Mangiare، Imperfetto"},
+  {it:"la pizza",ar:"البيتزا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"avete",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"chiamato",ar:"اتصلتوا",note:"Chiamare، Passato Prossimo"},
+  {it:"i vostri genitori",ar:"أهلكوا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Chiamare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho chiamato"},
+  {person:"Tu (أنت)",form:"Hai chiamato"},
+  {person:"Lui (هو)",form:"Ha chiamato"},
+  {person:"Lei (هي)",form:"Ha chiamato"},
+  {person:"Noi (احنا)",form:"Abbiamo chiamato"},
+  {person:"Voi (انتم)",form:"Avete chiamato"},
+  {person:"Loro (هم)",form:"Hanno chiamato"}]}},
+
+{it:"Loro hanno creduto alla storia mentre parlavano con il testimone", ar:"هم صدقوا القصة وهم كانوا بيتكلموا مع الشاهد.", en:"They believed the story while they were talking with the witness.", pronoun:"Loro (هم)",
+ words:[
+  {it:"Loro",ar:"هم",note:null},
+  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"creduto",ar:"صدقوا",note:"Credere، Passato Prossimo"},
+  {it:"alla storia",ar:"القصة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهم",note:null},
+  {it:"parlavano",ar:"كانوا بيتكلموا",note:"Parlare، Imperfetto"},
+  {it:"con",ar:"مع",note:null},
+  {it:"il testimone",ar:"الشاهد",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Credere",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho creduto"},
+  {person:"Tu (أنت)",form:"Hai creduto"},
+  {person:"Lui (هو)",form:"Ha creduto"},
+  {person:"Lei (هي)",form:"Ha creduto"},
+  {person:"Noi (احنا)",form:"Abbiamo creduto"},
+  {person:"Voi (انتم)",form:"Avete creduto"},
+  {person:"Loro (هم)",form:"Hanno creduto"}]}},
+
+{it:"Loro parlavano del film quando hanno creduto a una voce falsa", ar:"هم كانوا بيتكلموا عن الفيلم لما صدقوا شائعة كدابة.", en:"They were talking about the movie when they believed a false rumor.", pronoun:"Loro (هم)",
+ words:[
+  {it:"Loro",ar:"هم",note:null},
+  {it:"parlavano",ar:"كانوا بيتكلموا",note:"Parlare، Imperfetto"},
+  {it:"del film",ar:"عن الفيلم",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"creduto",ar:"صدقوا",note:"Credere، Passato Prossimo"},
+  {it:"a una voce",ar:"شائعة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"falsa",ar:"كدابة",note:null}
+ ], conj:{verb:"Credere",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho creduto"},
+  {person:"Tu (أنت)",form:"Hai creduto"},
+  {person:"Lui (هو)",form:"Ha creduto"},
+  {person:"Lei (هي)",form:"Ha creduto"},
+  {person:"Noi (احنا)",form:"Abbiamo creduto"},
+  {person:"Voi (انتم)",form:"Avete creduto"},
+  {person:"Loro (هم)",form:"Hanno creduto"}]}},
+
+{it:"Sono restato a letto mentre sognavo un viaggio lontano", ar:"أنا فضلت في السرير وأنا كنت باحلم برحلة بعيدة.", en:"I stayed in bed while I was dreaming of a faraway trip.", pronoun:"Io (أنا)",
+ words:[
+  {it:"Sono",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"restato",ar:"فضلت",note:"Restare، Passato Prossimo"},
+  {it:"a letto",ar:"في السرير",note:null},
+  {it:"mentre",ar:"وأنا",note:null},
+  {it:"sognavo",ar:"كنت باحلم",note:"Sognare، Imperfetto"},
+  {it:"un viaggio",ar:"برحلة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"lontano",ar:"بعيدة",note:null}
+ ], conj:{verb:"Restare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Sono restato/a"},
+  {person:"Tu (أنت)",form:"Sei restato/a"},
+  {person:"Lui (هو)",form:"È restato"},
+  {person:"Lei (هي)",form:"È restata"},
+  {person:"Noi (احنا)",form:"Siamo restati/e"},
+  {person:"Voi (انتم)",form:"Siete restati/e"},
+  {person:"Loro (هم)",form:"Sono restati/e"}]}},
+
+{it:"Sognavo la mia città quando sono restato bloccato in aeroporto", ar:"كنت باحلم بمدينتي لما فضلت متعطل في المطار.", en:"I was dreaming of my city when I got stuck at the airport.", pronoun:"Io (أنا)",
+ words:[
+  {it:"Sognavo",ar:"كنت باحلم",note:"Sognare، Imperfetto"},
+  {it:"la mia città",ar:"بمدينتي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"sono",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"restato",ar:"فضلت",note:"Restare، Passato Prossimo"},
+  {it:"bloccato",ar:"متعطل",note:null},
+  {it:"in aeroporto",ar:"في المطار",note:null}
+ ], conj:{verb:"Restare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Sono restato/a"},
+  {person:"Tu (أنت)",form:"Sei restato/a"},
+  {person:"Lui (هو)",form:"È restato"},
+  {person:"Lei (هي)",form:"È restata"},
+  {person:"Noi (احنا)",form:"Siamo restati/e"},
+  {person:"Voi (انتم)",form:"Siete restati/e"},
+  {person:"Loro (هم)",form:"Sono restati/e"}]}},
+
+{it:"Hai portato l'ombrello mentre pensavi alla pioggia", ar:"جبت الشمسية وانت كنت بتفكر في المطر.", en:"You brought the umbrella while you were thinking about the rain.", pronoun:"Tu (أنت)",
+ words:[
+  {it:"Hai",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"portato",ar:"جبت",note:"Portare، Passato Prossimo"},
+  {it:"l'ombrello",ar:"الشمسية",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وانت",note:null},
+  {it:"pensavi",ar:"كنت بتفكر",note:"Pensare، Imperfetto"},
+  {it:"alla pioggia",ar:"في المطر",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Portare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho portato"},
+  {person:"Tu (أنت)",form:"Hai portato"},
+  {person:"Lui (هو)",form:"Ha portato"},
+  {person:"Lei (هي)",form:"Ha portato"},
+  {person:"Noi (احنا)",form:"Abbiamo portato"},
+  {person:"Voi (انتم)",form:"Avete portato"},
+  {person:"Loro (هم)",form:"Hanno portato"}]}},
+
+{it:"Pensavi al lavoro quando hai portato i bambini a scuola", ar:"كنت بتفكر في الشغل لما وديت الأطفال المدرسة.", en:"You were thinking about work when you took the kids to school.", pronoun:"Tu (أنت)",
+ words:[
+  {it:"Pensavi",ar:"كنت بتفكر",note:"Pensare، Imperfetto"},
+  {it:"al lavoro",ar:"في الشغل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"portato",ar:"وديت",note:"Portare، Passato Prossimo"},
+  {it:"i bambini",ar:"الأطفال",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"a scuola",ar:"المدرسة",note:null}
+ ], conj:{verb:"Portare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho portato"},
+  {person:"Tu (أنت)",form:"Hai portato"},
+  {person:"Lui (هو)",form:"Ha portato"},
+  {person:"Lei (هي)",form:"Ha portato"},
+  {person:"Noi (احنا)",form:"Abbiamo portato"},
+  {person:"Voi (انتم)",form:"Avete portato"},
+  {person:"Loro (هم)",form:"Hanno portato"}]}},
+
+{it:"Lui ha aiutato il vicino mentre aspettava l'autobus", ar:"هو ساعد الجار وهو كان مستني الأتوبيس.", en:"He helped the neighbor while he was waiting for the bus.", pronoun:"Lui (هو)",
+ words:[
+  {it:"Lui",ar:"هو",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"aiutato",ar:"ساعد",note:"Aiutare، Passato Prossimo"},
+  {it:"il vicino",ar:"الجار",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهو",note:null},
+  {it:"aspettava",ar:"كان مستني",note:"Aspettare، Imperfetto"},
+  {it:"l'autobus",ar:"الأتوبيس",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Aiutare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho aiutato"},
+  {person:"Tu (أنت)",form:"Hai aiutato"},
+  {person:"Lui (هو)",form:"Ha aiutato"},
+  {person:"Lei (هي)",form:"Ha aiutato"},
+  {person:"Noi (احنا)",form:"Abbiamo aiutato"},
+  {person:"Voi (انتم)",form:"Avete aiutato"},
+  {person:"Loro (هم)",form:"Hanno aiutato"}]}},
+
+{it:"Lui aspettava il risultato quando ha aiutato un collega in difficoltà", ar:"هو كان مستني النتيجة لما ساعد زميل في مشكلة.", en:"He was waiting for the result when he helped a colleague in trouble.", pronoun:"Lui (هو)",
+ words:[
+  {it:"Lui",ar:"هو",note:null},
+  {it:"aspettava",ar:"كان مستني",note:"Aspettare، Imperfetto"},
+  {it:"il risultato",ar:"النتيجة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"aiutato",ar:"ساعد",note:"Aiutare، Passato Prossimo"},
+  {it:"un collega",ar:"زميل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"in difficoltà",ar:"في مشكلة",note:null}
+ ], conj:{verb:"Aiutare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho aiutato"},
+  {person:"Tu (أنت)",form:"Hai aiutato"},
+  {person:"Lui (هو)",form:"Ha aiutato"},
+  {person:"Lei (هي)",form:"Ha aiutato"},
+  {person:"Noi (احنا)",form:"Abbiamo aiutato"},
+  {person:"Voi (انتم)",form:"Avete aiutato"},
+  {person:"Loro (هم)",form:"Hanno aiutato"}]}},
+
+{it:"Lei ha bussato alla porta mentre noi dormivamo profondamente", ar:"هي طرقت الباب واحنا كنا نايمين بعميق.", en:"She knocked on the door while we were sleeping deeply.", pronoun:"Lei (هي)",
+ words:[
+  {it:"Lei",ar:"هي",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"bussato",ar:"طرقت",note:"Bussare، Passato Prossimo"},
+  {it:"alla porta",ar:"الباب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"واحنا",note:null},
+  {it:"dormivamo",ar:"كنا نايمين",note:"Dormire، Imperfetto"},
+  {it:"profondamente",ar:"بعميق",note:null}
+ ], conj:{verb:"Bussare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho bussato"},
+  {person:"Tu (أنت)",form:"Hai bussato"},
+  {person:"Lui (هو)",form:"Ha bussato"},
+  {person:"Lei (هي)",form:"Ha bussato"},
+  {person:"Noi (احنا)",form:"Abbiamo bussato"},
+  {person:"Voi (انتم)",form:"Avete bussato"},
+  {person:"Loro (هم)",form:"Hanno bussato"}]}},
+
+{it:"Lei dormiva tranquilla quando ha bussato il postino", ar:"هي كانت نايمة بهدوء لما طرق ساعي البريد.", en:"She was sleeping peacefully when the mailman knocked.", pronoun:"Lei (هي)",
+ words:[
+  {it:"Lei",ar:"هي",note:null},
+  {it:"dormiva",ar:"كانت نايمة",note:"Dormire، Imperfetto"},
+  {it:"tranquilla",ar:"بهدوء",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"bussato",ar:"طرق",note:"Bussare، Passato Prossimo"},
+  {it:"il postino",ar:"ساعي البريد",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Bussare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho bussato"},
+  {person:"Tu (أنت)",form:"Hai bussato"},
+  {person:"Lui (هو)",form:"Ha bussato"},
+  {person:"Lei (هي)",form:"Ha bussato"},
+  {person:"Noi (احنا)",form:"Abbiamo bussato"},
+  {person:"Voi (انتم)",form:"Avete bussato"},
+  {person:"Loro (هم)",form:"Hanno bussato"}]}},
+
+{it:"Noi abbiamo promesso di tornare mentre speravamo in un futuro migliore", ar:"احنا وعدنا بالرجوع وكنا آملين في مستقبل أفضل.", en:"We promised to come back while we were hoping for a better future.", pronoun:"Noi (احنا)",
+ words:[
+  {it:"Noi",ar:"احنا",note:null},
+  {it:"abbiamo",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"promesso",ar:"وعدنا",note:"Promettere، Passato Prossimo"},
+  {it:"di tornare",ar:"بالرجوع",note:null},
+  {it:"mentre",ar:"وكنا",note:null},
+  {it:"speravamo",ar:"آملين",note:"Sperare، Imperfetto"},
+  {it:"in un futuro",ar:"في مستقبل",note:null},
+  {it:"migliore",ar:"أفضل",note:null}
+ ], conj:{verb:"Promettere",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho promesso"},
+  {person:"Tu (أنت)",form:"Hai promesso"},
+  {person:"Lui (هو)",form:"Ha promesso"},
+  {person:"Lei (هي)",form:"Ha promesso"},
+  {person:"Noi (احنا)",form:"Abbiamo promesso"},
+  {person:"Voi (انتم)",form:"Avete promesso"},
+  {person:"Loro (هم)",form:"Hanno promesso"}]}},
+
+{it:"Noi speravamo di vincere quando abbiamo promesso una festa a tutti", ar:"احنا كنا آملين الفوز لما وعدنا بحفلة للكل.", en:"We were hoping to win when we promised a party to everyone.", pronoun:"Noi (احنا)",
+ words:[
+  {it:"Noi",ar:"احنا",note:null},
+  {it:"speravamo",ar:"كنا آملين",note:"Sperare، Imperfetto"},
+  {it:"di vincere",ar:"الفوز",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"abbiamo",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"promesso",ar:"وعدنا",note:"Promettere، Passato Prossimo"},
+  {it:"una festa",ar:"حفلة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"a tutti",ar:"للكل",note:null}
+ ], conj:{verb:"Promettere",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho promesso"},
+  {person:"Tu (أنت)",form:"Hai promesso"},
+  {person:"Lui (هو)",form:"Ha promesso"},
+  {person:"Lei (هي)",form:"Ha promesso"},
+  {person:"Noi (احنا)",form:"Abbiamo promesso"},
+  {person:"Voi (انتم)",form:"Avete promesso"},
+  {person:"Loro (هم)",form:"Hanno promesso"}]}},
+
+{it:"Avete detto la verità mentre sapevate le conseguenze", ar:"قلتوا الحقيقة وانتوا كنتوا عارفين العواقب.", en:"You (pl.) told the truth while you knew the consequences.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Avete",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"detto",ar:"قلتوا",note:"Dire، Passato Prossimo"},
+  {it:"la verità",ar:"الحقيقة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وانتوا",note:null},
+  {it:"sapevate",ar:"كنتوا عارفين",note:"Sapere، Imperfetto"},
+  {it:"le conseguenze",ar:"العواقب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Dire",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho detto"},
+  {person:"Tu (أنت)",form:"Hai detto"},
+  {person:"Lui (هو)",form:"Ha detto"},
+  {person:"Lei (هي)",form:"Ha detto"},
+  {person:"Noi (احنا)",form:"Abbiamo detto"},
+  {person:"Voi (انتم)",form:"Avete detto"},
+  {person:"Loro (هم)",form:"Hanno detto"}]}},
+
+{it:"Sapevate la risposta quando avete detto il vostro parere", ar:"كنتوا عارفين الإجابة لما قلتوا رأيكوا.", en:"You (pl.) knew the answer when you said your opinion.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Sapevate",ar:"كنتوا عارفين",note:"Sapere، Imperfetto"},
+  {it:"la risposta",ar:"الإجابة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"avete",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"detto",ar:"قلتوا",note:"Dire، Passato Prossimo"},
+  {it:"il vostro parere",ar:"رأيكوا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Dire",tense:"Passato Prossimo",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho detto"},
+  {person:"Tu (أنت)",form:"Hai detto"},
+  {person:"Lui (هو)",form:"Ha detto"},
+  {person:"Lei (هي)",form:"Ha detto"},
+  {person:"Noi (احنا)",form:"Abbiamo detto"},
+  {person:"Voi (انتم)",form:"Avete detto"},
+  {person:"Loro (هم)",form:"Hanno detto"}]}},
+
+{it:"Loro hanno capito la lezione mentre il professore spiegava con calma", ar:"هم استوعبوا الدرس والمدرس كان بيشرح بهدوء.", en:"They understood the lesson while the teacher was explaining calmly.", pronoun:"Loro (هم)",
+ words:[
+  {it:"Loro",ar:"هم",note:null},
+  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"capito",ar:"استوعبوا",note:"Capire، Passato Prossimo"},
+  {it:"la lezione",ar:"الدرس",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"والمدرس",note:null},
+  {it:"il professore",ar:"المدرس",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"spiegava",ar:"كان بيشرح",note:"Spiegare، Imperfetto"},
+  {it:"con calma",ar:"بهدوء",note:null}
+ ], conj:{verb:"Capire",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho capito"},
+  {person:"Tu (أنت)",form:"Hai capito"},
+  {person:"Lui (هو)",form:"Ha capito"},
+  {person:"Lei (هي)",form:"Ha capito"},
+  {person:"Noi (احنا)",form:"Abbiamo capito"},
+  {person:"Voi (انتم)",form:"Avete capito"},
+  {person:"Loro (هم)",form:"Hanno capito"}]}},
+
+{it:"Loro spiegavano il progetto quando hanno capito l'errore", ar:"هم كانوا بيشرحوا المشروع لما استوعبوا الخطأ.", en:"They were explaining the project when they understood the mistake.", pronoun:"Loro (هم)",
+ words:[
+  {it:"Loro",ar:"هم",note:null},
+  {it:"spiegavano",ar:"كانوا بيشرحوا",note:"Spiegare، Imperfetto"},
+  {it:"il progetto",ar:"المشروع",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"capito",ar:"استوعبوا",note:"Capire، Passato Prossimo"},
+  {it:"l'errore",ar:"الخطأ",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Capire",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho capito"},
+  {person:"Tu (أنت)",form:"Hai capito"},
+  {person:"Lui (هو)",form:"Ha capito"},
+  {person:"Lei (هي)",form:"Ha capito"},
+  {person:"Noi (احنا)",form:"Abbiamo capito"},
+  {person:"Voi (انتم)",form:"Avete capito"},
+  {person:"Loro (هم)",form:"Hanno capito"}]}},
+
+{it:"Ho pagato il conto mentre lavoravo ancora al progetto", ar:"دفعت الحساب وأنا كنت لسة باشتغل في المشروع.", en:"I paid the bill while I was still working on the project.", pronoun:"Io (أنا)",
+ words:[
+  {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"pagato",ar:"دفعت",note:"Pagare، Passato Prossimo"},
+  {it:"il conto",ar:"الحساب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وأنا",note:null},
+  {it:"lavoravo",ar:"كنت باشتغل",note:"Lavorare، Imperfetto"},
+  {it:"ancora",ar:"لسة",note:null},
+  {it:"al progetto",ar:"في المشروع",note:null}
+ ], conj:{verb:"Pagare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho pagato"},
+  {person:"Tu (أنت)",form:"Hai pagato"},
+  {person:"Lui (هو)",form:"Ha pagato"},
+  {person:"Lei (هي)",form:"Ha pagato"},
+  {person:"Noi (احنا)",form:"Abbiamo pagato"},
+  {person:"Voi (انتم)",form:"Avete pagato"},
+  {person:"Loro (هم)",form:"Hanno pagato"}]}},
+
+{it:"Lavoravo da casa quando ho pagato le bollette online", ar:"كنت باشتغل من البيت لما دفعت الفواتير أونلاين.", en:"I was working from home when I paid the bills online.", pronoun:"Io (أنا)",
+ words:[
+  {it:"Lavoravo",ar:"كنت باشتغل",note:"Lavorare، Imperfetto"},
+  {it:"da casa",ar:"من البيت",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ho",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"pagato",ar:"دفعت",note:"Pagare، Passato Prossimo"},
+  {it:"le bollette",ar:"الفواتير",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"online",ar:"أونلاين",note:null}
+ ], conj:{verb:"Pagare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho pagato"},
+  {person:"Tu (أنت)",form:"Hai pagato"},
+  {person:"Lui (هو)",form:"Ha pagato"},
+  {person:"Lei (هي)",form:"Ha pagato"},
+  {person:"Noi (احنا)",form:"Abbiamo pagato"},
+  {person:"Voi (انتم)",form:"Avete pagato"},
+  {person:"Loro (هم)",form:"Hanno pagato"}]}},
+
+{it:"Hai viaggiato in treno mentre stavi male", ar:"سافرت بالقطر وانت كنت تعبان.", en:"You traveled by train while you were feeling sick.", pronoun:"Tu (أنت)",
+ words:[
+  {it:"Hai",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"viaggiato",ar:"سافرت",note:"Viaggiare، Passato Prossimo"},
+  {it:"in treno",ar:"بالقطر",note:null},
+  {it:"mentre",ar:"وانت",note:null},
+  {it:"stavi",ar:"كنت",note:"Stare، Imperfetto"},
+  {it:"male",ar:"تعبان",note:null}
+ ], conj:{verb:"Viaggiare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho viaggiato"},
+  {person:"Tu (أنت)",form:"Hai viaggiato"},
+  {person:"Lui (هو)",form:"Ha viaggiato"},
+  {person:"Lei (هي)",form:"Ha viaggiato"},
+  {person:"Noi (احنا)",form:"Abbiamo viaggiato"},
+  {person:"Voi (انتم)",form:"Avete viaggiato"},
+  {person:"Loro (هم)",form:"Hanno viaggiato"}]}},
+
+{it:"Stavi bene quando hai viaggiato in Italia l'anno scorso", ar:"كنت كويس لما سافرت لإيطاليا السنة اللي فاتت.", en:"You were feeling well when you traveled to Italy last year.", pronoun:"Tu (أنت)",
+ words:[
+  {it:"Stavi",ar:"كنت",note:"Stare، Imperfetto"},
+  {it:"bene",ar:"كويس",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"viaggiato",ar:"سافرت",note:"Viaggiare، Passato Prossimo"},
+  {it:"in Italia",ar:"لإيطاليا",note:null},
+  {it:"l'anno scorso",ar:"السنة اللي فاتت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Viaggiare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho viaggiato"},
+  {person:"Tu (أنت)",form:"Hai viaggiato"},
+  {person:"Lui (هو)",form:"Ha viaggiato"},
+  {person:"Lei (هي)",form:"Ha viaggiato"},
+  {person:"Noi (احنا)",form:"Abbiamo viaggiato"},
+  {person:"Voi (انتم)",form:"Avete viaggiato"},
+  {person:"Loro (هم)",form:"Hanno viaggiato"}]}},
+
+{it:"Lui ha cercato le chiavi mentre camminava per la stanza", ar:"هو بحث عن المفاتيح وهو كان بيمشي في الأوضة.", en:"He looked for the keys while he was walking around the room.", pronoun:"Lui (هو)",
+ words:[
+  {it:"Lui",ar:"هو",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"cercato",ar:"بحث عن",note:"Cercare، Passato Prossimo"},
+  {it:"le chiavi",ar:"المفاتيح",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهو",note:null},
+  {it:"camminava",ar:"كان بيمشي",note:"Camminare، Imperfetto"},
+  {it:"per la stanza",ar:"في الأوضة",note:null}
+ ], conj:{verb:"Cercare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho cercato"},
+  {person:"Tu (أنت)",form:"Hai cercato"},
+  {person:"Lui (هو)",form:"Ha cercato"},
+  {person:"Lei (هي)",form:"Ha cercato"},
+  {person:"Noi (احنا)",form:"Abbiamo cercato"},
+  {person:"Voi (انتم)",form:"Avete cercato"},
+  {person:"Loro (هم)",form:"Hanno cercato"}]}},
+
+{it:"Lui camminava piano quando ha cercato di correre", ar:"هو كان بيمشي ببطء لما حاول الجري.", en:"He was walking slowly when he tried to run.", pronoun:"Lui (هو)",
+ words:[
+  {it:"Lui",ar:"هو",note:null},
+  {it:"camminava",ar:"كان بيمشي",note:"Camminare، Imperfetto"},
+  {it:"piano",ar:"ببطء",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"cercato",ar:"حاول",note:"Cercare، Passato Prossimo"},
+  {it:"di correre",ar:"الجري",note:null}
+ ], conj:{verb:"Cercare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho cercato"},
+  {person:"Tu (أنت)",form:"Hai cercato"},
+  {person:"Lui (هو)",form:"Ha cercato"},
+  {person:"Lei (هي)",form:"Ha cercato"},
+  {person:"Noi (احنا)",form:"Abbiamo cercato"},
+  {person:"Voi (انتم)",form:"Avete cercato"},
+  {person:"Loro (هم)",form:"Hanno cercato"}]}},
+
+{it:"Lei ha trovato il libro mentre aspettava il treno", ar:"هي لقيت الكتاب وهي كانت مستنية القطر.", en:"She found the book while she was waiting for the train.", pronoun:"Lei (هي)",
+ words:[
+  {it:"Lei",ar:"هي",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"trovato",ar:"لقيت",note:"Trovare، Passato Prossimo"},
+  {it:"il libro",ar:"الكتاب",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهي",note:null},
+  {it:"aspettava",ar:"كانت مستنية",note:"Aspettare، Imperfetto"},
+  {it:"il treno",ar:"القطر",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Trovare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho trovato"},
+  {person:"Tu (أنت)",form:"Hai trovato"},
+  {person:"Lui (هو)",form:"Ha trovato"},
+  {person:"Lei (هي)",form:"Ha trovato"},
+  {person:"Noi (احنا)",form:"Abbiamo trovato"},
+  {person:"Voi (انتم)",form:"Avete trovato"},
+  {person:"Loro (هم)",form:"Hanno trovato"}]}},
+
+{it:"Lei aspettava una risposta quando ha trovato la soluzione", ar:"هي كانت مستنية إجابة لما لقيت الحل.", en:"She was waiting for an answer when she found the solution.", pronoun:"Lei (هي)",
+ words:[
+  {it:"Lei",ar:"هي",note:null},
+  {it:"aspettava",ar:"كانت مستنية",note:"Aspettare، Imperfetto"},
+  {it:"una risposta",ar:"إجابة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"trovato",ar:"لقيت",note:"Trovare، Passato Prossimo"},
+  {it:"la soluzione",ar:"الحل",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Trovare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho trovato"},
+  {person:"Tu (أنت)",form:"Hai trovato"},
+  {person:"Lui (هو)",form:"Ha trovato"},
+  {person:"Lei (هي)",form:"Ha trovato"},
+  {person:"Noi (احنا)",form:"Abbiamo trovato"},
+  {person:"Voi (انتم)",form:"Avete trovato"},
+  {person:"Loro (هم)",form:"Hanno trovato"}]}},
+
+{it:"Noi abbiamo ringraziato il medico mentre ci aiutava con la ricetta", ar:"احنا شكرنا الدكتور وهو كان بيساعدنا في الروشتة.", en:"We thanked the doctor while he was helping us with the prescription.", pronoun:"Noi (احنا)",
+ words:[
+  {it:"Noi",ar:"احنا",note:null},
+  {it:"abbiamo",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"ringraziato",ar:"شكرنا",note:"Ringraziare، Passato Prossimo"},
+  {it:"il medico",ar:"الدكتور",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهو",note:null},
+  {it:"ci",ar:"نا",note:null},
+  {it:"aiutava",ar:"كان بيساعد",note:"Aiutare، Imperfetto"},
+  {it:"con la ricetta",ar:"في الروشتة",note:null}
+ ], conj:{verb:"Ringraziare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho ringraziato"},
+  {person:"Tu (أنت)",form:"Hai ringraziato"},
+  {person:"Lui (هو)",form:"Ha ringraziato"},
+  {person:"Lei (هي)",form:"Ha ringraziato"},
+  {person:"Noi (احنا)",form:"Abbiamo ringraziato"},
+  {person:"Voi (انتم)",form:"Avete ringraziato"},
+  {person:"Loro (هم)",form:"Hanno ringraziato"}]}},
+
+{it:"Noi aiutavamo il vicino quando ha ringraziato tutti per la sorpresa", ar:"احنا كنا بنساعد الجار لما شكر الكل على المفاجأة.", en:"We were helping the neighbor when he thanked everyone for the surprise.", pronoun:"Noi (احنا)",
+ words:[
+  {it:"Noi",ar:"احنا",note:null},
+  {it:"aiutavamo",ar:"كنا بنساعد",note:"Aiutare، Imperfetto"},
+  {it:"il vicino",ar:"الجار",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"quando",ar:"لما",note:null},
+  {it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"ringraziato",ar:"شكر",note:"Ringraziare، Passato Prossimo"},
+  {it:"tutti",ar:"الكل",note:null},
+  {it:"per la sorpresa",ar:"على المفاجأة",note:null}
+ ], conj:{verb:"Ringraziare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho ringraziato"},
+  {person:"Tu (أنت)",form:"Hai ringraziato"},
+  {person:"Lui (هو)",form:"Ha ringraziato"},
+  {person:"Lei (هي)",form:"Ha ringraziato"},
+  {person:"Noi (احنا)",form:"Abbiamo ringraziato"},
+  {person:"Voi (انتم)",form:"Avete ringraziato"},
+  {person:"Loro (هم)",form:"Hanno ringraziato"}]}},
+
+{it:"Avete salutato gli amici mentre uscivano dalla festa", ar:"سلمتوا على الأصدقاء وهم كانوا بيطلعو�� من الحفلة.", en:"You (pl.) greeted the friends while they were leaving the party.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Avete",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"salutato",ar:"سلمتوا على",note:"Salutare، Passato Prossimo"},
+  {it:"gli amici",ar:"الأصدقاء",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
+  {it:"mentre",ar:"وهم",note:null},
+  {it:"uscivano",ar:"كانوا بيطلعوا",note:"Uscire، Imperfetto"},
+  {it:"dalla festa",ar:"من الحفلة",note:null}
+ ], conj:{verb:"Salutare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho salutato"},
+  {person:"Tu (أنت)",form:"Hai salutato"},
+  {person:"Lui (هو)",form:"Ha salutato"},
+  {person:"Lei (هي)",form:"Ha salutato"},
+  {person:"Noi (احنا)",form:"Abbiamo salutato"},
+  {person:"Voi (انتم)",form:"Avete salutato"},
+  {person:"Loro (هم)",form:"Hanno salutato"}]}},
+
+{it:"Uscivate dal cinema quando avete salutato il vostro vicino", ar:"كنتوا بتطلعوا من السينما لما سلمتوا على جاركوا.", en:"You (pl.) were leaving the cinema when you greeted your neighbor.", pronoun:"Voi (انتم)",
+ words:[
+  {it:"Uscivate",ar:"كنتوا بتطلعوا",note:"Uscire، Imperfetto"},
+  {it:"dal cinema",ar:"من السينما",note:null},
+  {it:"quando",ar:"لما",note:null},
+  {it:"avete",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"salutato",ar:"سلمتوا على",note:"Salutare، Passato Prossimo"},
+  {it:"il vostro vicino",ar:"جاركوا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+ ], conj:{verb:"Salutare",tense:"Passato Prossimo",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho salutato"},
+  {person:"Tu (أنت)",form:"Hai salutato"},
+  {person:"Lui (هو)",form:"Ha salutato"},
+  {person:"Lei (هي)",form:"Ha salutato"},
+  {person:"Noi (احنا)",form:"Abbiamo salutato"},
+  {person:"Voi (انتم)",form:"Avete salutato"},
+  {person:"Loro (هم)",form:"Hanno salutato"}]}},
 ];
 
 // ===== AR_SEQ_SENTENCES =====
@@ -1514,6 +1638,304 @@ const AR_SEQ_SENTENCES = [
   {it:"ascoltare",ar:"أسمع"},{it:"la",ar:"الـ"},{it:"musica",ar:"موسيقى"},
   {it:"mentre",ar:"وأنا"},{it:"cucino",ar:"بطبخ"},{it:"la",ar:"الـ"},
   {it:"sera",ar:"بالليل"}
+]},
+
+{it:"Quanta pasta vuoi per cena?", ar:"عايز مكرونة قد ايه للعشا؟", en:"How much pasta do you want for dinner?",
+ words:[
+  {it:"Quanta",ar:"قد ايه (مؤنث)",note:"صفة استفهامية للكمية، مؤنث مفرد"},{it:"pasta",ar:"مكرونة"},
+  {it:"vuoi",ar:"عايز"},{it:"per",ar:"لـ"},{it:"cena",ar:"العشا"}
+]},
+
+{it:"Quanti fratelli e quante sorelle hai?", ar:"عندك كام أخ وكام أخت؟", en:"How many brothers and how many sisters do you have?",
+ words:[
+  {it:"Quanti",ar:"كام (جمع مذكر)",note:"صفة استفهامية للكمية، جمع مذكر"},{it:"fratelli",ar:"إخوة"},
+  {it:"e",ar:"و"},{it:"quante",ar:"كام (جمع مؤنث)",note:"صفة استفهامية للكمية، جمع مؤنث"},
+  {it:"sorelle",ar:"أخوات"},{it:"hai",ar:"عندك"}
+]},
+
+{it:"Quali film preferisci guardare?", ar:"انهي أفلام بتفضل تتفرج عليها؟", en:"Which movies do you prefer to watch?",
+ words:[
+  {it:"Quali",ar:"انهي (جمع)",note:"صفة/ضمير استفهامي، للجمع مذكر وموذكر"},{it:"film",ar:"أفلام"},
+  {it:"preferisci",ar:"بتفضل"},{it:"guardare",ar:"تتفرج"}
+]},
+
+{it:"I miei genitori e le mie sorelle abitano a Roma", ar:"والديّ وأخواتي بيسكنوا في روما", en:"My parents and my sisters live in Rome.",
+ words:[
+  {it:"I",ar:"الـ"},{it:"miei",ar:"بتوعي (جمع مذكر)",note:"صفة ملكية، جمع مذكر لـ mio"},
+  {it:"genitori",ar:"والدين"},{it:"e",ar:"و"},{it:"le",ar:"الـ"},
+  {it:"mie",ar:"بتوعي (جمع مؤنث)",note:"صفة ملكية، جمع مؤنث لـ mia"},
+  {it:"sorelle",ar:"أخوات"},{it:"abitano",ar:"بيسكنوا"},{it:"a",ar:"في"},{it:"Roma",ar:"روما"}
+]},
+
+{it:"I tuoi consigli e le tue idee mi hanno aiutato molto", ar:"نصايحك وأفكارك ساعدوني كتير", en:"Your advice and your ideas helped me a lot.",
+ words:[
+  {it:"I",ar:"الـ"},{it:"tuoi",ar:"بتوعك (جمع مذكر)",note:"صفة ملكية، جمع مذكر لـ tuo"},
+  {it:"consigli",ar:"نصايح"},{it:"e",ar:"و"},{it:"le",ar:"الـ"},
+  {it:"tue",ar:"بتوعك (جمع مؤنث)",note:"صفة ملكية، جمع مؤنث لـ tua"},
+  {it:"idee",ar:"أفكار"},{it:"mi",ar:"لي"},{it:"hanno",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"aiutato",ar:"ساعدوني",note:"Aiutare، Passato Prossimo"},{it:"molto",ar:"كتير"}
+]},
+
+{it:"Sua madre e i suoi fratelli sono venuti, ma le sue sorelle no", ar:"أمه وأخواته الذكور جم، بس أخواته البنات لأ", en:"His mother and his brothers came, but his sisters did not.",
+ words:[
+  {it:"Sua",ar:"بتاعه/بتاعها (مؤنث مفرد)",note:"صفة ملكية، مؤنث مفرد لـ suo"},{it:"madre",ar:"أم"},
+  {it:"e",ar:"و"},{it:"i",ar:"الـ"},
+  {it:"suoi",ar:"بتوعه/بتوعها (جمع مذكر)",note:"صفة ملكية، جمع مذكر لـ suo"},
+  {it:"fratelli",ar:"إخوة"},{it:"sono",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"venuti",ar:"جم",note:"Venire، Passato Prossimo"},{it:"ma",ar:"بس"},{it:"le",ar:"الـ"},
+  {it:"sue",ar:"بتوعه/بتوعها (جمع مؤنث)",note:"صفة ملكية، جمع مؤنث لـ suo"},
+  {it:"sorelle",ar:"أخوات"},{it:"no",ar:"لأ"}
+]},
+
+{it:"Il nostro professore ha detto che i nostri esami e le nostre lezioni cambieranno", ar:"أستاذنا قال إن امتحاناتنا ودروسنا هتتغير", en:"Our teacher said that our exams and our lessons will change.",
+ words:[
+  {it:"Il",ar:"الـ"},{it:"nostro",ar:"بتاعنا (مفرد مذكر)",note:"صفة ملكية، مفرد مذكر"},
+  {it:"professore",ar:"أستاذ"},{it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"detto",ar:"قال",note:"Dire، Passato Prossimo"},{it:"che",ar:"إن"},{it:"i",ar:"الـ"},
+  {it:"nostri",ar:"بتوعنا (جمع مذكر)",note:"صفة ملكية، جمع مذكر"},{it:"esami",ar:"امتحانات"},
+  {it:"e",ar:"و"},{it:"le",ar:"الـ"},
+  {it:"nostre",ar:"بتوعنا (جمع مؤنث)",note:"صفة ملكية، جمع مؤنث"},{it:"lezioni",ar:"دروس"},
+  {it:"cambieranno",ar:"هتتغير"}
+]},
+
+{it:"La vostra pazienza e le vostre idee sono importanti per noi", ar:"صبركم وأفكاركم مهمين لينا", en:"Your patience and your ideas are important to us.",
+ words:[
+  {it:"La",ar:"الـ"},{it:"vostra",ar:"بتوعكم (مفرد مؤنث)",note:"صفة ملكية، مفرد مؤنث"},
+  {it:"pazienza",ar:"صبر"},{it:"e",ar:"و"},{it:"le",ar:"الـ"},
+  {it:"vostre",ar:"بتوعكم (جمع مؤنث)",note:"صفة ملكية، جمع مؤنث"},{it:"idee",ar:"أفكار"},
+  {it:"sono",ar:""},{it:"importanti",ar:"مهمين"},{it:"per",ar:"لـ"},{it:"noi",ar:"إحنا"}
+]},
+
+{it:"Ho comprato dei libri e degli zaini per i bambini", ar:"شريت كتب وشنط ظهر للأطفال", en:"I bought some books and some backpacks for the children.",
+ words:[
+  {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},{it:"comprato",ar:"شريت",note:"Comprare، Passato Prossimo"},
+  {it:"dei",ar:"بعض (جمع مذكر)",note:"أداة تجزيئية جمع مذكر"},{it:"libri",ar:"كتب"},
+  {it:"e",ar:"و"},{it:"degli",ar:"بعض (جمع مذكر يبدأ بحرف متحرك)",note:"أداة تجزيئية جمع مذكر قبل صوت متحرك"},
+  {it:"zaini",ar:"شنط ظهر"},{it:"per",ar:"لـ"},{it:"i",ar:"الـ"},{it:"bambini",ar:"الأطفال"}
+]},
+
+{it:"Ho bisogno delle chiavi e dello zucchero per la torta", ar:"محتاج المفاتيح وشوية سكر للتورتة", en:"I need the keys and some sugar for the cake.",
+ words:[
+  {it:"Ho",ar:"عندي"},{it:"bisogno",ar:"محتاج"},
+  {it:"delle",ar:"بعض (جمع مؤنث)",note:"أداة تجزيئية جمع مؤنث"},{it:"chiavi",ar:"مفاتيح"},
+  {it:"e",ar:"و"},{it:"dello",ar:"بعض (مفرد مذكر يبدأ بـ s+consonante أو z)",note:"أداة تجزيئية مفرد مذكر خاصة"},
+  {it:"zucchero",ar:"سكر"},{it:"per",ar:"لـ"},{it:"la",ar:"الـ"},{it:"torta",ar:"تورتة"}
+]},
+
+{it:"Questi ragazzi e queste ragazze studiano insieme ogni giorno", ar:"الشباب دول والبنات دول بيدرسوا مع بعض كل يوم", en:"These boys and these girls study together every day.",
+ words:[
+  {it:"Questi",ar:"دول (جمع مذكر)",note:"ضمير/صفة إشارية جمع مذكر لـ questo"},{it:"ragazzi",ar:"شباب"},
+  {it:"e",ar:"و"},{it:"queste",ar:"دول (جمع مؤنث)",note:"ضمير/صفة إشارية جمع مؤنث لـ questa"},
+  {it:"ragazze",ar:"بنات"},{it:"studiano",ar:"بيدرسوا"},{it:"insieme",ar:"مع بعض"},
+  {it:"ogni",ar:"كل"},{it:"giorno",ar:"يوم"}
+]},
+
+{it:"Quello zaino è pesante, ma quella borsa è leggera", ar:"الشنطة داك ثقيلة، بس الشنطة الجزدان دي خفيفة", en:"That backpack is heavy, but that bag is light.",
+ words:[
+  {it:"Quello",ar:"داك (مفرد مذكر)",note:"صفة إشارية مفرد مذكر"},{it:"zaino",ar:"شنطة ظهر"},
+  {it:"è",ar:""},{it:"pesante",ar:"ثقيلة"},{it:"ma",ar:"بس"},
+  {it:"quella",ar:"دي (مفرد مؤنث)",note:"صفة إشارية مفرد مؤنث"},{it:"borsa",ar:"شنطة/جزدان"},
+  {it:"è",ar:""},{it:"leggera",ar:"خفيفة"}
+]},
+
+{it:"Quegli studenti e quelle studentesse hanno superato l'esame", ar:"الطلبة داك والطالبات داك نجحوا في الامتحان", en:"Those students (male) and those students (female) passed the exam.",
+ words:[
+  {it:"Quegli",ar:"داك (جمع مذكر يبدأ بصوت متحرك)",note:"صفة إشارية جمع مذكر خاصة قبل صوت متحرك"},
+  {it:"studenti",ar:"طلبة"},{it:"e",ar:"و"},
+  {it:"quelle",ar:"دول (جمع مؤنث)",note:"صفة إشارية جمع مؤنث"},{it:"studentesse",ar:"طالبات"},
+  {it:"hanno",ar:"",note:"جزء من الفعل المساعد"},{it:"superato",ar:"نجحوا",note:"Superare، Passato Prossimo"},
+  {it:"l'esame",ar:"الامتحان"}
+]},
+
+{it:"Quei bambini giocavano mentre quelli più grandi studiavano", ar:"الأطفال داك كانوا بيلعبوا وداك الأكبر كانوا بيذاكروا", en:"Those children were playing while those older ones were studying.",
+ words:[
+  {it:"Quei",ar:"داك (جمع مذكر قبل صوت ساكن)",note:"صفة إشارية جمع مذكر"},{it:"bambini",ar:"أطفال"},
+  {it:"giocavano",ar:"كانوا بيلعبوا",note:"Giocare، Imperfetto"},{it:"mentre",ar:"و"},
+  {it:"quelli",ar:"داك (ضمير، جمع مذكر)",note:"ضمير إشاري جمع مذكر، مش صفة"},
+  {it:"più",ar:"أكتر"},{it:"grandi",ar:"كبار"},{it:"studiavano",ar:"كانوا بيذاكروا",note:"Studiare، Imperfetto"}
+]},
+
+{it:"Qualcuno ha bussato alla porta, ma chiunque può entrare", ar:"حد دق الباب، بس أي حد ممكن يدخل", en:"Someone knocked on the door, but anyone can come in.",
+ words:[
+  {it:"Qualcuno",ar:"حد ما",note:"ضمير غير محدد، مفرد"},{it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"bussato",ar:"دق",note:"Bussare، Passato Prossimo"},{it:"alla",ar:"على الـ"},{it:"porta",ar:"باب"},
+  {it:"ma",ar:"بس"},{it:"chiunque",ar:"أي حد",note:"ضمير غير محدد، يعني أي شخص كان"},
+  {it:"può",ar:"ممكن"},{it:"entrare",ar:"يدخل"}
+]},
+
+{it:"Ognuno ha la sua opinione, e non voglio dire nulla o niente di più", ar:"كل واحد له رأيه، ومش عايز اقول ولا حاجة تانية", en:"Everyone has their own opinion, and I don't want to say anything more.",
+ words:[
+  {it:"Ognuno",ar:"كل واحد",note:"ضمير غير محدد، مفرد"},{it:"ha",ar:"له"},{it:"la",ar:"الـ"},
+  {it:"sua",ar:"بتاعه"},{it:"opinione",ar:"رأي"},{it:"e",ar:"و"},{it:"non",ar:"مش"},
+  {it:"voglio",ar:"عايز"},{it:"dire",ar:"اقول"},
+  {it:"nulla",ar:"ولا حاجة",note:"ضمير غير محدد للنفي، زي niente"},{it:"o",ar:"أو"},
+  {it:"niente",ar:"ولا حاجة",note:"ضمير غير محدد للنفي، زي nulla"},{it:"di più",ar:"أكتر"}
+]},
+
+{it:"Tutte le persone sono arrivate, ma nessuno e nessuna hanno parlato", ar:"كل الناس جم، بس ولا واحد وولا واحدة اتكلموا", en:"All the people arrived, but no one, male or female, spoke.",
+ words:[
+  {it:"Tutte",ar:"كل (جمع مؤنث)",note:"صفة/ضمير غير محدد جمع مؤنث لـ tutto"},{it:"le",ar:"الـ"},
+  {it:"persone",ar:"ناس"},{it:"sono",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"arrivate",ar:"جم",note:"Arrivare، Passato Prossimo"},{it:"ma",ar:"بس"},
+  {it:"nessuno",ar:"ولا واحد",note:"ضمير غير محدد للنفي، مذكر"},{it:"e",ar:"و"},
+  {it:"nessuna",ar:"ولا واحدة",note:"ضمير غير محدد للنفي، مؤنث"},{it:"hanno",ar:""},{it:"parlato",ar:"اتكلموا",note:"Parlare، Passato Prossimo"}
+]},
+
+{it:"Non conosco nessuno qui, non ne conosco alcuno", ar:"مش عارف حد هنا، مش عارف ولا حد فيهم", en:"I don't know anyone here, I don't know any of them.",
+ words:[
+  {it:"Non",ar:"مش"},{it:"conosco",ar:"عارف"},{it:"nessuno",ar:"حد"},{it:"qui",ar:"هنا"},
+  {it:"non",ar:"مش"},{it:"ne",ar:"منهم"},{it:"conosco",ar:"عارف"},
+  {it:"alcuno",ar:"ولا حد (فيهم)",note:"ضمير غير محدد، نادر الاستخدام كصفة، بيتقال غالبًا كضمير بعد ne في النفي"}
+]},
+
+{it:"Non ho alcuna intenzione di andare a quella festa", ar:"معنديش أي نية إني اروح الحفلة دي", en:"I have no intention of going to that party.",
+ words:[
+  {it:"Non",ar:"مش"},{it:"ho",ar:"عندي"},
+  {it:"alcuna",ar:"أي (مؤنث)",note:"صفة غير محددة، مؤنث، بتستخدم غالبًا في النفي"},
+  {it:"intenzione",ar:"نية"},{it:"di",ar:"إني"},{it:"andare",ar:"اروح"},{it:"a",ar:"لـ"},
+  {it:"quella",ar:"دي"},{it:"festa",ar:"حفلة"}
+]},
+
+{it:"Alcuni amici e alcune amiche mi hanno scritto ieri", ar:"بعض الأصحاب وبعض الصاحبات كتبولي إمبارح", en:"Some friends (male and female) wrote to me yesterday.",
+ words:[
+  {it:"Alcuni",ar:"بعض (جمع مذكر)",note:"صفة/ضمير غير محدد جمع مذكر"},{it:"amici",ar:"أصحاب"},
+  {it:"e",ar:"و"},{it:"alcune",ar:"بعض (جمع مؤنث)",note:"صفة/ضمير غير محدد جمع مؤنث"},
+  {it:"amiche",ar:"صاحبات"},{it:"mi",ar:"لي"},{it:"hanno",ar:""},{it:"scritto",ar:"كتبوا",note:"Scrivere، Passato Prossimo"},{it:"ieri",ar:"إمبارح"}
+]},
+
+{it:"Molti turisti e molte turiste visitano Roma ogni anno", ar:"سياح كتير رجالة وستات بيزوروا روما كل سنة", en:"Many tourists, male and female, visit Rome every year.",
+ words:[
+  {it:"Molti",ar:"كتير (جمع مذكر)",note:"صفة/ضمير غير محدد للكمية، جمع مذكر"},{it:"turisti",ar:"سياح"},
+  {it:"e",ar:"و"},{it:"molte",ar:"كتير (جمع مؤنث)",note:"صفة/ضمير غير محدد للكمية، جمع مؤنث"},
+  {it:"turiste",ar:"سياحات"},{it:"visitano",ar:"بيزوروا"},{it:"Roma",ar:"روما"},{it:"ogni",ar:"كل"},{it:"anno",ar:"سنة"}
+]},
+
+{it:"Ho poco tempo, poca pazienza, pochi soldi e poche idee oggi", ar:"عندي وقت قليل، وصبر قليل، وفلوس قليلة، وأفكار قليلة النهاردة", en:"I have little time, little patience, little money, and few ideas today.",
+ words:[
+  {it:"Ho",ar:"عندي"},{it:"poco",ar:"قليل (مفرد مذكر)",note:"صفة غير محددة للكمية القليلة، مفرد مذكر"},
+  {it:"tempo",ar:"وقت"},{it:"poca",ar:"قليلة (مفرد مؤنث)",note:"مفرد مؤنث لـ poco"},{it:"pazienza",ar:"صبر"},
+  {it:"pochi",ar:"قليلين (جمع مذكر)",note:"جمع مذكر لـ poco"},{it:"soldi",ar:"فلوس"},
+  {it:"e",ar:"و"},{it:"poche",ar:"قليلة (جمع مؤنث)",note:"جمع مؤنث لـ poco"},{it:"idee",ar:"أفكار"},{it:"oggi",ar:"النهاردة"}
+]},
+
+{it:"C'è troppa gente, troppi rumori e troppe macchine in questa città", ar:"فيه ناس كتير أوي، وضوضا كتير أوي، وعربيات كتير أوي في المدينة دي", en:"There is too much people, too many noises, and too many cars in this city.",
+ words:[
+  {it:"C'è",ar:"فيه"},{it:"troppa",ar:"كتير أوي (مفرد مؤنث)",note:"صفة غير محددة للكمية الزايدة، مفرد مؤنث"},
+  {it:"gente",ar:"ناس"},{it:"troppi",ar:"كتير أوي (جمع مذكر)",note:"جمع مذكر لـ troppo"},{it:"rumori",ar:"ضوضا"},
+  {it:"e",ar:"و"},{it:"troppe",ar:"كتير أوي (جمع مؤنث)",note:"جمع مؤنث لـ troppo"},{it:"macchine",ar:"عربيات"},
+  {it:"in",ar:"في"},{it:"questa",ar:"دي"},{it:"città",ar:"مدينة"}
+]},
+
+{it:"Ho tanto lavoro, tanta fame, tanti amici e tante idee", ar:"عندي شغل كتير جدًا، وجعان جدًا، وأصحاب كتير جدًا، وأفكار كتير جدًا", en:"I have so much work, so much hunger, so many friends, and so many ideas.",
+ words:[
+  {it:"Ho",ar:"عندي"},{it:"tanto",ar:"كتير جدًا (مفرد مذكر)",note:"صفة غير محددة للكمية الكبيرة، مفرد مذكر"},
+  {it:"lavoro",ar:"شغل"},{it:"tanta",ar:"كتير جدًا (مفرد مؤنث)",note:"مفرد مؤنث لـ tanto"},{it:"fame",ar:"جوع"},
+  {it:"tanti",ar:"كتير جدًا (جمع مذكر)",note:"جمع مذكر لـ tanto"},{it:"amici",ar:"أصحاب"},
+  {it:"e",ar:"و"},{it:"tante",ar:"كتير جدًا (جمع مؤنث)",note:"جمع مؤنث لـ tanto"},{it:"idee",ar:"أفكار"}
+]},
+
+{it:"Ho aspettato parecchio tempo con parecchia pazienza, insieme a parecchi amici e parecche amiche", ar:"استنيت وقت كتير بصبر كويس، مع أصحاب كتير وصاحبات كتير", en:"I waited quite a long time with quite a lot of patience, together with quite a few friends.",
+ words:[
+  {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},{it:"aspettato",ar:"استنيت",note:"Aspettare، Passato Prossimo"},
+  {it:"parecchio",ar:"كتير نسبيًا (مفرد مذكر)",note:"صفة غير محددة، مفرد مذكر"},{it:"tempo",ar:"وقت"},
+  {it:"con",ar:"بـ"},{it:"parecchia",ar:"كتير نسبيًا (مفرد مؤنث)",note:"مفرد مؤنث لـ parecchio"},{it:"pazienza",ar:"صبر"},
+  {it:"insieme a",ar:"مع"},{it:"parecchi",ar:"كتير نسبيًا (جمع مذكر)",note:"جمع مذكر لـ parecchio"},{it:"amici",ar:"أصحاب"},
+  {it:"e",ar:"و"},{it:"parecche",ar:"كتير نسبيًا (جمع مؤنث)",note:"جمع مؤنث لـ parecchio"},{it:"amiche",ar:"صاحبات"}
+]},
+
+{it:"Vuoi un altro caffè o un'altra bibita? Ho anche altri dolci e altre bevande", ar:"عايز قهوة تانية ولا مشروب تاني؟ عندي كمان حلويات تانية ومشروبات تانية", en:"Do you want another coffee or another drink? I also have other sweets and other drinks.",
+ words:[
+  {it:"Vuoi",ar:"عايز"},{it:"un",ar:""},{it:"altro",ar:"تاني (مفرد مذكر)",note:"صفة/ضمير غير محدد، مفرد مذكر"},
+  {it:"caffè",ar:"قهوة"},{it:"o",ar:"ولا"},{it:"un'altra",ar:"تانية (مفرد مؤنث)",note:"altra، مفرد مؤنث لـ altro"},
+  {it:"bibita",ar:"مشروب"},{it:"Ho",ar:"عندي"},{it:"anche",ar:"كمان",note:"ظرف بمعنى also/too"},
+  {it:"altri",ar:"تانية (جمع مذكر)",note:"جمع مذكر لـ altro"},{it:"dolci",ar:"حلويات"},
+  {it:"e",ar:"و"},{it:"altre",ar:"تانية (جمع مؤنث)",note:"جمع مؤنث لـ altro"},{it:"bevande",ar:"مشروبات"}
+]},
+
+{it:"Certo che vengo! Certa gente non capisce che certi giorni sono difficili per certe persone", ar:"طبعًا هاجي! في ناس ما بيفهموش إن في أيام صعبة على ناس معينة", en:"Of course I'm coming! Certain people don't understand that certain days are hard for certain people.",
+ words:[
+  {it:"Certo",ar:"طبعًا",note:"هنا بمعنى بالتأكيد؛ ولما تيجي قبل اسم بتبقى صفة غير محددة"},{it:"che",ar:"إن"},
+  {it:"vengo",ar:"هاجي"},{it:"Certa",ar:"معينة (مفرد مؤنث)",note:"صفة غير محددة، مفرد مؤنث"},
+  {it:"gente",ar:"ناس"},{it:"non",ar:"مش"},{it:"capisce",ar:"بتفهم"},{it:"che",ar:"إن"},
+  {it:"certi",ar:"معينة (جمع مذكر)",note:"جمع مذكر لـ certo"},{it:"giorni",ar:"أيام"},
+  {it:"sono",ar:""},{it:"difficili",ar:"صعبة"},{it:"per",ar:"لـ"},
+  {it:"certe",ar:"معينة (جمع مؤنث)",note:"جمع مؤنث لـ certo"},{it:"persone",ar:"ناس"}
+]},
+
+{it:"Non so dove hai messo le chiavi", ar:"مش عارف حطيت المفاتيح فين", en:"I don't know where you put the keys.",
+ words:[
+  {it:"Non",ar:"مش"},{it:"so",ar:"عارف"},{it:"dove",ar:"فين",note:"حرف جر/ظرف استفهامي أو رابط للمكان"},
+  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},{it:"messo",ar:"حطيت",note:"Mettere، Passato Prossimo"},
+  {it:"le",ar:"الـ"},{it:"chiavi",ar:"مفاتيح"}
+]},
+
+{it:"Abbiamo camminato lungo la spiaggia mentre parlavamo", ar:"مشينا على طول الشط وإحنا بنتكلم", en:"We walked along the beach while we were talking.",
+ words:[
+  {it:"Abbiamo",ar:"",note:"جزء من الفعل المساعد"},{it:"camminato",ar:"مشينا",note:"Camminare، Passato Prossimo"},
+  {it:"lungo",ar:"على طول",note:"حرف جر مركب بمعنى along"},{it:"la",ar:"الـ"},{it:"spiaggia",ar:"شط"},
+  {it:"mentre",ar:"وإحنا"},{it:"parlavamo",ar:"كنا بنتكلم",note:"Parlare، Imperfetto"}
+]},
+
+{it:"Ho dormito durante il viaggio in treno", ar:"نمت خلال رحلة القطر", en:"I slept during the train journey.",
+ words:[
+  {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},{it:"dormito",ar:"نمت",note:"Dormire، Passato Prossimo"},
+  {it:"durante",ar:"خلال",note:"حرف جر مركب بمعنى during"},{it:"il",ar:"الـ"},{it:"viaggio",ar:"رحلة"},
+  {it:"in",ar:"بـ"},{it:"treno",ar:"قطر"}
+]},
+
+{it:"Sono uscito verso le nove di sera", ar:"خرجت حوالي الساعة تسعة بالليل", en:"I went out around nine in the evening.",
+ words:[
+  {it:"Sono",ar:"",note:"جزء من الفعل المساعد"},{it:"uscito",ar:"خرجت",note:"Uscire، Passato Prossimo"},
+  {it:"verso",ar:"حوالي",note:"حرف جر مركب بمعنى around/toward"},{it:"le",ar:"الـ"},{it:"nove",ar:"تسعة"},
+  {it:"di",ar:"بـ"},{it:"sera",ar:"الليل"}
+]},
+
+{it:"La squadra ha giocato contro un avversario forte", ar:"الفريق لعب ضد خصم قوي", en:"The team played against a strong opponent.",
+ words:[
+  {it:"La",ar:"الـ"},{it:"squadra",ar:"فريق"},{it:"ha",ar:"",note:"جزء من الفعل المساعد"},
+  {it:"giocato",ar:"لعب",note:"Giocare، Passato Prossimo"},{it:"contro",ar:"ضد",note:"حرف جر مركب بمعنى against"},
+  {it:"un",ar:""},{it:"avversario",ar:"خصم"},{it:"forte",ar:"قوي"}
+]},
+
+{it:"Secondo me, hai fatto la scelta giusta", ar:"حسب رأيي، اخترت الاختيار الصحيح", en:"In my opinion, you made the right choice.",
+ words:[
+  {it:"Secondo",ar:"حسب",note:"حرف جر مركب بمعنى according to"},{it:"me",ar:"رأيي"},
+  {it:"hai",ar:"",note:"جزء من الفعل المساعد"},{it:"fatto",ar:"اخترت",note:"Fare، Passato Prossimo"},
+  {it:"la",ar:"الـ"},{it:"scelta",ar:"اختيار"},{it:"giusta",ar:"صحيح"}
+]},
+
+{it:"Oltre al lavoro, ho anche altri impegni", ar:"غير الشغل، عندي التزامات تانية كمان", en:"Besides work, I also have other commitments.",
+ words:[
+  {it:"Oltre",ar:"غير",note:"حرف جر مركب بمعنى besides/beyond"},{it:"al",ar:"الـ"},{it:"lavoro",ar:"شغل"},
+  {it:"ho",ar:"عندي"},{it:"anche",ar:"كمان",note:"ظرف بمعنى also/too"},{it:"altri",ar:"تانية"},{it:"impegni",ar:"التزامات"}
+]},
+
+{it:"Hanno mangiato tutto eccetto la verdura", ar:"أكلوا كل حاجة غير الخضار", en:"They ate everything except the vegetables.",
+ words:[
+  {it:"Hanno",ar:"",note:"جزء من الفعل المساعد"},{it:"mangiato",ar:"أكلوا",note:"Mangiare، Passato Prossimo"},
+  {it:"tutto",ar:"كل حاجة"},{it:"eccetto",ar:"غير",note:"حرف جر مركب بمعنى except"},{it:"la",ar:"الـ"},{it:"verdura",ar:"خضار"}
+]},
+
+{it:"Andremo alla festa, salvo imprevisti", ar:"هنروح للحفلة، إلا لو حصل حاجة غير متوقعة", en:"We'll go to the party, unless something unexpected happens.",
+ words:[
+  {it:"Andremo",ar:"هنروح"},{it:"alla",ar:"للـ"},{it:"festa",ar:"حفلة"},
+  {it:"salvo",ar:"إلا لو",note:"حرف جر مركب بمعنى except/barring"},{it:"imprevisti",ar:"حاجة غير متوقعة"}
+]},
+
+{it:"Ho prenotato il biglietto tramite internet, mediante una carta di credito", ar:"حجزت التذكرة عن طريق النت، عن طريق كارت الائتمان", en:"I booked the ticket via the internet, by means of a credit card.",
+ words:[
+  {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},{it:"prenotato",ar:"حجزت",note:"Prenotare، Passato Prossimo"},
+  {it:"il",ar:"الـ"},{it:"biglietto",ar:"تذكرة"},
+  {it:"tramite",ar:"عن طريق",note:"حرف جر مركب بمعنى via/through"},{it:"internet",ar:"النت"},
+  {it:"mediante",ar:"عن طريق",note:"حرف جر مركب بمعنى by means of"},{it:"una",ar:""},{it:"carta",ar:"كارت"},
+  {it:"di",ar:""},{it:"credito",ar:"الائتمان"}
+]},
+
+{it:"Vengo anche io alla festa, vieni pure tu!", ar:"هاجي أنا كمان للحفلة، تعالى انت كمان!", en:"I'm coming to the party too, you come too!",
+ words:[
+  {it:"Vengo",ar:"هاجي"},{it:"anche",ar:"كمان",note:"ظرف بمعنى also/too، ممكن تتحول لـ anch' قبل io"},
+  {it:"io",ar:"أنا"},{it:"alla",ar:"للـ"},{it:"festa",ar:"حفلة"},
+  {it:"vieni",ar:"تعالى"},{it:"pure",ar:"كمان",note:"ظرف بمعنى also/too، وكمان بيستخدم كتشجيع زي Vai pure!"},{it:"tu",ar:"انت"}
 ]},
 
 ];
