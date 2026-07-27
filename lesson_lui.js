@@ -33,6 +33,16 @@ const LESSON_LUI = [
     "transitive": true,
     "quiz": [
      {
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "options": [
+       "-ato",
+       "-uto",
+       "-ito",
+       "-ando"
+      ],
+      "correct": 0
+     },
+     {
       "q": "الفعل \"Lavorare\" منتمي لأي مجموعة؟",
       "options": [
        "-ire",
@@ -119,6 +129,16 @@ const LESSON_LUI = [
     "tense": "imperfetto",
     "transitive": true,
     "quiz": [
+     {
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "options": [
+       "-avo...",
+       "-evo...",
+       "-ivo...",
+       "-erò..."
+      ],
+      "correct": 0
+     },
      {
       "q": "الفعل \"Aspettare\" منتمي لأي مجموعة؟",
       "options": [
@@ -355,6 +375,16 @@ const LESSON_LUI = [
     "transitive": true,
     "quiz": [
      {
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "options": [
+       "-avo...",
+       "-evo...",
+       "-ivo...",
+       "-erò..."
+      ],
+      "correct": 0
+     },
+     {
       "q": "الفعل \"Lavorare\" منتمي لأي مجموعة؟",
       "options": [
        "-are",
@@ -486,6 +516,16 @@ const LESSON_LUI = [
     "tense": "passato",
     "transitive": true,
     "quiz": [
+     {
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "options": [
+       "-ato",
+       "-uto",
+       "-ito",
+       "-ando"
+      ],
+      "correct": 0
+     },
      {
       "q": "الفعل \"Aspettare\" منتمي لأي مجموعة؟",
       "options": [
@@ -1439,6 +1479,16 @@ const LESSON_LUI = [
     "transitive": true,
     "quiz": [
      {
+      "q": "نهايات الفعل المنتظم من مجموعة -ere في Imperfetto بتبدأ بإيه؟",
+      "options": [
+       "-avo...",
+       "-evo...",
+       "-ivo...",
+       "-erò..."
+      ],
+      "correct": 1
+     },
+     {
       "q": "الفعل \"Dormire\" منتمي لأي مجموعة؟",
       "options": [
        "-are",
@@ -1651,6 +1701,16 @@ const LESSON_LUI = [
     "tense": "imperfetto",
     "transitive": true,
     "quiz": [
+     {
+      "q": "نهايات الفعل المنتظم من مجموعة -ire في Imperfetto بتبدأ بإيه؟",
+      "options": [
+       "-avo...",
+       "-evo...",
+       "-ivo...",
+       "-erò..."
+      ],
+      "correct": 2
+     },
      {
       "q": "الفعل \"Dormire\" منتمي لأي مجموعة؟",
       "options": [
@@ -1986,6 +2046,16 @@ const LESSON_LUI = [
     "transitive": true,
     "quiz": [
      {
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -ere في Passato Prossimo بتكون إيه؟",
+      "options": [
+       "-ato",
+       "-uto",
+       "-ito",
+       "-ando"
+      ],
+      "correct": 1
+     },
+     {
       "q": "الفعل \"Aiutare\" منتمي لأي مجموعة؟",
       "options": [
        "-ire",
@@ -2072,6 +2142,16 @@ const LESSON_LUI = [
     "tense": "imperfetto",
     "transitive": true,
     "quiz": [
+     {
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "options": [
+       "-avo...",
+       "-evo...",
+       "-ivo...",
+       "-erò..."
+      ],
+      "correct": 0
+     },
      {
       "q": "الفعل \"Aspettare\" منتمي لأي مجموعة؟",
       "options": [
@@ -2271,6 +2351,16 @@ const LESSON_LUI = [
     "transitive": true,
     "quiz": [
      {
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "options": [
+       "-avo...",
+       "-evo...",
+       "-ivo...",
+       "-erò..."
+      ],
+      "correct": 0
+     },
+     {
       "q": "الفعل \"Aspettare\" منتمي لأي مجموعة؟",
       "options": [
        "شاذ",
@@ -2356,6 +2446,16 @@ const LESSON_LUI = [
     "tense": "passato",
     "transitive": true,
     "quiz": [
+     {
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "options": [
+       "-ato",
+       "-uto",
+       "-ito",
+       "-ando"
+      ],
+      "correct": 0
+     },
      {
       "q": "الفعل \"Aiutare\" منتمي لأي مجموعة؟",
       "options": [
@@ -2601,6 +2701,16 @@ const LESSON_LUI = [
     "transitive": true,
     "quiz": [
      {
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "options": [
+       "-ato",
+       "-uto",
+       "-ito",
+       "-ando"
+      ],
+      "correct": 0
+     },
+     {
       "q": "الفعل \"Cercare\" منتمي لأي مجموعة؟",
       "options": [
        "شاذ",
@@ -2687,6 +2797,16 @@ const LESSON_LUI = [
     "tense": "imperfetto",
     "transitive": true,
     "quiz": [
+     {
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "options": [
+       "-avo...",
+       "-evo...",
+       "-ivo...",
+       "-erò..."
+      ],
+      "correct": 0
+     },
      {
       "q": "الفعل \"Camminare\" منتمي لأي مجموعة؟",
       "options": [
@@ -2884,6 +3004,16 @@ const LESSON_LUI = [
     "transitive": true,
     "quiz": [
      {
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "options": [
+       "-avo...",
+       "-evo...",
+       "-ivo...",
+       "-erò..."
+      ],
+      "correct": 0
+     },
+     {
       "q": "الفعل \"Camminare\" منتمي لأي مجموعة؟",
       "options": [
        "-are",
@@ -2973,6 +3103,16 @@ const LESSON_LUI = [
     "tense": "passato",
     "transitive": true,
     "quiz": [
+     {
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "options": [
+       "-ato",
+       "-uto",
+       "-ito",
+       "-ando"
+      ],
+      "correct": 0
+     },
      {
       "q": "الفعل \"Cercare\" منتمي لأي مجموعة؟",
       "options": [
