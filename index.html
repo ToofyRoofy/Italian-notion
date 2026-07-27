@@ -41,6 +41,31 @@
   .sc-lbl{font-size:.7rem;color:var(--muted);margin-top:3px;}
   .sc.g .sc-num{color:var(--gold);} .sc.r .sc-num{color:var(--green);} .sc.b .sc-num{color:var(--blue);}
 
+  /* skill scores */
+  .skill-scores{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#0e0e1a;border:1px solid var(--border);border-radius:16px;padding:10px;}
+  .skill-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:9px 5px;text-align:center;min-height:58px;}
+  .skill-num{font-size:1.05rem;font-weight:900;line-height:1;color:var(--gold);}
+  .skill-lbl{font-size:.62rem;color:var(--muted);margin-top:5px;white-space:nowrap;}
+  .skill-card.pr .skill-num{color:var(--gold)}
+  .skill-card.li .skill-num{color:var(--blue)}
+  .skill-card.wr .skill-num{color:var(--green)}
+  .skill-card.gr .skill-num{color:var(--purple)}
+  .session-insight{display:none;background:#0e0e1a;border:1px solid var(--border);border-radius:14px;padding:10px 12px;color:var(--muted);font-size:.78rem;line-height:1.6;text-align:right;}
+  .session-insight.show{display:block;}
+
+  .grammar-quiz-panel{display:none;background:#0e0e1a;border:1px solid var(--border);border-radius:14px;padding:14px;margin-top:10px;text-align:right;}
+  .grammar-quiz-panel.show{display:block;}
+  .grammar-q-title{font-size:.72rem;color:var(--purple);font-weight:900;letter-spacing:.08em;text-align:center;margin-bottom:8px;}
+  .grammar-q-prompt{font-size:1rem;font-weight:800;line-height:1.7;margin-bottom:10px;color:var(--text);}
+  .grammar-q-options{display:flex;flex-direction:column;gap:8px;}
+  .grammar-q-option{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:10px;padding:10px 12px;font-family:inherit;font-size:.86rem;line-height:1.5;text-align:right;cursor:pointer;transition:.15s;}
+  .grammar-q-option:hover:not(:disabled){border-color:var(--purple);transform:translateY(-1px);}
+  .grammar-q-option.ok{border-color:var(--green);background:rgba(0,232,150,.10);}
+  .grammar-q-option.bad{border-color:var(--red);background:rgba(255,77,109,.10);}
+  .grammar-q-option:disabled{cursor:default;opacity:.95;}
+  .grammar-explain{display:none;margin-top:10px;border-radius:10px;padding:10px 12px;background:rgba(192,132,252,.10);border:1px solid rgba(192,132,252,.28);font-size:.82rem;line-height:1.7;color:var(--text);}
+  .grammar-explain.show{display:block;}
+
   /* mode tabs */
   .mode-tabs{display:flex;gap:8px;}
   .mode-tab{
@@ -430,6 +455,14 @@
 
   <div class="engine-status" id="engineStatus"></div>
 
+  <div class="skill-scores" id="skillScores">
+    <div class="skill-card pr"><div class="skill-num" id="skillPron">0%</div><div class="skill-lbl">🎙️ نطق</div></div>
+    <div class="skill-card li"><div class="skill-num" id="skillListen">0%</div><div class="skill-lbl">👂 سمع</div></div>
+    <div class="skill-card wr"><div class="skill-num" id="skillWrite">0%</div><div class="skill-lbl">✍️ كتابة</div></div>
+    <div class="skill-card gr"><div class="skill-num" id="skillGrammar">0%</div><div class="skill-lbl">🧩 ترتيب</div></div>
+  </div>
+  <div class="session-insight" id="sessionInsight"></div>
+
   <div class="wrap" id="game" style="padding:0">
   <div class="scores">
     <div class="sc g"><div class="sc-num" id="sAvg">0%</div><div class="sc-lbl">📊 متوسط النطق</div></div>
@@ -546,6 +579,14 @@
         <button class="write-check-btn" id="writeCheckBtn" onclick="checkWrite()">✅ تحقق من الإجابة</button>
         <div class="write-result" id="writeResult"></div>
         <div class="write-score" id="writeScore"></div>
+      </div>
+
+      <!-- Grammar question appears after writing -->
+      <div class="grammar-quiz-panel" id="grammarQuizPanel">
+        <div class="grammar-q-title">🧩 سؤال جرامر بعد الكتابة</div>
+        <div class="grammar-q-prompt" id="grammarQPrompt"></div>
+        <div class="grammar-q-options" id="grammarQOptions"></div>
+        <div class="grammar-explain" id="grammarQExplain"></div>
       </div>
 
       <!-- isolated single-word drill -->
@@ -1183,6 +1224,51 @@ function micErrorMessage(err){
   return base;
 }
 
+
+// ===== 4-SKILL SCORING LAYER =====
+const SKILL_LABELS={pronunciation:'🎙️ النطق',listening:'👂 السمع',writing:'✍️ الكتابة',grammarOrder:'🧩 ترتيب الجملة'};
+const skillScores={
+  pronunciation:{attempts:0,totalScore:0,best:0,passed:0},
+  listening:{attempts:0,totalScore:0,best:0,passed:0,replays:0,reveals:0},
+  writing:{attempts:0,totalScore:0,best:0,passed:0,correctWords:0,totalWords:0},
+  grammarOrder:{attempts:0,totalScore:0,best:0,passed:0,reveals:0}
+};
+function skillAvg(k){const s=skillScores[k];return s.attempts?Math.round(s.totalScore/s.attempts):0;}
+function addSkillScore(skill,score,passed){
+  const s=skillScores[skill]; if(!s)return;
+  score=Math.max(0,Math.min(100,Math.round(score||0)));
+  s.attempts++; s.totalScore+=score; s.best=Math.max(s.best,score); if(passed)s.passed++;
+  saveSkillScores(); updateSkillScoreUI();
+}
+function addWritingSkillScore(score,correct,total,passed){
+  const s=skillScores.writing; s.correctWords+=correct||0; s.totalWords+=total||0; addSkillScore('writing',score,passed);
+}
+function resetSessionScores(){
+  Object.keys(skillScores).forEach(k=>{Object.keys(skillScores[k]).forEach(x=>skillScores[k][x]=0);});
+  saveSkillScores(); updateSkillScoreUI();
+}
+function saveSkillScores(){try{localStorage.setItem('parlaSkillScores',JSON.stringify(skillScores));}catch(e){}}
+function loadSkillScores(){
+  try{const raw=localStorage.getItem('parlaSkillScores'); if(!raw)return; const saved=JSON.parse(raw);
+    Object.keys(skillScores).forEach(k=>{if(saved[k])Object.assign(skillScores[k],saved[k]);});
+  }catch(e){}
+}
+function updateSkillScoreUI(){
+  const map={skillPron:'pronunciation',skillListen:'listening',skillWrite:'writing',skillGrammar:'grammarOrder'};
+  Object.keys(map).forEach(id=>{const el=document.getElementById(id); if(el)el.textContent=skillAvg(map[id])+'%';});
+  updateSessionInsight();
+}
+function updateSessionInsight(){
+  const el=document.getElementById('sessionInsight'); if(!el)return;
+  const active=Object.keys(skillScores).filter(k=>skillScores[k].attempts>0);
+  if(active.length<2){el.classList.remove('show');return;}
+  const sorted=active.map(k=>({k,avg:skillAvg(k)})).sort((a,b)=>a.avg-b.avg);
+  const weak=sorted[0],strong=sorted[sorted.length-1];
+  el.innerHTML='تحليل سريع: أقوى مهارة عندك '+SKILL_LABELS[strong.k]+' ('+strong.avg+'%) — محتاجة تركيز أكتر: '+SKILL_LABELS[weak.k]+' ('+weak.avg+'%).';
+  el.classList.add('show');
+}
+loadSkillScores();
+
 // ===== WORD TAB PIPELINE: يمشي على LESSON_SENTENCES جملة بجملة، كلمة بكلمة =====
 let wpSentenceIdx=0;
 let wpWordIndices=[];
@@ -1195,9 +1281,26 @@ let wpChainActive=false;
 let wpChainSentenceIdx=null;
 let wpUnlockedIndices=[]; // فهرس بالجمل اللي خلصت كلماتها في تاب نطق الكلمات — دي اللي بتفتح في تاب الدرس الإنفينيتي
 
+function saveUnlockedSentences(){
+  try{localStorage.setItem('parlaUnlockedSentenceIndices',JSON.stringify(wpUnlockedIndices));}catch(e){}
+}
+function loadUnlockedSentences(){
+  try{
+    const raw=localStorage.getItem('parlaUnlockedSentenceIndices');
+    if(!raw)return;
+    const arr=JSON.parse(raw);
+    if(Array.isArray(arr)){
+      wpUnlockedIndices=[...new Set(arr.map(Number).filter(i=>Number.isInteger(i)&&i>=0&&i<LESSON_SENTENCES.length))].sort((a,b)=>a-b);
+    }
+  }catch(e){}
+}
+loadUnlockedSentences();
+
 function start(){
+  loadUnlockedSentences();
   wpSentenceIdx=0;
   totalScore=0;passedCount=0;bestScore=0;totalAttempts=0;failCount=0;
+  resetSessionScores();
   document.getElementById('endScreen').classList.remove('show');
   document.getElementById('game').style.display='flex';
   wpLoadSentence(0);
@@ -1239,6 +1342,7 @@ function wpUpdateScores(){
   document.getElementById('sAvg').textContent=(passedCount?Math.round(totalScore/passedCount):0)+'%';
   document.getElementById('sAll').textContent=totalAttempts;
   document.getElementById('sBest').textContent=bestScore+'%';
+  updateSkillScoreUI();
 }
 
 function wpRenderWord(){
@@ -1313,6 +1417,7 @@ function judge(alts,conf){
   let score=Math.round((bestSim*0.85+confVal*0.15)*100);
   score=Math.max(0,Math.min(100,score));
   if(score>bestScore)bestScore=score;
+  addSkillScore('pronunciation',score,score>=PASS);
 
   document.getElementById('heard').textContent='🎧 سمعت: "'+heard+'"';
 
@@ -1416,7 +1521,7 @@ function wpBuildInfoHtml(w){
     if(w.tense==='passato'&&w.aux)html+='<div>🔧 الفعل المساعد: <b>'+w.aux+'</b></div>';
     html+='<div>↔️ النوع: <b>'+(w.transitivity==='intransitive'?'غير متعدٍ (intransitive)':'متعدٍ (transitive)')+'</b>'+(w.transitivityNote?' — '+escHtml(w.transitivityNote):'')+'</div>';
     if(w.note)html+='<div style="color:var(--muted);font-size:.78rem">'+escHtml(w.note)+'</div>';
-    html+='<div style="margin-top:6px"><button class="tts-btn" onclick="wpOpenVerbModal('+JSON.stringify(w.verbInfinitive||'')+')">📊 شوف التصريف الكامل</button></div>';
+    html+='<div style="margin-top:6px"><button class="tts-btn" onclick="wpOpenVerbModal(\''+escHtml(String(w.verbInfinitive||'')).replace(/'/g,'\\\'')+'\')">📊 شوف التصريف الكامل</button></div>';
     return html;
   }
   if(w.type==='nome_unit'){
@@ -1526,6 +1631,7 @@ function wpRetryWordThenReask(wordIt){
 function wpFinishSentenceQuiz(){
   wpChainActive=true;
   if(!wpUnlockedIndices.includes(wpSentenceIdx))wpUnlockedIndices.push(wpSentenceIdx);
+  saveUnlockedSentences();
   const unlockedTarget=LESSON_SENTENCES[wpSentenceIdx];
   if(lDeck&&lDeck.length>0&&lDeck.indexOf(unlockedTarget)<0)lDeck.push(unlockedTarget);
   wpShowStage('word');
@@ -1536,6 +1642,7 @@ function wpFinishSentenceQuiz(){
 function wpSyncLessonDeckToSentence(sentenceIdx){
   const target=LESSON_SENTENCES[sentenceIdx];
   if(!wpUnlockedIndices.includes(sentenceIdx))wpUnlockedIndices.push(sentenceIdx);
+  saveUnlockedSentences();
   if(!lDeck||lDeck.length===0){lDeck=wpUnlockedIndices.map(i=>LESSON_SENTENCES[i]);}
   let foundIdx=lDeck.indexOf(target);
   if(foundIdx<0)foundIdx=lDeck.findIndex(s=>s.it===target.it&&s.ar===target.ar);
@@ -1834,6 +1941,7 @@ function hideLessonLocked(){
   document.getElementById('lessonContentWrap').style.display='';
 }
 function lStart(){
+  loadUnlockedSentences();
   if(wpUnlockedIndices.length===0){
     lDeck=[];lIdx=0;
     showLessonLocked();
@@ -2014,6 +2122,7 @@ function lJudgeSentence(alts){
   if(allOk){
     // flip auto tokens to ok so the whole sentence row turns green
     const okIdxsThisPass=s.words.map((w,i)=>i).filter(i=>tokenStates[i]==='ok');
+    addSkillScore('pronunciation',100,true);
     tokenStates=tokenStates.map(st=>st==='auto'?'ok':st);
     lPassed++;lStreak++;
     sentenceAnswered=true;
@@ -2031,6 +2140,8 @@ function lJudgeSentence(alts){
     document.getElementById('lMicBtn').disabled=true;
     maybeRunWordPipeline(okIdxsThisPass,showDone);
   } else {
+    const okCount=s.words.filter((w,i)=>tokenStates[i]==='ok'||tokenStates[i]==='auto').length;
+    addSkillScore('pronunciation',Math.round(okCount/s.words.length*100),false);
     lStreak=0;
     document.getElementById('lBadge').innerHTML='⚠️ في كلمات غلط — هنتدرب عليهم';
     document.getElementById('lBadge').className='badge mid show';
@@ -2376,6 +2487,7 @@ function wpMaybeChainAfterListen(){
 
 function setStudyMode(mode){
   if(micBusy)return;
+  grammarHide();
   const prevMode=currentStudyMode;
   currentStudyMode=mode;
   seqStopTts(); // قفل أي نطق AR متأخر أو شغال من التاب اللي كنا فيه، قبل ما نبدّل
@@ -2609,6 +2721,8 @@ function seqCheck(){
   });
   const pct=Math.round(correct/s.words.length*100);
   lAttempts++;
+  addSkillScore('grammarOrder',pct,pct>=80);
+  if(seqSub==='ar')addSkillScore('listening',Math.round(pct*0.85+15),pct>=80);
   if(pct>=80){lPassed++;lStreak++;floatEmoji('✅');}
   else{lStreak=0;floatEmoji('🔀');}
   lUpdateScore();
@@ -2644,8 +2758,73 @@ function seqReveal(){
   document.getElementById('lNextBtn').className='next-btn show';
   document.getElementById('lNextBtn').textContent=seqIsLast()?'خلصت الدفعة 🏆':'الجملة الجاية ←';
   document.getElementById('seqRevealBtn').style.display='none';
+  skillScores.grammarOrder.reveals++; if(seqSub==='ar')skillScores.listening.reveals++;
+  addSkillScore('grammarOrder',35,false); if(seqSub==='ar')addSkillScore('listening',35,false);
   lStreak=0;lUpdateScore();
   wpMaybeChainAfterListen();
+}
+
+
+// ── GRAMMAR MICRO-QUESTIONS (appear after Writing) ──
+let currentGrammarQuestion=null;
+function grammarHide(){
+  const panel=document.getElementById('grammarQuizPanel'); if(panel)panel.classList.remove('show');
+  currentGrammarQuestion=null;
+}
+function sentenceText(s){return (s.it||s.words.map(w=>w.it).join(' ')).trim();}
+function hasWord(s,rx){return s.words.some(w=>rx.test(norm(w.it)));}
+function makeGrammarQuestion(s){
+  const txt=sentenceText(s);
+  const low=txt.toLowerCase();
+  if(/(ho|hai|ha|abbiamo|avete|hanno)\s+\w*(ato|uto|ito)/i.test(txt)){
+    const aux=(txt.match(/(ho|hai|ha|abbiamo|avete|hanno)/i)||['ho'])[0];
+    return {prompt:'ليه استخدمنا "'+aux+'" في الجملة؟',options:['لأن الفعل هنا في Passato Prossimo وبيستخدم avere','لأن الفاعل مؤنث مفرد','لأن الجملة في المستقبل','لأن بعد mentre لازم avere'],answer:0,explanation:'في الماضي المركب Passato Prossimo أفعال كتير زي mangiare / guardare / parlare بتاخد avere: ho mangiato, ho guardato.'};
+  }
+  if(/(sono|sei|è|e|siamo|siete)\s+\w*(ato|ata|ati|ate)/i.test(txt)){
+    return {prompt:'إيه القاعدة المهمة مع الأفعال اللي بتاخد essere؟',options:['آخر التصريف بيتفق مع الفاعل في النوع والعدد','بنستخدم نفس النهاية دايمًا: -o','لازم نحط avere بعد الفعل','الفاعل لازم يتحذف'],answer:0,explanation:'مع essere في Passato Prossimo لازم الـ participio يتفق مع الفاعل: andato / andata / andati / andate.'};
+  }
+  if(/mentre/i.test(txt) || /avo|evo|ivo/i.test(txt)){
+    return {prompt:'ليه استخدمنا فعل زي "guardavo / mangiavo"؟',options:['عشان يوصف حدث مستمر أو خلفية في الماضي','عشان ده أمر مباشر','عشان ده مستقبل قريب','عشان الفاعل جمع'],answer:0,explanation:'Imperfetto بنستخدمه للخلفية أو العادة أو الحدث المستمر في الماضي. مع mentre شائع جدًا: mentre guardavo = وأنا كنت بتفرج.'};
+  }
+  const prep=s.words.find(w=>['a','in','con','per','da','di'].includes(norm(w.it)));
+  if(prep){
+    return {prompt:'الكلمة "'+prep.it+'" هنا وظيفتها إيه؟',options:['حرف جر بيربط المعنى بين الكلمات','فعل مساعد في الماضي','أداة استفهام','ضمير ملكية'],answer:0,explanation:'حروف الجر زي a / in / con / per / da / di صغيرة، لكنها بتحدد العلاقة: إلى، في، مع، من، عشان...'};
+  }
+  const art=s.words.find(w=>['il','lo','la','l','un','una','uno','i','gli','le'].includes(norm(w.it).replace(/'/g,'')));
+  if(art){
+    return {prompt:'الكلمة "'+art.it+'" تعتبر إيه؟',options:['أداة تعريف أو تنكير مرتبطة بالاسم','فعل في الماضي','حرف جر','صفة ملكية'],answer:0,explanation:'الأدوات في الإيطالي بتتغير حسب النوع والعدد وبداية الاسم: il/un للمذكر، la/una للمؤنث، وهكذا.'};
+  }
+  return {prompt:'إيه أول حاجة ندور عليها لفهم تركيب الجملة الإيطالية؟',options:['الفعل: زمنه ومين الفاعل بتاعه','آخر كلمة بس','علامات الترقيم فقط','الترجمة الحرفية كلمة بكلمة'],answer:0,explanation:'الفعل هو قلب الجملة: منه نعرف الزمن والفاعل، وبعدها نفهم باقي الكلمات حواليه.'};
+}
+function showGrammarQuestion(){
+  const s=lDeck[lIdx]; if(!s)return;
+  currentGrammarQuestion=makeGrammarQuestion(s);
+  const panel=document.getElementById('grammarQuizPanel');
+  const prompt=document.getElementById('grammarQPrompt');
+  const opts=document.getElementById('grammarQOptions');
+  const exp=document.getElementById('grammarQExplain');
+  prompt.textContent=currentGrammarQuestion.prompt; opts.innerHTML=''; exp.className='grammar-explain'; exp.textContent='';
+  currentGrammarQuestion.options.forEach((op,i)=>{
+    const b=document.createElement('button'); b.className='grammar-q-option'; b.textContent=op;
+    b.onclick=()=>answerGrammarQuestion(i); opts.appendChild(b);
+  });
+  panel.classList.add('show');
+  document.getElementById('lNextBtn').className='next-btn';
+}
+function answerGrammarQuestion(i){
+  if(!currentGrammarQuestion)return;
+  const q=currentGrammarQuestion;
+  const opts=[...document.getElementById('grammarQOptions').children];
+  opts.forEach((b,idx)=>{b.disabled=true; if(idx===q.answer)b.classList.add('ok');});
+  const ok=i===q.answer; if(!ok&&opts[i])opts[i].classList.add('bad');
+  addSkillScore('grammarOrder',ok?100:35,ok);
+  const exp=document.getElementById('grammarQExplain');
+  exp.innerHTML=(ok?'✅ صح. ':'❌ مش بالظبط. ')+q.explanation; exp.className='grammar-explain show';
+  document.getElementById('lBadge').innerHTML=(ok?'🧩 إجابة الجرامر صح ✅':'🧩 راجع سبب القاعدة فوق') ;
+  document.getElementById('lBadge').className='badge '+(ok?'ok':'mid')+' show';
+  document.getElementById('lNextBtn').className='next-btn show';
+  document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+  currentGrammarQuestion=null;
 }
 
 // ── WRITE MODE ──
@@ -2660,6 +2839,7 @@ function writeSetup(){
   document.getElementById('lNextBtn').className='next-btn';
   document.getElementById('lHeard').textContent='';
   document.getElementById('lBadge').className='badge';
+  grammarHide();
   inp.onkeydown=(e)=>{
     if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();checkWrite();}
   };
@@ -2715,15 +2895,12 @@ function checkWrite(){
   scoreEl.style.color=pct>=80?'var(--green)':pct>=50?'var(--gold)':'var(--red)';
 
   lAttempts++;
+  addWritingSkillScore(pct,correctCount,gradedCount,pct>=80);
   if(pct>=80){lPassed++;lStreak++;floatEmoji('✅');}
   else{lStreak=0;floatEmoji('📝');}
   lUpdateScore();
 
-  document.getElementById('lNextBtn').className='next-btn show';
-  document.getElementById('lNextBtn').textContent=
-    lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
-
-  wpMaybeChainAfterWrite();
+  showGrammarQuestion();
 }
 
 // لما الكتابة تخلص والسلسلة كانت من تاب نطق الكلمات، نرجعله للجملة الجاية في نفس التاب.
