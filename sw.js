@@ -2,7 +2,7 @@
 const SHELL_CACHE = 'parla-shell-v7';  // يتغير مع كل إصدار جديد
 const MODEL_CACHE = 'parla-models-v1'; // ثابت — مش بيتمسح أبدًا
 
-// ⚠️ باگ: كان مكتوب هنا 'parla.html' بس اسم الملف الفعلي 'index.html' —
+// ⚠️ Bug: كان مكتوب هنا 'parla.html' بس اسم الملف الفعلي 'index.html' —
 // caches.open(...).add() كان بيفشل بصمت (بسبب .catch(()=>{}) تحت) ومايخزّنش
 // صفحة الشِل الأساسية في أول تثبيت، وده كان بيضعف ضمان الأوفلاين الحقيقي.
 const CORE_FILES = ['./index.html', './sentences.js', './verbs.js', './grammar.js'];
@@ -18,7 +18,7 @@ self.addEventListener('install', e => {
   self.skipWaiting();
 });
 
-// ===== ACTIVATE: امسح الشيل القديم بس، واحمي كاش الموديلات =====
+// ===== ACTIVATE: امسح الشِل القديم بس، واحمي كاش الموديلات =====
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
@@ -47,7 +47,7 @@ self.addEventListener('fetch', e => {
         })
         .catch(() =>
           caches.match(e.request).then(cached =>
-            // لو الطلب ده تنقّل صفحة (navigation) ومفيش نسخة مخزّنة بنفس الـ
+            // لو الطلب ده كان تنقّل صفحة (navigation) ومفيش نسخة مخزّنة بنفس الـ
             // URL بالضبط (زي اختلاف query string)، رجّع صفحة الشِل الأساسية
             // المخزّنة بدل فشل كامل في الأوفلاين.
             cached || (e.request.mode === 'navigate' ? caches.match('./index.html') : undefined)

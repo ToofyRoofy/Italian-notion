@@ -378,6 +378,9 @@
   .bd-word.has-grammar{border-bottom:2px dotted var(--blue);}
   .bd-grammar-btn{display:inline-block;margin-inline-start:4px;font-size:.72rem;cursor:pointer;opacity:.8;}
   .bd-grammar-btn:active{opacity:1;transform:scale(.9);}
+  .bd-word.has-verb{border-bottom:2px dotted var(--green);}
+  .bd-verb-btn{display:inline-block;margin-inline-start:4px;font-size:.72rem;cursor:pointer;opacity:.8;}
+  .bd-verb-btn:active{opacity:1;transform:scale(.9);}
   .verb-modal{background:var(--card);border:1px solid var(--border);border-radius:18px;max-width:420px;width:100%;max-height:82vh;display:flex;flex-direction:column;overflow:hidden;}
   .verb-modal-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 8px;}
   .verb-modal-it{font-family:Georgia,serif;font-size:1.55rem;color:var(--gold);direction:ltr;font-weight:900;}
@@ -517,10 +520,6 @@
 
       <div class="breakdown" id="lBreakdown"></div>
 
-      <div class="conj-table" id="lConjWrap" style="display:none">
-        <div class="conj-title" id="lConjTitle"></div>
-        <table class="conj-tbl" id="lConjTbl"></table>
-      </div>
     </div>
 
     <div class="mic-area" id="lMicArea">
@@ -1001,7 +1000,7 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
   // watchdog الثابت اللي كان عندنا.
   const isSentence=mode==='sentence';
   const recMaxMs=isSentence?16000:6000;
-  const recSilenceMs=isSentence?1400:900;
+  const recSilenceMs=isSentence?1400:450;
   // الـ watchdog لازم يغطي وقت التسجيل + وقت تحليل Whisper (اللي بيكبر مع
   // طول الصوت وبيبقى أبطأ على الأجهزة ��لضعيفة) — 20 ثانية ثابتة كانت بتنتهي
   // في نص التحليل لجمل طويلة وتلغي نتيجة كانت شكلها هتوصل لو استنينا شوية.
@@ -1349,9 +1348,9 @@ function renderVerbsList(){
     wrapEl.appendChild(section);
   });
 }
-function openVerbModal(i){
+function openVerbModal(i,tab){
   vmCurrentIdx=i;
-  vmCurrentTab='meaning';
+  vmCurrentTab=tab||'meaning';
   document.getElementById('vmIt').textContent=VERBS[i].it;
   document.getElementById('verbModalOverlay').classList.add('show');
   renderVerbModalTabs();
@@ -1421,6 +1420,29 @@ function findGrammarTopicId(word){
   const map=buildGrammarTriggerMap();
   return map[normalizeGrammarWord(word)]||null;
 }
+
+// ===== VERB NOTE PARSING (tap-to-popup conjugation for words like "cucinavo") =====
+// notes بتاعة الأفعال في sentences.js متسقة بالشكل: "InfinitoVerbo، Tense"
+// (Tense وحدة من: Presente / Passato Prossimo / Imperfetto)
+let VERB_NAME_MAP=null;
+function buildVerbNameMap(){
+  if(VERB_NAME_MAP)return VERB_NAME_MAP;
+  VERB_NAME_MAP={};
+  if(typeof VERBS==='undefined')return VERB_NAME_MAP;
+  VERBS.forEach((v,i)=>{VERB_NAME_MAP[v.it.toLowerCase()]=i;});
+  return VERB_NAME_MAP;
+}
+const VERB_TENSE_TAB={'Presente':'presente','Passato Prossimo':'passato','Imperfetto':'imperfetto'};
+function findVerbFromNote(note){
+  if(!note)return null;
+  const m=note.match(/^([A-Za-zàèìòùé']+)،\s*(Presente|Passato Prossimo|Imperfetto)\s*$/);
+  if(!m)return null;
+  const map=buildVerbNameMap();
+  const idx=map[m[1].toLowerCase()];
+  if(idx===undefined)return null;
+  return {idx, tab:VERB_TENSE_TAB[m[2]]};
+}
+
 function getGrammarTopic(id){
   if(typeof GRAMMAR==='undefined')return null;
   return GRAMMAR.find(g=>g.id===id)||null;
@@ -1542,7 +1564,8 @@ function lRender(){
     row.className='bd-row';
     const wordSpan=document.createElement('span');
     const gTopicId=findGrammarTopicId(w.it);
-    wordSpan.className='bd-word word-tap'+(gTopicId?' has-grammar':'');
+    const vInfo=findVerbFromNote(w.note);
+    wordSpan.className='bd-word word-tap'+(gTopicId?' has-grammar':'')+(vInfo?' has-verb':'');
     wordSpan.textContent=w.it;
     wordSpan.onclick=()=>speakWord(w.it);
     row.appendChild(wordSpan);
@@ -1554,6 +1577,14 @@ function lRender(){
       gBtn.onclick=(e)=>{e.stopPropagation();openGrammarModal(gTopicId);};
       row.appendChild(gBtn);
     }
+    if(vInfo){
+      const vBtn=document.createElement('span');
+      vBtn.className='bd-verb-btn';
+      vBtn.textContent='📗';
+      vBtn.title='تصريف الفعل';
+      vBtn.onclick=(e)=>{e.stopPropagation();openVerbModal(vInfo.idx,vInfo.tab);};
+      row.appendChild(vBtn);
+    }
     const noteSpan=document.createElement('span');
     noteSpan.className='bd-note';
     noteSpan.textContent=w.note?(w.ar+' — '+w.note):w.ar;
@@ -1561,14 +1592,6 @@ function lRender(){
     bd.appendChild(row);
   });
 
-  const conjWrap=document.getElementById('lConjWrap');
-  if(s.conj){
-    conjWrap.style.display='block';
-    document.getElementById('lConjTitle').textContent='تصريف '+s.conj.verb+' في الـ '+s.conj.tense+(s.conj.regular?' (فعل منتظم)':' (فعل شاذ)');
-    document.getElementById('lConjTbl').innerHTML=s.conj.rows.map(r=>'<tr><td>'+r.person+'</td><td>'+r.form+'</td></tr>').join('');
-  } else {
-    conjWrap.style.display='none';
-  }
 
   document.getElementById('lHeard').textContent='';
   document.getElementById('lBadge').className='badge';
@@ -1857,6 +1880,12 @@ function lNext(){
     } else { seqSetup(); }
     return;
   }
+  // لو دس على "جملة تانية" قبل ما يحل الجملة الحالية (يعني تخطّاها من غير إجابة)،
+  // بتتحسب محاولة فاشلة (صفر) عشان النسبة متبقاش بتتجاهل الجمل اللي اتخطّت.
+  if(!sentenceAnswered){
+    lAttempts++;
+    lStreak=0;
+  }
   lIdx++;
   if(lIdx>=lDeck.length){lEnd();return;}
   lRender();
@@ -1931,7 +1960,6 @@ function setStudyMode(mode){
     document.getElementById('lMicLbl').textContent='اضغط وقول الجملة كله��';
     document.getElementById('lBreakdown').style.display='flex';
     const sc=lDeck[lIdx];
-    if(sc.conj)document.getElementById('lConjWrap').style.display='block';
     lRenderTokens();
     if(sentenceAnswered){
       document.getElementById('lNextBtn').className='next-btn show';
@@ -1945,7 +1973,6 @@ function setStudyMode(mode){
   if(isWr){
     document.getElementById('lBreakdown').style.display='flex';
     const sc=lDeck[lIdx];
-    if(sc.conj)document.getElementById('lConjWrap').style.display='block';
     writeSetup();
   }
 }
@@ -2018,7 +2045,6 @@ function seqSetup(){
   document.getElementById('lHeard').textContent='';
   document.getElementById('lBadge').className='badge';
   document.getElementById('lBreakdown').style.display='none';
-  document.getElementById('lConjWrap').style.display='none';
   document.getElementById('seqRevealBtn').style.display='inline-block';
   seqRender();
 }
@@ -2134,7 +2160,6 @@ function seqCheck(){
   document.getElementById('lCard').className='card '+(pct>=80?'ok':pct>=50?'mid':'bad');
 
   document.getElementById('lBreakdown').style.display='flex';
-  if(s.conj)document.getElementById('lConjWrap').style.display='block';
   document.getElementById('lNextBtn').className='next-btn show';
   document.getElementById('lNextBtn').textContent=seqIsLast()?'خلصت الدفعة 🏆':'الجملة الجاية ←';
   document.getElementById('seqRevealBtn').style.display='none';
@@ -2156,7 +2181,6 @@ function seqReveal(){
   });
   document.getElementById('seqPool').innerHTML='';
   document.getElementById('lBreakdown').style.display='flex';
-  if(s.conj)document.getElementById('lConjWrap').style.display='block';
   document.getElementById('lNextBtn').className='next-btn show';
   document.getElementById('lNextBtn').textContent=seqIsLast()?'خلصت الدفعة 🏆':'الجم��ة الجاية ←';
   document.getElementById('seqRevealBtn').style.display='none';

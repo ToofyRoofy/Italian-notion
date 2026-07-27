@@ -179,14 +179,14 @@ const WORDS = [
 // ===== INFINITE LESSON BANK =====
 const LESSON_SENTENCES = [
 
-{it:"Ho mangiato un panino mentre guardavo la TV", ar:"أكلت ساندويتش وأنا كنت باتفرج على التيفي.", en:"I ate a sandwich while I was watching TV.", pronoun:"Io (أنا)",
+{it:"Ho mangiato un panino mentre guardavo la TV", ar:"أكلت ساندويتش وأنا كنت باتفرج على التليفزيون.", en:"I ate a sandwich while I was watching TV.", pronoun:"Io (أنا)",
  words:[
   {it:"Ho",ar:"",note:"جزء من الفعل المساعد"},
   {it:"mangiato",ar:"أكلت",note:"Mangiare، Passato Prossimo"},
   {it:"un panino",ar:"ساندويتش",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
   {it:"mentre",ar:"وأنا",note:null},
   {it:"guardavo",ar:"كنت باتفرج",note:"Guardare، Imperfetto"},
-  {it:"la TV",ar:"التيفي",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
+  {it:"la TV",ar:"التلفزيون",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
  ], conj:{verb:"Mangiare",tense:"Passato Prossimo",regular:true,rows:[
   {person:"Io (أنا)",form:"Ho mangiato"},
   {person:"Tu (أنت)",form:"Hai mangiato"},
@@ -288,14 +288,14 @@ const LESSON_SENTENCES = [
   {person:"Voi (انتم)",form:"Avete aspettato"},
   {person:"Loro (هم)",form:"Hanno aspettato"}]}},
 
-{it:"Lei è arrivata a casa mentre io cucinavo la cena", ar:"هي وصلت البيت وأنا كنت باعمل العشا.", en:"She arrived home while I was cooking dinner.", pronoun:"Lei (هي)",
+{it:"Lei è arrivata a casa mentre io cucinavo la cena", ar:"هي وصلت البيت وأنا كنت بطبخ العشا.", en:"She arrived home while I was cooking dinner.", pronoun:"Lei (هي)",
  words:[
   {it:"Lei",ar:"هي",note:null},
   {it:"è",ar:"",note:"جزء من الفعل المساعد"},
   {it:"arrivata",ar:"وصلت",note:"Arrivare، Passato Prossimo"},
   {it:"a casa",ar:"البيت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
   {it:"mentre",ar:"وأنا",note:null},
-  {it:"cucinavo",ar:"كنت باعمل",note:"Cucinare، Imperfetto"},
+  {it:"cucinavo",ar:"كنت بطبخ",note:"Cucinare، Imperfetto"},
   {it:"la cena",ar:"العشا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
  ], conj:{verb:"Arrivare",tense:"Passato Prossimo",regular:true,rows:[
   {person:"Io (أنا)",form:"Sono arrivato/a"},
@@ -306,10 +306,10 @@ const LESSON_SENTENCES = [
   {person:"Voi (انتم)",form:"Siete arrivati/e"},
   {person:"Loro (هم)",form:"Sono arrivati/e"}]}},
 
-{it:"Lei cucinava la pasta quando è arrivato suo fratello dall'aeroporto", ar:"هي كانت بتعمل المكرونة لما أخوها وصل من المطار.", en:"She was cooking pasta when her brother arrived from the airport.", pronoun:"Lei (هي)",
+{it:"Lei cucinava la pasta quando è arrivato suo fratello dall'aeroporto", ar:"هي كانت بتطبخ المكرونة لما أخوها وصل من المطار.", en:"She was cooking pasta when her brother arrived from the airport.", pronoun:"Lei (هي)",
  words:[
   {it:"Lei",ar:"هي",note:null},
-  {it:"cucinava",ar:"كانت بتعمل",note:"Cucinare، Imperfetto"},
+  {it:"cucinava",ar:"كانت بتطبخ",note:"Cucinare، Imperfetto"},
   {it:"la pasta",ar:"المكرونة",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
   {it:"quando",ar:"لما",note:null},
   {it:"è",ar:"",note:"جزء من الفعل المساعد"},
@@ -877,13 +877,13 @@ const LESSON_SENTENCES = [
   {person:"Voi (انتم)",form:"Avete pulito"},
   {person:"Loro (هم)",form:"Hanno pulito"}]}},
 
-{it:"Avete chiamato il ristorante mentre mangiavate a casa", ar:"اتصلتوا بالمطعم وانتوا كنتوا باكلين في البيت.", en:"You (pl.) called the restaurant while you were eating at home.", pronoun:"Voi (انتم)",
+{it:"Avete chiamato il ristorante mentre mangiavate a casa", ar:"اتصلتوا بالمطعم وانتوا كنتوا بتاكلوا في البيت.", en:"You (pl.) called the restaurant while you were eating at home.", pronoun:"Voi (انتم)",
  words:[
   {it:"Avete",ar:"",note:"جزء من الفعل المساعد"},
   {it:"chiamato",ar:"اتصلتوا",note:"Chiamare، Passato Prossimo"},
   {it:"il ristorante",ar:"المطعم",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
   {it:"mentre",ar:"وانتوا",note:null},
-  {it:"mangiavate",ar:"كنتوا باكلين",note:"Mangiare، Imperfetto"},
+  {it:"mangiavate",ar:"كنتوا بتاكلوا",note:"Mangiare، Imperfetto"},
   {it:"a casa",ar:"في البيت",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"}
  ], conj:{verb:"Chiamare",tense:"Passato Prossimo",regular:true,rows:[
   {person:"Io (أنا)",form:"Ho chiamato"},
@@ -894,9 +894,9 @@ const LESSON_SENTENCES = [
   {person:"Voi (انتم)",form:"Avete chiamato"},
   {person:"Loro (هم)",form:"Hanno chiamato"}]}},
 
-{it:"Mangiavate la pizza quando avete chiamato i vostri genitori", ar:"كنتوا باكلين البيتزا لما اتصلتوا باهلكوا.", en:"You (pl.) were eating pizza when you called your parents.", pronoun:"Voi (انتم)",
+{it:"Mangiavate la pizza quando avete chiamato i vostri genitori", ar:"كنتوا بتاكلوا البيتزا لما اتصلتوا باهلكوا.", en:"You (pl.) were eating pizza when you called your parents.", pronoun:"Voi (انتم)",
  words:[
-  {it:"Mangiavate",ar:"كنتوا باكلين",note:"Mangiare، Imperfetto"},
+  {it:"Mangiavate",ar:"كنتوا بتاكلوا",note:"Mangiare، Imperfetto"},
   {it:"la pizza",ar:"البيتزا",note:"الأداة دي بتتلفظ ملتصقة بالكلمة اللي بعدها كوحدة نفسية واحدة، مش لوحدها"},
   {it:"quando",ar:"لما",note:null},
   {it:"avete",ar:"",note:"جزء من الفعل المساعد"},

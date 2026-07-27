@@ -1887,4 +1887,337 @@ const VERBS = [
   {person:"Loro (هم)",form:"Escano"}
  ]}
 },
+{
+ it:"Cucinare", ar:"يطبخ",
+ presente:[
+  {person:"Io (أنا)",form:"Cucino"},
+  {person:"Tu (أنت)",form:"Cucini"},
+  {person:"Lui (هو)",form:"Cucina"},
+  {person:"Lei (هي)",form:"Cucina"},
+  {person:"Noi (احنا)",form:"Cuciniamo"},
+  {person:"Voi (انتم)",form:"Cucinate"},
+  {person:"Loro (هم)",form:"Cucinano"}
+ ],
+ passato:{aux:"avere",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho cucinato"},
+  {person:"Tu (أنت)",form:"Hai cucinato"},
+  {person:"Lui (هو)",form:"Ha cucinato"},
+  {person:"Lei (هي)",form:"Ha cucinato"},
+  {person:"Noi (احنا)",form:"Abbiamo cucinato"},
+  {person:"Voi (انتم)",form:"Avete cucinato"},
+  {person:"Loro (هم)",form:"Hanno cucinato"}
+ ]},
+ imperfetto:{regular:true,rows:[
+  {person:"Io (أنا)",form:"Cucinavo"},
+  {person:"Tu (أنت)",form:"Cucinavi"},
+  {person:"Lui (هو)",form:"Cucinava"},
+  {person:"Lei (هي)",form:"Cucinava"},
+  {person:"Noi (احنا)",form:"Cucinavamo"},
+  {person:"Voi (انتم)",form:"Cucinavate"},
+  {person:"Loro (هم)",form:"Cucinavano"}
+ ]},
+ imperativo:{note:null,rows:[
+  {person:"Tu (أنت)",form:"Cucina"},
+  {person:"Lei (رسمي - هو/هي)",form:"Cucini"},
+  {person:"Noi (احنا)",form:"Cuciniamo"},
+  {person:"Voi (انتم)",form:"Cucinate"},
+  {person:"Loro (هم)",form:"Cucinino"}
+ ]}
+},
+{
+ it:"Pensare", ar:"يفكر",
+ presente:[
+  {person:"Io (أنا)",form:"Penso"},
+  {person:"Tu (أنت)",form:"Pensi"},
+  {person:"Lui (هو)",form:"Pensa"},
+  {person:"Lei (هي)",form:"Pensa"},
+  {person:"Noi (احنا)",form:"Pensiamo"},
+  {person:"Voi (انتم)",form:"Pensate"},
+  {person:"Loro (هم)",form:"Pensano"}
+ ],
+ passato:{aux:"avere",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho pensato"},
+  {person:"Tu (أنت)",form:"Hai pensato"},
+  {person:"Lui (هو)",form:"Ha pensato"},
+  {person:"Lei (هي)",form:"Ha pensato"},
+  {person:"Noi (احنا)",form:"Abbiamo pensato"},
+  {person:"Voi (انتم)",form:"Avete pensato"},
+  {person:"Loro (هم)",form:"Hanno pensato"}
+ ]},
+ imperfetto:{regular:true,rows:[
+  {person:"Io (أنا)",form:"Pensavo"},
+  {person:"Tu (أنت)",form:"Pensavi"},
+  {person:"Lui (هو)",form:"Pensava"},
+  {person:"Lei (هي)",form:"Pensava"},
+  {person:"Noi (احنا)",form:"Pensavamo"},
+  {person:"Voi (انتم)",form:"Pensavate"},
+  {person:"Loro (هم)",form:"Pensavano"}
+ ]},
+ imperativo:{note:null,rows:[
+  {person:"Tu (أنت)",form:"Pensa"},
+  {person:"Lei (رسمي - هو/هي)",form:"Pensi"},
+  {person:"Noi (احنا)",form:"Pensiamo"},
+  {person:"Voi (انتم)",form:"Pensate"},
+  {person:"Loro (هم)",form:"Pensino"}
+ ]}
+},
+{
+ it:"Piangere", ar:"يعيّط / يبكي",
+ presente:[
+  {person:"Io (أنا)",form:"Piango"},
+  {person:"Tu (أنت)",form:"Piangi"},
+  {person:"Lui (هو)",form:"Piange"},
+  {person:"Lei (هي)",form:"Piange"},
+  {person:"Noi (احنا)",form:"Piangiamo"},
+  {person:"Voi (انتم)",form:"Piangete"},
+  {person:"Loro (هم)",form:"Piangono"}
+ ],
+ passato:{aux:"avere",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho pianto"},
+  {person:"Tu (أنت)",form:"Hai pianto"},
+  {person:"Lui (هو)",form:"Ha pianto"},
+  {person:"Lei (هي)",form:"Ha pianto"},
+  {person:"Noi (احنا)",form:"Abbiamo pianto"},
+  {person:"Voi (انتم)",form:"Avete pianto"},
+  {person:"Loro (هم)",form:"Hanno pianto"}
+ ]},
+ imperfetto:{regular:true,rows:[
+  {person:"Io (أنا)",form:"Piangevo"},
+  {person:"Tu (أنت)",form:"Piangevi"},
+  {person:"Lui (هو)",form:"Piangeva"},
+  {person:"Lei (هي)",form:"Piangeva"},
+  {person:"Noi (احنا)",form:"Piangevamo"},
+  {person:"Voi (انتم)",form:"Piangevate"},
+  {person:"Loro (هم)",form:"Piangevano"}
+ ]},
+ imperativo:{note:null,rows:[
+  {person:"Tu (أنت)",form:"Piangi"},
+  {person:"Lei (رسمي - هو/هي)",form:"Pianga"},
+  {person:"Noi (احنا)",form:"Piangiamo"},
+  {person:"Voi (انتم)",form:"Piangete"},
+  {person:"Loro (هم)",form:"Piangano"}
+ ]}
+},
+{
+ it:"Ridere", ar:"يضحك",
+ presente:[
+  {person:"Io (أنا)",form:"Rido"},
+  {person:"Tu (أنت)",form:"Ridi"},
+  {person:"Lui (هو)",form:"Ride"},
+  {person:"Lei (هي)",form:"Ride"},
+  {person:"Noi (احنا)",form:"Ridiamo"},
+  {person:"Voi (انتم)",form:"Ridete"},
+  {person:"Loro (هم)",form:"Ridono"}
+ ],
+ passato:{aux:"avere",regular:false,rows:[
+  {person:"Io (أنا)",form:"Ho riso"},
+  {person:"Tu (أنت)",form:"Hai riso"},
+  {person:"Lui (هو)",form:"Ha riso"},
+  {person:"Lei (هي)",form:"Ha riso"},
+  {person:"Noi (احنا)",form:"Abbiamo riso"},
+  {person:"Voi (انتم)",form:"Avete riso"},
+  {person:"Loro (هم)",form:"Hanno riso"}
+ ]},
+ imperfetto:{regular:true,rows:[
+  {person:"Io (أنا)",form:"Ridevo"},
+  {person:"Tu (أنت)",form:"Ridevi"},
+  {person:"Lui (هو)",form:"Rideva"},
+  {person:"Lei (هي)",form:"Rideva"},
+  {person:"Noi (احنا)",form:"Ridevamo"},
+  {person:"Voi (انتم)",form:"Ridevate"},
+  {person:"Loro (هم)",form:"Ridevano"}
+ ]},
+ imperativo:{note:null,rows:[
+  {person:"Tu (أنت)",form:"Ridi"},
+  {person:"Lei (رسمي - هو/هي)",form:"Rida"},
+  {person:"Noi (احنا)",form:"Ridiamo"},
+  {person:"Voi (انتم)",form:"Ridete"},
+  {person:"Loro (هم)",form:"Ridano"}
+ ]}
+},
+{
+ it:"Dormire", ar:"ينام",
+ presente:[
+  {person:"Io (أنا)",form:"Dormo"},
+  {person:"Tu (أنت)",form:"Dormi"},
+  {person:"Lui (هو)",form:"Dorme"},
+  {person:"Lei (هي)",form:"Dorme"},
+  {person:"Noi (احنا)",form:"Dormiamo"},
+  {person:"Voi (انتم)",form:"Dormite"},
+  {person:"Loro (هم)",form:"Dormono"}
+ ],
+ passato:{aux:"avere",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho dormito"},
+  {person:"Tu (أنت)",form:"Hai dormito"},
+  {person:"Lui (هو)",form:"Ha dormito"},
+  {person:"Lei (هي)",form:"Ha dormito"},
+  {person:"Noi (احنا)",form:"Abbiamo dormito"},
+  {person:"Voi (انتم)",form:"Avete dormito"},
+  {person:"Loro (هم)",form:"Hanno dormito"}
+ ]},
+ imperfetto:{regular:true,rows:[
+  {person:"Io (أنا)",form:"Dormivo"},
+  {person:"Tu (أنت)",form:"Dormivi"},
+  {person:"Lui (هو)",form:"Dormiva"},
+  {person:"Lei (هي)",form:"Dormiva"},
+  {person:"Noi (احنا)",form:"Dormivamo"},
+  {person:"Voi (انتم)",form:"Dormivate"},
+  {person:"Loro (هم)",form:"Dormivano"}
+ ]},
+ imperativo:{note:null,rows:[
+  {person:"Tu (أنت)",form:"Dormi"},
+  {person:"Lei (رسمي - هو/هي)",form:"Dorma"},
+  {person:"Noi (احنا)",form:"Dormiamo"},
+  {person:"Voi (انتم)",form:"Dormite"},
+  {person:"Loro (هم)",form:"Dormano"}
+ ]}
+},
+{
+ it:"Sognare", ar:"يحلم",
+ presente:[
+  {person:"Io (أنا)",form:"Sogno"},
+  {person:"Tu (أنت)",form:"Sogni"},
+  {person:"Lui (هو)",form:"Sogna"},
+  {person:"Lei (هي)",form:"Sogna"},
+  {person:"Noi (احنا)",form:"Sogniamo"},
+  {person:"Voi (انتم)",form:"Sognate"},
+  {person:"Loro (هم)",form:"Sognano"}
+ ],
+ passato:{aux:"avere",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho sognato"},
+  {person:"Tu (أنت)",form:"Hai sognato"},
+  {person:"Lui (هو)",form:"Ha sognato"},
+  {person:"Lei (هي)",form:"Ha sognato"},
+  {person:"Noi (احنا)",form:"Abbiamo sognato"},
+  {person:"Voi (انتم)",form:"Avete sognato"},
+  {person:"Loro (هم)",form:"Hanno sognato"}
+ ]},
+ imperfetto:{regular:true,rows:[
+  {person:"Io (أنا)",form:"Sognavo"},
+  {person:"Tu (أنت)",form:"Sognavi"},
+  {person:"Lui (هو)",form:"Sognava"},
+  {person:"Lei (هي)",form:"Sognava"},
+  {person:"Noi (احنا)",form:"Sognavamo"},
+  {person:"Voi (انتم)",form:"Sognavate"},
+  {person:"Loro (هم)",form:"Sognavano"}
+ ]},
+ imperativo:{note:null,rows:[
+  {person:"Tu (أنت)",form:"Sogna"},
+  {person:"Lei (رسمي - هو/هي)",form:"Sogni"},
+  {person:"Noi (احنا)",form:"Sogniamo"},
+  {person:"Voi (انتم)",form:"Sognate"},
+  {person:"Loro (هم)",form:"Sognino"}
+ ]}
+},
+{
+ it:"Sperare", ar:"يتمنى / يأمل",
+ presente:[
+  {person:"Io (أنا)",form:"Spero"},
+  {person:"Tu (أنت)",form:"Speri"},
+  {person:"Lui (هو)",form:"Spera"},
+  {person:"Lei (هي)",form:"Spera"},
+  {person:"Noi (احنا)",form:"Speriamo"},
+  {person:"Voi (انتم)",form:"Sperate"},
+  {person:"Loro (هم)",form:"Sperano"}
+ ],
+ passato:{aux:"avere",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho sperato"},
+  {person:"Tu (أنت)",form:"Hai sperato"},
+  {person:"Lui (هو)",form:"Ha sperato"},
+  {person:"Lei (هي)",form:"Ha sperato"},
+  {person:"Noi (احنا)",form:"Abbiamo sperato"},
+  {person:"Voi (انتم)",form:"Avete sperato"},
+  {person:"Loro (هم)",form:"Hanno sperato"}
+ ]},
+ imperfetto:{regular:true,rows:[
+  {person:"Io (أنا)",form:"Speravo"},
+  {person:"Tu (أنت)",form:"Speravi"},
+  {person:"Lui (هو)",form:"Sperava"},
+  {person:"Lei (هي)",form:"Sperava"},
+  {person:"Noi (احنا)",form:"Speravamo"},
+  {person:"Voi (انتم)",form:"Speravate"},
+  {person:"Loro (هم)",form:"Speravano"}
+ ]},
+ imperativo:{note:null,rows:[
+  {person:"Tu (أنت)",form:"Spera"},
+  {person:"Lei (رسمي - هو/هي)",form:"Speri"},
+  {person:"Noi (احنا)",form:"Speriamo"},
+  {person:"Voi (انتم)",form:"Sperate"},
+  {person:"Loro (هم)",form:"Sperino"}
+ ]}
+},
+{
+ it:"Spiegare", ar:"يشرح",
+ presente:[
+  {person:"Io (أنا)",form:"Spiego"},
+  {person:"Tu (أنت)",form:"Spieghi"},
+  {person:"Lui (هو)",form:"Spiega"},
+  {person:"Lei (هي)",form:"Spiega"},
+  {person:"Noi (احنا)",form:"Spieghiamo"},
+  {person:"Voi (انتم)",form:"Spiegate"},
+  {person:"Loro (هم)",form:"Spiegano"}
+ ],
+ passato:{aux:"avere",regular:true,rows:[
+  {person:"Io (أنا)",form:"Ho spiegato"},
+  {person:"Tu (أنت)",form:"Hai spiegato"},
+  {person:"Lui (هو)",form:"Ha spiegato"},
+  {person:"Lei (هي)",form:"Ha spiegato"},
+  {person:"Noi (احنا)",form:"Abbiamo spiegato"},
+  {person:"Voi (انتم)",form:"Avete spiegato"},
+  {person:"Loro (هم)",form:"Hanno spiegato"}
+ ]},
+ imperfetto:{regular:true,rows:[
+  {person:"Io (أنا)",form:"Spiegavo"},
+  {person:"Tu (أنت)",form:"Spiegavi"},
+  {person:"Lui (هو)",form:"Spiegava"},
+  {person:"Lei (هي)",form:"Spiegava"},
+  {person:"Noi (احنا)",form:"Spiegavamo"},
+  {person:"Voi (انتم)",form:"Spiegavate"},
+  {person:"Loro (هم)",form:"Spiegavano"}
+ ]},
+ imperativo:{note:null,rows:[
+  {person:"Tu (أنت)",form:"Spiega"},
+  {person:"Lei (رسمي - هو/هي)",form:"Spieghi"},
+  {person:"Noi (احنا)",form:"Spieghiamo"},
+  {person:"Voi (انتم)",form:"Spiegate"},
+  {person:"Loro (هم)",form:"Spieghino"}
+ ]}
+},
+{
+ it:"Stare", ar:"يقعد / يكون بحال معينة",
+ presente:[
+  {person:"Io (أنا)",form:"Sto"},
+  {person:"Tu (أنت)",form:"Stai"},
+  {person:"Lui (هو)",form:"Sta"},
+  {person:"Lei (هي)",form:"Sta"},
+  {person:"Noi (احنا)",form:"Stiamo"},
+  {person:"Voi (انتم)",form:"State"},
+  {person:"Loro (هم)",form:"Stanno"}
+ ],
+ passato:{aux:"essere",regular:false,rows:[
+  {person:"Io (أنا)",form:"Sono stato/a"},
+  {person:"Tu (أنت)",form:"Sei stato/a"},
+  {person:"Lui (هو)",form:"È stato"},
+  {person:"Lei (هي)",form:"È stata"},
+  {person:"Noi (احنا)",form:"Siamo stati/e"},
+  {person:"Voi (انتم)",form:"Siete stati/e"},
+  {person:"Loro (هم)",form:"Sono stati/e"}
+ ]},
+ imperfetto:{regular:true,rows:[
+  {person:"Io (أنا)",form:"Stavo"},
+  {person:"Tu (أنت)",form:"Stavi"},
+  {person:"Lui (هو)",form:"Stava"},
+  {person:"Lei (هي)",form:"Stava"},
+  {person:"Noi (احنا)",form:"Stavamo"},
+  {person:"Voi (انتم)",form:"Stavate"},
+  {person:"Loro (هم)",form:"Stavano"}
+ ]},
+ imperativo:{note:"صيغة الأمر مع Tu شاذة: Sta' (أو Stai)",rows:[
+  {person:"Tu (أنت)",form:"Sta'"},
+  {person:"Lei (رسمي - هو/هي)",form:"Stia"},
+  {person:"Noi (احنا)",form:"Stiamo"},
+  {person:"Voi (انتم)",form:"State"},
+  {person:"Loro (هم)",form:"Stiano"}
+ ]}
+},
 ];
