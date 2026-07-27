@@ -464,7 +464,7 @@
   </div>
 
   <div class="mic-area">
-    <button class="tts-btn" onclick="speak()">🔊 اس��ع النطق الصح</button>
+    <button class="tts-btn" onclick="speak()">🔊 اسمع النطق الصح</button>
     <button class="mic-btn" id="micBtn" onclick="toggleMic()">🎙️</button>
     <div class="mic-lbl" id="micLbl">اضغط وتكلم</div>
   </div>
@@ -591,7 +591,7 @@
     </div>
   </div>
 
-  <!-- VERBS MODE: مكتبة مرجعية للأفعال، مقسّمة ARE / ERE / IRE، دوس على أي فعل يط��علك pop up فيه تصريفه كامل -->
+  <!-- VERBS MODE: مكتبة مرجعية للأفعال، مقسّمة ARE / ERE / IRE، دوس على أي فعل يطلعلك pop up فيه تصريفه كامل -->
   <div class="wrap" id="verbsMode" style="display:none;padding:0">
     <div class="verbs-intro">📚 الأفعال مقسّمة حسب الماضي — ARE و ERE و IRE. اضعط على أي فعل عشان تشوف معناه وتصريفه كامل</div>
     <div id="verbGroups"></div>
@@ -935,7 +935,7 @@ async function recordAudioVAD(maxMs,silenceMs){
     let stopped=false;
 
     // ثابت 0.02 كان بيفتكر إن في كلام طول ما ضجيج المايك/المكان فوق القيمة
-    // دي (شائع في مايكات الموبايل بسبب AGC)، فمكانش بيوصل لحالة "سكوت"
+    // ده (شائع في مايكات الموبايل بسبب AGC)، فمكانش بيوصل لحالة "سكوت"
     // خالص وكان بيستنى للـ maxMs كامل كل مرة حتى لو المستخدم سكت فعلاً بدري.
     // هنا بنقيس "أرضية الضجيج" الفعلية أول ~250ms قبل ما الكلام يبدأ،
     // وبعدين نبني عليها عتبتين: عتبة أعلى عشان نتأكد إن ده كلام فعلاً،
@@ -966,7 +966,7 @@ async function recordAudioVAD(maxMs,silenceMs){
           // عتبة الكلام: واضح فوق أرضية الضجيج، بحد أدنى 0.02 عشان مايكات
           // نضيفة جداً (أرضية ضجيج شبه صفرية) لسه محتاجة صوت حقيقي مش همس.
           speechThresh=Math.max(0.02,noiseFloor*2.5+0.008);
-          // عتبة السكوت: أقرب لأرضية الضجيج نفسها (ه��تيريسيس) عشان نلحق
+          // عتبة السكوت: أقرب لأرضية الضجيج نفسها (هيستِيريسيس) عشان نلحق
           // لحظة السكوت فعلياً بدل ما نستنى الصوت يوصل صفر تمام.
           silenceThresh=Math.max(0.012,noiseFloor*1.5+0.004);
           calibrated=true;
@@ -1060,7 +1060,7 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
   // وطبيعي يبقى فيها وقفات نص الجملة (فاصلة، تفكير) أطول من وقفة نهاية كلمة
   // واحدة. استخدام توقيتات وضع الكلمة القصيرة هنا كان بيقطع الجملة قبل ما
   // المستخدم يخلص كلامها — وده السبب الأساسي في إحساسه إن التعرف الأوفلاين
-  // "بطي�� أو فاضل يحمّل": كان بيتقطع بدري أو ياخد وقت تحليل أطول من الـ
+  // "بطيء أو فاضل يحمّل": كان بيتقطع بدري أو ياخد وقت تحليل أطول من الـ
   // watchdog الثابت اللي كان عندنا.
   const isSentence=mode==='sentence';
   const recMaxMs=isSentence?16000:6000;
@@ -1521,23 +1521,17 @@ function wpRetryWordThenReask(wordIt){
   setTimeout(()=>speak(),300);
 }
 
-// ── بعد انتهاء تقييم الجملة — انتقال أوتوماتيكي لتاب الدرس الإنفينيتي (نطق ← ترتيب ← كتابة) ──
+// بعد انتهاء تقييم الجملة — الجملة بس اللي بتتفتح تلقائي في تاب الدرس الإنفينيتي،
+// من غير ما نشد المستخدم من تاب نطق الكلمات — هو اللي يقرر يكمّل جمل تانية هنا ولا يروح للدرس وقت ما يحب.
 function wpFinishSentenceQuiz(){
-  wpShowStage('word');
-  document.getElementById('wpProgress').textContent='🏆 خلصنا كلمات ومعلومات الجملة دي — يلا ننطقها كاملة';
-  document.getElementById('card').style.display='none';
-  document.querySelector('.mic-area').style.display='none';
   wpChainActive=true;
-  wpChainSentenceIdx=wpSentenceIdx;
   if(!wpUnlockedIndices.includes(wpSentenceIdx))wpUnlockedIndices.push(wpSentenceIdx);
-  seqSub='it';
-  document.getElementById('seqSubIt').classList.add('active');
-  document.getElementById('seqSubAr').classList.remove('active');
-  setTimeout(()=>{
-    switchMode('lesson');
-    wpSyncLessonDeckToSentence(wpChainSentenceIdx);
-    setStudyMode('speak');
-  },900);
+  const unlockedTarget=LESSON_SENTENCES[wpSentenceIdx];
+  if(lDeck&&lDeck.length>0&&lDeck.indexOf(unlockedTarget)<0)lDeck.push(unlockedTarget);
+  wpShowStage('word');
+  document.getElementById('wpProgress').textContent='🎉 الجملة دي اتفتحت في تاب "الدرس الإنفينيتي" — كمّل جملة تانية هنا ولا روح ذاكرها هناك وقت ما تحب';
+  floatEmoji('🎉');
+  setTimeout(()=>wpLoadSentence(wpSentenceIdx+1),1400);
 }
 function wpSyncLessonDeckToSentence(sentenceIdx){
   const target=LESSON_SENTENCES[sentenceIdx];
@@ -1554,13 +1548,20 @@ function wpSyncLessonDeckToSentence(sentenceIdx){
   hideLessonLocked();
   lRender();
 }
-// لما الجملة تخلص في وضع الكتابة والسلسلة كانت انطلقت من تاب نطق الكلمات، نرجعله للجملة الجاية في نفس التاب.
+// لما الجملة تخلص في وضع الكتابة، نفضّل للجملة التانية المفتوحة في نفس تاب الدرس الإنفينيتي —
+// مبقاش ما نرجع المستخدم لتاب نطق الكلمات أوتوماتيكياً.
 function wpChainAdvanceToNextSentence(){
-  wpChainActive=false;
-  const nextIdx=wpChainSentenceIdx+1;
-  wpChainSentenceIdx=null;
-  switchMode('word');
-  wpLoadSentence(nextIdx);
+  if(lIdx+1<lDeck.length){
+    lIdx++;
+    seqSub='it';
+    document.getElementById('seqSubIt').classList.add('active');
+    document.getElementById('seqSubAr').classList.remove('active');
+    setStudyMode('speak');
+    lRender();
+  } else {
+    document.getElementById('lBadge').innerHTML='🏆 خلصت كل الجمل اللي اتفتحت لحد دلوقتي — روح نطق كلمات أكتر في تاب "نطق الكلمات" عشان تفتح جمل تانية هنا';
+    document.getElementById('lBadge').className='badge ok show';
+  }
 }
 
 function floatEmoji(emoji){
@@ -1786,7 +1787,7 @@ let lPassed=0,lStreak=0,lAttempts=0;
 let currentStudyMode='speak'; // 'speak' | 'listen' | 'write'
 let seqPlaced=[],seqPoolOrder=[],seqChecked=false,seqSub='it';
 let arSeqDeck=[],arSeqIdx=0;
-let seqTtsTimer=null; // بي����خزّن فيه الـ setTimeout بتاع تشغيل النطق التلقائي في AR mode، عشان نقدر نلغيه لو الجملة اتغيّرت قبل ما يجري
+let seqTtsTimer=null; // بيتخزّن فيه الـ setTimeout بتاع تشغيل النطق التلقائي في AR mode، عشان نقدر نلغيه لو الجملة اتغيّرت قبل ما يجري
 function seqStopTts(){ // يلغي أي نطق متأخر (التايمر) + أي نطق شغال دلوقتي
   clearTimeout(seqTtsTimer);
   seqTtsTimer=null;
@@ -2097,7 +2098,7 @@ function drillJudge(alts){
 
   // ثبّت أي حرف اتقال صح في المحاولة دي فوق أي حروف كانت متثبتة من قبل —
   // الحرف اللي يتثبت "صح" مرة، يفضل صح لهذه الكلمة لحد ما تخلص أو تتخطاها،
-  // حتى لو محاولة تانية مختلفة مالقتهوش في ن��س المكان.
+  // حتى لو محاولة تانية مختلفة مالقتهوش في نفس المكان.
   if(drillLetterMask.length!==target.length) drillLetterMask=new Array(target.length).fill(false);
   alts.forEach(a=>{
     const m=alignMismatches(w.it,a);
@@ -2314,11 +2315,11 @@ function lSkipSentence(){
   document.getElementById('lMicBtn').disabled=true;
   document.getElementById('lSkipBtn').style.display='none';
   document.getElementById('lNextBtn').className='next-btn show';
-  document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدف��ة 🏆':'الجملة الجاية ←';
+  document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
 }
 
 function lNext(){
-  if(currentStudyMode==='listen'&&seqSub==='ar'){
+  if(currentStudyMode==='listen'&&seqSub==='ar'&&!wpChainActive){
     arSeqIdx++;
     if(arSeqIdx>=arSeqDeck.length){
       arSeqDeck=shuffle([...AR_SEQ_SENTENCES]);arSeqIdx=0;
@@ -2377,13 +2378,13 @@ function setStudyMode(mode){
   if(micBusy)return;
   const prevMode=currentStudyMode;
   currentStudyMode=mode;
-  seqStopTts(); // قفل أي نطق AR متأ��ر أو شغال من التاب اللي كنا فيه، قبل ما نبدّل
+  seqStopTts(); // قفل أي نطق AR متأخر أو شغال من التاب اللي كنا فيه، قبل ما نبدّل
   ['speak','listen','write'].forEach(m=>{
     document.getElementById('st'+m.charAt(0).toUpperCase()+m.slice(1))
       .classList.toggle('active',m===mode);
   });
 
-  // إيقاف الـ drill بنظاف�� لو كان شغّال
+  // إيقاف الـ drill بنظافة لو كان شغّال
   if(drillMode){
     drillMode=false;
     document.getElementById('drillBox').classList.remove('show');
@@ -2409,7 +2410,7 @@ function setStudyMode(mode){
   document.getElementById('lNextBtn').className='next-btn';
 
   if(isSp){
-    // رجوع لوضع النطق — حافظ على tokenStates وsentenceAnswered كما هم
+    // رجوع لوضع النطق — حافظ على tokenStates و sentenceAnswered كما هم
     document.getElementById('lTtsBtn').style.display='inline-block';
     document.getElementById('lMicBtn').onclick=lToggleMic;
     document.getElementById('lMicBtn').disabled=sentenceAnswered;
