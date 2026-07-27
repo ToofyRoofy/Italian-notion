@@ -1,5 +1,5 @@
 // Parla Italiano — Service Worker v4
-const SHELL_CACHE = 'parla-shell-v7';  // يتغير مع كل إصدار جديد
+const SHELL_CACHE = 'parla-shell-v9';  // يتغير مع كل إصدار جديد
 const MODEL_CACHE = 'parla-models-v1'; // ثابت — مش بيتمسح أبدًا
 
 // ⚠️ Bug: كان مكتوب هنا 'parla.html' بس اسم الملف الفعلي 'index.html' —

@@ -396,6 +396,22 @@
   .verb-meaning b{color:var(--gold);direction:ltr;display:inline-block;font-family:Georgia,serif;}
   .verb-aux-note{font-size:.76rem;color:var(--muted);text-align:center;margin-bottom:8px;}
   .verb-imp-note{font-size:.8rem;color:var(--gold);text-align:center;margin-top:12px;line-height:1.7;background:#f5c5180d;border:1px solid #f5c51830;border-radius:10px;padding:8px 10px;}
+
+  /* ── Word-tab sentence pipeline (نطق الكلمات على أساس LESSON_SENTENCES) ── */
+  .wp-context{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 14px;text-align:center;}
+  .wp-context-it{font-family:Georgia,serif;font-size:1.05rem;color:var(--text);direction:ltr;line-height:1.5;}
+  .wp-context-ar{font-size:.85rem;color:var(--gold);margin-top:4px;line-height:1.5;}
+  .wp-progress{text-align:center;font-size:.78rem;color:var(--muted);letter-spacing:1px;}
+  .wp-info-panel{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px;text-align:center;display:flex;flex-direction:column;gap:10px;}
+  .wp-info-it{font-family:Georgia,serif;font-size:2rem;color:var(--gold);direction:ltr;}
+  .wp-info-ar{font-size:1.05rem;color:var(--text);}
+  .wp-info-body{font-size:.86rem;color:var(--text);line-height:2;text-align:right;}
+  .wp-info-body b{color:var(--blue);}
+  .wp-quiz-panel{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;}
+  .wp-quiz-progress{text-align:center;font-size:.75rem;color:var(--muted);}
+  .wp-quiz-q{font-size:1rem;color:var(--text);text-align:center;font-weight:700;line-height:1.6;}
+  .wp-quiz-options{display:flex;flex-direction:column;gap:8px;}
+  .wp-quiz-feedback{text-align:center;font-size:.88rem;font-weight:700;min-height:20px;}
 </style>
 </head>
 <body>
@@ -421,7 +437,10 @@
     <div class="sc r"><div class="sc-num" id="sBest">0%</div><div class="sc-lbl">🏆 أعلى سكور</div></div>
   </div>
 
+  <div class="wp-context" id="wpContext"></div>
+
   <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+  <div class="wp-progress" id="wpProgress"></div>
 
   <div class="card" id="card">
     <div class="card-cat" id="cat"></div>
@@ -445,7 +464,7 @@
   </div>
 
   <div class="mic-area">
-    <button class="tts-btn" onclick="speak()">🔊 اسمع النطق الصح</button>
+    <button class="tts-btn" onclick="speak()">🔊 اس��ع النطق الصح</button>
     <button class="mic-btn" id="micBtn" onclick="toggleMic()">🎙️</button>
     <div class="mic-lbl" id="micLbl">اضغط وتكلم</div>
   </div>
@@ -454,6 +473,20 @@
   <div class="badge" id="badge"></div>
   <button class="skip-link" id="skipBtn" onclick="skipWord()">تخطي الكلمة دي ←</button>
   <button class="next-btn" id="nextBtn" onclick="next()">التالي ←</button>
+
+  <div class="wp-info-panel" id="wpInfoPanel" style="display:none">
+    <div class="wp-info-it" id="wpInfoIt"></div>
+    <div class="wp-info-ar" id="wpInfoAr"></div>
+    <div class="wp-info-body" id="wpInfoBody"></div>
+    <button class="next-btn show" id="wpInfoNextBtn">التالي ←</button>
+  </div>
+
+  <div class="wp-quiz-panel" id="wpQuizPanel" style="display:none">
+    <div class="wp-quiz-progress" id="wpQuizProgress"></div>
+    <div class="wp-quiz-q" id="wpQuizQ"></div>
+    <div class="wp-quiz-options" id="wpQuizOptions"></div>
+    <div class="wp-quiz-feedback" id="wpQuizFeedback"></div>
+  </div>
   </div>
 
   <div class="wrap" id="endScreen" style="padding:0">
@@ -465,6 +498,12 @@
 
   <!-- LESSON MODE: infinite-style sentence breakdown + pronunciation + word-drill -->
   <div class="wrap" id="lessonMode" style="display:none;padding:0">
+    <div id="lLockedMsg" style="display:none;text-align:center;padding:48px 20px;">
+      <div style="font-size:48px;margin-bottom:12px;">🔒</div>
+      <div style="font-size:18px;font-weight:700;">لسه مفيش جمل اتفتحت هنا</div>
+      <div style="opacity:.7;margin-top:8px;line-height:1.7;">كمّل نطق كلمات أي جملة في تاب "🎤️ نطق الكلمات" الأول، وهي هتظهر هنا تلقائي.</div>
+    </div>
+    <div id="lessonContentWrap">
     <div class="scores">
       <div class="sc g"><div class="sc-num" id="lAvg">0%</div><div class="sc-lbl">📊 جمل صح</div></div>
       <div class="sc b"><div class="sc-num" id="lAll">0/0</div><div class="sc-lbl">📖 الجملة</div></div>
@@ -518,6 +557,22 @@
         <div class="drill-attempts" id="drillAttempts"></div>
       </div>
 
+      <!-- word grammar info panel (شغل بعد نطق الكلمة صح) -->
+      <div class="drill-box" id="wordInfoBox" style="display:none">
+        <div class="drill-label" id="wordInfoProgress">معلومة عن الكلمة</div>
+        <div class="drill-word" id="wordInfoWord"></div>
+        <div id="wordInfoBody" style="text-align:right;font-size:15px;line-height:1.9;margin-top:6px"></div>
+        <button class="next-btn show" id="wordInfoNextBtn" style="margin-top:10px" onclick="wordPipelineAfterInfo()">تمام، جاوب على سؤال ←</button>
+      </div>
+
+      <!-- word MCQ quiz panel -->
+      <div class="drill-box" id="wordQuizBox" style="display:none">
+        <div class="drill-label">سؤال سريع</div>
+        <div class="drill-word" id="wordQuizQ" style="font-size:17px"></div>
+        <div id="wordQuizOptions" style="display:flex;flex-direction:column;gap:8px;margin-top:10px"></div>
+        <div class="drill-attempts" id="wordQuizFeedback"></div>
+      </div>
+
       <div class="breakdown" id="lBreakdown"></div>
 
     </div>
@@ -533,9 +588,10 @@
     <button class="skip-link" id="lSkipBtn" onclick="lSkipSentence()">تخطي الجملة دي ←</button>
     <button class="next-btn" id="lNextBtn" onclick="lNext()">الجملة الجاية ←</button>
     <button class="restart-btn" id="lRestartBtn" onclick="lStart()" style="display:none">🔄 ابدأ الدفعة من الأول</button>
+    </div>
   </div>
 
-  <!-- VERBS MODE: مكتبة مرجعية للأفعال، مقسّمة ARE / ERE / IRE، دوس على أي فعل يطلعلك pop up فيه تصريفه كامل -->
+  <!-- VERBS MODE: مكتبة مرجعية للأفعال، مقسّمة ARE / ERE / IRE، دوس على أي فعل يط��علك pop up فيه تصريفه كامل -->
   <div class="wrap" id="verbsMode" style="display:none;padding:0">
     <div class="verbs-intro">📚 الأفعال مقسّمة حسب الماضي — ARE و ERE و IRE. اضعط على أي فعل عشان تشوف معناه وتصريفه كامل</div>
     <div id="verbGroups"></div>
@@ -579,6 +635,14 @@
 <script src="sentences.js"></script>
 <script src="verbs.js"></script>
 <script src="grammar.js"></script>
+<script src="lesson_io.js"></script>
+<script src="lesson_tu.js"></script>
+<script src="lesson_lui.js"></script>
+<script src="lesson_lei.js"></script>
+<script src="lesson_noi.js"></script>
+<script src="lesson_voi.js"></script>
+<script src="lesson_loro.js"></script>
+<script src="lesson_manifest.js"></script>
 <script>
 
 let deck=[],idx=0,answered=false;
@@ -825,7 +889,7 @@ async function ensureWhisperLoaded(){
       // بنفرض النسخة المصغّرة (int8) بشكل صريح عشان نضمن نفس الحجم/السرعة اللي
       // رسالة الحالة فوق واعدة بيها (~40-75 ميجا)، بدل الاعتماد على قيمة
       // افتراضية ممكن تتغيّر بين إصدارات المكتبة وتنزّل نسخة fp32 أكبر
-      // وأبطأ بكتير في التحليل، خ����وصًا على الموبايل.
+      // وأبطأ بكتير في التحليل، خصوصًا على الموبايل.
       quantized:true,
       progress_callback:(p)=>{
         if(p&&p.status==='progress'&&typeof p.progress==='number'){
@@ -870,7 +934,7 @@ async function recordAudioVAD(maxMs,silenceMs){
     const startTime=Date.now();
     let stopped=false;
 
-    // ثابت 0.02 كان ب��فتكر إن في كلام طول ما ضجيج المايك/المكان فوق القيمة
+    // ثابت 0.02 كان بيفتكر إن في كلام طول ما ضجيج المايك/المكان فوق القيمة
     // دي (شائع في مايكات الموبايل بسبب AGC)، فمكانش بيوصل لحالة "سكوت"
     // خالص وكان بيستنى للـ maxMs كامل كل مرة حتى لو المستخدم سكت فعلاً بدري.
     // هنا بنقيس "أرضية الضجيج" الفعلية أول ~250ms قبل ما الكلام يبدأ،
@@ -902,7 +966,7 @@ async function recordAudioVAD(maxMs,silenceMs){
           // عتبة الكلام: واضح فوق أرضية الضجيج، بحد أدنى 0.02 عشان مايكات
           // نضيفة جداً (أرضية ضجيج شبه صفرية) لسه محتاجة صوت حقيقي مش همس.
           speechThresh=Math.max(0.02,noiseFloor*2.5+0.008);
-          // عتبة السكوت: أقرب لأرضية الضجيج نفسها (هستيريسيس) عشان نلحق
+          // عتبة السكوت: أقرب لأرضية الضجيج نفسها (ه��تيريسيس) عشان نلحق
           // لحظة السكوت فعلياً بدل ما نستنى الصوت يوصل صفر تمام.
           silenceThresh=Math.max(0.012,noiseFloor*1.5+0.004);
           calibrated=true;
@@ -994,15 +1058,15 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
 
   // جُمل الدرس (mode:'sentence') محتاجة وقت تسجيل أطول بكتير من كلمة واحدة،
   // وطبيعي يبقى فيها وقفات نص الجملة (فاصلة، تفكير) أطول من وقفة نهاية كلمة
-  // واح������ة. استخدام توقيتات وضع الكلمة القصيرة هنا ك��ن بيقطع الجملة قبل م��
+  // واحدة. استخدام توقيتات وضع الكلمة القصيرة هنا كان بيقطع الجملة قبل ما
   // المستخدم يخلص كلامها — وده السبب الأساسي في إحساسه إن التعرف الأوفلاين
-  // "بطيء أو فاضل يحمّل": كان بيتقطع بدري أو ياخد وقت تحليل أطول من الـ
+  // "بطي�� أو فاضل يحمّل": كان بيتقطع بدري أو ياخد وقت تحليل أطول من الـ
   // watchdog الثابت اللي كان عندنا.
   const isSentence=mode==='sentence';
   const recMaxMs=isSentence?16000:6000;
   const recSilenceMs=isSentence?1400:450;
   // الـ watchdog لازم يغطي وقت التسجيل + وقت تحليل Whisper (اللي بيكبر مع
-  // طول الصوت وبيبقى أبطأ على الأجهزة ��لضعيفة) — 20 ثانية ثابتة كانت بتنتهي
+  // طول الصوت وبيبقى أبطأ على الأجهزة الضعيفة) — 20 ثانية ثابتة كانت بتنتهي
   // في نص التحليل لجمل طويلة وتلغي نتيجة كانت شكلها هتوصل لو استنينا شوية.
   const watchdogMs=isSentence?45000:25000;
 
@@ -1111,7 +1175,7 @@ function micErrorMessage(err){
     'offline-not-ready':'📡 المحرك الأوفلاين لسه بيحمّل من النت لأول مرة، ولازم يخلص التحميل مرة واحدة وانت متوصل بالنت — وبعد كده هيشتغل من غيره تمامًا'
   };
   let base=m[err]||'خطأ: '+err;
-  // لو السبب الحقيقي وراء فشل الفولباك (ال��ونلاين) إن المحرك الأوفلاين لسه
+  // لو السبب الحقيقي وراء فشل الفولباك (الأونلاين) إن المحرك الأوفلاين لسه
   // بيحمّل، نوضّح ده للمستخدم عشان ميفهمهاش عطل دايم في الجهاز.
   if(whisperLoading&&!whisperReady&&(err==='network'||err==='no-speech'||err==='no-engine')){
     base+=' — المحرك الأوفلاين لسه بيحمّل في الخلفية أول مرة، محتاج نت مرة واحدة بس';
@@ -1119,24 +1183,74 @@ function micErrorMessage(err){
   return base;
 }
 
+// ===== WORD TAB PIPELINE: يمشي على LESSON_SENTENCES جملة بجملة، كلمة بكلمة =====
+let wpSentenceIdx=0;
+let wpWordIndices=[];
+let wpPos=0;
+let wpQuizList=[];
+let wpQuizIdx=0;
+let wpRetryTarget=null;
+let wpRetryFails=0;
+let wpChainActive=false;
+let wpChainSentenceIdx=null;
+let wpUnlockedIndices=[]; // فهرس بالجمل اللي خلصت كلماتها في تاب نطق الكلمات — دي اللي بتفتح في تاب الدرس الإنفينيتي
+
 function start(){
-  deck=shuffle(WORDS);idx=0;answered=false;
+  wpSentenceIdx=0;
   totalScore=0;passedCount=0;bestScore=0;totalAttempts=0;failCount=0;
   document.getElementById('endScreen').classList.remove('show');
   document.getElementById('game').style.display='flex';
-  render();
+  wpLoadSentence(0);
 }
 function restart(){start();}
 
-function render(){
+function wpShowStage(stage){
+  document.getElementById('card').style.display=stage==='word'?'':'none';
+  document.querySelector('.mic-area').style.display=stage==='word'?'':'none';
+  document.getElementById('heard').style.display=stage==='word'?'':'none';
+  document.getElementById('wpInfoPanel').style.display=stage==='info'?'flex':'none';
+  document.getElementById('wpQuizPanel').style.display=stage==='quiz'?'flex':'none';
+}
+
+function wpLoadSentence(si){
+  if(si>=LESSON_SENTENCES.length){endGame();return;}
+  wpSentenceIdx=si;
+  const s=LESSON_SENTENCES[si];
+  wpWordIndices=s.words.map((w,i)=>i).filter(i=>{
+    const t=s.words[i].type;
+    return t && t!=='omesso' && t!=='altro';
+  });
+  wpPos=0;
+  document.getElementById('wpContext').innerHTML='<div class="wp-context-it">'+escHtml(s.it||'')+'</div><div class="wp-context-ar">'+escHtml(s.ar||'')+'</div>';
+  document.getElementById('endScreen').classList.remove('show');
+  document.getElementById('game').style.display='flex';
+  wpShowStage('word');
+  if(wpWordIndices.length===0){wpStartQuiz();return;}
+  wpRenderWord();
+}
+
+function wpCurrentWord(){
+  const s=LESSON_SENTENCES[wpSentenceIdx];
+  if(!s)return null;
+  return s.words[wpWordIndices[wpPos]];
+}
+
+function wpUpdateScores(){
+  document.getElementById('sAvg').textContent=(passedCount?Math.round(totalScore/passedCount):0)+'%';
+  document.getElementById('sAll').textContent=totalAttempts;
+  document.getElementById('sBest').textContent=bestScore+'%';
+}
+
+function wpRenderWord(){
   answered=false;
   failCount=0;
-  const w=deck[idx];
-  document.getElementById('cat').textContent=w.cat;
+  wpRetryTarget=null;
+  const w=wpCurrentWord();
+  document.getElementById('cat').textContent=(w.type||'').toUpperCase();
   document.getElementById('wIt').textContent=w.it;
-  document.getElementById('wAr').textContent=w.ar;
-  document.getElementById('wIpa').textContent=w.ipa;
-  document.getElementById('wPron').textContent=w.pron;
+  document.getElementById('wAr').textContent=w.ar||'';
+  document.getElementById('wIpa').textContent='';
+  document.getElementById('wPron').textContent='';
   document.getElementById('wEx').textContent='';
   document.getElementById('heard').textContent='';
   document.getElementById('badge').className='badge';
@@ -1147,14 +1261,16 @@ function render(){
   document.getElementById('micBtn').disabled=false;
   document.getElementById('micLbl').className='mic-lbl';
   document.getElementById('micLbl').textContent='اضغط وتكلم';
-  document.getElementById('progFill').style.width=(idx/deck.length*100)+'%';
-  document.getElementById('sAvg').textContent=(passedCount?Math.round(totalScore/passedCount):0)+'%';
-  document.getElementById('sAll').textContent=totalAttempts;
-  document.getElementById('sBest').textContent=bestScore+'%';
+  document.getElementById('progFill').style.width=(wpPos/wpWordIndices.length*100)+'%';
+  document.getElementById('wpProgress').textContent=toArabicDigits(wpPos+1)+' / '+toArabicDigits(wpWordIndices.length)+' كلمات';
+  wpUpdateScores();
+  wpShowStage('word');
 }
 
 function speak(){
-  const utt=new SpeechSynthesisUtterance(deck[idx].it);
+  const w=wpRetryTarget!=null?{it:wpRetryTarget}:wpCurrentWord();
+  if(!w)return;
+  const utt=new SpeechSynthesisUtterance(w.it);
   utt.lang='it-IT';utt.rate=0.8;
   speechSynthesis.cancel();speechSynthesis.speak(utt);
 }
@@ -1178,13 +1294,14 @@ function judge(alts,conf){
   if(answered)return;
   answered=true;
   totalAttempts++;
-  const w=deck[idx];
-  const target=norm(w.it);
+  const isRetry=wpRetryTarget!=null;
+  const targetWord=isRetry?wpRetryTarget:wpCurrentWord().it;
+  const target=norm(targetWord);
   const heard=alts[0];
 
   // Approximate accuracy score: best text-similarity among the recognizer's
   // alternatives, blended lightly with its confidence value. This is NOT a
-  // real phoneme-level accent analysis (that needs server-side ML) ��� it's a
+  // real phoneme-level accent analysis (that needs server-side ML) — it's a
   // free, on-device proxy based on how close the transcribed word is to the
   // target spelling.
   let bestSim=0,bestAlt=heard;
@@ -1198,46 +1315,55 @@ function judge(alts,conf){
   if(score>bestScore)bestScore=score;
 
   document.getElementById('heard').textContent='🎧 سمعت: "'+heard+'"';
-  document.getElementById('wEx').textContent=w.ex;
 
   const badge=document.getElementById('badge');
   const card=document.getElementById('card');
-  const nb=document.getElementById('nextBtn');
-  const skipBtn=document.getElementById('skipBtn');
 
   if(score>=PASS){
-    // Passed — word is done, move on is allowed.
     totalScore+=score;passedCount++;
     badge.innerHTML='🌟 <b>'+score+'%</b> — تمام! عديت الكلمة ✅';
     badge.className='badge ok show';
     card.className='card ok';
     floatEmoji('🌟');
     document.getElementById('micBtn').disabled=true;
-    skipBtn.style.display='none';
-    nb.className='next-btn show';
-    nb.textContent=idx+1>=deck.length?'النتيجة 🏆':'التالي ←';
-    // مسح أي تظليل مقاطع من محاولة فاشلة سابقة، الكلمة عديت تمام.
-    document.getElementById('wIt').textContent=w.it;
+    document.getElementById('wIt').textContent=targetWord;
+    wpUpdateScores();
+    if(isRetry){
+      wpRetryTarget=null;wpRetryFails=0;
+      setTimeout(()=>{wpShowStage('quiz');wpRenderQuizQuestion();},900);
+    } else {
+      setTimeout(()=>wpShowInfo(wpCurrentWord()),400);
+    }
   } else {
-    // Below 80% — must retry this same word, mic stays active.
     failCount++;
-    if(failCount>=3){
-      // 3 wrong tries in a row — move on automatically instead of leaving
-      // the learner stuck retrying the same word.
-      badge.innerHTML='⏭️ خلصت 3 محاولات — يلا نكمل على الكلمة الجاية';
+    if(isRetry){
+      wpRetryFails++;
+      answered=false;
+      if(wpRetryFails>=6){
+        badge.innerHTML='⏭️ ماشي مشكلة — هنكمل على السؤال';
+        badge.className='badge mid show';
+        card.className='card mid';
+        document.getElementById('micBtn').disabled=true;
+        wpRetryTarget=null;wpRetryFails=0;
+        setTimeout(()=>{wpShowStage('quiz');wpRenderQuizQuestion();},900);
+      } else {
+        badge.innerHTML='🔁 <b>'+score+'%</b> — مش كده، جرّب تاني';
+        badge.className='badge bad show';
+        card.className='card bad';
+        floatEmoji('🔁');
+        setTimeout(()=>speak(),450);
+      }
+    } else if(failCount>=3){
+      badge.innerHTML='⏭️ خلصت 3 محاولات — يلا نكمل';
       badge.className='badge bad show';
       card.className='card bad';
       floatEmoji('⏭️');
       document.getElementById('micBtn').disabled=true;
-      skipBtn.style.display='none';
-      document.getElementById('wIt').textContent=w.it;
-      setTimeout(next,1200);
+      document.getElementById('wIt').textContent=targetWord;
+      setTimeout(()=>wpShowInfo(wpCurrentWord()),1200);
     } else {
       answered=false;
-      // بنقسم الكلمة لـ3 مقاطع تقريبية ونحدد أنهي مقطع فيه أغلب الفرق بين
-      // اللي المستخدم قاله واللي المفروض، عشان يركّز عليه بس وهو بيعيد قول
-      // الكلمة كاملة تاني (مش تحليل صوتي حقيقي لكل مقطع، ده تقريب نصّي).
-      const segResults=computeSegmentResults(w.it,bestAlt);
+      const segResults=computeSegmentResults(targetWord,bestAlt);
       const badSegs=segResults.filter(r=>!r.ok).map(r=>r.text);
       document.getElementById('wIt').innerHTML=renderWordSegmentsHtml(segResults);
       let cls,emoji,msg;
@@ -1250,11 +1376,8 @@ function judge(alts,conf){
       floatEmoji(emoji);
       setTimeout(()=>speak(),450);
     }
+    wpUpdateScores();
   }
-
-  document.getElementById('sAvg').textContent=(passedCount?Math.round(totalScore/passedCount):0)+'%';
-  document.getElementById('sAll').textContent=totalAttempts;
-  document.getElementById('sBest').textContent=bestScore+'%';
 }
 
 function skipWord(){
@@ -1263,9 +1386,9 @@ function skipWord(){
 }
 
 function next(){
-  idx++;
-  if(idx>=deck.length){endGame();return;}
-  render();
+  wpPos++;
+  if(wpPos>=wpWordIndices.length){wpStartQuiz();return;}
+  wpRenderWord();
 }
 
 function endGame(){
@@ -1274,8 +1397,170 @@ function endGame(){
   const d=avg>=85?{e:'🏆',t:'محترف إيطالي!'}:avg>=65?{e:'🌟',t:'برافو عليك!'}:avg>=45?{e:'💪',t:'كويس، بس تقدر أحسن!'}:{e:'😅',t:'حاول تاني!'};
   document.getElementById('endEmoji').textContent=d.e;
   document.getElementById('endTitle').textContent=d.t;
-  document.getElementById('endSub').innerHTML=`متوسط دقة النطق: <b style="color:var(--gold)">${avg}%</b><br>أعلى سكور: <b style="color:var(--green)">${bestScore}%</b> &nbsp;|&nbsp; ${totalAttempts} محاولة لـ ${passedCount} كلمة`;
+  document.getElementById('endSub').innerHTML=`عديت كل جمل الدرس! — متوسط دقة النطق: <b style="color:var(--gold)">${avg}%</b><br>أعلى سكور: <b style="color:var(--green)">${bestScore}%</b> &nbsp;|&nbsp; ${totalAttempts} محاولة لـ ${passedCount} كلمة`;
   document.getElementById('endScreen').classList.add('show');
+}
+
+// ── معلومات الكلمة (Info Panel) حسب النوع ──
+function wpOpenVerbModal(infinitive){
+  const idx=VERBS.findIndex(v=>v.it.toLowerCase()===String(infinitive||'').toLowerCase());
+  if(idx>=0)openVerbModal(idx,'meaning');
+}
+function wpBuildInfoHtml(w){
+  const TENSE_AR={presente:'Presente',passato:'Passato Prossimo',imperfetto:'Imperfetto',imperativo:'Imperativo'};
+  if(w.type==='verbo'){
+    let html='';
+    html+='<div>📌 المصدر: <b>'+escHtml(w.verbInfinitive||'')+'</b></div>';
+    html+='<div>⏱️ الزمن: <b>'+(TENSE_AR[w.tense]||w.tense||'')+'</b></div>';
+    html+='<div>📂 المجموعة: <b>-'+(w.group||'')+'</b> ('+(w.regular?'منتظم':'شاذ')+')</div>';
+    if(w.tense==='passato'&&w.aux)html+='<div>🔧 الفعل المساعد: <b>'+w.aux+'</b></div>';
+    html+='<div>↔️ النوع: <b>'+(w.transitivity==='intransitive'?'غير متعدٍ (intransitive)':'متعدٍ (transitive)')+'</b>'+(w.transitivityNote?' — '+escHtml(w.transitivityNote):'')+'</div>';
+    if(w.note)html+='<div style="color:var(--muted);font-size:.78rem">'+escHtml(w.note)+'</div>';
+    html+='<div style="margin-top:6px"><button class="tts-btn" onclick="wpOpenVerbModal('+JSON.stringify(w.verbInfinitive||'')+')">📊 شوف التصريف الكامل</button></div>';
+    return html;
+  }
+  if(w.type==='nome_unit'){
+    let html='';
+    html+='<div>👤 الجنس: <b>'+(w.gender==='f'?'مؤنث':'مذكر')+'</b></div>';
+    if(w.plural)html+='<div>📝 الجمع: <b>'+escHtml(w.plural)+'</b></div>';
+    if(w.relatedWords&&w.relatedWords.length)html+='<div>🔗 كلمات من نفس العيلة: '+w.relatedWords.map(r=>escHtml(r.it)+' ('+escHtml(r.ar)+')').join(' / ')+'</div>';
+    return html;
+  }
+  if(w.type==='aggettivo'){
+    let html='';
+    html+='<div>📐 الاستخدام: '+escHtml(w.usage||'')+'</div>';
+    if(w.forms)html+='<div>🔄 الأشكال: <b>'+escHtml(w.forms.ms||'')+'</b> / <b>'+escHtml(w.forms.fs||'')+'</b> / <b>'+escHtml(w.forms.mp||'')+'</b> / <b>'+escHtml(w.forms.fp||'')+'</b></div>';
+    return html;
+  }
+  if(w.type==='congiunzione'){
+    let html='';
+    html+='<div>📖 نوعها: <b>'+escHtml(w.kind||'أداة ربط')+'</b></div>';
+    if(w.grammarId&&getGrammarTopic(w.grammarId))html+='<div style="margin-top:6px"><button class="tts-btn" onclick="openGrammarModal('+JSON.stringify(w.grammarId)+')">📖 شوف الدرس الكامل</button></div>';
+    return html;
+  }
+  if(w.type==='sintagma_prep'){
+    let html='';
+    html+='<div>🔍 ليه \'‎'+escHtml(w.prep||'')+'\'؟</div>';
+    if(w.prepNote)html+='<div>→ '+escHtml(w.prepNote)+'</div>';
+    return html;
+  }
+  return '<div>'+escHtml(w.note||'')+'</div>';
+}
+function wpShowInfo(w){
+  wpShowStage('info');
+  const isLast=wpPos+1>=wpWordIndices.length;
+  document.getElementById('wpInfoIt').textContent=w.it;
+  document.getElementById('wpInfoAr').textContent=w.ar||'';
+  document.getElementById('wpInfoBody').innerHTML=wpBuildInfoHtml(w);
+  const btn=document.getElementById('wpInfoNextBtn');
+  btn.textContent=isLast?'ابدأ التقييم':'التالي ←';
+  btn.onclick=()=>{
+    if(isLast){wpStartQuiz();}
+    else{wpPos++;wpRenderWord();}
+  };
+  setTimeout(()=>speakWord(w.it),200);
+}
+
+// ── تقييم MCQ على مستوى الجملة (sentence.quiz) ──
+function wpStartQuiz(){
+  const s=LESSON_SENTENCES[wpSentenceIdx];
+  wpQuizList=(s.quiz||[]).slice();
+  wpQuizIdx=0;
+  if(wpQuizList.length===0){wpFinishSentenceQuiz();return;}
+  wpShowStage('quiz');
+  wpRenderQuizQuestion();
+}
+function wpRenderQuizQuestion(){
+  document.getElementById('wpQuizProgress').textContent='سؤال '+toArabicDigits(wpQuizIdx+1)+' / '+toArabicDigits(wpQuizList.length);
+  const item=wpQuizList[wpQuizIdx];
+  document.getElementById('wpQuizQ').textContent=item.q;
+  document.getElementById('wpQuizFeedback').textContent='';
+  const wrap=document.getElementById('wpQuizOptions');
+  wrap.innerHTML='';
+  item.options.forEach((opt,oi)=>{
+    const btn=document.createElement('button');
+    btn.className='write-check-btn';
+    btn.textContent=opt;
+    btn.onclick=()=>wpQuizAnswer(oi);
+    wrap.appendChild(btn);
+  });
+}
+function wpQuizAnswer(oi){
+  const item=wpQuizList[wpQuizIdx];
+  if(oi===item.correct){
+    document.getElementById('wpQuizFeedback').textContent='✅ صح!';
+    floatEmoji('✅');
+    setTimeout(()=>{
+      wpQuizIdx++;
+      if(wpQuizIdx>=wpQuizList.length){wpFinishSentenceQuiz();}
+      else{wpRenderQuizQuestion();}
+    },600);
+  } else {
+    document.getElementById('wpQuizFeedback').textContent='❌ مش كده — هننطق "'+item.wordIt+'" تاني قبل ما نرجع للسؤال';
+    setTimeout(()=>wpRetryWordThenReask(item.wordIt),700);
+  }
+}
+function wpRetryWordThenReask(wordIt){
+  wpShowStage('word');
+  wpRetryTarget=wordIt;
+  wpRetryFails=0;
+  answered=false;failCount=0;
+  document.getElementById('cat').textContent='إعادة النطق';
+  document.getElementById('wIt').textContent=wordIt;
+  document.getElementById('wAr').textContent='';
+  document.getElementById('wIpa').textContent='';
+  document.getElementById('wPron').textContent='';
+  document.getElementById('wEx').textContent='';
+  document.getElementById('heard').textContent='';
+  document.getElementById('badge').className='badge';
+  document.getElementById('card').className='card';
+  document.getElementById('micBtn').className='mic-btn';
+  document.getElementById('micBtn').disabled=false;
+  document.getElementById('micLbl').className='mic-lbl';
+  document.getElementById('micLbl').textContent='اضغط وقول الكلمة تاني';
+  setTimeout(()=>speak(),300);
+}
+
+// ── بعد انتهاء تقييم الجملة — انتقال أوتوماتيكي لتاب الدرس الإنفينيتي (نطق ← ترتيب ← كتابة) ──
+function wpFinishSentenceQuiz(){
+  wpShowStage('word');
+  document.getElementById('wpProgress').textContent='🏆 خلصنا كلمات ومعلومات الجملة دي — يلا ننطقها كاملة';
+  document.getElementById('card').style.display='none';
+  document.querySelector('.mic-area').style.display='none';
+  wpChainActive=true;
+  wpChainSentenceIdx=wpSentenceIdx;
+  if(!wpUnlockedIndices.includes(wpSentenceIdx))wpUnlockedIndices.push(wpSentenceIdx);
+  seqSub='it';
+  document.getElementById('seqSubIt').classList.add('active');
+  document.getElementById('seqSubAr').classList.remove('active');
+  setTimeout(()=>{
+    switchMode('lesson');
+    wpSyncLessonDeckToSentence(wpChainSentenceIdx);
+    setStudyMode('speak');
+  },900);
+}
+function wpSyncLessonDeckToSentence(sentenceIdx){
+  const target=LESSON_SENTENCES[sentenceIdx];
+  if(!wpUnlockedIndices.includes(sentenceIdx))wpUnlockedIndices.push(sentenceIdx);
+  if(!lDeck||lDeck.length===0){lDeck=wpUnlockedIndices.map(i=>LESSON_SENTENCES[i]);}
+  let foundIdx=lDeck.indexOf(target);
+  if(foundIdx<0)foundIdx=lDeck.findIndex(s=>s.it===target.it&&s.ar===target.ar);
+  if(foundIdx<0){
+    lDeck=wpUnlockedIndices.map(i=>LESSON_SENTENCES[i]);
+    foundIdx=lDeck.indexOf(target);
+    if(foundIdx<0)foundIdx=lDeck.length-1;
+  }
+  lIdx=foundIdx;
+  hideLessonLocked();
+  lRender();
+}
+// لما الجملة تخلص في وضع الكتابة والسلسلة كانت انطلقت من تاب نطق الكلمات، نرجعله للجملة الجاية في نفس التاب.
+function wpChainAdvanceToNextSentence(){
+  wpChainActive=false;
+  const nextIdx=wpChainSentenceIdx+1;
+  wpChainSentenceIdx=null;
+  switchMode('word');
+  wpLoadSentence(nextIdx);
 }
 
 function floatEmoji(emoji){
@@ -1501,18 +1786,20 @@ let lPassed=0,lStreak=0,lAttempts=0;
 let currentStudyMode='speak'; // 'speak' | 'listen' | 'write'
 let seqPlaced=[],seqPoolOrder=[],seqChecked=false,seqSub='it';
 let arSeqDeck=[],arSeqIdx=0;
-let seqTtsTimer=null; // بيتخزّن فيه الـ setTimeout بتاع تشغيل النطق التلقائي في AR mode، عشان نقدر نلغيه لو الجملة اتغيّرت قبل ما يجري
+let seqTtsTimer=null; // بي����خزّن فيه الـ setTimeout بتاع تشغيل النطق التلقائي في AR mode، عشان نقدر نلغيه لو الجملة اتغيّرت قبل ما يجري
 function seqStopTts(){ // يلغي أي نطق متأخر (التايمر) + أي نطق شغال دلوقتي
   clearTimeout(seqTtsTimer);
   seqTtsTimer=null;
   speechSynthesis.cancel();
 }
-function seqS(){return seqSub==='ar'?arSeqDeck[arSeqIdx]:lDeck[lIdx];}
-function seqIsLast(){return seqSub==='ar'?arSeqIdx+1>=arSeqDeck.length:lIdx+1>=lDeck.length;}
+function seqS(){return (seqSub==='ar'&&!wpChainActive)?arSeqDeck[arSeqIdx]:lDeck[lIdx];}
+function seqIsLast(){return (seqSub==='ar'&&!wpChainActive)?arSeqIdx+1>=arSeqDeck.length:lIdx+1>=lDeck.length;}
 function seqAdvance(){ // كمّل للجملة الجاية في AR sub-mode (لما المستخدم يبدّل تاب أو سب-تاب)
   // ملحوظة: IT sub-mode بيستخدم lDeck/lIdx اللي هي نفسها المستخدمة في تابات
   // النطق والكتابة، فمينفعش نـ advance فيها هنا عشان ما نبوّظ تقدّم المستخدم
   // في التابات التانية. الـ advance هنا خاص بـ AR deck بس (arSeqDeck/arSeqIdx).
+  // لما السلسلة الأوتوماتيكية شغالة، الترتيب بالعربي بيشتغل على نفس lDeck/lIdx مش على arSeqDeck — فمينفعش نلمس arSeqDeck خالص.
+  if(wpChainActive)return;
   if(seqSub!=='ar')return;
   if(arSeqDeck.length===0)return; // لسه مفيش deck — seqSetup هيعمله من الصفر
   arSeqIdx++;
@@ -1537,18 +1824,33 @@ let tokenStates=[];           // 'pending'|'ok'|'bad'|'drill'|'skipped'|'auto', 
 let sentenceAnswered=false;
 let sentenceFails=0;
 
+function showLessonLocked(){
+  document.getElementById('lLockedMsg').style.display='block';
+  document.getElementById('lessonContentWrap').style.display='none';
+}
+function hideLessonLocked(){
+  document.getElementById('lLockedMsg').style.display='none';
+  document.getElementById('lessonContentWrap').style.display='';
+}
 function lStart(){
-  lDeck=shuffle(LESSON_SENTENCES);lIdx=0;
+  if(wpUnlockedIndices.length===0){
+    lDeck=[];lIdx=0;
+    showLessonLocked();
+    return;
+  }
+  lDeck=wpUnlockedIndices.map(i=>LESSON_SENTENCES[i]);lIdx=0;
   lPassed=0;lStreak=0;lAttempts=0;
   document.getElementById('lRestartBtn').style.display='none';
+  hideLessonLocked();
   lRender();
 }
 function restartLesson(){lStart();}
 
 function lRender(){
   drillMode=false;sentenceAnswered=false;sentenceFails=0;
+  pipelineSeenWords=new Set();
   const s=lDeck[lIdx];
-  tokenStates=s.words.map(w=>isAutoSkipWord(w.it)?'auto':'pending');
+  tokenStates=s.words.map(w=>(w.type==='omesso'||isAutoSkipWord(w.it))?'auto':'pending');
 
   document.getElementById('lPronoun').textContent=s.pronoun;
   document.getElementById('lAr').textContent=s.ar;
@@ -1710,17 +2012,23 @@ function lJudgeSentence(alts){
 
   if(allOk){
     // flip auto tokens to ok so the whole sentence row turns green
+    const okIdxsThisPass=s.words.map((w,i)=>i).filter(i=>tokenStates[i]==='ok');
     tokenStates=tokenStates.map(st=>st==='auto'?'ok':st);
     lPassed++;lStreak++;
     sentenceAnswered=true;
-    document.getElementById('lBadge').innerHTML='🌟 ممتاز! الجملة صح كلها ✅';
-    document.getElementById('lBadge').className='badge ok show';
-    document.getElementById('lCard').className='card ok';
-    floatEmoji('🌟');
+    const showDone=()=>{
+      document.getElementById('lBadge').innerHTML='🌟 ممتاز! الجملة صح كلها ✅';
+      document.getElementById('lBadge').className='badge ok show';
+      document.getElementById('lCard').className='card ok';
+      floatEmoji('🌟');
+      document.getElementById('lMicBtn').disabled=true;
+      document.getElementById('lSkipBtn').style.display='none';
+      document.getElementById('lNextBtn').className='next-btn show';
+      document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+      wpMaybeChainAfterSpeak();
+    };
     document.getElementById('lMicBtn').disabled=true;
-    document.getElementById('lSkipBtn').style.display='none';
-    document.getElementById('lNextBtn').className='next-btn show';
-    document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة ��':'الجملة الجاي�� ←';
+    maybeRunWordPipeline(okIdxsThisPass,showDone);
   } else {
     lStreak=0;
     document.getElementById('lBadge').innerHTML='⚠️ في كلمات غلط — هنتدرب عليهم';
@@ -1729,6 +2037,12 @@ function lJudgeSentence(alts){
     startDrill(badIdxs[0]);
   }
   lUpdateScore();
+}
+
+// لما الجملة تعدي كاملة في وضع النطق والسلسلة كانت انطلقت من تاب نطق الكلمات، نكمل أوتوماتيكيا لتاب الترتيب.
+function wpMaybeChainAfterSpeak(){
+  if(!wpChainActive)return;
+  setTimeout(()=>setStudyMode('listen'),900);
 }
 
 // ── Drill mode: isolate one mispronounced word and retest just that word ──
@@ -1783,7 +2097,7 @@ function drillJudge(alts){
 
   // ثبّت أي حرف اتقال صح في المحاولة دي فوق أي حروف كانت متثبتة من قبل —
   // الحرف اللي يتثبت "صح" مرة، يفضل صح لهذه الكلمة لحد ما تخلص أو تتخطاها،
-  // حتى لو محاولة تانية مختلفة مالقتهوش في نفس المكان.
+  // حتى لو محاولة تانية مختلفة مالقتهوش في ن��س المكان.
   if(drillLetterMask.length!==target.length) drillLetterMask=new Array(target.length).fill(false);
   alts.forEach(a=>{
     const m=alignMismatches(w.it,a);
@@ -1823,6 +2137,8 @@ function drillJudge(alts){
 // auto-skip after 3 fails — moves on to the next bad word, or wraps up the
 // sentence if that was the last one.
 function finishDrillWord(){
+  const completedIdx=drillTokenIdx;
+  const wasSkipped=tokenStates[completedIdx]==='skipped';
   setTimeout(()=>{
     document.getElementById('lTtsBtn').style.display='inline-block';
     document.getElementById('lMicBtn').onclick=lToggleMic;
@@ -1830,26 +2146,158 @@ function finishDrillWord(){
     document.getElementById('drillBox').classList.remove('show');
     drillMode=false;
 
-    const nextBad=tokenStates.findIndex(st=>st==='bad');
-    if(nextBad>=0){
-      startDrill(nextBad);
-    } else {
-      sentenceAnswered=true;
-      tokenStates=tokenStates.map(st=>st==='auto'?'ok':st);
-      const hadSkips=tokenStates.includes('skipped');
-      if(!hadSkips){lPassed++;lStreak++;}
-      else{lPassed+=0.5;lStreak=0;}
-      document.getElementById('lBadge').innerHTML=hadSkips?'👍 خلصنا الجملة — كملنا بعض الكلمات تاني وقت':'🌟 ممتاز! عديت الجملة كلها ✅';
-      document.getElementById('lBadge').className='badge ok show';
-      document.getElementById('lCard').className='card ok';
-      document.getElementById('lMicBtn').disabled=true;
-      document.getElementById('lSkipBtn').style.display='none';
-      document.getElementById('lNextBtn').className='next-btn show';
-      document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
-      floatEmoji(hadSkips?'👍':'🏆');
-      lUpdateScore();
-    }
+    const runNext=()=>{
+      const nextBad=tokenStates.findIndex(st=>st==='bad');
+      if(nextBad>=0){
+        startDrill(nextBad);
+      } else {
+        sentenceAnswered=true;
+        tokenStates=tokenStates.map(st=>st==='auto'?'ok':st);
+        const hadSkips=tokenStates.includes('skipped');
+        if(!hadSkips){lPassed++;lStreak++;}
+        else{lPassed+=0.5;lStreak=0;}
+        document.getElementById('lBadge').innerHTML=hadSkips?'👍 خلصنا الجملة — كملنا بعض الكلمات تاني وقت':'🌟 ممتاز! عديت الجملة كلها ✅';
+        document.getElementById('lBadge').className='badge ok show';
+        document.getElementById('lCard').className='card ok';
+        document.getElementById('lMicBtn').disabled=true;
+        document.getElementById('lSkipBtn').style.display='none';
+        document.getElementById('lNextBtn').className='next-btn show';
+        document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+        floatEmoji(hadSkips?'👍':'🏆');
+        lUpdateScore();
+        wpMaybeChainAfterSpeak();
+      }
+    };
+
+    if(wasSkipped){ runNext(); return; }
+    maybeRunWordPipeline([completedIdx], runNext);
   },700);
+}
+
+// ===== WORD INFO + MCQ PIPELINE (مبني على spec_word_pipeline.md) =====
+// بعد ما المتعلم ينطق كلمة صح بيجي بانيل معلومة قصير عن الكلمة دي (فعل/اسم/حرف جر/أداة ربط)
+// وبعدين سؤال اختيار من متعدد لازم يجاوب صح قبل ما يكمل. الكلمات المحذوفة (omesso) والغير
+// مصنفة (altro) بتعدي المرحلة دي تمامًا عشان متتعطلشش اللعبة مع بيانات قديمة/غير مصنفة.
+let pipelineSeenWords=new Set();
+let pipelineCurrentWordIdx=null;
+
+function maybeRunWordPipeline(idxs,callback){
+  const s=lDeck[lIdx];
+  const queue=idxs.filter(i=>{
+    if(pipelineSeenWords.has(i))return false;
+    const w=s.words[i];
+    return w&&w.type&&Array.isArray(w.quiz)&&w.quiz.length>0&&w.type!=='omesso'&&w.type!=='altro';
+  });
+  queue.forEach(i=>pipelineSeenWords.add(i));
+  runPipelineQueue(queue,0,callback);
+}
+function runPipelineQueue(queue,pos,callback){
+  if(pos>=queue.length){callback();return;}
+  const idx=queue[pos];
+  showWordInfo(idx,pos,queue.length,()=>{
+    runWordQuiz(idx,0,()=>{runPipelineQueue(queue,pos+1,callback);});
+  });
+}
+function toArabicDigits(n){
+  return String(n).replace(/[0-9]/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+}
+function buildWordInfoHtml(w){
+  const TENSE_AR={presente:'المضارع (Presente)',passato:'الماضي القريب (Passato Prossimo)',imperfetto:'الماضي الناقص (Imperfetto)',imperativo:'الأمر (Imperativo)'};
+  if(w.type==='verbo'){
+    let html='';
+    html+='<div>🔤 الفعل الأصلي (المصدر): <b>'+escHtml(w.verbInfinitive||'')+'</b></div>';
+    if(w.group)html+='<div>📚 مجموعة الفعل: <b>'+w.group+'</b></div>';
+    if(w.tense)html+='<div>⏱️ الزمن: <b>'+(TENSE_AR[w.tense]||w.tense)+'</b></div>';
+    html+='<div>✅ '+(w.regular?'فعل منتظم (بيتصرف على القاعدة العادية)':'فعل شاذ (له تصريف خاص، احفظه لوحده)')+'</div>';
+    if(w.tense==='passato')html+='<div>🤝 الفعل المساعد بتاعه: <b>'+(w.aux==='essere'?'essere':'avere')+'</b></div>';
+    html+='<div>🎯 '+(w.transitive?'فعل متعدٍ (بياخد مفعول به مباشر)':'فعل لازم (مش بياخد مفعول به مباشر)')+'</div>';
+    return html;
+  }
+  if(w.type==='nome_unit'){
+    let html='';
+    html+='<div>🚻 الجنس: <b>'+(w.gender==='f'?'مؤنث':'مذكر')+'</b></div>';
+    if(w.plural)html+='<div>🔢 صيغة الجمع (تقريبية): <b>'+escHtml(w.plural)+'</b></div>';
+    return html;
+  }
+  if(w.type==='congiunzione'){
+    let html='';
+    html+='<div>🔗 المعنى هنا: <b>'+escHtml(w.meaning||'')+'</b></div>';
+    if(w.grammarId)html+='<div><button class="bd-grammar-btn" style="font-size:22px" onclick="openGrammarModal(\''+w.grammarId+'\')">📘 شوف القاعدة كاملة</button></div>';
+    return html;
+  }
+  if(w.type==='sintagma_prep'){
+    let html='';
+    html+='<div>🧩 حرف الجر: <b>'+escHtml(w.prep||'')+'</b></div>';
+    if(w.prepNote)html+='<div>💡 '+escHtml(w.prepNote)+'</div>';
+    return html;
+  }
+  if(w.type==='aggettivo'){
+    let html='';
+    if(w.invariant||!w.forms){
+      html+='<div>🧷 كلمة ثابتة الشكل (ظرف/صفة بلا تصريف حسب الجنس أو العدد)</div>';
+    } else {
+      html+='<div>📐 صيغها:</div>';
+      html+='<div>مذكر مفرد: <b>'+escHtml(w.forms.ms||'')+'</b> — مؤنث مفرد: <b>'+escHtml(w.forms.fs||'')+'</b></div>';
+      html+='<div>مذكر جمع: <b>'+escHtml(w.forms.mp||'')+'</b> — مؤنث جمع: <b>'+escHtml(w.forms.fp||'')+'</b></div>';
+    }
+    return html;
+  }
+  return '<div>'+escHtml(w.note||'')+'</div>';
+}
+function showWordInfo(idx,pos,total,next){
+  const s=lDeck[lIdx];
+  const w=s.words[idx];
+  pipelineCurrentWordIdx=idx;
+  document.getElementById('drillBox').classList.remove('show');
+  document.getElementById('wordQuizBox').style.display='none';
+  document.getElementById('wordInfoProgress').textContent='معلومة عن الكلمة — '+toArabicDigits(pos+1)+'/'+toArabicDigits(total)+' كلمات';
+  document.getElementById('wordInfoWord').textContent=w.it;
+  document.getElementById('wordInfoBody').innerHTML=buildWordInfoHtml(w);
+  document.getElementById('wordInfoBox').style.display='block';
+  document.getElementById('lMicBtn').style.display='none';
+  document.getElementById('lMicLbl').style.display='none';
+  document.getElementById('lTtsBtn').style.display='none';
+  setTimeout(()=>speakWord(w.it),200);
+  document.getElementById('wordInfoNextBtn').onclick=()=>{
+    document.getElementById('wordInfoBox').style.display='none';
+    next();
+  };
+}
+function wordPipelineAfterInfo(){ /* placeholder kept for the inline onclick in HTML; real handler is bound per-word in showWordInfo */ }
+function runWordQuiz(idx,qPos,next){
+  const s=lDeck[lIdx];
+  const w=s.words[idx];
+  if(!w.quiz||qPos>=w.quiz.length){
+    document.getElementById('wordQuizBox').style.display='none';
+    document.getElementById('lMicBtn').style.display='';
+    document.getElementById('lMicLbl').style.display='';
+    document.getElementById('lTtsBtn').style.display='inline-block';
+    next();
+    return;
+  }
+  const item=w.quiz[qPos];
+  document.getElementById('wordQuizQ').textContent=item.q;
+  document.getElementById('wordQuizFeedback').textContent='';
+  const optsWrap=document.getElementById('wordQuizOptions');
+  optsWrap.innerHTML='';
+  item.options.forEach((opt,oi)=>{
+    const btn=document.createElement('button');
+    btn.className='write-check-btn';
+    btn.style.width='100%';
+    btn.textContent=opt;
+    btn.onclick=()=>{
+      if(oi===item.correct){
+        document.getElementById('wordQuizFeedback').textContent='✅ صح!';
+        floatEmoji('✅');
+        setTimeout(()=>runWordQuiz(idx,qPos+1,next),500);
+      } else {
+        document.getElementById('wordQuizFeedback').textContent='❌ مش كده، جرب تاني';
+      }
+    };
+    optsWrap.appendChild(btn);
+  });
+  document.getElementById('wordInfoBox').style.display='none';
+  document.getElementById('wordQuizBox').style.display='block';
 }
 
 function lSkipSentence(){
@@ -1866,7 +2314,7 @@ function lSkipSentence(){
   document.getElementById('lMicBtn').disabled=true;
   document.getElementById('lSkipBtn').style.display='none';
   document.getElementById('lNextBtn').className='next-btn show';
-  document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+  document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدف��ة 🏆':'الجملة الجاية ←';
 }
 
 function lNext(){
@@ -1915,17 +2363,27 @@ ensureWhisperLoaded();
 // ── Study mode switcher ──
 // بيبدّل البانيل بس من غير ما يعيد تحميل الجملة أو يمسح tokenStates —
 // كده لو المستخدم بدّل موود وهو في نص جملة، التقدم في وضع النطق بيتحفظ.
+// لما وضع الترتيب (listen) يخلص والسلسلة كانت من تاب نطق الكلمات، نكمل أوتوماتيكيا لوضع الكتابة.
+function wpMaybeChainAfterListen(){
+  if(!wpChainActive)return;
+  if(seqSub==='it'){
+    setTimeout(()=>{ setSeqSub('ar'); },900);
+  } else {
+    setTimeout(()=>setStudyMode('write'),900);
+  }
+}
+
 function setStudyMode(mode){
   if(micBusy)return;
   const prevMode=currentStudyMode;
   currentStudyMode=mode;
-  seqStopTts(); // قفل أي نطق AR متأخر أو شغال من التاب اللي كنا فيه، قبل ما نبدّل
+  seqStopTts(); // قفل أي نطق AR متأ��ر أو شغال من التاب اللي كنا فيه، قبل ما نبدّل
   ['speak','listen','write'].forEach(m=>{
     document.getElementById('st'+m.charAt(0).toUpperCase()+m.slice(1))
       .classList.toggle('active',m===mode);
   });
 
-  // إيقاف الـ drill بنظ��فة لو كان شغّال
+  // إيقاف الـ drill بنظاف�� لو كان شغّال
   if(drillMode){
     drillMode=false;
     document.getElementById('drillBox').classList.remove('show');
@@ -1957,7 +2415,7 @@ function setStudyMode(mode){
     document.getElementById('lMicBtn').disabled=sentenceAnswered;
     document.getElementById('lMicBtn').className='mic-btn';
     document.getElementById('lMicLbl').className='mic-lbl';
-    document.getElementById('lMicLbl').textContent='اضغط وقول الجملة كله��';
+    document.getElementById('lMicLbl').textContent='اضغط وقول الجملة كلها';
     document.getElementById('lBreakdown').style.display='flex';
     const sc=lDeck[lIdx];
     lRenderTokens();
@@ -2000,7 +2458,7 @@ function setSeqSub(sub){
 }
 
 function seqSetup(){
-  if(seqSub==='ar'&&arSeqDeck.length===0){arSeqDeck=shuffle([...AR_SEQ_SENTENCES]);arSeqIdx=0;}
+  if(seqSub==='ar'&&!wpChainActive&&arSeqDeck.length===0){arSeqDeck=shuffle([...AR_SEQ_SENTENCES]);arSeqIdx=0;}
   const s=seqS();
   seqChecked=false;
   seqPlaced=[];
@@ -2163,6 +2621,7 @@ function seqCheck(){
   document.getElementById('lNextBtn').className='next-btn show';
   document.getElementById('lNextBtn').textContent=seqIsLast()?'خلصت الدفعة 🏆':'الجملة الجاية ←';
   document.getElementById('seqRevealBtn').style.display='none';
+  wpMaybeChainAfterListen();
 }
 
 function seqReveal(){
@@ -2182,9 +2641,10 @@ function seqReveal(){
   document.getElementById('seqPool').innerHTML='';
   document.getElementById('lBreakdown').style.display='flex';
   document.getElementById('lNextBtn').className='next-btn show';
-  document.getElementById('lNextBtn').textContent=seqIsLast()?'خلصت الدفعة 🏆':'الجم��ة الجاية ←';
+  document.getElementById('lNextBtn').textContent=seqIsLast()?'خلصت الدفعة 🏆':'الجملة الجاية ←';
   document.getElementById('seqRevealBtn').style.display='none';
   lStreak=0;lUpdateScore();
+  wpMaybeChainAfterListen();
 }
 
 // ── WRITE MODE ──
@@ -2261,6 +2721,14 @@ function checkWrite(){
   document.getElementById('lNextBtn').className='next-btn show';
   document.getElementById('lNextBtn').textContent=
     lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+
+  wpMaybeChainAfterWrite();
+}
+
+// لما الكتابة تخلص والسلسلة كانت من تاب نطق الكلمات، نرجعله للجملة الجاية في نفس التاب.
+function wpMaybeChainAfterWrite(){
+  if(!wpChainActive)return;
+  setTimeout(()=>wpChainAdvanceToNextSentence(),1400);
 }
 </script>
 </body>
