@@ -599,7 +599,7 @@
 
       <!-- Grammar question appears after writing -->
       <div class="grammar-quiz-panel" id="grammarQuizPanel">
-        <div class="grammar-q-title">🧩 سؤال جرامر بعد الكتبويبة</div>
+        <div class="grammar-q-title">🧩 سؤال جرامر بعد الكتابة</div>
         <div class="grammar-q-prompt" id="grammarQPrompt"></div>
         <div class="grammar-q-options" id="grammarQOptions"></div>
         <div class="grammar-explain" id="grammarQExplain"></div>
@@ -650,7 +650,7 @@
 
   <!-- VERBS MODE: مكتبة مرجعية للأفعال، مقسّمة ARE / ERE / IRE، اضغط على أي فعل يطلعلك pop up فيه تصريفه كمل -->
   <div class="wrap" id="verbsMode" style="display:none;padding:0">
-    <div class="verbs-intro">📚 الأفعال مقسّمة حسب الماضي — ARE و ERE و IRE. اضعط على أي فعل لكي تاعرض معناه وتصريفه كمل</div>
+    <div class="verbs-intro">📚 الأفعال مقسّمة حسب الماضي — ARE و ERE و IRE. اضغط على أي فعل لكي تاعرض معناه وتصريفه كمل</div>
     <div id="verbGroups"></div>
   </div>
 </div>
@@ -721,7 +721,7 @@ function norm(s){
 // turn 'bad' and never trigger the isolated word-drill — only real content
 // words (verbs, nouns, adjectives, pronouns, definite articles, etc.) do.
 const AUTO_SKIP_WORDS=new Set([
-  // حروف الجر البسيطة
+  // حروف الجر اللكنيطة
   'a','di','da','in','con','su','per','tra','fra',
   // حروف الجر المدمجة (a/da/di/in/su + الأداة)
   'al','allo','alla','ai','agli','alle',
@@ -768,8 +768,8 @@ function similarity(a,b){
 // 2) نقارن حروف الكلمة الذي المستخدم قالها (بعد التفريغ النصي) بحروف الكلمة
 //    الأصلية حرف بحرف (Levenshtein alignment) لكي نعرف أنهي حروف "ضاعت"
 //    أو اتقالت خطأ.
-// 3) أي مقطع يقع فيه أغلب الحروف الخطأ بيتحدد بالأحمر، والمستخدم بيتقال له
-//    يركّز فيه وهو بيعيد قول الكلمة كملة مرة أخرى.
+// 3) أي مقطع يقع فيه أغلب الحروف الخطأ بيتحدد بالأحمر، والمستخدم يُقال له
+//    يركّز فيه وهو بيعيد قول الكلمة كاملة مرة أخرى.
 // هذا تقريب مفيد لتوجيه الانتباه، ليس تحليل نطق دقيق 100% لكل حرف.
 
 function rawSyllables(word){
@@ -938,7 +938,7 @@ function setEngineStatus(text){
 async function ensureWhisperLoaded(){
   if(whisperReady||whisperLoading)return;
   whisperLoading=true;
-  setEngineStatus('⏳ بيحمّل محرك النطق الأوفلاين أول مرة (~40-75 ميجا، مرة واحدة بس)...');
+  setEngineStatus('⏳ بيحمّل محرك النطق الأوفلاين أول مرة (~40-75 ميجا، مرة واحدة لكن)...');
   try{
     const mod=await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2');
     mod.env.allowLocalModels=false;
@@ -946,7 +946,7 @@ async function ensureWhisperLoaded(){
       // بنفرض النسخة المصغّرة (int8) بشكل صريح لكي نضمن نفس الحجم/السرعة الذي
       // رسالة الحالة فوق واعدة بيها (~40-75 ميجا)، بدل الاعتماد على قيمة
       // افتراضية ممكن تتغيّر بين إصدارات المكتبة وتنزّل نسخة fp32 أكبر
-      // وأبطأ بكتير في التحليل، خصوصًا على الموبايل.
+      // وأبطأ بكثيرًا في التحليل، خصوصًا على الموبايل.
       quantized:true,
       progress_callback:(p)=>{
         if(p&&p.status==='progress'&&typeof p.progress==='number'){
@@ -992,7 +992,7 @@ async function recordAudioVAD(maxMs,silenceMs){
     let stopped=false;
 
     // ثابت 0.02 كان بيفتكر إن في كلام طول ما ضجيج المايك/المكان فوق القيمة
-    // هذا (شائع في مايكات الموبايل بسبب AGC)، فمكانش بيوصل لحالة "سكوت"
+    // هذا (شائع في مايكات الموبايل لكنبب AGC)، فمكانش بيوصل لحالة "سكوت"
     // خالص وكان بيستنى للـ maxMs كمل كل مرة حتى لو المستخدم سكت فعلاً بدري.
     // هنا بنقيس "أرضية الضجيج" الفعلية أول ~250ms قبل ما الكلام يبدأ،
     // وبعدين نبني علماذاا عتبتين: عتبة أعلى لكي نتأكد إن هذا كلام فعلاً،
@@ -1113,11 +1113,11 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
 
   if(!whisperReady&&!whisperLoading)ensureWhisperLoaded();
 
-  // جُمل الدرس (mode:'sentence') محتاجة وقت تسجيل أطول بكتير من كلمة واحدة،
+  // جُمل الدرس (mode:'sentence') محتاجة وقت تسجيل أطول بكثيرًا من كلمة واحدة،
   // وطبيعي يبقى فيها وقفات نص الجملة (فاصلة، تفكير) أطول من وقفة نهاية كلمة
   // واحدة. استخدام توقيتات وضع الكلمة القصيرة هنا كان بيقطع الجملة قبل ما
   // المستخدم يخلص كلامها — وده السبب الأساسي في إحساسه إن التعرف الأوفلاين
-  // "بطيء أو فاضل يحمّل": كان بيتقطع بدري أو ياخد وقت تحليل أطول من الـ
+  // "بطيء أو ما زال يُحمّل": كان بيتقطع بدري أو ياخد وقت تحليل أطول من الـ
   // watchdog الثابت الذي كان عندنا.
   const isSentence=mode==='sentence';
   const recMaxMs=isSentence?16000:6000;
@@ -1156,12 +1156,12 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
     try{
       const audio=await recordAudioVAD(recMaxMs,recSilenceMs);
       if(finished)return;
-      lbl.textContent='🧠 بيحلل النطق...';
-      // طمّن المستخدم لو التحليل طوّل بدل ما يفضل الذيبل واقف على "بيحلل
-      // النطق..." من غير أي تحديث — وده كان بيحسسه إن الشاشة واقفة/فاضلة
+      lbl.textContent='🧠 يحلل النطق...';
+      // طمّن المستخدم لو التحليل طوّل بدل ما يفضل الذيبل واقف على "يحلل
+      // النطق..." من غير أي تحديث — وده كان بيحسسه إن الشاشة واقفة/ما زالة
       // تحمّل مع إنها شغالة فعلاً في الخلفية.
       const stillWorking=setTimeout(()=>{
-        if(!finished)lbl.textContent='🧠 ما زال بيحلل... (بياخد وقت أطول قليل في الجمل الطويلة)';
+        if(!finished)lbl.textContent='🧠 ما زال يحلل... (بياخد وقت أطول قليل في الجمل الطويلة)';
       },5000);
       const text=await whisperTranscribe(audio);
       clearTimeout(stillWorking);
@@ -1179,7 +1179,7 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
   }
 
   // المحرك الأوفلاين ما زال بيحمّل ومحتاجين نرجع للفولباك الذي أساسًا يحتاج نت.
-  // لو لا توجد نت خالص، نفشل بسرعة برسالة واضحة بدل ما نستنى الـ watchdog كمل
+  // لو لا توجد نت خالص، نفشل لكنرعة برسالة واضحة بدل ما نستنى الـ watchdog كمل
   // على محاولة SpeechRecognition الذي مستحيل تنجح من غير نت.
   if(!navigator.onLine){
     finish();
@@ -1235,14 +1235,14 @@ function micErrorMessage(err){
   // لو السبب الحقيقي وراء فشل الفولباك (الأونلاين) إن المحرك الأوفلاين ما زال
   // بيحمّل، نوضّح هذا للمستخدم لكي ميفهمهاش عطل دايم في الجهاز.
   if(whisperLoading&&!whisperReady&&(err==='network'||err==='no-speech'||err==='no-engine')){
-    base+=' — المحرك الأوفلاين ما زال بيحمّل في الخلفية أول مرة، محتاج نت مرة واحدة بس';
+    base+=' — المحرك الأوفلاين ما زال بيحمّل في الخلفية أول مرة، محتاج نت مرة واحدة لكن';
   }
   return base;
 }
 
 
 // ===== 4-SKILL SCORING LAYER =====
-const SKILL_LABELS={pronunciation:'🎙️ النطق',listening:'👂 السمع',writing:'✍️ الكتبويبة',grammarOrder:'🧩 ترتيب الجملة'};
+const SKILL_LABELS={pronunciation:'🎙️ النطق',listening:'👂 السمع',writing:'✍️ الكتابة',grammarOrder:'🧩 ترتيب الجملة'};
 const skillScores={
   pronunciation:{attempts:0,totalScore:0,best:0,passed:0},
   listening:{attempts:0,totalScore:0,best:0,passed:0,replays:0,reveals:0},
@@ -1576,7 +1576,7 @@ function next(){
 function endGame(){
   document.getElementById('game').style.display='none';
   const avg=passedCount?Math.round(totalScore/passedCount):0;
-  const d=avg>=85?{e:'🏆',t:'محترف إيطالي!'}:avg>=65?{e:'🌟',t:'برافو عليك!'}:avg>=45?{e:'💪',t:'جيد، بس تقدر أحسن!'}:{e:'😅',t:'حاول مرة أخرى!'};
+  const d=avg>=85?{e:'🏆',t:'محترف إيطالي!'}:avg>=65?{e:'🌟',t:'برافو عليك!'}:avg>=45?{e:'💪',t:'جيد، لكن تقدر أحسن!'}:{e:'😅',t:'حاول مرة أخرى!'};
   document.getElementById('endEmoji').textContent=d.e;
   document.getElementById('endTitle').textContent=d.t;
   document.getElementById('endSub').innerHTML=`عديت كل جمل الدرس! — متوسط دقة النطق: <b style="color:var(--gold)">${avg}%</b><br>أعلى سكور: <b style="color:var(--green)">${bestScore}%</b> &nbsp;|&nbsp; ${totalAttempts} محاولة لـ ${passedCount} كلمة`;
@@ -1598,7 +1598,7 @@ function wpBuildInfoHtml(w){
     if(w.tense==='passato'&&w.aux)html+='<div>🔧 الفعل المساعد: <b>'+w.aux+'</b></div>';
     html+='<div>↔️ النوع: <b>'+(w.transitivity==='intransitive'?'غير متعدٍ (intransitive)':'متعدٍ (transitive)')+'</b>'+(w.transitivityNote?' — '+escHtml(w.transitivityNote):'')+'</div>';
     if(w.note)html+='<div style="color:var(--muted);font-size:.78rem">'+escHtml(w.note)+'</div>';
-    html+='<div style="margin-top:6px"><button class="tts-btn" onclick="wpOpenVerbModal(\''+escHtml(String(w.verbInfinitive||'')).replace(/'/g,'\\\'')+'\')">📊 اعرض التصريف الكمل</button></div>';
+    html+='<div style="margin-top:6px"><button class="tts-btn" onclick="wpOpenVerbModal(\''+escHtml(String(w.verbInfinitive||'')).replace(/'/g,'\\\'')+'\')">📊 اعرض التصريف الكامل</button></div>';
     return html;
   }
   if(w.type==='nome_unit'){
@@ -1617,7 +1617,7 @@ function wpBuildInfoHtml(w){
   if(w.type==='congiunzione'){
     let html='';
     html+='<div>📖 نوعها: <b>'+escHtml(w.kind||'أداة ربط')+'</b></div>';
-    if(w.grammarId&&getGrammarTopic(w.grammarId))html+='<div style="margin-top:6px"><button class="tts-btn" onclick="openGrammarModal('+JSON.stringify(w.grammarId)+')">📖 اعرض الدرس الكمل</button></div>';
+    if(w.grammarId&&getGrammarTopic(w.grammarId))html+='<div style="margin-top:6px"><button class="tts-btn" onclick="openGrammarModal(\''+escHtml(String(w.grammarId||'')).replace(/'/g,'\\\'')+'\')">📖 اعرض الدرس الكامل</button></div>';
     return html;
   }
   if(w.type==='sintagma_prep'){
@@ -1715,8 +1715,8 @@ function wpRetryWordThenReask(wordIt){
   setTimeout(()=>speak(),300);
 }
 
-// بعد انتهاء تقييم الجملة — الجملة بس الذي بتتفتح تلقائي في تبويب الدرس الإنفينيتي،
-// من غير ما نشد المستخدم من تبويب نطق الكلمات — هو الذي يقرر يكمّل جمل مرة أخرىة هنا ولا يروح للدرس وقت ما يحب.
+// بعد انتهاء تقييم الجملة — الجملة لكن الذي بتتفتح تلقائي في تبويب الدرس الإنفينيتي،
+// من غير ما نشد المستخدم من تبويب نطق الكلمات — هو الذي يقرر يكمّل جمل مرة أخرىة هنا ولا يروح للدرس حينما يحب.
 function wpFinishSentenceQuiz(){
   wpChainActive=true;
   if(!wpUnlockedIndices.includes(wpSentenceIdx))wpUnlockedIndices.push(wpSentenceIdx);
@@ -1724,7 +1724,7 @@ function wpFinishSentenceQuiz(){
   const unlockedTarget=LESSON_SENTENCES[wpSentenceIdx];
   if(lDeck&&lDeck.length>0&&lDeck.indexOf(unlockedTarget)<0)lDeck.push(unlockedTarget);
   wpShowStage('word');
-  document.getElementById('wpProgress').textContent='🎉 هذه الجملة فُتحت في تبويب "الدرس الإنفينيتي" — كمّل جملة أخرى هنا ولا روح ذاكرها هناك وقت ما تحب';
+  document.getElementById('wpProgress').textContent='🎉 هذه الجملة فُتحت في تبويب "الدرس الإنفينيتي" — كمّل جملة أخرى هنا ولا روح ذاكرها هناك حينما تحب';
   floatEmoji('🎉');
   try{localStorage.setItem('parlaWordProgress',JSON.stringify({sentenceIdx:wpSentenceIdx+1,wordPos:0}));}catch(e){}
   setTimeout(()=>wpLoadSentence(wpSentenceIdx+1),1400);
@@ -1745,7 +1745,7 @@ function wpSyncLessonDeckToSentence(sentenceIdx){
   hideLessonLocked();
   lRender();
 }
-// لما الجملة تخلص في وضع الكتبويبة، نفضّل للجملة المرة أخرىة المفتوحة في نفس تبويب الدرس الإنفينيتي —
+// لما الجملة تخلص في وضع الكتابة، نفضّل للجملة الآخرة المفتوحة في نفس تبويب الدرس الإنفينيتي —
 // مبقاش ما نرجع المستخدم لتبويب نطق الكلمات أوتوماتيكياً.
 function wpChainAdvanceToNextSentence(){
   if(lIdx+1<lDeck.length){
@@ -1998,8 +1998,8 @@ function seqS(){return (seqSub==='ar'&&!wpChainActive)?arSeqDeck[arSeqIdx]:lDeck
 function seqIsLast(){return (seqSub==='ar'&&!wpChainActive)?arSeqIdx+1>=arSeqDeck.length:lIdx+1>=lDeck.length;}
 function seqAdvance(){ // كمّل للجملة الجاية في AR sub-mode (لما المستخدم يبدّل تبويب أو سب-تبويب)
   // ملحوظة: IT sub-mode بيستخدم lDeck/lIdx الذي هي نفسها المستخدمة في تبويبات
-  // النطق والكتبويبة، فمَنفعش نـ advance فيها هنا لكي ما نبوّظ تقدّم المستخدم
-  // في التبويبات المرة أخرىة. الـ advance هنا خاص بـ AR deck بس (arSeqDeck/arSeqIdx).
+  // النطق والكتابة، فمَنفعش نـ advance فيها هنا لكي ما نبوّظ تقدّم المستخدم
+  // في التبويبات الآخرة. الـ advance هنا خاص بـ AR deck لكن (arSeqDeck/arSeqIdx).
   // لما السلسلة الأوتوماتيكية شغالة، الترتيب بالعربي يعمل على نفس lDeck/lIdx ليس على arSeqDeck — فمَنفعش نلمس arSeqDeck خالص.
   if(wpChainActive)return;
   if(seqSub!=='ar')return;
@@ -2246,7 +2246,7 @@ function lJudgeSentence(alts){
   lUpdateScore();
 }
 
-// لما الجملة تعدي كملة في وضع النطق والسلسلة كانت انطلقت من تبويب نطق الكلمات، نكمل أوتوماتيكيا لتبويب الترتيب.
+// لما الجملة تعدي كاملة في وضع النطق والسلسلة كانت انطلقت من تبويب نطق الكلمات، نكمل أوتوماتيكيا لتبويب الترتيب.
 function wpMaybeChainAfterSpeak(){
   if(!wpChainActive)return;
   setTimeout(()=>setStudyMode('listen'),900);
@@ -2429,7 +2429,7 @@ function buildWordInfoHtml(w){
   if(w.type==='congiunzione'){
     let html='';
     html+='<div>🔗 المعنى هنا: <b>'+escHtml(w.meaning||'')+'</b></div>';
-    if(w.grammarId)html+='<div><button class="bd-grammar-btn" style="font-size:22px" onclick="openGrammarModal(\''+w.grammarId+'\')">📘 اعرض القاعدة كملة</button></div>';
+    if(w.grammarId)html+='<div><button class="bd-grammar-btn" style="font-size:22px" onclick="openGrammarModal(\''+escHtml(String(w.grammarId||'')).replace(/'/g,'\\\'')+'\')">📘 اعرض القاعدة كاملة</button></div>';
     return html;
   }
   if(w.type==='sintagma_prep'){
@@ -2570,9 +2570,9 @@ start();
 ensureWhisperLoaded();
 
 // ── Study mode switcher ──
-// بيبدّل البانيل بس من غير ما يعيد تحميل الجملة أو يمسح tokenStates —
+// بيبدّل البانيل لكن من غير ما يعيد تحميل الجملة أو يمسح tokenStates —
 // هكذا لو المستخدم بدّل موود وهو في نص جملة، التقدم في وضع النطق بيتحفظ.
-// لما وضع الترتيب (listen) يخلص والسلسلة كانت من تبويب نطق الكلمات، نكمل أوتوماتيكيا لوضع الكتبويبة.
+// لما وضع الترتيب (listen) يخلص والسلسلة كانت من تبويب نطق الكلمات، نكمل أوتوماتيكيا لوضع الكتابة.
 function wpMaybeChainAfterListen(){
   if(!wpChainActive)return;
   if(seqSub==='it'){
@@ -2907,7 +2907,7 @@ function makeGrammarQuestion(s){
   const low=txt.toLowerCase();
   if(/(ho|hai|ha|abbiamo|avete|hanno)\s+\w*(ato|uto|ito)/i.test(txt)){
     const aux=(txt.match(/(ho|hai|ha|abbiamo|avete|hanno)/i)||['ho'])[0];
-    return {prompt:'لماذا استخدمنا "'+aux+'" في الجملة؟',options:['لأن الفعل هنا في Passato Prossimo وبيستخدم avere','لأن الفاعل مؤنث مفرد','لأن الجملة في المستقبل','لأن بعد mentre لازم avere'],answer:0,explanation:'في الماضي المركب Passato Prossimo أفعال كتير مثل mangiare / guardare / parlare بتاخد avere: ho mangiato, ho guardato.'};
+    return {prompt:'لماذا استخدمنا "'+aux+'" في الجملة؟',options:['لأن الفعل هنا في Passato Prossimo وبيستخدم avere','لأن الفاعل مؤنث مفرد','لأن الجملة في المستقبل','لأن بعد mentre لازم avere'],answer:0,explanation:'في الماضي المركب Passato Prossimo أفعال كثيرًا مثل mangiare / guardare / parlare بتاخد avere: ho mangiato, ho guardato.'};
   }
   if(/(sono|sei|è|e|siamo|siete)\s+\w*(ato|ata|ati|ate)/i.test(txt)){
     return {prompt:'ما القاعدة المهمة مع الأفعال الذي بتاخد essere؟',options:['آخر التصريف بيتفق مع الفاعل في النوع والعدد','بنستخدم نفس النهاية دايمًا: -o','لازم نحط avere بعد الفعل','الفاعل لازم يتحذف'],answer:0,explanation:'مع essere في Passato Prossimo لازم الـ participio يتفق مع الفاعل: andato / andata / andati / andate.'};
@@ -2923,7 +2923,7 @@ function makeGrammarQuestion(s){
   if(art){
     return {prompt:'الكلمة "'+art.it+'" تعتبر ما؟',options:['أداة تعريف أو تنكير مرتبطة بالاسم','فعل في الماضي','حرف جر','صفة ملكية'],answer:0,explanation:'الأدوات في الإيطالي تتغير حسب النوع والعدد وبداية الاسم: il/un للمذكر، la/una للمؤنث، وهكذا.'};
   }
-  return {prompt:'ما أول شيء ندور علماذاا لفهم تركيب الجملة الإيطالية؟',options:['الفعل: زمنه ومَن الفاعل بتاعه','آخر كلمة بس','علامات الترقيم فقط','الترجمة الحرفية كلمة بكلمة'],answer:0,explanation:'الفعل هو قلب الجملة: منه نعرف الزمن والفاعل، وبعدها نفهم باقي الكلمات حوالماذا.'};
+  return {prompt:'ما أول شيء ندور علماذاا لفهم تركيب الجملة الإيطالية؟',options:['الفعل: زمنه ومَن الفاعل بتاعه','آخر كلمة لكن','علامات الترقيم فقط','الترجمة الحرفية كلمة بكلمة'],answer:0,explanation:'الفعل هو قلب الجملة: منه نعرف الزمن والفاعل، وبعدها نفهم باقي الكلمات حوالماذا.'};
 }
 function showGrammarQuestion(){
   const s=lDeck[lIdx]; if(!s)return;
@@ -3017,7 +3017,7 @@ function checkWrite(){
     resultWrap.appendChild(div);
   });
 
-  // النسبة من الكلمات المحتوى بس (ليس حروف الجر)
+  // النسبة من الكلمات المحتوى لكن (ليس حروف الجر)
   const pct=gradedCount?Math.round(correctCount/gradedCount*100):0;
   const scoreEl=document.getElementById('writeScore');
   scoreEl.textContent=correctCount+'/'+gradedCount+' كلمة صحيح — '+pct+'%';
@@ -3032,7 +3032,7 @@ function checkWrite(){
   showGrammarQuestion();
 }
 
-// لما الكتبويبة تخلص والسلسلة كانت من تبويب نطق الكلمات، نرجعله للجملة الجاية في نفس التبويب.
+// لما الكتابة تخلص والسلسلة كانت من تبويب نطق الكلمات، نرجعله للجملة الجاية في نفس التبويب.
 function wpMaybeChainAfterWrite(){
   if(!wpChainActive)return;
   setTimeout(()=>wpChainAdvanceToNextSentence(),1400);
