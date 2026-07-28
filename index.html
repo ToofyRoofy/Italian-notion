@@ -65,6 +65,15 @@
   .grammar-q-option:disabled{cursor:default;opacity:.95;}
   .grammar-explain{display:none;margin-top:10px;border-radius:10px;padding:10px 12px;background:rgba(192,132,252,.10);border:1px solid rgba(192,132,252,.28);font-size:.82rem;line-height:1.7;color:var(--text);}
   .grammar-explain.show{display:block;}
+  .autosave-note{text-align:center;color:var(--muted);font-size:.68rem;margin-top:-6px;}
+  .listen-quiz-panel{display:none;background:#0e0e1a;border:1px solid var(--border);border-radius:14px;padding:12px;margin-top:10px;text-align:right;}
+  .listen-quiz-panel.show{display:block;}
+  .listen-q-title{font-size:.72rem;color:var(--blue);font-weight:900;text-align:center;margin-bottom:8px;}
+  .listen-q-prompt{font-size:.92rem;font-weight:800;line-height:1.6;margin-bottom:10px;}
+  .listen-q-options{display:flex;flex-direction:column;gap:8px;}
+  .listen-q-option{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:10px;padding:9px 11px;font-family:inherit;font-size:.84rem;line-height:1.5;text-align:right;cursor:pointer;}
+  .listen-q-option.ok{border-color:var(--green);background:rgba(0,232,150,.10);}
+  .listen-q-option.bad{border-color:var(--red);background:rgba(255,77,109,.10);}
 
   /* mode tabs */
   .mode-tabs{display:flex;gap:8px;}
@@ -454,6 +463,7 @@
   </div>
 
   <div class="engine-status" id="engineStatus"></div>
+  <div class="autosave-note" id="autosaveNote">✅ التقدم بيتحفظ تلقائيًا</div>
 
   <div class="skill-scores" id="skillScores">
     <div class="skill-card pr"><div class="skill-num" id="skillPron">0%</div><div class="skill-lbl">🎙️ نطق</div></div>
@@ -571,6 +581,12 @@
         <div class="seq-zone-lbl">الكلمات</div>
         <div class="seq-pool" id="seqPool"></div>
         <button class="free-next-btn" onclick="seqReveal()" id="seqRevealBtn" style="display:block;margin:6px auto 0">👁️ كشف الترتيب</button>
+      </div>
+
+      <div class="listen-quiz-panel" id="listenQuizPanel">
+        <div class="listen-q-title">👂 سؤال سمع سريع</div>
+        <div class="listen-q-prompt" id="listenQPrompt"></div>
+        <div class="listen-q-options" id="listenQOptions"></div>
       </div>
 
       <!-- Write mode panel -->
@@ -1238,7 +1254,7 @@ function addSkillScore(skill,score,passed){
   const s=skillScores[skill]; if(!s)return;
   score=Math.max(0,Math.min(100,Math.round(score||0)));
   s.attempts++; s.totalScore+=score; s.best=Math.max(s.best,score); if(passed)s.passed++;
-  saveSkillScores(); updateSkillScoreUI();
+  saveSkillScores(); updateSkillScoreUI(); setTimeout(saveAppState,0);
 }
 function addWritingSkillScore(score,correct,total,passed){
   const s=skillScores.writing; s.correctWords+=correct||0; s.totalWords+=total||0; addSkillScore('writing',score,passed);
@@ -1269,6 +1285,40 @@ function updateSessionInsight(){
 }
 loadSkillScores();
 
+function collectAppState(){
+  return {
+    version:8,
+    unlockedSentenceIndices:wpUnlockedIndices||[],
+    wordMode:{sentenceIdx:wpSentenceIdx||0,wordPos:wpPos||0},
+    lessonMode:{idx:lIdx||0,studyMode:currentStudyMode||'speak',seqSub:seqSub||'it'},
+    scores:skillScores
+  };
+}
+function saveAppState(){
+  try{
+    localStorage.setItem('parlaAppStateV8',JSON.stringify(collectAppState()));
+    localStorage.setItem('parlaUnlockedSentenceIndices',JSON.stringify(wpUnlockedIndices||[]));
+    localStorage.setItem('parlaWordProgress',JSON.stringify({sentenceIdx:wpSentenceIdx||0,wordPos:wpPos||0}));
+    localStorage.setItem('parlaLessonProgress',JSON.stringify({idx:lIdx||0}));
+    localStorage.setItem('parlaSkillScores',JSON.stringify(skillScores));
+    const n=document.getElementById('autosaveNote'); if(n)n.textContent='✅ اتحفظ تلقائيًا';
+  }catch(e){const n=document.getElementById('autosaveNote'); if(n)n.textContent='⚠️ الحفظ مش متاح في المتصفح ده';}
+}
+function loadAppState(){
+  try{
+    const raw=localStorage.getItem('parlaAppStateV8'); if(!raw)return;
+    const st=JSON.parse(raw);
+    if(Array.isArray(st.unlockedSentenceIndices))wpUnlockedIndices=[...new Set(st.unlockedSentenceIndices.map(Number).filter(i=>Number.isInteger(i)&&i>=0&&i<LESSON_SENTENCES.length))].sort((a,b)=>a-b);
+    if(st.scores)Object.keys(skillScores).forEach(k=>{if(st.scores[k])Object.assign(skillScores[k],st.scores[k]);});
+  }catch(e){}
+}
+function confirmResetAllProgress(){
+  if(!confirm('متأكد؟ ده هيمسح الجمل المفتوحة والسكور وكل التقدم المحفوظ.'))return;
+  ['parlaAppStateV8','parlaUnlockedSentenceIndices','parlaWordProgress','parlaLessonProgress','parlaSkillScores'].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
+  wpUnlockedIndices=[]; resetSessionScores(); clearWordProgress(); location.reload();
+}
+loadAppState();
+
 // ===== WORD TAB PIPELINE: يمشي على LESSON_SENTENCES جملة بجملة، كلمة بكلمة =====
 let wpSentenceIdx=0;
 let wpWordIndices=[];
@@ -1283,6 +1333,7 @@ let wpUnlockedIndices=[]; // فهرس بالجمل اللي خلصت كلمات�
 
 function saveUnlockedSentences(){
   try{localStorage.setItem('parlaUnlockedSentenceIndices',JSON.stringify(wpUnlockedIndices));}catch(e){}
+  setTimeout(saveAppState,0);
 }
 function loadUnlockedSentences(){
   try{
@@ -1296,16 +1347,40 @@ function loadUnlockedSentences(){
 }
 loadUnlockedSentences();
 
+function saveWordProgress(){
+  try{localStorage.setItem('parlaWordProgress',JSON.stringify({sentenceIdx:wpSentenceIdx,wordPos:wpPos}));}catch(e){}
+  setTimeout(saveAppState,0);
+}
+function loadWordProgress(){
+  try{
+    const raw=localStorage.getItem('parlaWordProgress'); if(!raw)return null;
+    const st=JSON.parse(raw);
+    if(Number.isInteger(st.sentenceIdx)&&st.sentenceIdx>=0&&st.sentenceIdx<LESSON_SENTENCES.length){
+      return {sentenceIdx:st.sentenceIdx,wordPos:Number.isInteger(st.wordPos)?Math.max(0,st.wordPos):0};
+    }
+  }catch(e){}
+  return null;
+}
+function clearWordProgress(){try{localStorage.removeItem('parlaWordProgress');}catch(e){}}
+
+function resetAllProgress(){
+  wpUnlockedIndices=[]; saveUnlockedSentences(); clearWordProgress(); resetSessionScores();
+}
+
+
 function start(){
   loadUnlockedSentences();
-  wpSentenceIdx=0;
+  loadSkillScores();
+  const saved=loadWordProgress();
+  wpSentenceIdx=saved?saved.sentenceIdx:0;
   totalScore=0;passedCount=0;bestScore=0;totalAttempts=0;failCount=0;
-  resetSessionScores();
   document.getElementById('endScreen').classList.remove('show');
   document.getElementById('game').style.display='flex';
-  wpLoadSentence(0);
+  wpLoadSentence(wpSentenceIdx);
+  if(saved&&wpWordIndices.length){wpPos=Math.min(saved.wordPos||0,Math.max(0,wpWordIndices.length-1));wpRenderWord();}
+  updateSkillScoreUI();
 }
-function restart(){start();}
+function restart(){resetAllProgress();start();}
 
 function wpShowStage(stage){
   document.getElementById('card').style.display=stage==='word'?'':'none';
@@ -1318,6 +1393,7 @@ function wpShowStage(stage){
 function wpLoadSentence(si){
   if(si>=LESSON_SENTENCES.length){endGame();return;}
   wpSentenceIdx=si;
+  saveWordProgress();
   const s=LESSON_SENTENCES[si];
   wpWordIndices=s.words.map((w,i)=>i).filter(i=>{
     const t=s.words[i].type;
@@ -1492,6 +1568,7 @@ function skipWord(){
 
 function next(){
   wpPos++;
+  saveWordProgress();
   if(wpPos>=wpWordIndices.length){wpStartQuiz();return;}
   wpRenderWord();
 }
@@ -1590,10 +1667,22 @@ function wpRenderQuizQuestion(){
     wrap.appendChild(btn);
   });
 }
+
+function quizExplanation(item){
+  const q=(item&&item.q)||''; const opts=(item&&item.options)||[]; const ans=opts[item.correct]||'';
+  if(q.includes('Passato Prossimo')&&q.includes('-are'))return 'قاعدة: أفعال -are المنتظمة تتحول غالبًا إلى -ato.';
+  if(q.includes('Passato Prossimo')&&q.includes('-ere'))return 'قاعدة: أفعال -ere المنتظمة تتحول غالبًا إلى -uto.';
+  if(q.includes('Passato Prossimo')&&q.includes('-ire'))return 'قاعدة: أفعال -ire المنتظمة تتحول غالبًا إلى -ito.';
+  if(q.includes('Imperfetto')&&q.includes('-are'))return 'قاعدة: Imperfetto لمجموعة -are يبدأ بـ -av- مثل parlavo.';
+  if(q.includes('Imperfetto')&&q.includes('-ere'))return 'قاعدة: Imperfetto لمجموعة -ere يبدأ بـ -ev- مثل prendevo.';
+  if(q.includes('Imperfetto')&&q.includes('-ire'))return 'قاعدة: Imperfetto لمجموعة -ire يبدأ بـ -iv- مثل dormivo.';
+  return ans?('الإجابة: '+ans):'';
+}
+
 function wpQuizAnswer(oi){
   const item=wpQuizList[wpQuizIdx];
   if(oi===item.correct){
-    document.getElementById('wpQuizFeedback').textContent='✅ صح!';
+    document.getElementById('wpQuizFeedback').textContent='✅ صح! '+quizExplanation(item);
     floatEmoji('✅');
     setTimeout(()=>{
       wpQuizIdx++;
@@ -1637,6 +1726,7 @@ function wpFinishSentenceQuiz(){
   wpShowStage('word');
   document.getElementById('wpProgress').textContent='🎉 الجملة دي اتفتحت في تاب "الدرس الإنفينيتي" — كمّل جملة تانية هنا ولا روح ذاكرها هناك وقت ما تحب';
   floatEmoji('🎉');
+  try{localStorage.setItem('parlaWordProgress',JSON.stringify({sentenceIdx:wpSentenceIdx+1,wordPos:0}));}catch(e){}
   setTimeout(()=>wpLoadSentence(wpSentenceIdx+1),1400);
 }
 function wpSyncLessonDeckToSentence(sentenceIdx){
@@ -1890,6 +1980,10 @@ function renderGrammarBlocks(blocks){
 // reference build, with (2) our deep grammar breakdown + conjugation tables
 // + tap-any-word-to-hear-it + always-available free navigation.
 let lDeck=[],lIdx=0;
+
+function saveLessonProgress(){try{localStorage.setItem('parlaLessonProgress',JSON.stringify({idx:lIdx}));}catch(e){} setTimeout(saveAppState,0);}
+function loadLessonProgress(){try{const raw=localStorage.getItem('parlaLessonProgress'); if(!raw)return 0; const st=JSON.parse(raw); return Number.isInteger(st.idx)?Math.max(0,st.idx):0;}catch(e){return 0;}}
+
 let lPassed=0,lStreak=0,lAttempts=0;
 let currentStudyMode='speak'; // 'speak' | 'listen' | 'write'
 let seqPlaced=[],seqPoolOrder=[],seqChecked=false,seqSub='it';
@@ -1947,7 +2041,7 @@ function lStart(){
     showLessonLocked();
     return;
   }
-  lDeck=wpUnlockedIndices.map(i=>LESSON_SENTENCES[i]);lIdx=0;
+  lDeck=wpUnlockedIndices.map(i=>LESSON_SENTENCES[i]);lIdx=Math.min(loadLessonProgress(),Math.max(0,lDeck.length-1));
   lPassed=0;lStreak=0;lAttempts=0;
   document.getElementById('lRestartBtn').style.display='none';
   hideLessonLocked();
@@ -2026,6 +2120,7 @@ function lRender(){
   const isWr=currentStudyMode==='write';
   document.getElementById('lTokens').style.display=isSp?'flex':'none';
   document.getElementById('listenPanel').style.display=isLi?'block':'none';
+  if(!isLi)hideListenQuestion();
   document.getElementById('writePanel').style.display=isWr?'flex':'none';
   document.getElementById('lMicBtn').style.display=isSp?'flex':'none';
   document.getElementById('lMicLbl').style.display=isSp?'block':'none';
@@ -2430,6 +2525,7 @@ function lSkipSentence(){
 }
 
 function lNext(){
+  saveLessonProgress();
   if(currentStudyMode==='listen'&&seqSub==='ar'&&!wpChainActive){
     arSeqIdx++;
     if(arSeqIdx>=arSeqDeck.length){
@@ -2447,6 +2543,7 @@ function lNext(){
     lStreak=0;
   }
   lIdx++;
+  saveLessonProgress();
   if(lIdx>=lDeck.length){lEnd();return;}
   lRender();
 }
@@ -2510,6 +2607,7 @@ function setStudyMode(mode){
   // ── إظهار / إخفاء البانيلات ──
   document.getElementById('lTokens').style.display=isSp?'flex':'none';
   document.getElementById('listenPanel').style.display=isLi?'block':'none';
+  if(!isLi)hideListenQuestion();
   document.getElementById('writePanel').style.display=isWr?'flex':'none';
   document.getElementById('lMicBtn').style.display=isSp?'flex':'none';
   document.getElementById('lMicLbl').style.display=isSp?'block':'none';
@@ -2540,12 +2638,41 @@ function setStudyMode(mode){
   if(isLi){
     if(prevMode!==mode) seqAdvance(); // بدّلنا للتاب ده من تاب تاني — كمّل للجملة الجاية، مش نفس القديمة
     seqSetup(); // seqSetup يدير الـ breakdown بنفسه
+    showListenQuestion();
   }
   if(isWr){
     document.getElementById('lBreakdown').style.display='flex';
     const sc=lDeck[lIdx];
     writeSetup();
   }
+}
+
+
+// ── LISTENING MICRO-QUIZ ──
+let currentListenQuestion=null;
+function hideListenQuestion(){const p=document.getElementById('listenQuizPanel'); if(p)p.classList.remove('show'); currentListenQuestion=null;}
+function makeListenQuestion(s){
+  const pool=LESSON_SENTENCES.filter(x=>x!==s);
+  const distractors=shuffle(pool).slice(0,3).map(x=>x.ar||x.en||x.it);
+  const options=shuffle([s.ar||s.en||s.it,...distractors]);
+  return {prompt:'اسمع الجملة، واختار معناها الصح:',answer:options.indexOf(s.ar||s.en||s.it),options};
+}
+function showListenQuestion(){
+  const s=seqS(); if(!s)return;
+  currentListenQuestion=makeListenQuestion(s);
+  document.getElementById('listenQPrompt').textContent=currentListenQuestion.prompt;
+  const wrap=document.getElementById('listenQOptions'); wrap.innerHTML='';
+  currentListenQuestion.options.forEach((op,i)=>{const b=document.createElement('button'); b.className='listen-q-option'; b.textContent=op; b.onclick=()=>answerListenQuestion(i); wrap.appendChild(b);});
+  document.getElementById('listenQuizPanel').classList.add('show');
+  setTimeout(()=>speakWord(s.it),250);
+}
+function answerListenQuestion(i){
+  if(!currentListenQuestion)return;
+  const q=currentListenQuestion, opts=[...document.getElementById('listenQOptions').children];
+  opts.forEach((b,idx)=>{b.disabled=true; if(idx===q.answer)b.classList.add('ok');});
+  const ok=i===q.answer; if(!ok&&opts[i])opts[i].classList.add('bad');
+  addSkillScore('listening',ok?100:35,ok);
+  currentListenQuestion=null;
 }
 
 // ── SEQUENCE MODE ──
@@ -2559,6 +2686,7 @@ function seqArLabel(w){
 }
 
 function setSeqSub(sub){
+  hideListenQuestion();
   seqStopTts(); // قفل أي نطق متأخر من السب-تاب اللي كنا فيه
   const prevSub=seqSub;
   seqSub=sub;
@@ -2568,6 +2696,7 @@ function setSeqSub(sub){
   document.getElementById('lEn').style.display='';
   if(sub==='ar'&&prevSub!=='ar') seqAdvance(); // داخلين على AR من تاب تاني — كمّل للجملة الجاية
   seqSetup();
+  showListenQuestion();
 }
 
 function seqSetup(){
