@@ -345,7 +345,7 @@
   .wr-tok.ok{color:var(--green);border-color:#00e89650;background:#00e8960d;}
   .wr-tok.bad{color:var(--red);border-color:#ff4d6d50;background:#ff4d6d0d;}
   .wr-tok .correct-form{display:block;font-size:.66rem;color:var(--muted);margin-top:2px;}
-  /* حروف الجر والمقالات في write mode — دايماً صح تلقائياً زي speak mode */
+  /* حروف الجر والمقالات في write mode — دايماً صحيح تلقائياً مثل speak mode */
   .wr-tok.auto{color:var(--muted);border-color:var(--border);border-style:dashed;opacity:.6;}
   .write-score{text-align:center;font-size:.88rem;font-weight:700;min-height:20px;}
 
@@ -400,10 +400,10 @@
   .gm-item-title{font-family:Georgia,serif;color:var(--gold);font-weight:700;direction:ltr;text-align:left;font-size:.95rem;margin-bottom:2px;}
   .gm-item-note{font-size:.78rem;color:var(--muted);margin-bottom:6px;line-height:1.5;}
   .gm-item{margin-bottom:14px;}
-  .gm-ex-row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--border);font-size:.82rem;cursor:pointer;}
+  .gm-ex-row{display:flex;flex-direction:column;gap:4px;padding:8px 0;border-bottom:1px solid var(--border);font-size:.84rem;cursor:pointer;}
   .gm-ex-row:active{background:rgba(255,255,255,.05);}
-  .gm-ex-it{direction:ltr;text-align:left;color:var(--green);font-family:Georgia,serif;flex-shrink:0;}
-  .gm-ex-ar{color:var(--text);text-align:right;}
+  .gm-ex-it{direction:ltr;text-align:left;color:var(--green);font-family:Georgia,serif;display:block;}
+  .gm-ex-ar{color:var(--text);text-align:right;display:block;border-top:1px dashed rgba(255,255,255,.10);padding-top:4px;}
   .gm-table-title{font-size:.78rem;color:var(--blue);margin:10px 0 4px;font-weight:700;}
   .gm-table{width:100%;border-collapse:collapse;font-size:.76rem;margin-bottom:8px;}
   .gm-table th,.gm-table td{padding:5px 6px;border-bottom:1px solid var(--border);text-align:center;}
@@ -468,7 +468,7 @@
   <div class="skill-scores" id="skillScores">
     <div class="skill-card pr"><div class="skill-num" id="skillPron">0%</div><div class="skill-lbl">🎙️ نطق</div></div>
     <div class="skill-card li"><div class="skill-num" id="skillListen">0%</div><div class="skill-lbl">👂 سمع</div></div>
-    <div class="skill-card wr"><div class="skill-num" id="skillWrite">0%</div><div class="skill-lbl">✍️ كتابة</div></div>
+    <div class="skill-card wr"><div class="skill-num" id="skillWrite">0%</div><div class="skill-lbl">✍️ كتبويبة</div></div>
     <div class="skill-card gr"><div class="skill-num" id="skillGrammar">0%</div><div class="skill-lbl">🧩 ترتيب</div></div>
   </div>
   <div class="session-insight" id="sessionInsight"></div>
@@ -507,14 +507,14 @@
   </div>
 
   <div class="mic-area">
-    <button class="tts-btn" onclick="speak()">🔊 اسمع النطق الصح</button>
+    <button class="tts-btn" onclick="speak()">🔊 استمع إلى النطق الصحيحيح</button>
     <button class="mic-btn" id="micBtn" onclick="toggleMic()">🎙️</button>
-    <div class="mic-lbl" id="micLbl">اضغط وتكلم</div>
+    <div class="mic-lbl" id="micLbl">اضغط وتحدث</div>
   </div>
 
   <div class="heard" id="heard"></div>
   <div class="badge" id="badge"></div>
-  <button class="skip-link" id="skipBtn" onclick="skipWord()">تخطي الكلمة دي ←</button>
+  <button class="skip-link" id="skipBtn" onclick="skipWord()">تخطي هذه الكلمة ←</button>
   <button class="next-btn" id="nextBtn" onclick="next()">التالي ←</button>
 
   <div class="wp-info-panel" id="wpInfoPanel" style="display:none">
@@ -536,19 +536,19 @@
     <div class="end-emoji" id="endEmoji"></div>
     <div class="end-title" id="endTitle"></div>
     <div class="end-sub"  id="endSub"></div>
-    <button class="restart-btn" onclick="restart()">🔄 العب تاني</button>
+    <button class="restart-btn" onclick="restart()">🔄 ابدأ مرة أخرى</button>
   </div>
 
   <!-- LESSON MODE: infinite-style sentence breakdown + pronunciation + word-drill -->
   <div class="wrap" id="lessonMode" style="display:none;padding:0">
     <div id="lLockedMsg" style="display:none;text-align:center;padding:48px 20px;">
       <div style="font-size:48px;margin-bottom:12px;">🔒</div>
-      <div style="font-size:18px;font-weight:700;">لسه مفيش جمل اتفتحت هنا</div>
-      <div style="opacity:.7;margin-top:8px;line-height:1.7;">كمّل نطق كلمات أي جملة في تاب "🎤️ نطق الكلمات" الأول، وهي هتظهر هنا تلقائي.</div>
+      <div style="font-size:18px;font-weight:700;">ما زال لا توجد جمل فُتحت هنا</div>
+      <div style="opacity:.7;margin-top:8px;line-height:1.7;">كمّل نطق كلمات أي جملة في تبويب "🎤️ نطق الكلمات" الأول، وهي هتظهر هنا تلقائي.</div>
     </div>
     <div id="lessonContentWrap">
     <div class="scores">
-      <div class="sc g"><div class="sc-num" id="lAvg">0%</div><div class="sc-lbl">📊 جمل صح</div></div>
+      <div class="sc g"><div class="sc-num" id="lAvg">0%</div><div class="sc-lbl">📊 جمل صحيح</div></div>
       <div class="sc b"><div class="sc-num" id="lAll">0/0</div><div class="sc-lbl">📖 الجملة</div></div>
       <div class="sc r"><div class="sc-num" id="lStreak">0</div><div class="sc-lbl">🔥 streak</div></div>
     </div>
@@ -557,9 +557,9 @@
     <div class="study-tabs">
       <button class="study-tab active" id="stSpeak" onclick="setStudyMode('speak')">🎙️ نطق</button>
       <button class="study-tab" id="stListen" onclick="setStudyMode('listen')">🔀 ترتيب</button>
-      <button class="study-tab" id="stWrite" onclick="setStudyMode('write')">✍️ كتابة</button>
+      <button class="study-tab" id="stWrite" onclick="setStudyMode('write')">✍️ كتبويبة</button>
     </div>
-    <button class="free-next-btn" onclick="lNext()">⏭️ جملة تانية</button>
+    <button class="free-next-btn" onclick="lNext()">⏭️ جملة أخرى</button>
 
     <div class="card" id="lCard">
       <div class="card-cat" id="lPronoun"></div>
@@ -576,7 +576,7 @@
         </div>
         <div class="seq-zone-lbl" id="seqZoneLbl">رتّب بالإيطالي 🔀</div>
         <div class="seq-answer" id="seqAnswer">
-          <span class="seq-empty-hint">اضغط على الكلمات بالترتيب الصح</span>
+          <span class="seq-empty-hint">اضغط على الكلمات بالترتيب الصحيح</span>
         </div>
         <div class="seq-zone-lbl">الكلمات</div>
         <div class="seq-pool" id="seqPool"></div>
@@ -599,7 +599,7 @@
 
       <!-- Grammar question appears after writing -->
       <div class="grammar-quiz-panel" id="grammarQuizPanel">
-        <div class="grammar-q-title">🧩 سؤال جرامر بعد الكتابة</div>
+        <div class="grammar-q-title">🧩 سؤال جرامر بعد الكتبويبة</div>
         <div class="grammar-q-prompt" id="grammarQPrompt"></div>
         <div class="grammar-q-options" id="grammarQOptions"></div>
         <div class="grammar-explain" id="grammarQExplain"></div>
@@ -614,12 +614,12 @@
         <div class="drill-attempts" id="drillAttempts"></div>
       </div>
 
-      <!-- word grammar info panel (شغل بعد نطق الكلمة صح) -->
+      <!-- word grammar info panel (شغل بعد نطق الكلمة صحيح) -->
       <div class="drill-box" id="wordInfoBox" style="display:none">
         <div class="drill-label" id="wordInfoProgress">معلومة عن الكلمة</div>
         <div class="drill-word" id="wordInfoWord"></div>
         <div id="wordInfoBody" style="text-align:right;font-size:15px;line-height:1.9;margin-top:6px"></div>
-        <button class="next-btn show" id="wordInfoNextBtn" style="margin-top:10px" onclick="wordPipelineAfterInfo()">تمام، جاوب على سؤال ←</button>
+        <button class="next-btn show" id="wordInfoNextBtn" style="margin-top:10px" onclick="wordPipelineAfterInfo()">ممتاز، أجب على سؤال ←</button>
       </div>
 
       <!-- word MCQ quiz panel -->
@@ -635,22 +635,22 @@
     </div>
 
     <div class="mic-area" id="lMicArea">
-      <button class="tts-btn" id="lTtsBtn" onclick="lSpeak()">🔊 اسمع الجملة</button>
+      <button class="tts-btn" id="lTtsBtn" onclick="lSpeak()">🔊 استمع إلى الجملة</button>
       <button class="mic-btn" id="lMicBtn" onclick="lToggleMic()">🎙️</button>
-      <div class="mic-lbl" id="lMicLbl">اضغط وقول الجملة كلها</div>
+      <div class="mic-lbl" id="lMicLbl">اضغط وقل الجملة كلها</div>
     </div>
 
     <div class="heard" id="lHeard"></div>
     <div class="badge" id="lBadge"></div>
-    <button class="skip-link" id="lSkipBtn" onclick="lSkipSentence()">تخطي الجملة دي ←</button>
-    <button class="next-btn" id="lNextBtn" onclick="lNext()">الجملة الجاية ←</button>
-    <button class="restart-btn" id="lRestartBtn" onclick="lStart()" style="display:none">🔄 ابدأ الدفعة من الأول</button>
+    <button class="skip-link" id="lSkipBtn" onclick="lSkipSentence()">تخطي هذه الجملة ←</button>
+    <button class="next-btn" id="lNextBtn" onclick="lNext()">الجملة التالية ←</button>
+    <button class="restart-btn" id="lRestartBtn" onclick="lStart()" style="display:none">🔄 ابدأ المجموعة من الأول</button>
     </div>
   </div>
 
-  <!-- VERBS MODE: مكتبة مرجعية للأفعال، مقسّمة ARE / ERE / IRE، دوس على أي فعل يطلعلك pop up فيه تصريفه كامل -->
+  <!-- VERBS MODE: مكتبة مرجعية للأفعال، مقسّمة ARE / ERE / IRE، اضغط على أي فعل يطلعلك pop up فيه تصريفه كمل -->
   <div class="wrap" id="verbsMode" style="display:none;padding:0">
-    <div class="verbs-intro">📚 الأفعال مقسّمة حسب الماضي — ARE و ERE و IRE. اضعط على أي فعل عشان تشوف معناه وتصريفه كامل</div>
+    <div class="verbs-intro">📚 الأفعال مقسّمة حسب الماضي — ARE و ERE و IRE. اضعط على أي فعل لكي تاعرض معناه وتصريفه كمل</div>
     <div id="verbGroups"></div>
   </div>
 </div>
@@ -660,7 +660,7 @@
   <div class="verb-modal">
     <div class="verb-modal-head">
       <div class="verb-modal-it" id="vmIt"></div>
-      <button class="verb-speak-btn" id="vmSpeakBtn" onclick="speakVerb()" title="اسمع الفعل">🔊</button>
+      <button class="verb-speak-btn" id="vmSpeakBtn" onclick="speakVerb()" title="استمع إلى الفعل">🔊</button>
       <button class="verb-modal-close" onclick="closeVerbModal()">✕</button>
     </div>
     <div class="verb-modal-tabs">
@@ -761,16 +761,16 @@ function similarity(a,b){
 }
 
 // ===== SEGMENT-LEVEL FEEDBACK (word mode) =====
-// مهم: مفيش عندنا موديل يقدر يسمع/يحلل 3 مقاطع صوتية منفصلة فعلياً من التسجيل
-// (ده يحتاج "forced alignment" صوتي حقيقي، وWhisper-tiny في المتصفح مبيرجعش
-// توقيتات على مستوى المقطع بشكل موثوق). البديل العملي اللي عملناه هنا:
+// مهم: لا توجد عندنا موديل يقدر يسمع/يحلل 3 مقاطع صوتية منفصلة فعلياً من التسجيل
+// (هذا يحتاج "forced alignment" صوتي حقيقي، وWhisper-tiny في المتصفح مبيرجعش
+// توقيتات على مستوى المقطع بشكل موثوق). البديل العملي الذي عملناه هنا:
 // 1) نقسم شكل الكلمة نفسها لـ3 مقاطع تقريبية (V/CV heuristic).
-// 2) نقارن حروف الكلمة اللي المستخدم قالها (بعد التفريغ النصي) بحروف الكلمة
-//    الأصلية حرف بحرف (Levenshtein alignment) عشان نعرف أنهي حروف "ضاعت"
-//    أو اتقالت غلط.
-// 3) أي مقطع يقع فيه أغلب الحروف الغلط بيتحدد بالأحمر، والمستخدم بيتقال له
-//    يركّز فيه وهو بيعيد قول الكلمة كاملة تاني.
-// ده تقريب مفيد لتوجيه الانتباه، مش تحليل نطق دقيق 100% لكل حرف.
+// 2) نقارن حروف الكلمة الذي المستخدم قالها (بعد التفريغ النصي) بحروف الكلمة
+//    الأصلية حرف بحرف (Levenshtein alignment) لكي نعرف أنهي حروف "ضاعت"
+//    أو اتقالت خطأ.
+// 3) أي مقطع يقع فيه أغلب الحروف الخطأ بيتحدد بالأحمر، والمستخدم بيتقال له
+//    يركّز فيه وهو بيعيد قول الكلمة كملة مرة أخرى.
+// هذا تقريب مفيد لتوجيه الانتباه، ليس تحليل نطق دقيق 100% لكل حرف.
 
 function rawSyllables(word){
   const isVowel=c=>/[aeiouàèéìòù]/i.test(c);
@@ -846,8 +846,8 @@ function mapToNormIndices(word){
   return map;
 }
 
-// بيرجع مصفوفة boolean بطول norm(target) — true يعني الحرف ده اتقال صح
-// (طابق حاجة في المسموع)، false يعني ضاع أو اتبدل بحرف مختلف.
+// بيرجع مصفوفة boolean بطول norm(target) — true يعني الحرف هذا اتقال صحيح
+// (طابق شيء في المسموع)، false يعني ضاع أو اتبدل بحرف مختلف.
 function alignMismatches(target,heard){
   const a=norm(target),b=norm(heard);
   const m=a.length,n=b.length;
@@ -873,7 +873,7 @@ function alignMismatches(target,heard){
 }
 
 // بيقسّم الكلمة لـ3 مقاطع وبيحدد كل مقطع "سليم" أو "محتاج تركيز" بناءً على
-// نسبة الحروف الغلط فيه مقارنة بأسوأ مقطع في الكلمة.
+// نسبة الحروف الخطأ فيه مقارنة بأسوأ مقطع في الكلمة.
 function computeSegmentResults(word,heard){
   const segments=syllabify3(word);
   const matched=alignMismatches(word,heard);
@@ -902,9 +902,9 @@ function renderWordSegmentsHtml(results){
   return results.map(r=>r.ok?escHtml(r.text):'<span style="color:#e74c3c;text-decoration:underline wavy;font-weight:800;">'+escHtml(r.text)+'</span>').join('');
 }
 
-// بيرسم الكلمة حرف بحرف: الحروف اللي اتثبتت "صح" (في mask) بالأخضر، والباقي
-// بالأحمر تحته خط متعرج — يُستخدم في drill mode عشان يبيّن للمتعلم أنهي
-// حروف قفلها فعلاً وأنهي حروف لسه محتاج يركّز فيها.
+// بيرسم الكلمة حرف بحرف: الحروف الذي اتثبتت "صحيح" (في mask) بالأخضر، والباقي
+// بالأحمر تحته خط متعرج — يُستخدم في drill mode لكي يبيّن للمتعلم أنهي
+// حروف قفلها فعلاً وأنهي حروف ما زال محتاج يركّز فيها.
 function renderWordLetterMaskHtml(word,mask){
   const map=mapToNormIndices(word);
   let html='';
@@ -943,7 +943,7 @@ async function ensureWhisperLoaded(){
     const mod=await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2');
     mod.env.allowLocalModels=false;
     whisperPipeline=await mod.pipeline('automatic-speech-recognition','Xenova/whisper-tiny',{
-      // بنفرض النسخة المصغّرة (int8) بشكل صريح عشان نضمن نفس الحجم/السرعة اللي
+      // بنفرض النسخة المصغّرة (int8) بشكل صريح لكي نضمن نفس الحجم/السرعة الذي
       // رسالة الحالة فوق واعدة بيها (~40-75 ميجا)، بدل الاعتماد على قيمة
       // افتراضية ممكن تتغيّر بين إصدارات المكتبة وتنزّل نسخة fp32 أكبر
       // وأبطأ بكتير في التحليل، خصوصًا على الموبايل.
@@ -955,10 +955,10 @@ async function ensureWhisperLoaded(){
       }
     });
     whisperReady=true;
-    setEngineStatus('✅ المحرك الأوفلاين جاهز — هيشتغل من غير نت دلوقتي');
+    setEngineStatus('✅ المحرك الأوفلاين جاهز — هيشتغل من غير نت الآن');
     setTimeout(()=>setEngineStatus(''),2500);
   }catch(err){
-    setEngineStatus('⚠️ تعذّر تحميل المحرك الأوفلاين، هنستخدم تعرف الصوت اللي محتاج نت لحد ما يتاح');
+    setEngineStatus('⚠️ تعذّر تحميل المحرك الأوفلاين، هنستخدم تعرف الصوت الذي محتاج نت لحد ما يتاح');
     setTimeout(()=>setEngineStatus(''),3500);
   }
   whisperLoading=false;
@@ -992,12 +992,12 @@ async function recordAudioVAD(maxMs,silenceMs){
     let stopped=false;
 
     // ثابت 0.02 كان بيفتكر إن في كلام طول ما ضجيج المايك/المكان فوق القيمة
-    // ده (شائع في مايكات الموبايل بسبب AGC)، فمكانش بيوصل لحالة "سكوت"
-    // خالص وكان بيستنى للـ maxMs كامل كل مرة حتى لو المستخدم سكت فعلاً بدري.
+    // هذا (شائع في مايكات الموبايل بسبب AGC)، فمكانش بيوصل لحالة "سكوت"
+    // خالص وكان بيستنى للـ maxMs كمل كل مرة حتى لو المستخدم سكت فعلاً بدري.
     // هنا بنقيس "أرضية الضجيج" الفعلية أول ~250ms قبل ما الكلام يبدأ،
-    // وبعدين نبني عليها عتبتين: عتبة أعلى عشان نتأكد إن ده كلام فعلاً،
-    // وعتبة أوطى (أقرب لأرضية الضجيج) عشان نعتبره سكوت فور ما الصوت يرجع
-    // قريب من الضجيج الطبيعي، مش لازم يوصل لصفر.
+    // وبعدين نبني علماذاا عتبتين: عتبة أعلى لكي نتأكد إن هذا كلام فعلاً،
+    // وعتبة أوطى (أقرب لأرضية الضجيج) لكي نعتبره سكوت فور ما الصوت يرجع
+    // قريب من الضجيج الطبيعي، ليس لازم يوصل لصفر.
     const CALIBRATE_MS=250;
     let calibSum=0,calibCount=0,noiseFloor=0.006,calibrated=false;
     let speechThresh=0.02,silenceThresh=0.02;
@@ -1020,11 +1020,11 @@ async function recordAudioVAD(maxMs,silenceMs){
           calibSum+=rms;calibCount++;
         } else {
           if(calibCount>0)noiseFloor=calibSum/calibCount;
-          // عتبة الكلام: واضح فوق أرضية الضجيج، بحد أدنى 0.02 عشان مايكات
-          // نضيفة جداً (أرضية ضجيج شبه صفرية) لسه محتاجة صوت حقيقي مش همس.
+          // عتبة الكلام: واضح فوق أرضية الضجيج، بحد أدنى 0.02 لكي مايكات
+          // نضيفة جداً (أرضية ضجيج شبه صفرية) ما زال محتاجة صوت حقيقي ليس همس.
           speechThresh=Math.max(0.02,noiseFloor*2.5+0.008);
-          // عتبة السكوت: أقرب لأرضية الضجيج نفسها (هيستِيريسيس) عشان نلحق
-          // لحظة السكوت فعلياً بدل ما نستنى الصوت يوصل صفر تمام.
+          // عتبة السكوت: أقرب لأرضية الضجيج نفسها (هيستِيريسيس) لكي نلحق
+          // لحظة السكوت فعلياً بدل ما نستنى الصوت يوصل صفر ممتاز.
           silenceThresh=Math.max(0.012,noiseFloor*1.5+0.004);
           calibrated=true;
         }
@@ -1066,8 +1066,8 @@ async function recordAudioVAD(maxMs,silenceMs){
   });
 }
 
-// صفارة قصيرة (Beep) بتتشغل قبل ما التسجيل يبدأ فعلياً، عشان يبقى واضح
-// للمستخدم إمتى يتكلم بالضبط. قصيرة عن قصد (120ms) بدل صفارة طويلة مزعجة.
+// صفارة قصيرة (Beep) بتتشغل قبل ما التسجيل يبدأ فعلياً، لكي يبقى واضح
+// للمستخدم متى يتكلم بالضبط. قصيرة عن قصد (120ms) بدل صفارة طويلة مزعجة.
 function playBeep(){
   return new Promise(resolve=>{
     try{
@@ -1118,17 +1118,17 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
   // واحدة. استخدام توقيتات وضع الكلمة القصيرة هنا كان بيقطع الجملة قبل ما
   // المستخدم يخلص كلامها — وده السبب الأساسي في إحساسه إن التعرف الأوفلاين
   // "بطيء أو فاضل يحمّل": كان بيتقطع بدري أو ياخد وقت تحليل أطول من الـ
-  // watchdog الثابت اللي كان عندنا.
+  // watchdog الثابت الذي كان عندنا.
   const isSentence=mode==='sentence';
   const recMaxMs=isSentence?16000:6000;
   const recSilenceMs=isSentence?1400:450;
-  // الـ watchdog لازم يغطي وقت التسجيل + وقت تحليل Whisper (اللي بيكبر مع
+  // الـ watchdog لازم يغطي وقت التسجيل + وقت تحليل Whisper (الذي بيكبر مع
   // طول الصوت وبيبقى أبطأ على الأجهزة الضعيفة) — 20 ثانية ثابتة كانت بتنتهي
-  // في نص التحليل لجمل طويلة وتلغي نتيجة كانت شكلها هتوصل لو استنينا شوية.
+  // في نص التحليل لجمل طويلة وتلغي نتيجة كانت شكلها هتوصل لو استنينا قليل.
   const watchdogMs=isSentence?45000:25000;
 
-  // صفارة قصيرة (Beep) قبل ما التسجيل يبدأ فعلياً، عشان يبقى واضح ومتفق عليه
-  // إمتى المستخدم يتكلم بالظبط — بعد الصفارة على طول — بدل ما يتردد أو
+  // صفارة قصيرة (Beep) قبل ما التسجيل يبدأ فعلياً، لكي يبقى واضح ومتفق علماذا
+  // متى المستخدم يتكلم بالظبط — بعد الصفارة على طول — بدل ما يتردد أو
   // يبدأ الكلام قبل ما التسجيل يكون شغال فعلاً.
   lbl.textContent='🔴 بيسمعك...';
   await playBeep();
@@ -1157,11 +1157,11 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
       const audio=await recordAudioVAD(recMaxMs,recSilenceMs);
       if(finished)return;
       lbl.textContent='🧠 بيحلل النطق...';
-      // طمّن المستخدم لو التحليل طوّل بدل ما يفضل الليبل واقف على "بيحلل
+      // طمّن المستخدم لو التحليل طوّل بدل ما يفضل الذيبل واقف على "بيحلل
       // النطق..." من غير أي تحديث — وده كان بيحسسه إن الشاشة واقفة/فاضلة
       // تحمّل مع إنها شغالة فعلاً في الخلفية.
       const stillWorking=setTimeout(()=>{
-        if(!finished)lbl.textContent='🧠 لسه بيحلل... (بياخد وقت أطول شوية في الجمل الطويلة)';
+        if(!finished)lbl.textContent='🧠 ما زال بيحلل... (بياخد وقت أطول قليل في الجمل الطويلة)';
       },5000);
       const text=await whisperTranscribe(audio);
       clearTimeout(stillWorking);
@@ -1178,9 +1178,9 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
     return;
   }
 
-  // المحرك الأوفلاين لسه بيحمّل ومحتاجين نرجع للفولباك اللي أساسًا يحتاج نت.
-  // لو مفيش نت خالص، نفشل بسرعة برسالة واضحة بدل ما نستنى الـ watchdog كامل
-  // على محاولة SpeechRecognition اللي مستحيل تنجح من غير نت.
+  // المحرك الأوفلاين ما زال بيحمّل ومحتاجين نرجع للفولباك الذي أساسًا يحتاج نت.
+  // لو لا توجد نت خالص، نفشل بسرعة برسالة واضحة بدل ما نستنى الـ watchdog كمل
+  // على محاولة SpeechRecognition الذي مستحيل تنجح من غير نت.
   if(!navigator.onLine){
     finish();
     onError(whisperLoading?'offline-not-ready':'network');
@@ -1224,25 +1224,25 @@ async function smartListen({micBtnId,micLblId,errEl,onResult,onError,mode}){
 
 function micErrorMessage(err){
   const m={
-    'not-allowed':'⛔ مفيش إذن ميكروفون',
-    'no-speech':'ما سمعتش حاجة، جرب تاني',
+    'not-allowed':'⛔ لا توجد إذن ميكروفون',
+    'no-speech':'ما سمعتش شيء، جرب مرة أخرى',
     'network':'خطأ في الشبكة',
-    'no-engine':'⚠️ المتصفح ده مش بيدعم تعرف الصوت — جرب Chrome',
-    'timeout':'⌛ ماحصلش رد، جرب تاني',
-    'offline-not-ready':'📡 المحرك الأوفلاين لسه بيحمّل من النت لأول مرة، ولازم يخلص التحميل مرة واحدة وانت متوصل بالنت — وبعد كده هيشتغل من غيره تمامًا'
+    'no-engine':'⚠️ المتصفح هذا ليس بيدعم تعرف الصوت — جرب Chrome',
+    'timeout':'⌛ ماحصلش رد، جرب مرة أخرى',
+    'offline-not-ready':'📡 المحرك الأوفلاين ما زال بيحمّل من النت لأول مرة، ولازم يخلص التحميل مرة واحدة وأنت متوصل بالنت — وبعد هكذا هيشتغل من غيره ممتازًا'
   };
   let base=m[err]||'خطأ: '+err;
-  // لو السبب الحقيقي وراء فشل الفولباك (الأونلاين) إن المحرك الأوفلاين لسه
-  // بيحمّل، نوضّح ده للمستخدم عشان ميفهمهاش عطل دايم في الجهاز.
+  // لو السبب الحقيقي وراء فشل الفولباك (الأونلاين) إن المحرك الأوفلاين ما زال
+  // بيحمّل، نوضّح هذا للمستخدم لكي ميفهمهاش عطل دايم في الجهاز.
   if(whisperLoading&&!whisperReady&&(err==='network'||err==='no-speech'||err==='no-engine')){
-    base+=' — المحرك الأوفلاين لسه بيحمّل في الخلفية أول مرة، محتاج نت مرة واحدة بس';
+    base+=' — المحرك الأوفلاين ما زال بيحمّل في الخلفية أول مرة، محتاج نت مرة واحدة بس';
   }
   return base;
 }
 
 
 // ===== 4-SKILL SCORING LAYER =====
-const SKILL_LABELS={pronunciation:'🎙️ النطق',listening:'👂 السمع',writing:'✍️ الكتابة',grammarOrder:'🧩 ترتيب الجملة'};
+const SKILL_LABELS={pronunciation:'🎙️ النطق',listening:'👂 السمع',writing:'✍️ الكتبويبة',grammarOrder:'🧩 ترتيب الجملة'};
 const skillScores={
   pronunciation:{attempts:0,totalScore:0,best:0,passed:0},
   listening:{attempts:0,totalScore:0,best:0,passed:0,replays:0,reveals:0},
@@ -1302,7 +1302,7 @@ function saveAppState(){
     localStorage.setItem('parlaLessonProgress',JSON.stringify({idx:lIdx||0}));
     localStorage.setItem('parlaSkillScores',JSON.stringify(skillScores));
     const n=document.getElementById('autosaveNote'); if(n)n.textContent='✅ اتحفظ تلقائيًا';
-  }catch(e){const n=document.getElementById('autosaveNote'); if(n)n.textContent='⚠️ الحفظ مش متاح في المتصفح ده';}
+  }catch(e){const n=document.getElementById('autosaveNote'); if(n)n.textContent='⚠️ الحفظ ليس متاح في المتصفح هذا';}
 }
 function loadAppState(){
   try{
@@ -1313,13 +1313,13 @@ function loadAppState(){
   }catch(e){}
 }
 function confirmResetAllProgress(){
-  if(!confirm('متأكد؟ ده هيمسح الجمل المفتوحة والسكور وكل التقدم المحفوظ.'))return;
+  if(!confirm('متأكد؟ هذا هيمسح الجمل المفتوحة والسكور وكل التقدم المحفوظ.'))return;
   ['parlaAppStateV8','parlaUnlockedSentenceIndices','parlaWordProgress','parlaLessonProgress','parlaSkillScores'].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});
   wpUnlockedIndices=[]; resetSessionScores(); clearWordProgress(); location.reload();
 }
 loadAppState();
 
-// ===== WORD TAB PIPELINE: يمشي على LESSON_SENTENCES جملة بجملة، كلمة بكلمة =====
+// ===== WORD TAB PIPELINE: يليسي على LESSON_SENTENCES جملة بجملة، كلمة بكلمة =====
 let wpSentenceIdx=0;
 let wpWordIndices=[];
 let wpPos=0;
@@ -1329,7 +1329,7 @@ let wpRetryTarget=null;
 let wpRetryFails=0;
 let wpChainActive=false;
 let wpChainSentenceIdx=null;
-let wpUnlockedIndices=[]; // فهرس بالجمل اللي خلصت كلماتها في تاب نطق الكلمات — دي اللي بتفتح في تاب الدرس الإنفينيتي
+let wpUnlockedIndices=[]; // فهرس بالجمل الذي أنهيت كلماتها في تبويب نطق الكلمات — هذه الذي بتفتح في تبويب الدرس الإنفينيتي
 
 function saveUnlockedSentences(){
   try{localStorage.setItem('parlaUnlockedSentenceIndices',JSON.stringify(wpUnlockedIndices));}catch(e){}
@@ -1440,7 +1440,7 @@ function wpRenderWord(){
   document.getElementById('micBtn').className='mic-btn';
   document.getElementById('micBtn').disabled=false;
   document.getElementById('micLbl').className='mic-lbl';
-  document.getElementById('micLbl').textContent='اضغط وتكلم';
+  document.getElementById('micLbl').textContent='اضغط وتحدث';
   document.getElementById('progFill').style.width=(wpPos/wpWordIndices.length*100)+'%';
   document.getElementById('wpProgress').textContent=toArabicDigits(wpPos+1)+' / '+toArabicDigits(wpWordIndices.length)+' كلمات';
   wpUpdateScores();
@@ -1460,11 +1460,11 @@ function toggleMic(){
   smartListen({
     micBtnId:'micBtn',micLblId:'micLbl',mode:'word',
     onResult:(alts,conf)=>{
-      document.getElementById('micLbl').textContent='اضغط وتكلم';
+      document.getElementById('micLbl').textContent='اضغط وتحدث';
       judge(alts,conf);
     },
     onError:(err)=>{
-      document.getElementById('micLbl').textContent='اضغط وتكلم';
+      document.getElementById('micLbl').textContent='اضغط وتحدث';
       document.getElementById('heard').textContent=micErrorMessage(err);
     }
   });
@@ -1502,7 +1502,7 @@ function judge(alts,conf){
 
   if(score>=PASS){
     totalScore+=score;passedCount++;
-    badge.innerHTML='🌟 <b>'+score+'%</b> — تمام! عديت الكلمة ✅';
+    badge.innerHTML='🌟 <b>'+score+'%</b> — ممتاز! عديت الكلمة ✅';
     badge.className='badge ok show';
     card.className='card ok';
     floatEmoji('🌟');
@@ -1521,21 +1521,21 @@ function judge(alts,conf){
       wpRetryFails++;
       answered=false;
       if(wpRetryFails>=6){
-        badge.innerHTML='⏭️ ماشي مشكلة — هنكمل على السؤال';
+        badge.innerHTML='⏭️ ماشي ليسكلة — هنكمل على السؤال';
         badge.className='badge mid show';
         card.className='card mid';
         document.getElementById('micBtn').disabled=true;
         wpRetryTarget=null;wpRetryFails=0;
         setTimeout(()=>{wpShowStage('quiz');wpRenderQuizQuestion();},900);
       } else {
-        badge.innerHTML='🔁 <b>'+score+'%</b> — مش كده، جرّب تاني';
+        badge.innerHTML='🔁 <b>'+score+'%</b> — ليس هكذا، جرّب مرة أخرى';
         badge.className='badge bad show';
         card.className='card bad';
         floatEmoji('🔁');
         setTimeout(()=>speak(),450);
       }
     } else if(failCount>=3){
-      badge.innerHTML='⏭️ خلصت 3 محاولات — يلا نكمل';
+      badge.innerHTML='⏭️ أنهيت 3 محاولات — يلا نكمل';
       badge.className='badge bad show';
       card.className='card bad';
       floatEmoji('⏭️');
@@ -1549,8 +1549,8 @@ function judge(alts,conf){
       document.getElementById('wIt').innerHTML=renderWordSegmentsHtml(segResults);
       let cls,emoji,msg;
       const focusHint=badSegs.length?(' — ركّز في الجزء المحدد بالأحمر: "'+badSegs.join('')+'"'):'';
-      if(score>=55){cls='mid';emoji='💪';msg='قريب! حاول تاني عشان تعدي 80%'+focusHint;}
-      else{cls='bad';emoji='🔁';msg='بعيد عن النطق الصح — اسمع وحاول تاني'+focusHint;}
+      if(score>=55){cls='mid';emoji='💪';msg='قريب! حاول مرة أخرى لكي تعدي 80%'+focusHint;}
+      else{cls='bad';emoji='🔁';msg='بعيد عن النطق الصحيحيح — استمع إلى وحاول مرة أخرى'+focusHint;}
       badge.innerHTML=emoji+' <b>'+score+'%</b> — '+msg;
       badge.className='badge '+cls+' show';
       card.className='card '+cls;
@@ -1576,7 +1576,7 @@ function next(){
 function endGame(){
   document.getElementById('game').style.display='none';
   const avg=passedCount?Math.round(totalScore/passedCount):0;
-  const d=avg>=85?{e:'🏆',t:'محترف إيطالي!'}:avg>=65?{e:'🌟',t:'برافو عليك!'}:avg>=45?{e:'💪',t:'كويس، بس تقدر أحسن!'}:{e:'😅',t:'حاول تاني!'};
+  const d=avg>=85?{e:'🏆',t:'محترف إيطالي!'}:avg>=65?{e:'🌟',t:'برافو عليك!'}:avg>=45?{e:'💪',t:'جيد، بس تقدر أحسن!'}:{e:'😅',t:'حاول مرة أخرى!'};
   document.getElementById('endEmoji').textContent=d.e;
   document.getElementById('endTitle').textContent=d.t;
   document.getElementById('endSub').innerHTML=`عديت كل جمل الدرس! — متوسط دقة النطق: <b style="color:var(--gold)">${avg}%</b><br>أعلى سكور: <b style="color:var(--green)">${bestScore}%</b> &nbsp;|&nbsp; ${totalAttempts} محاولة لـ ${passedCount} كلمة`;
@@ -1598,7 +1598,7 @@ function wpBuildInfoHtml(w){
     if(w.tense==='passato'&&w.aux)html+='<div>🔧 الفعل المساعد: <b>'+w.aux+'</b></div>';
     html+='<div>↔️ النوع: <b>'+(w.transitivity==='intransitive'?'غير متعدٍ (intransitive)':'متعدٍ (transitive)')+'</b>'+(w.transitivityNote?' — '+escHtml(w.transitivityNote):'')+'</div>';
     if(w.note)html+='<div style="color:var(--muted);font-size:.78rem">'+escHtml(w.note)+'</div>';
-    html+='<div style="margin-top:6px"><button class="tts-btn" onclick="wpOpenVerbModal(\''+escHtml(String(w.verbInfinitive||'')).replace(/'/g,'\\\'')+'\')">📊 شوف التصريف الكامل</button></div>';
+    html+='<div style="margin-top:6px"><button class="tts-btn" onclick="wpOpenVerbModal(\''+escHtml(String(w.verbInfinitive||'')).replace(/'/g,'\\\'')+'\')">📊 اعرض التصريف الكمل</button></div>';
     return html;
   }
   if(w.type==='nome_unit'){
@@ -1617,12 +1617,12 @@ function wpBuildInfoHtml(w){
   if(w.type==='congiunzione'){
     let html='';
     html+='<div>📖 نوعها: <b>'+escHtml(w.kind||'أداة ربط')+'</b></div>';
-    if(w.grammarId&&getGrammarTopic(w.grammarId))html+='<div style="margin-top:6px"><button class="tts-btn" onclick="openGrammarModal('+JSON.stringify(w.grammarId)+')">📖 شوف الدرس الكامل</button></div>';
+    if(w.grammarId&&getGrammarTopic(w.grammarId))html+='<div style="margin-top:6px"><button class="tts-btn" onclick="openGrammarModal('+JSON.stringify(w.grammarId)+')">📖 اعرض الدرس الكمل</button></div>';
     return html;
   }
   if(w.type==='sintagma_prep'){
     let html='';
-    html+='<div>🔍 ليه \'‎'+escHtml(w.prep||'')+'\'؟</div>';
+    html+='<div>🔍 لماذا \'‎'+escHtml(w.prep||'')+'\'؟</div>';
     if(w.prepNote)html+='<div>→ '+escHtml(w.prepNote)+'</div>';
     return html;
   }
@@ -1682,7 +1682,7 @@ function quizExplanation(item){
 function wpQuizAnswer(oi){
   const item=wpQuizList[wpQuizIdx];
   if(oi===item.correct){
-    document.getElementById('wpQuizFeedback').textContent='✅ صح! '+quizExplanation(item);
+    document.getElementById('wpQuizFeedback').textContent='✅ صحيحيح! '+quizExplanation(item);
     floatEmoji('✅');
     setTimeout(()=>{
       wpQuizIdx++;
@@ -1690,7 +1690,7 @@ function wpQuizAnswer(oi){
       else{wpRenderQuizQuestion();}
     },600);
   } else {
-    document.getElementById('wpQuizFeedback').textContent='❌ مش كده — هننطق "'+item.wordIt+'" تاني قبل ما نرجع للسؤال';
+    document.getElementById('wpQuizFeedback').textContent='❌ ليس هكذا — هننطق "'+item.wordIt+'" مرة أخرى قبل ما نرجع للسؤال';
     setTimeout(()=>wpRetryWordThenReask(item.wordIt),700);
   }
 }
@@ -1711,12 +1711,12 @@ function wpRetryWordThenReask(wordIt){
   document.getElementById('micBtn').className='mic-btn';
   document.getElementById('micBtn').disabled=false;
   document.getElementById('micLbl').className='mic-lbl';
-  document.getElementById('micLbl').textContent='اضغط وقول الكلمة تاني';
+  document.getElementById('micLbl').textContent='اضغط وقل الكلمة مرة أخرى';
   setTimeout(()=>speak(),300);
 }
 
-// بعد انتهاء تقييم الجملة — الجملة بس اللي بتتفتح تلقائي في تاب الدرس الإنفينيتي،
-// من غير ما نشد المستخدم من تاب نطق الكلمات — هو اللي يقرر يكمّل جمل تانية هنا ولا يروح للدرس وقت ما يحب.
+// بعد انتهاء تقييم الجملة — الجملة بس الذي بتتفتح تلقائي في تبويب الدرس الإنفينيتي،
+// من غير ما نشد المستخدم من تبويب نطق الكلمات — هو الذي يقرر يكمّل جمل مرة أخرىة هنا ولا يروح للدرس وقت ما يحب.
 function wpFinishSentenceQuiz(){
   wpChainActive=true;
   if(!wpUnlockedIndices.includes(wpSentenceIdx))wpUnlockedIndices.push(wpSentenceIdx);
@@ -1724,7 +1724,7 @@ function wpFinishSentenceQuiz(){
   const unlockedTarget=LESSON_SENTENCES[wpSentenceIdx];
   if(lDeck&&lDeck.length>0&&lDeck.indexOf(unlockedTarget)<0)lDeck.push(unlockedTarget);
   wpShowStage('word');
-  document.getElementById('wpProgress').textContent='🎉 الجملة دي اتفتحت في تاب "الدرس الإنفينيتي" — كمّل جملة تانية هنا ولا روح ذاكرها هناك وقت ما تحب';
+  document.getElementById('wpProgress').textContent='🎉 هذه الجملة فُتحت في تبويب "الدرس الإنفينيتي" — كمّل جملة أخرى هنا ولا روح ذاكرها هناك وقت ما تحب';
   floatEmoji('🎉');
   try{localStorage.setItem('parlaWordProgress',JSON.stringify({sentenceIdx:wpSentenceIdx+1,wordPos:0}));}catch(e){}
   setTimeout(()=>wpLoadSentence(wpSentenceIdx+1),1400);
@@ -1745,8 +1745,8 @@ function wpSyncLessonDeckToSentence(sentenceIdx){
   hideLessonLocked();
   lRender();
 }
-// لما الجملة تخلص في وضع الكتابة، نفضّل للجملة التانية المفتوحة في نفس تاب الدرس الإنفينيتي —
-// مبقاش ما نرجع المستخدم لتاب نطق الكلمات أوتوماتيكياً.
+// لما الجملة تخلص في وضع الكتبويبة، نفضّل للجملة المرة أخرىة المفتوحة في نفس تبويب الدرس الإنفينيتي —
+// مبقاش ما نرجع المستخدم لتبويب نطق الكلمات أوتوماتيكياً.
 function wpChainAdvanceToNextSentence(){
   if(lIdx+1<lDeck.length){
     lIdx++;
@@ -1756,7 +1756,7 @@ function wpChainAdvanceToNextSentence(){
     setStudyMode('speak');
     lRender();
   } else {
-    document.getElementById('lBadge').innerHTML='🏆 خلصت كل الجمل اللي اتفتحت لحد دلوقتي — روح نطق كلمات أكتر في تاب "نطق الكلمات" عشان تفتح جمل تانية هنا';
+    document.getElementById('lBadge').innerHTML='🏆 أنهيت كل الجمل الذي فُتحت لحد الآن — روح نطق كلمات أكتر في تبويب "نطق الكلمات" لكي تفتح جمل مرة أخرىة هنا';
     document.getElementById('lBadge').className='badge ok show';
   }
 }
@@ -1868,7 +1868,7 @@ function renderVerbModalBody(){
   const v=VERBS[vmCurrentIdx];
   const body=document.getElementById('vmBody');
   if(vmCurrentTab==='meaning'){
-    body.innerHTML='<div class="verb-meaning"><b>'+v.it+'</b><br>= '+v.ar+'</div>';
+    body.innerHTML='<div class="verb-meaning"><b>'+v.it+'</b><div style="margin-top:8px;color:var(--text);direction:rtl">'+v.ar+'</div></div>';
   } else if(vmCurrentTab==='presente'){
     body.innerHTML=verbConjTableHtml(v.presente);
   } else if(vmCurrentTab==='passato'){
@@ -1988,22 +1988,22 @@ let lPassed=0,lStreak=0,lAttempts=0;
 let currentStudyMode='speak'; // 'speak' | 'listen' | 'write'
 let seqPlaced=[],seqPoolOrder=[],seqChecked=false,seqSub='it';
 let arSeqDeck=[],arSeqIdx=0;
-let seqTtsTimer=null; // بيتخزّن فيه الـ setTimeout بتاع تشغيل النطق التلقائي في AR mode، عشان نقدر نلغيه لو الجملة اتغيّرت قبل ما يجري
-function seqStopTts(){ // يلغي أي نطق متأخر (التايمر) + أي نطق شغال دلوقتي
+let seqTtsTimer=null; // بيتخزّن فيه الـ setTimeout بتاع تشغيل النطق التلقائي في AR mode، لكي نقدر نلغيه لو الجملة اتغيّرت قبل ما يجري
+function seqStopTts(){ // يلغي أي نطق متأخر (التايمر) + أي نطق شغال الآن
   clearTimeout(seqTtsTimer);
   seqTtsTimer=null;
   speechSynthesis.cancel();
 }
 function seqS(){return (seqSub==='ar'&&!wpChainActive)?arSeqDeck[arSeqIdx]:lDeck[lIdx];}
 function seqIsLast(){return (seqSub==='ar'&&!wpChainActive)?arSeqIdx+1>=arSeqDeck.length:lIdx+1>=lDeck.length;}
-function seqAdvance(){ // كمّل للجملة الجاية في AR sub-mode (لما المستخدم يبدّل تاب أو سب-تاب)
-  // ملحوظة: IT sub-mode بيستخدم lDeck/lIdx اللي هي نفسها المستخدمة في تابات
-  // النطق والكتابة، فمينفعش نـ advance فيها هنا عشان ما نبوّظ تقدّم المستخدم
-  // في التابات التانية. الـ advance هنا خاص بـ AR deck بس (arSeqDeck/arSeqIdx).
-  // لما السلسلة الأوتوماتيكية شغالة، الترتيب بالعربي بيشتغل على نفس lDeck/lIdx مش على arSeqDeck — فمينفعش نلمس arSeqDeck خالص.
+function seqAdvance(){ // كمّل للجملة الجاية في AR sub-mode (لما المستخدم يبدّل تبويب أو سب-تبويب)
+  // ملحوظة: IT sub-mode بيستخدم lDeck/lIdx الذي هي نفسها المستخدمة في تبويبات
+  // النطق والكتبويبة، فمَنفعش نـ advance فيها هنا لكي ما نبوّظ تقدّم المستخدم
+  // في التبويبات المرة أخرىة. الـ advance هنا خاص بـ AR deck بس (arSeqDeck/arSeqIdx).
+  // لما السلسلة الأوتوماتيكية شغالة، الترتيب بالعربي يعمل على نفس lDeck/lIdx ليس على arSeqDeck — فمَنفعش نلمس arSeqDeck خالص.
   if(wpChainActive)return;
   if(seqSub!=='ar')return;
-  if(arSeqDeck.length===0)return; // لسه مفيش deck — seqSetup هيعمله من الصفر
+  if(arSeqDeck.length===0)return; // ما زال لا توجد deck — seqSetup هيعمله من الصفر
   arSeqIdx++;
   if(arSeqIdx>=arSeqDeck.length){arSeqDeck=shuffle([...AR_SEQ_SENTENCES]);arSeqIdx=0;}
 }
@@ -2108,7 +2108,7 @@ function lRender(){
   document.getElementById('lMicBtn').disabled=false;
   document.getElementById('lMicBtn').onclick=lToggleMic;
   document.getElementById('lMicLbl').className='mic-lbl';
-  document.getElementById('lMicLbl').textContent='اضغط وقول الجملة كلها';
+  document.getElementById('lMicLbl').textContent='اضغط وقل الجملة كلها';
   document.getElementById('lTtsBtn').style.display='inline-block';
   document.getElementById('lProgFill').style.width=(lIdx/lDeck.length*100)+'%';
   lUpdateScore();
@@ -2136,7 +2136,7 @@ function lRenderTokens(){
     const span=document.createElement('span');
     span.className='token '+tokenStates[i];
     span.textContent=w.it;
-    span.title=tokenStates[i]==='auto'?w.ar+' (مش لازم تتنطق لوحدها)':w.ar;
+    span.title=tokenStates[i]==='auto'?w.ar+' (ليس لازم تتنطق لوحدها)':w.ar;
     span.onclick=()=>speakWord(w.it);
     wrap.appendChild(span);
   });
@@ -2169,11 +2169,11 @@ function lToggleMic(){
   smartListen({
     micBtnId:'lMicBtn',micLblId:'lMicLbl',mode:'sentence',
     onResult:(alts)=>{
-      document.getElementById('lMicLbl').textContent='اضغط وقول الجملة كلها';
+      document.getElementById('lMicLbl').textContent='اضغط وقل الجملة كلها';
       lJudgeSentence(alts);
     },
     onError:(err)=>{
-      document.getElementById('lMicLbl').textContent='اضغط وقول الجملة كلها';
+      document.getElementById('lMicLbl').textContent='اضغط وقل الجملة كلها';
       document.getElementById('lHeard').textContent=micErrorMessage(err);
     }
   });
@@ -2222,14 +2222,14 @@ function lJudgeSentence(alts){
     lPassed++;lStreak++;
     sentenceAnswered=true;
     const showDone=()=>{
-      document.getElementById('lBadge').innerHTML='🌟 ممتاز! الجملة صح كلها ✅';
+      document.getElementById('lBadge').innerHTML='🌟 ممتاز! الجملة صحيح كلها ✅';
       document.getElementById('lBadge').className='badge ok show';
       document.getElementById('lCard').className='card ok';
       floatEmoji('🌟');
       document.getElementById('lMicBtn').disabled=true;
       document.getElementById('lSkipBtn').style.display='none';
       document.getElementById('lNextBtn').className='next-btn show';
-      document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+      document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'أنهيت المجموعة 🏆':'الجملة التالية ←';
       wpMaybeChainAfterSpeak();
     };
     document.getElementById('lMicBtn').disabled=true;
@@ -2238,7 +2238,7 @@ function lJudgeSentence(alts){
     const okCount=s.words.filter((w,i)=>tokenStates[i]==='ok'||tokenStates[i]==='auto').length;
     addSkillScore('pronunciation',Math.round(okCount/s.words.length*100),false);
     lStreak=0;
-    document.getElementById('lBadge').innerHTML='⚠️ في كلمات غلط — هنتدرب عليهم';
+    document.getElementById('lBadge').innerHTML='⚠️ في كلمات خطأ — هنتدرب علماذام';
     document.getElementById('lBadge').className='badge mid show';
     if(sentenceFails>=3)document.getElementById('lSkipBtn').style.display='inline-block';
     startDrill(badIdxs[0]);
@@ -2246,7 +2246,7 @@ function lJudgeSentence(alts){
   lUpdateScore();
 }
 
-// لما الجملة تعدي كاملة في وضع النطق والسلسلة كانت انطلقت من تاب نطق الكلمات، نكمل أوتوماتيكيا لتاب الترتيب.
+// لما الجملة تعدي كملة في وضع النطق والسلسلة كانت انطلقت من تبويب نطق الكلمات، نكمل أوتوماتيكيا لتبويب الترتيب.
 function wpMaybeChainAfterSpeak(){
   if(!wpChainActive)return;
   setTimeout(()=>setStudyMode('listen'),900);
@@ -2266,14 +2266,14 @@ function startDrill(tokenIdx){
   document.getElementById('drillWord').textContent=w.it;
   document.getElementById('drillAr').textContent=w.ar;
   document.getElementById('drillNote').textContent=w.note||'';
-  document.getElementById('drillAttempts').textContent='قول الكلمة دي لوحدها';
+  document.getElementById('drillAttempts').textContent='قول هذه الكلمة لوحدها';
   document.getElementById('drillBox').classList.add('show');
   document.getElementById('lTtsBtn').style.display='none';
 
   document.getElementById('lMicBtn').className='mic-btn';
   document.getElementById('lMicBtn').disabled=false;
   document.getElementById('lMicBtn').onclick=drillToggleMic;
-  document.getElementById('lMicLbl').textContent='اضغط وقول الكلمة';
+  document.getElementById('lMicLbl').textContent='اضغط وقل الكلمة';
 
   setTimeout(()=>speakWord(w.it),300);
 }
@@ -2283,11 +2283,11 @@ function drillToggleMic(){
   smartListen({
     micBtnId:'lMicBtn',micLblId:'lMicLbl',mode:'word',
     onResult:(alts)=>{
-      document.getElementById('lMicLbl').textContent='اضغط وقول الكلمة';
+      document.getElementById('lMicLbl').textContent='اضغط وقل الكلمة';
       drillJudge(alts);
     },
     onError:(err)=>{
-      document.getElementById('lMicLbl').textContent='اضغط وقول الكلمة';
+      document.getElementById('lMicLbl').textContent='اضغط وقل الكلمة';
       document.getElementById('lHeard').textContent=micErrorMessage(err);
     }
   });
@@ -2302,9 +2302,9 @@ function drillJudge(alts){
   const heard=alts[0];
   document.getElementById('lHeard').textContent='🎧 سمعت: "'+heard+'"';
 
-  // ثبّت أي حرف اتقال صح في المحاولة دي فوق أي حروف كانت متثبتة من قبل —
-  // الحرف اللي يتثبت "صح" مرة، يفضل صح لهذه الكلمة لحد ما تخلص أو تتخطاها،
-  // حتى لو محاولة تانية مختلفة مالقتهوش في نفس المكان.
+  // ثبّت أي حرف اتقال صحيح في المحاولة هذه فوق أي حروف كانت متثبتة من قبل —
+  // الحرف الذي يتثبت "صحيح" مرة، يفضل صحيح لهذه الكلمة لحد ما تخلص أو تتخطاها،
+  // حتى لو محاولة مرة أخرىة مختلفة مالقتهوش في نفس المكان.
   if(drillLetterMask.length!==target.length) drillLetterMask=new Array(target.length).fill(false);
   alts.forEach(a=>{
     const m=alignMismatches(w.it,a);
@@ -2319,7 +2319,7 @@ function drillJudge(alts){
     lRenderTokens();
     floatEmoji('✅');
     document.getElementById('drillWord').innerHTML=renderWordLetterMaskHtml(w.it,new Array(totalLetters).fill(true));
-    document.getElementById('drillAttempts').textContent='✅ كويس!';
+    document.getElementById('drillAttempts').textContent='✅ جيد!';
     finishDrillWord();
   } else {
     drillFails++;
@@ -2330,11 +2330,11 @@ function drillJudge(alts){
       tokenStates[drillTokenIdx]='skipped';
       lRenderTokens();
       floatEmoji('⏭️');
-      document.getElementById('drillAttempts').textContent='⏭️ تخطينا الكلمة دي، يلا نكمل';
+      document.getElementById('drillAttempts').textContent='⏭️ تخطينا هذه الكلمة، يلا نكمل';
       finishDrillWord();
     } else {
       floatEmoji('🔁');
-      document.getElementById('drillAttempts').textContent='ثبّتنا '+okLetters+' من '+totalLetters+' حروف صح — قول الكلمة تاني وركّز في الحروف الحمرا';
+      document.getElementById('drillAttempts').textContent='ثبّتنا '+okLetters+' من '+totalLetters+' حروف صحيح — قول الكلمة مرة أخرى وركّز في الحروف الحمرا';
       setTimeout(()=>speakWord(w.it),300);
     }
   }
@@ -2349,7 +2349,7 @@ function finishDrillWord(){
   setTimeout(()=>{
     document.getElementById('lTtsBtn').style.display='inline-block';
     document.getElementById('lMicBtn').onclick=lToggleMic;
-    document.getElementById('lMicLbl').textContent='اضغط وقول الجملة كلها';
+    document.getElementById('lMicLbl').textContent='اضغط وقل الجملة كلها';
     document.getElementById('drillBox').classList.remove('show');
     drillMode=false;
 
@@ -2363,13 +2363,13 @@ function finishDrillWord(){
         const hadSkips=tokenStates.includes('skipped');
         if(!hadSkips){lPassed++;lStreak++;}
         else{lPassed+=0.5;lStreak=0;}
-        document.getElementById('lBadge').innerHTML=hadSkips?'👍 خلصنا الجملة — كملنا بعض الكلمات تاني وقت':'🌟 ممتاز! عديت الجملة كلها ✅';
+        document.getElementById('lBadge').innerHTML=hadSkips?'👍 خلصنا الجملة — كملنا بعض الكلمات مرة أخرى وقت':'🌟 ممتاز! عديت الجملة كلها ✅';
         document.getElementById('lBadge').className='badge ok show';
         document.getElementById('lCard').className='card ok';
         document.getElementById('lMicBtn').disabled=true;
         document.getElementById('lSkipBtn').style.display='none';
         document.getElementById('lNextBtn').className='next-btn show';
-        document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+        document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'أنهيت المجموعة 🏆':'الجملة التالية ←';
         floatEmoji(hadSkips?'👍':'🏆');
         lUpdateScore();
         wpMaybeChainAfterSpeak();
@@ -2382,9 +2382,9 @@ function finishDrillWord(){
 }
 
 // ===== WORD INFO + MCQ PIPELINE (مبني على spec_word_pipeline.md) =====
-// بعد ما المتعلم ينطق كلمة صح بيجي بانيل معلومة قصير عن الكلمة دي (فعل/اسم/حرف جر/أداة ربط)
-// وبعدين سؤال اختيار من متعدد لازم يجاوب صح قبل ما يكمل. الكلمات المحذوفة (omesso) والغير
-// مصنفة (altro) بتعدي المرحلة دي تمامًا عشان متتعطلشش اللعبة مع بيانات قديمة/غير مصنفة.
+// بعد ما المتعلم ينطق كلمة صحيح يأتي بانيل معلومة قصير عن هذه الكلمة (فعل/اسم/حرف جر/أداة ربط)
+// وبعدين سؤال اختيار من متعدد لازم يأجب صحيح قبل ما يكمل. الكلمات المحذوفة (omesso) والغير
+// مصنفة (altro) بتعدي المرحلة هذه ممتازًا لكي متتعطلشش اللعبة مع بيانات قديمة/غير مصنفة.
 let pipelineSeenWords=new Set();
 let pipelineCurrentWordIdx=null;
 
@@ -2415,9 +2415,9 @@ function buildWordInfoHtml(w){
     html+='<div>🔤 الفعل الأصلي (المصدر): <b>'+escHtml(w.verbInfinitive||'')+'</b></div>';
     if(w.group)html+='<div>📚 مجموعة الفعل: <b>'+w.group+'</b></div>';
     if(w.tense)html+='<div>⏱️ الزمن: <b>'+(TENSE_AR[w.tense]||w.tense)+'</b></div>';
-    html+='<div>✅ '+(w.regular?'فعل منتظم (بيتصرف على القاعدة العادية)':'فعل شاذ (له تصريف خاص، احفظه لوحده)')+'</div>';
+    html+='<div>✅ '+(w.regular?'فعل منتظم (يُصرَّف على القاعدة العادية)':'فعل شاذ (له تصريف خاص، احفظه لوحده)')+'</div>';
     if(w.tense==='passato')html+='<div>🤝 الفعل المساعد بتاعه: <b>'+(w.aux==='essere'?'essere':'avere')+'</b></div>';
-    html+='<div>🎯 '+(w.transitive?'فعل متعدٍ (بياخد مفعول به مباشر)':'فعل لازم (مش بياخد مفعول به مباشر)')+'</div>';
+    html+='<div>🎯 '+(w.transitive?'فعل متعدٍ (بياخد مفعول به مباشر)':'فعل لازم (ليس بياخد مفعول به مباشر)')+'</div>';
     return html;
   }
   if(w.type==='nome_unit'){
@@ -2429,7 +2429,7 @@ function buildWordInfoHtml(w){
   if(w.type==='congiunzione'){
     let html='';
     html+='<div>🔗 المعنى هنا: <b>'+escHtml(w.meaning||'')+'</b></div>';
-    if(w.grammarId)html+='<div><button class="bd-grammar-btn" style="font-size:22px" onclick="openGrammarModal(\''+w.grammarId+'\')">📘 شوف القاعدة كاملة</button></div>';
+    if(w.grammarId)html+='<div><button class="bd-grammar-btn" style="font-size:22px" onclick="openGrammarModal(\''+w.grammarId+'\')">📘 اعرض القاعدة كملة</button></div>';
     return html;
   }
   if(w.type==='sintagma_prep'){
@@ -2494,11 +2494,11 @@ function runWordQuiz(idx,qPos,next){
     btn.textContent=opt;
     btn.onclick=()=>{
       if(oi===item.correct){
-        document.getElementById('wordQuizFeedback').textContent='✅ صح!';
+        document.getElementById('wordQuizFeedback').textContent='✅ صحيحيح!';
         floatEmoji('✅');
         setTimeout(()=>runWordQuiz(idx,qPos+1,next),500);
       } else {
-        document.getElementById('wordQuizFeedback').textContent='❌ مش كده، جرب تاني';
+        document.getElementById('wordQuizFeedback').textContent='❌ ليس هكذا، جرب مرة أخرى';
       }
     };
     optsWrap.appendChild(btn);
@@ -2521,7 +2521,7 @@ function lSkipSentence(){
   document.getElementById('lMicBtn').disabled=true;
   document.getElementById('lSkipBtn').style.display='none';
   document.getElementById('lNextBtn').className='next-btn show';
-  document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+  document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'أنهيت المجموعة 🏆':'الجملة التالية ←';
 }
 
 function lNext(){
@@ -2536,8 +2536,8 @@ function lNext(){
     } else { seqSetup(); }
     return;
   }
-  // لو دس على "جملة تانية" قبل ما يحل الجملة الحالية (يعني تخطّاها من غير إجابة)،
-  // بتتحسب محاولة فاشلة (صفر) عشان النسبة متبقاش بتتجاهل الجمل اللي اتخطّت.
+  // لو دس على "جملة أخرى" قبل ما يحل الجملة الحالية (يعني تخطّاها من غير إجابة)،
+  // بتتحسب محاولة فاشلة (صفر) لكي النسبة متبقاش بتتجاهل الجمل الذي اتخطّت.
   if(!sentenceAnswered){
     lAttempts++;
     lStreak=0;
@@ -2553,7 +2553,7 @@ function lEnd(){
   document.getElementById('lNextBtn').className='next-btn';
   document.getElementById('lSkipBtn').style.display='none';
   const pct=lAttempts?Math.round(lPassed/lAttempts*100):0;
-  document.getElementById('lBadge').innerHTML='🏆 خلصت كل الـ '+lDeck.length+' جملة! نسبة النجاح: <b>'+pct+'%</b>';
+  document.getElementById('lBadge').innerHTML='🏆 أنهيت كل الـ '+lDeck.length+' جملة! نسبة النجاح: <b>'+pct+'%</b>';
   document.getElementById('lBadge').className='badge ok show';
   document.getElementById('lRestartBtn').style.display='inline-block';
   floatEmoji('🏆');
@@ -2571,8 +2571,8 @@ ensureWhisperLoaded();
 
 // ── Study mode switcher ──
 // بيبدّل البانيل بس من غير ما يعيد تحميل الجملة أو يمسح tokenStates —
-// كده لو المستخدم بدّل موود وهو في نص جملة، التقدم في وضع النطق بيتحفظ.
-// لما وضع الترتيب (listen) يخلص والسلسلة كانت من تاب نطق الكلمات، نكمل أوتوماتيكيا لوضع الكتابة.
+// هكذا لو المستخدم بدّل موود وهو في نص جملة، التقدم في وضع النطق بيتحفظ.
+// لما وضع الترتيب (listen) يخلص والسلسلة كانت من تبويب نطق الكلمات، نكمل أوتوماتيكيا لوضع الكتبويبة.
 function wpMaybeChainAfterListen(){
   if(!wpChainActive)return;
   if(seqSub==='it'){
@@ -2587,7 +2587,7 @@ function setStudyMode(mode){
   grammarHide();
   const prevMode=currentStudyMode;
   currentStudyMode=mode;
-  seqStopTts(); // قفل أي نطق AR متأخر أو شغال من التاب اللي كنا فيه، قبل ما نبدّل
+  seqStopTts(); // قفل أي نطق AR متأخر أو شغال من التبويب الذي كنا فيه، قبل ما نبدّل
   ['speak','listen','write'].forEach(m=>{
     document.getElementById('st'+m.charAt(0).toUpperCase()+m.slice(1))
       .classList.toggle('active',m===mode);
@@ -2599,7 +2599,7 @@ function setStudyMode(mode){
     document.getElementById('drillBox').classList.remove('show');
     document.getElementById('lMicBtn').onclick=lToggleMic;
     document.getElementById('lTtsBtn').style.display='inline-block';
-    document.getElementById('lMicLbl').textContent='اضغط وقول الجملة كلها';
+    document.getElementById('lMicLbl').textContent='اضغط وقل الجملة كلها';
   }
 
   const isSp=mode==='speak', isLi=mode==='listen', isWr=mode==='write';
@@ -2612,7 +2612,7 @@ function setStudyMode(mode){
   document.getElementById('lMicBtn').style.display=isSp?'flex':'none';
   document.getElementById('lMicLbl').style.display=isSp?'block':'none';
 
-  // ── مسح الـ UI المشترك ──
+  // ── مسح الـ UI الليسترك ──
   document.getElementById('lHeard').textContent='';
   document.getElementById('lBadge').className='badge';
   document.getElementById('lSkipBtn').style.display='none';
@@ -2626,17 +2626,17 @@ function setStudyMode(mode){
     document.getElementById('lMicBtn').disabled=sentenceAnswered;
     document.getElementById('lMicBtn').className='mic-btn';
     document.getElementById('lMicLbl').className='mic-lbl';
-    document.getElementById('lMicLbl').textContent='اضغط وقول الجملة كلها';
+    document.getElementById('lMicLbl').textContent='اضغط وقل الجملة كلها';
     document.getElementById('lBreakdown').style.display='flex';
     const sc=lDeck[lIdx];
     lRenderTokens();
     if(sentenceAnswered){
       document.getElementById('lNextBtn').className='next-btn show';
-      document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+      document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'أنهيت المجموعة 🏆':'الجملة التالية ←';
     }
   }
   if(isLi){
-    if(prevMode!==mode) seqAdvance(); // بدّلنا للتاب ده من تاب تاني — كمّل للجملة الجاية، مش نفس القديمة
+    if(prevMode!==mode) seqAdvance(); // بدّلنا للتبويب هذا من تبويب مرة أخرى — كمّل للجملة الجاية، ليس نفس القديمة
     seqSetup(); // seqSetup يدير الـ breakdown بنفسه
     showListenQuestion();
   }
@@ -2655,7 +2655,7 @@ function makeListenQuestion(s){
   const pool=LESSON_SENTENCES.filter(x=>x!==s);
   const distractors=shuffle(pool).slice(0,3).map(x=>x.ar||x.en||x.it);
   const options=shuffle([s.ar||s.en||s.it,...distractors]);
-  return {prompt:'اسمع الجملة، واختار معناها الصح:',answer:options.indexOf(s.ar||s.en||s.it),options};
+  return {prompt:'استمع إلى الجملة، واختار معناها الصحيح:',answer:options.indexOf(s.ar||s.en||s.it),options};
 }
 function showListenQuestion(){
   const s=seqS(); if(!s)return;
@@ -2687,14 +2687,14 @@ function seqArLabel(w){
 
 function setSeqSub(sub){
   hideListenQuestion();
-  seqStopTts(); // قفل أي نطق متأخر من السب-تاب اللي كنا فيه
+  seqStopTts(); // قفل أي نطق متأخر من السب-تبويب الذي كنا فيه
   const prevSub=seqSub;
   seqSub=sub;
   document.getElementById('seqSubIt').classList.toggle('active',sub==='it');
   document.getElementById('seqSubAr').classList.toggle('active',sub==='ar');
   document.getElementById('lAr').style.display='';
   document.getElementById('lEn').style.display='';
-  if(sub==='ar'&&prevSub!=='ar') seqAdvance(); // داخلين على AR من تاب تاني — كمّل للجملة الجاية
+  if(sub==='ar'&&prevSub!=='ar') seqAdvance(); // داخلين على AR من تبويب مرة أخرى — كمّل للجملة الجاية
   seqSetup();
   showListenQuestion();
 }
@@ -2720,7 +2720,7 @@ function seqSetup(){
   enEl.textContent=s.en;
   if(seqSub==='ar'){
     arEl.style.display='none';   // الإجابة — نخبّيها
-    enEl.style.display='';       // الإنجليزي فقط كتلميح
+    enEl.style.display='';       // الإنجليمثل فقط كتلميح
   } else {
     arEl.style.display='';
     enEl.style.display='';
@@ -2731,7 +2731,7 @@ function seqSetup(){
   if(seqSub==='ar'){
     const utt=new SpeechSynthesisUtterance(s.it);
     utt.lang='it-IT';utt.rate=0.75;
-    clearTimeout(seqTtsTimer); // امسح أي تايمر قديم متأخر، عشان ما يجيش يشغّل جملة قديمة بعد ما الجملة اتغيّرت
+    clearTimeout(seqTtsTimer); // امسح أي تايمر قديم متأخر، لكي ما يجيش يشغّل جملة قديمة بعد ما الجملة اتغيّرت
     seqTtsTimer=setTimeout(()=>{speechSynthesis.cancel();speechSynthesis.speak(utt);},700);
   }
 
@@ -2764,7 +2764,7 @@ function seqRender(){
   if(seqPlaced.length===0){
     const hint=document.createElement('span');
     hint.className='seq-empty-hint';
-    hint.textContent=ar?'اختار الكلمات بالعربي بالترتيب الصح':'اضغط على الكلمات بالترتيب الصح';
+    hint.textContent=ar?'اختار الكلمات بالعربي بالترتيب الصحيح':'اضغط على الكلمات بالترتيب الصحيح';
     az.appendChild(hint);
     az.classList.remove('has-tiles');
   } else {
@@ -2857,13 +2857,13 @@ function seqCheck(){
   lUpdateScore();
 
   const badge=document.getElementById('lBadge');
-  badge.innerHTML=correct+'/'+s.words.length+' كلمة في مكانها الصح — <b>'+pct+'%</b>';
+  badge.innerHTML=correct+'/'+s.words.length+' كلمة في مكانها الصحيحيح — <b>'+pct+'%</b>';
   badge.className='badge '+(pct>=80?'ok':pct>=50?'mid':'bad')+' show';
   document.getElementById('lCard').className='card '+(pct>=80?'ok':pct>=50?'mid':'bad');
 
   document.getElementById('lBreakdown').style.display='flex';
   document.getElementById('lNextBtn').className='next-btn show';
-  document.getElementById('lNextBtn').textContent=seqIsLast()?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+  document.getElementById('lNextBtn').textContent=seqIsLast()?'أنهيت المجموعة 🏆':'الجملة التالية ←';
   document.getElementById('seqRevealBtn').style.display='none';
   wpMaybeChainAfterListen();
 }
@@ -2885,7 +2885,7 @@ function seqReveal(){
   document.getElementById('seqPool').innerHTML='';
   document.getElementById('lBreakdown').style.display='flex';
   document.getElementById('lNextBtn').className='next-btn show';
-  document.getElementById('lNextBtn').textContent=seqIsLast()?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+  document.getElementById('lNextBtn').textContent=seqIsLast()?'أنهيت المجموعة 🏆':'الجملة التالية ←';
   document.getElementById('seqRevealBtn').style.display='none';
   skillScores.grammarOrder.reveals++; if(seqSub==='ar')skillScores.listening.reveals++;
   addSkillScore('grammarOrder',35,false); if(seqSub==='ar')addSkillScore('listening',35,false);
@@ -2907,23 +2907,23 @@ function makeGrammarQuestion(s){
   const low=txt.toLowerCase();
   if(/(ho|hai|ha|abbiamo|avete|hanno)\s+\w*(ato|uto|ito)/i.test(txt)){
     const aux=(txt.match(/(ho|hai|ha|abbiamo|avete|hanno)/i)||['ho'])[0];
-    return {prompt:'ليه استخدمنا "'+aux+'" في الجملة؟',options:['لأن الفعل هنا في Passato Prossimo وبيستخدم avere','لأن الفاعل مؤنث مفرد','لأن الجملة في المستقبل','لأن بعد mentre لازم avere'],answer:0,explanation:'في الماضي المركب Passato Prossimo أفعال كتير زي mangiare / guardare / parlare بتاخد avere: ho mangiato, ho guardato.'};
+    return {prompt:'لماذا استخدمنا "'+aux+'" في الجملة؟',options:['لأن الفعل هنا في Passato Prossimo وبيستخدم avere','لأن الفاعل مؤنث مفرد','لأن الجملة في المستقبل','لأن بعد mentre لازم avere'],answer:0,explanation:'في الماضي المركب Passato Prossimo أفعال كتير مثل mangiare / guardare / parlare بتاخد avere: ho mangiato, ho guardato.'};
   }
   if(/(sono|sei|è|e|siamo|siete)\s+\w*(ato|ata|ati|ate)/i.test(txt)){
-    return {prompt:'إيه القاعدة المهمة مع الأفعال اللي بتاخد essere؟',options:['آخر التصريف بيتفق مع الفاعل في النوع والعدد','بنستخدم نفس النهاية دايمًا: -o','لازم نحط avere بعد الفعل','الفاعل لازم يتحذف'],answer:0,explanation:'مع essere في Passato Prossimo لازم الـ participio يتفق مع الفاعل: andato / andata / andati / andate.'};
+    return {prompt:'ما القاعدة المهمة مع الأفعال الذي بتاخد essere؟',options:['آخر التصريف بيتفق مع الفاعل في النوع والعدد','بنستخدم نفس النهاية دايمًا: -o','لازم نحط avere بعد الفعل','الفاعل لازم يتحذف'],answer:0,explanation:'مع essere في Passato Prossimo لازم الـ participio يتفق مع الفاعل: andato / andata / andati / andate.'};
   }
   if(/mentre/i.test(txt) || /avo|evo|ivo/i.test(txt)){
-    return {prompt:'ليه استخدمنا فعل زي "guardavo / mangiavo"؟',options:['عشان يوصف حدث مستمر أو خلفية في الماضي','عشان ده أمر مباشر','عشان ده مستقبل قريب','عشان الفاعل جمع'],answer:0,explanation:'Imperfetto بنستخدمه للخلفية أو العادة أو الحدث المستمر في الماضي. مع mentre شائع جدًا: mentre guardavo = وأنا كنت بتفرج.'};
+    return {prompt:'لماذا استخدمنا فعل مثل "guardavo / mangiavo"؟',options:['لكي يوصف حدث مستمر أو خلفية في الماضي','لكي هذا أمر مباشر','لكي هذا مستقبل قريب','لكي الفاعل جمع'],answer:0,explanation:'Imperfetto بنستخدمه للخلفية أو العادة أو الحدث المستمر في الماضي. مع mentre شائع جدًا: mentre guardavo = وأنا كنت أشاهد.'};
   }
   const prep=s.words.find(w=>['a','in','con','per','da','di'].includes(norm(w.it)));
   if(prep){
-    return {prompt:'الكلمة "'+prep.it+'" هنا وظيفتها إيه؟',options:['حرف جر بيربط المعنى بين الكلمات','فعل مساعد في الماضي','أداة استفهام','ضمير ملكية'],answer:0,explanation:'حروف الجر زي a / in / con / per / da / di صغيرة، لكنها بتحدد العلاقة: إلى، في، مع، من، عشان...'};
+    return {prompt:'الكلمة "'+prep.it+'" هنا وظيفتها ما؟',options:['حرف جر بيربط المعنى بين الكلمات','فعل مساعد في الماضي','أداة استفهام','ضمير ملكية'],answer:0,explanation:'حروف الجر مثل a / in / con / per / da / di صغيرة، لكنها بتحدد العلاقة: إلى، في، مع، من، لكي...'};
   }
   const art=s.words.find(w=>['il','lo','la','l','un','una','uno','i','gli','le'].includes(norm(w.it).replace(/'/g,'')));
   if(art){
-    return {prompt:'الكلمة "'+art.it+'" تعتبر إيه؟',options:['أداة تعريف أو تنكير مرتبطة بالاسم','فعل في الماضي','حرف جر','صفة ملكية'],answer:0,explanation:'الأدوات في الإيطالي بتتغير حسب النوع والعدد وبداية الاسم: il/un للمذكر، la/una للمؤنث، وهكذا.'};
+    return {prompt:'الكلمة "'+art.it+'" تعتبر ما؟',options:['أداة تعريف أو تنكير مرتبطة بالاسم','فعل في الماضي','حرف جر','صفة ملكية'],answer:0,explanation:'الأدوات في الإيطالي تتغير حسب النوع والعدد وبداية الاسم: il/un للمذكر، la/una للمؤنث، وهكذا.'};
   }
-  return {prompt:'إيه أول حاجة ندور عليها لفهم تركيب الجملة الإيطالية؟',options:['الفعل: زمنه ومين الفاعل بتاعه','آخر كلمة بس','علامات الترقيم فقط','الترجمة الحرفية كلمة بكلمة'],answer:0,explanation:'الفعل هو قلب الجملة: منه نعرف الزمن والفاعل، وبعدها نفهم باقي الكلمات حواليه.'};
+  return {prompt:'ما أول شيء ندور علماذاا لفهم تركيب الجملة الإيطالية؟',options:['الفعل: زمنه ومَن الفاعل بتاعه','آخر كلمة بس','علامات الترقيم فقط','الترجمة الحرفية كلمة بكلمة'],answer:0,explanation:'الفعل هو قلب الجملة: منه نعرف الزمن والفاعل، وبعدها نفهم باقي الكلمات حوالماذا.'};
 }
 function showGrammarQuestion(){
   const s=lDeck[lIdx]; if(!s)return;
@@ -2948,11 +2948,11 @@ function answerGrammarQuestion(i){
   const ok=i===q.answer; if(!ok&&opts[i])opts[i].classList.add('bad');
   addSkillScore('grammarOrder',ok?100:35,ok);
   const exp=document.getElementById('grammarQExplain');
-  exp.innerHTML=(ok?'✅ صح. ':'❌ مش بالظبط. ')+q.explanation; exp.className='grammar-explain show';
-  document.getElementById('lBadge').innerHTML=(ok?'🧩 إجابة الجرامر صح ✅':'🧩 راجع سبب القاعدة فوق') ;
+  exp.innerHTML=(ok?'✅ صحيح. ':'❌ ليس بالظبط. ')+q.explanation; exp.className='grammar-explain show';
+  document.getElementById('lBadge').innerHTML=(ok?'🧩 إجابة الجرامر صحيح ✅':'🧩 راجع سبب القاعدة فوق') ;
   document.getElementById('lBadge').className='badge '+(ok?'ok':'mid')+' show';
   document.getElementById('lNextBtn').className='next-btn show';
-  document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'خلصت الدفعة 🏆':'الجملة الجاية ←';
+  document.getElementById('lNextBtn').textContent=lIdx+1>=lDeck.length?'أنهيت المجموعة 🏆':'الجملة التالية ←';
   currentGrammarQuestion=null;
 }
 
@@ -2992,7 +2992,7 @@ function checkWrite(){
   s.words.forEach((w,i)=>{
     const div=document.createElement('div');
 
-    // حروف الجر والمقالات — دايماً صح تلقائياً زي speak mode
+    // حروف الجر والمقالات — دايماً صحيح تلقائياً مثل speak mode
     if(isAutoSkipWord(w.it)){
       div.className='wr-tok auto';
       div.textContent=w.it;
@@ -3017,10 +3017,10 @@ function checkWrite(){
     resultWrap.appendChild(div);
   });
 
-  // النسبة من الكلمات المحتوى بس (مش حروف الجر)
+  // النسبة من الكلمات المحتوى بس (ليس حروف الجر)
   const pct=gradedCount?Math.round(correctCount/gradedCount*100):0;
   const scoreEl=document.getElementById('writeScore');
-  scoreEl.textContent=correctCount+'/'+gradedCount+' كلمة صح — '+pct+'%';
+  scoreEl.textContent=correctCount+'/'+gradedCount+' كلمة صحيح — '+pct+'%';
   scoreEl.style.color=pct>=80?'var(--green)':pct>=50?'var(--gold)':'var(--red)';
 
   lAttempts++;
@@ -3032,7 +3032,7 @@ function checkWrite(){
   showGrammarQuestion();
 }
 
-// لما الكتابة تخلص والسلسلة كانت من تاب نطق الكلمات، نرجعله للجملة الجاية في نفس التاب.
+// لما الكتبويبة تخلص والسلسلة كانت من تبويب نطق الكلمات، نرجعله للجملة الجاية في نفس التبويب.
 function wpMaybeChainAfterWrite(){
   if(!wpChainActive)return;
   setTimeout(()=>wpChainAdvanceToNextSentence(),1400);

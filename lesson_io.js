@@ -2,7 +2,7 @@
 const LESSON_IO = [
  {
   "it": "Ho mangiato un panino mentre guardavo la TV",
-  "ar": "أكلت ساندويتش وأنا كنت باتفرج على التليفزيون.",
+  "ar": "أكلت ساندويتش وأنا كنت باتفرج على التليفمثلون.",
   "en": "I ate a sandwich while I was watching TV.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -26,7 +26,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -46,7 +46,7 @@ const LESSON_IO = [
       "correct": 3
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"mangiato\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"mangiato\" ما؟",
       "options": [
        "Passato Prossimo",
        "Imperfetto",
@@ -56,7 +56,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Mangiare\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Mangiare\" في الماضي ما؟",
       "options": [
        "essere",
        "avere"
@@ -76,7 +76,7 @@ const LESSON_IO = [
     "plural": "i panini",
     "quiz": [
      {
-      "q": "جنس \"un panino\" إيه؟",
+      "q": "جنس \"un panino\" ما؟",
       "options": [
        "جمع",
        "محايد",
@@ -94,15 +94,15 @@ const LESSON_IO = [
     "ar": "وأنا",
     "note": null,
     "type": "congiunzione",
-    "meaning": "بينما / في نفس الوقت اللي",
+    "meaning": "بينما / في الوقت نفسه الذي",
     "grammarId": "mentre",
     "quiz": [
      {
-      "q": "\"mentre\" بمعنى إيه هنا؟",
+      "q": "\"mentre\" بمعنى ما هنا؟",
       "options": [
-       "عشان",
-       "بينما / في نفس الوقت اللي",
-       "لما / عندما",
+       "لكي",
+       "بينما / في الوقت نفسه الذي",
+       "عندما",
        "لكن"
       ],
       "correct": 1
@@ -123,7 +123,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -143,7 +143,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"guardavo\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"guardavo\" ما؟",
       "options": [
        "Presente",
        "Passato Prossimo",
@@ -158,14 +158,14 @@ const LESSON_IO = [
    },
    {
     "it": "la TV",
-    "ar": "التلفزيون",
+    "ar": "التلفمثلون",
     "note": null,
     "type": "nome_unit",
     "gender": "f",
     "plural": "le TV",
     "quiz": [
      {
-      "q": "جنس \"la TV\" إيه؟",
+      "q": "جنس \"la TV\" ما؟",
       "options": [
        "مؤنث",
        "جمع",
@@ -201,11 +201,11 @@ const LESSON_IO = [
      "form": "Ha mangiato"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Abbiamo mangiato"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Avete mangiato"
     },
     {
@@ -228,7 +228,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "mangiato",
-    "q": "الزمن اللي اتصرف فيه \"mangiato\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"mangiato\" ما؟",
     "options": [
      "Imperfetto",
      "Imperativo",
@@ -239,7 +239,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "mangiato",
-    "q": "الفعل المساعد اللي بيجي مع \"Mangiare\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Mangiare\" في الـ Passato Prossimo ما؟",
     "options": [
      "sono",
      "avere",
@@ -250,7 +250,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "un panino",
-    "q": "جنس \"un panino\" إيه؟",
+    "q": "جنس \"un panino\" ما؟",
     "options": [
      "مذكر",
      "مؤنث",
@@ -261,12 +261,12 @@ const LESSON_IO = [
    },
    {
     "wordIt": "mentre",
-    "q": "\"mentre\" بمعنى إيه هنا؟",
+    "q": "\"mentre\" بمعنى ما هنا؟",
     "options": [
      "لكن",
-     "عشان",
+     "لكي",
      "ولو",
-     "بينما / في نفس الوقت اللي"
+     "بينما / في الوقت نفسه الذي"
     ],
     "correct": 3
    },
@@ -283,7 +283,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "guardavo",
-    "q": "الزمن اللي اتصرف فيه \"guardavo\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"guardavo\" ما؟",
     "options": [
      "Imperativo",
      "Presente",
@@ -294,7 +294,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "la TV",
-    "q": "جنس \"la TV\" إيه؟",
+    "q": "جنس \"la TV\" ما؟",
     "options": [
      "مذكر",
      "مؤنث",
@@ -307,7 +307,7 @@ const LESSON_IO = [
  },
  {
   "it": "Mangiavo la pasta mentre ho guardato il telefono",
-  "ar": "كنت باكل المكرونة وأنا بصيت في التيليفون.",
+  "ar": "كنت باكل المكرونة وأنا بصيت في الهاتف.",
   "en": "I was eating pasta when I looked at my phone.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -324,7 +324,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -344,7 +344,7 @@ const LESSON_IO = [
       "correct": 2
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"Mangiavo\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"Mangiavo\" ما؟",
       "options": [
        "Imperfetto",
        "Imperativo",
@@ -366,7 +366,7 @@ const LESSON_IO = [
     "plural": "le paste",
     "quiz": [
      {
-      "q": "جنس \"la pasta\" إيه؟",
+      "q": "جنس \"la pasta\" ما؟",
       "options": [
        "محايد",
        "مذكر",
@@ -384,16 +384,16 @@ const LESSON_IO = [
     "ar": "وأنا",
     "note": null,
     "type": "congiunzione",
-    "meaning": "بينما / في نفس الوقت اللي",
+    "meaning": "بينما / في الوقت نفسه الذي",
     "grammarId": "mentre",
     "quiz": [
      {
-      "q": "\"mentre\" بمعنى إيه هنا؟",
+      "q": "\"mentre\" بمعنى ما هنا؟",
       "options": [
-       "بينما / في نفس الوقت اللي",
-       "لما / عندما",
+       "بينما / في الوقت نفسه الذي",
+       "عندما",
        "لكن",
-       "عشان"
+       "لكي"
       ],
       "correct": 0
      }
@@ -420,7 +420,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -440,7 +440,7 @@ const LESSON_IO = [
       "correct": 3
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"guardato\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"guardato\" ما؟",
       "options": [
        "Passato Prossimo",
        "Imperfetto",
@@ -450,7 +450,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Guardare\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Guardare\" في الماضي ما؟",
       "options": [
        "essere",
        "avere"
@@ -463,14 +463,14 @@ const LESSON_IO = [
    },
    {
     "it": "il telefono",
-    "ar": "التيليفون",
+    "ar": "الهاتف",
     "note": null,
     "type": "nome_unit",
     "gender": "m",
     "plural": "i telefoni",
     "quiz": [
      {
-      "q": "جنس \"il telefono\" إيه؟",
+      "q": "جنس \"il telefono\" ما؟",
       "options": [
        "جمع",
        "محايد",
@@ -506,11 +506,11 @@ const LESSON_IO = [
      "form": "Ha guardato"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Abbiamo guardato"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Avete guardato"
     },
     {
@@ -533,7 +533,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "Mangiavo",
-    "q": "الزمن اللي اتصرف فيه \"Mangiavo\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"Mangiavo\" ما؟",
     "options": [
      "Imperfetto",
      "Imperativo",
@@ -544,7 +544,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "la pasta",
-    "q": "جنس \"la pasta\" إيه؟",
+    "q": "جنس \"la pasta\" ما؟",
     "options": [
      "محايد",
      "مذكر",
@@ -555,11 +555,11 @@ const LESSON_IO = [
    },
    {
     "wordIt": "mentre",
-    "q": "\"mentre\" بمعنى إيه هنا؟",
+    "q": "\"mentre\" بمعنى ما هنا؟",
     "options": [
-     "بينما / في نفس الوقت اللي",
+     "بينما / في الوقت نفسه الذي",
      "لكن",
-     "عشان",
+     "لكي",
      "ولو"
     ],
     "correct": 0
@@ -577,7 +577,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "guardato",
-    "q": "الزمن اللي اتصرف فيه \"guardato\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"guardato\" ما؟",
     "options": [
      "Imperfetto",
      "Imperativo",
@@ -588,7 +588,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "guardato",
-    "q": "الفعل المساعد اللي بيجي مع \"Guardare\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Guardare\" في الـ Passato Prossimo ما؟",
     "options": [
      "sono",
      "avere",
@@ -599,7 +599,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "il telefono",
-    "q": "جنس \"il telefono\" إيه؟",
+    "q": "جنس \"il telefono\" ما؟",
     "options": [
      "مذكر",
      "مؤنث",
@@ -636,7 +636,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -656,7 +656,7 @@ const LESSON_IO = [
       "correct": 2
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"comprato\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"comprato\" ما؟",
       "options": [
        "Imperfetto",
        "Imperativo",
@@ -666,7 +666,7 @@ const LESSON_IO = [
       "correct": 3
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Comprare\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Comprare\" في الماضي ما؟",
       "options": [
        "avere",
        "essere"
@@ -686,7 +686,7 @@ const LESSON_IO = [
     "plural": "i pani",
     "quiz": [
      {
-      "q": "جنس \"il pane\" إيه؟",
+      "q": "جنس \"il pane\" ما؟",
       "options": [
        "محايد",
        "مذكر",
@@ -704,16 +704,16 @@ const LESSON_IO = [
     "ar": "وأنا",
     "note": null,
     "type": "congiunzione",
-    "meaning": "بينما / في نفس الوقت اللي",
+    "meaning": "بينما / في الوقت نفسه الذي",
     "grammarId": "mentre",
     "quiz": [
      {
-      "q": "\"mentre\" بمعنى إيه هنا؟",
+      "q": "\"mentre\" بمعنى ما هنا؟",
       "options": [
-       "بينما / في نفس الوقت اللي",
-       "لما / عندما",
+       "بينما / في الوقت نفسه الذي",
+       "عندما",
        "لكن",
-       "عشان"
+       "لكي"
       ],
       "correct": 0
      }
@@ -733,7 +733,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -753,7 +753,7 @@ const LESSON_IO = [
       "correct": 3
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"parlavo\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"parlavo\" ما؟",
       "options": [
        "Passato Prossimo",
        "Imperfetto",
@@ -772,10 +772,10 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "con",
-    "prepNote": "بيدل على مصاحبة أو أداة (مع / بـ) — مفيش أداة تعريف هنا لأن الاسم بيعبّر عن مفهوم عام مش حاجة محددة",
+    "prepNote": "يدل على مصاحبة أو أداة (مع / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
     "quiz": [
      {
-      "q": "ليه استخدمنا حرف الجر في \"con\"؟ الأصل إيه؟",
+      "q": "لماذا استخدمنا حرف الجر في \"con\"؟ الأصل ما؟",
       "options": [
        "fra",
        "a",
@@ -795,7 +795,7 @@ const LESSON_IO = [
     "plural": "i panettieri",
     "quiz": [
      {
-      "q": "جنس \"il panettiere\" إيه؟",
+      "q": "جنس \"il panettiere\" ما؟",
       "options": [
        "محايد",
        "مذكر",
@@ -831,11 +831,11 @@ const LESSON_IO = [
      "form": "Ha comprato"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Abbiamo comprato"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Avete comprato"
     },
     {
@@ -858,7 +858,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "comprato",
-    "q": "الزمن اللي اتصرف فيه \"comprato\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"comprato\" ما؟",
     "options": [
      "Imperfetto",
      "Imperativo",
@@ -869,7 +869,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "comprato",
-    "q": "الفعل المساعد اللي بيجي مع \"Comprare\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Comprare\" في الـ Passato Prossimo ما؟",
     "options": [
      "sono",
      "avere",
@@ -880,7 +880,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "il pane",
-    "q": "جنس \"il pane\" إيه؟",
+    "q": "جنس \"il pane\" ما؟",
     "options": [
      "مذكر",
      "مؤنث",
@@ -891,12 +891,12 @@ const LESSON_IO = [
    },
    {
     "wordIt": "mentre",
-    "q": "\"mentre\" بمعنى إيه هنا؟",
+    "q": "\"mentre\" بمعنى ما هنا؟",
     "options": [
      "لكن",
-     "عشان",
+     "لكي",
      "ولو",
-     "بينما / في نفس الوقت اللي"
+     "بينما / في الوقت نفسه الذي"
     ],
     "correct": 3
    },
@@ -913,7 +913,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "parlavo",
-    "q": "الزمن اللي اتصرف فيه \"parlavo\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"parlavo\" ما؟",
     "options": [
      "Imperativo",
      "Presente",
@@ -924,7 +924,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "con",
-    "q": "ليه استخدمنا حرف الجر في \"con\"؟ الأصل إيه؟",
+    "q": "لماذا استخدمنا حرف الجر في \"con\"؟ الأصل ما؟",
     "options": [
      "con",
      "a",
@@ -935,7 +935,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "il panettiere",
-    "q": "جنس \"il panettiere\" إيه؟",
+    "q": "جنس \"il panettiere\" ما؟",
     "options": [
      "مؤنث",
      "جمع",
@@ -948,7 +948,7 @@ const LESSON_IO = [
  },
  {
   "it": "Parlavo con il vicino quando ho comprato il giornale",
-  "ar": "كنت باتكلم مع الجار لما شريت الجورنال.",
+  "ar": "كنت باتكلم مع الجار لما شريت الصحيفة.",
   "en": "I was talking with the neighbor when I bought the newspaper.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -965,7 +965,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -985,7 +985,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"Parlavo\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"Parlavo\" ما؟",
       "options": [
        "Presente",
        "Passato Prossimo",
@@ -1004,10 +1004,10 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "con",
-    "prepNote": "بيدل على مصاحبة أو أداة (مع / بـ) — مفيش أداة تعريف هنا لأن الاسم بيعبّر عن مفهوم عام مش حاجة محددة",
+    "prepNote": "يدل على مصاحبة أو أداة (مع / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
     "quiz": [
      {
-      "q": "ليه استخدمنا حرف الجر في \"con\"؟ الأصل إيه؟",
+      "q": "لماذا استخدمنا حرف الجر في \"con\"؟ الأصل ما؟",
       "options": [
        "in",
        "di",
@@ -1027,7 +1027,7 @@ const LESSON_IO = [
     "plural": "i vicini",
     "quiz": [
      {
-      "q": "جنس \"il vicino\" إيه؟",
+      "q": "جنس \"il vicino\" ما؟",
       "options": [
        "جمع",
        "محايد",
@@ -1045,15 +1045,15 @@ const LESSON_IO = [
     "ar": "لما",
     "note": null,
     "type": "congiunzione",
-    "meaning": "لما / عندما",
+    "meaning": "عندما",
     "grammarId": "interrogativi",
     "quiz": [
      {
-      "q": "\"quando\" بمعنى إيه هنا؟",
+      "q": "\"quando\" بمعنى ما هنا؟",
       "options": [
-       "عشان",
-       "لما / عندما",
-       "بينما / في نفس الوقت اللي",
+       "لكي",
+       "عندما",
+       "بينما / في الوقت نفسه الذي",
        "لكن"
       ],
       "correct": 1
@@ -1081,7 +1081,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -1101,7 +1101,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"comprato\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"comprato\" ما؟",
       "options": [
        "Presente",
        "Passato Prossimo",
@@ -1111,7 +1111,7 @@ const LESSON_IO = [
       "correct": 1
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Comprare\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Comprare\" في الماضي ما؟",
       "options": [
        "avere",
        "essere"
@@ -1124,14 +1124,14 @@ const LESSON_IO = [
    },
    {
     "it": "il giornale",
-    "ar": "الجورنال",
+    "ar": "الصحيفة",
     "note": null,
     "type": "nome_unit",
     "gender": "m",
     "plural": "i giornali",
     "quiz": [
      {
-      "q": "جنس \"il giornale\" إيه؟",
+      "q": "جنس \"il giornale\" ما؟",
       "options": [
        "مؤنث",
        "جمع",
@@ -1167,11 +1167,11 @@ const LESSON_IO = [
      "form": "Ha comprato"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Abbiamo comprato"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Avete comprato"
     },
     {
@@ -1194,7 +1194,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "Parlavo",
-    "q": "الزمن اللي اتصرف فيه \"Parlavo\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"Parlavo\" ما؟",
     "options": [
      "Imperativo",
      "Presente",
@@ -1205,7 +1205,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "con",
-    "q": "ليه استخدمنا حرف الجر في \"con\"؟ الأصل إيه؟",
+    "q": "لماذا استخدمنا حرف الجر في \"con\"؟ الأصل ما؟",
     "options": [
      "con",
      "su",
@@ -1216,7 +1216,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "il vicino",
-    "q": "جنس \"il vicino\" إيه؟",
+    "q": "جنس \"il vicino\" ما؟",
     "options": [
      "مؤنث",
      "جمع",
@@ -1227,11 +1227,11 @@ const LESSON_IO = [
    },
    {
     "wordIt": "quando",
-    "q": "\"quando\" بمعنى إيه هنا؟",
+    "q": "\"quando\" بمعنى ما هنا؟",
     "options": [
-     "عشان",
+     "لكي",
      "ولو",
-     "لما / عندما",
+     "عندما",
      "لكن"
     ],
     "correct": 2
@@ -1249,7 +1249,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "comprato",
-    "q": "الزمن اللي اتصرف فيه \"comprato\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"comprato\" ما؟",
     "options": [
      "Presente",
      "Passato Prossimo",
@@ -1260,7 +1260,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "comprato",
-    "q": "الفعل المساعد اللي بيجي مع \"Comprare\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Comprare\" في الـ Passato Prossimo ما؟",
     "options": [
      "essere",
      "ho",
@@ -1271,7 +1271,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "il giornale",
-    "q": "جنس \"il giornale\" إيه؟",
+    "q": "جنس \"il giornale\" ما؟",
     "options": [
      "جمع",
      "محايد",
@@ -1284,7 +1284,7 @@ const LESSON_IO = [
  },
  {
   "it": "Sono partito presto mentre gli altri aspettavano il taxi",
-  "ar": "أنا مشيت بدري والباقيين كانوا مستنيين التاكسي.",
+  "ar": "أنا ليسيت بدري والباقيين كانوا مستنيين التاكسي.",
   "en": "I left early while the others were waiting for the taxi.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -1297,7 +1297,7 @@ const LESSON_IO = [
    },
    {
     "it": "partito",
-    "ar": "مشيت",
+    "ar": "ليسيت",
     "note": "Partire، Passato Prossimo",
     "type": "verbo",
     "verbInfinitive": "Partire",
@@ -1308,7 +1308,7 @@ const LESSON_IO = [
     "transitive": false,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -ire في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -ire في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -1328,7 +1328,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"partito\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"partito\" ما؟",
       "options": [
        "Imperfetto",
        "Imperativo",
@@ -1338,7 +1338,7 @@ const LESSON_IO = [
       "correct": 3
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Partire\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Partire\" في الماضي ما؟",
       "options": [
        "avere",
        "essere"
@@ -1347,7 +1347,7 @@ const LESSON_IO = [
      }
     ],
     "transitivity": "intransitive",
-    "transitivityNote": "بيحتاج حرف جر (غالباً a أو di) عشان يوصل للمفعول"
+    "transitivityNote": "يحتاج حرف جر (غالباً a أو di) لكي يوصل للمفعول"
    },
    {
     "it": "presto",
@@ -1363,7 +1363,7 @@ const LESSON_IO = [
     },
     "quiz": [
      {
-      "q": "\"presto\" هنا بيشتغل كـ إيه في الجملة؟",
+      "q": "\"presto\" هنا يعمل كـ ما في الجملة؟",
       "options": [
        "حرف جر",
        "فعل",
@@ -1373,23 +1373,23 @@ const LESSON_IO = [
       "correct": 3
      }
     ],
-    "usage": "بيجي بعد الفعل كظرف، وشكله بيفضل يفضل ثابت مش بيتغيّر حسب الجنس أو العدد"
+    "usage": "يأتي بعد الفعل كظرف، وشكله بيفضل يفضل ثابت ليس بيتغيّر حسب الجنس أو العدد"
    },
    {
     "it": "mentre",
     "ar": "والباقيين",
     "note": null,
     "type": "congiunzione",
-    "meaning": "بينما / في نفس الوقت اللي",
+    "meaning": "بينما / في الوقت نفسه الذي",
     "grammarId": "mentre",
     "quiz": [
      {
-      "q": "\"mentre\" بمعنى إيه هنا؟",
+      "q": "\"mentre\" بمعنى ما هنا؟",
       "options": [
-       "بينما / في نفس الوقت اللي",
-       "لما / عندما",
+       "بينما / في الوقت نفسه الذي",
+       "عندما",
        "لكن",
-       "عشان"
+       "لكي"
       ],
       "correct": 0
      }
@@ -1405,7 +1405,7 @@ const LESSON_IO = [
     "plural": "gli altri",
     "quiz": [
      {
-      "q": "جنس \"gli altri\" إيه؟",
+      "q": "جنس \"gli altri\" ما؟",
       "options": [
        "مؤنث",
        "جمع",
@@ -1431,7 +1431,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -1451,7 +1451,7 @@ const LESSON_IO = [
       "correct": 2
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"aspettavano\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"aspettavano\" ما؟",
       "options": [
        "Imperfetto",
        "Imperativo",
@@ -1473,7 +1473,7 @@ const LESSON_IO = [
     "plural": "i taxi",
     "quiz": [
      {
-      "q": "جنس \"il taxi\" إيه؟",
+      "q": "جنس \"il taxi\" ما؟",
       "options": [
        "محايد",
        "مذكر",
@@ -1509,11 +1509,11 @@ const LESSON_IO = [
      "form": "È partita"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Siamo partiti/e"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Siete partiti/e"
     },
     {
@@ -1536,7 +1536,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "partito",
-    "q": "الزمن اللي اتصرف فيه \"partito\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"partito\" ما؟",
     "options": [
      "Presente",
      "Passato Prossimo",
@@ -1547,7 +1547,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "partito",
-    "q": "الفعل المساعد اللي بيجي مع \"Partire\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Partire\" في الـ Passato Prossimo ما؟",
     "options": [
      "essere",
      "ho",
@@ -1558,7 +1558,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "presto",
-    "q": "\"presto\" هنا بيشتغل كـ إيه في الجملة؟",
+    "q": "\"presto\" هنا يعمل كـ ما في الجملة؟",
     "options": [
      "صفة/ظرف",
      "حرف جر",
@@ -1569,18 +1569,18 @@ const LESSON_IO = [
    },
    {
     "wordIt": "mentre",
-    "q": "\"mentre\" بمعنى إيه هنا؟",
+    "q": "\"mentre\" بمعنى ما هنا؟",
     "options": [
      "ولو",
-     "بينما / في نفس الوقت اللي",
+     "بينما / في الوقت نفسه الذي",
      "لكن",
-     "عشان"
+     "لكي"
     ],
     "correct": 1
    },
    {
     "wordIt": "gli altri",
-    "q": "جنس \"gli altri\" إيه؟",
+    "q": "جنس \"gli altri\" ما؟",
     "options": [
      "مذكر",
      "مؤنث",
@@ -1602,7 +1602,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "aspettavano",
-    "q": "الزمن اللي اتصرف فيه \"aspettavano\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"aspettavano\" ما؟",
     "options": [
      "Imperfetto",
      "Imperativo",
@@ -1613,7 +1613,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "il taxi",
-    "q": "جنس \"il taxi\" إيه؟",
+    "q": "جنس \"il taxi\" ما؟",
     "options": [
      "محايد",
      "مذكر",
@@ -1626,7 +1626,7 @@ const LESSON_IO = [
  },
  {
   "it": "Aspettavo il treno quando è partito il mio amico in macchina",
-  "ar": "كنت مستني القطر لما صاحبي مشى بالعربية.",
+  "ar": "كنت مستني القطر لما صاحبي ليسى بالعربية.",
   "en": "I was waiting for the train when my friend left by car.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -1643,7 +1643,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -1663,7 +1663,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"Aspettavo\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"Aspettavo\" ما؟",
       "options": [
        "Presente",
        "Passato Prossimo",
@@ -1685,7 +1685,7 @@ const LESSON_IO = [
     "plural": "i treni",
     "quiz": [
      {
-      "q": "جنس \"il treno\" إيه؟",
+      "q": "جنس \"il treno\" ما؟",
       "options": [
        "مؤنث",
        "جمع",
@@ -1703,16 +1703,16 @@ const LESSON_IO = [
     "ar": "لما",
     "note": null,
     "type": "congiunzione",
-    "meaning": "لما / عندما",
+    "meaning": "عندما",
     "grammarId": "interrogativi",
     "quiz": [
      {
-      "q": "\"quando\" بمعنى إيه هنا؟",
+      "q": "\"quando\" بمعنى ما هنا؟",
       "options": [
        "لكن",
-       "عشان",
-       "لما / عندما",
-       "بينما / في نفس الوقت اللي"
+       "لكي",
+       "عندما",
+       "بينما / في الوقت نفسه الذي"
       ],
       "correct": 2
      }
@@ -1728,7 +1728,7 @@ const LESSON_IO = [
    },
    {
     "it": "partito",
-    "ar": "مشى",
+    "ar": "ليسى",
     "note": "Partire، Passato Prossimo",
     "type": "verbo",
     "verbInfinitive": "Partire",
@@ -1739,7 +1739,7 @@ const LESSON_IO = [
     "transitive": false,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -ire في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -ire في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -1759,7 +1759,7 @@ const LESSON_IO = [
       "correct": 3
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"partito\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"partito\" ما؟",
       "options": [
        "Imperativo",
        "Presente",
@@ -1769,7 +1769,7 @@ const LESSON_IO = [
       "correct": 2
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Partire\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Partire\" في الماضي ما؟",
       "options": [
        "essere",
        "avere"
@@ -1778,7 +1778,7 @@ const LESSON_IO = [
      }
     ],
     "transitivity": "intransitive",
-    "transitivityNote": "بيحتاج حرف جر (غالباً a أو di) عشان يوصل للمفعول"
+    "transitivityNote": "يحتاج حرف جر (غالباً a أو di) لكي يوصل للمفعول"
    },
    {
     "it": "il mio amico",
@@ -1789,7 +1789,7 @@ const LESSON_IO = [
     "plural": "i mio amici",
     "quiz": [
      {
-      "q": "جنس \"il mio amico\" إيه؟",
+      "q": "جنس \"il mio amico\" ما؟",
       "options": [
        "مذكر",
        "مؤنث",
@@ -1808,10 +1808,10 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "in",
-    "prepNote": "بيدل على مكان جوه حاجة أو وسيلة مواصلة (في / بـ) — مفيش أداة تعريف هنا لأن الاسم بيعبّر عن مفهوم عام مش حاجة محددة",
+    "prepNote": "يدل على مكان داخل شيء أو وسيلة مواصلة (في / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
     "quiz": [
      {
-      "q": "ليه استخدمنا حرف الجر في \"in macchina\"؟ الأصل إيه؟",
+      "q": "لماذا استخدمنا حرف الجر في \"in macchina\"؟ الأصل ما؟",
       "options": [
        "di",
        "da",
@@ -1845,11 +1845,11 @@ const LESSON_IO = [
      "form": "È partita"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Siamo partiti/e"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Siete partiti/e"
     },
     {
@@ -1872,7 +1872,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "Aspettavo",
-    "q": "الزمن اللي اتصرف فيه \"Aspettavo\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"Aspettavo\" ما؟",
     "options": [
      "Passato Prossimo",
      "Imperfetto",
@@ -1883,7 +1883,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "il treno",
-    "q": "جنس \"il treno\" إيه؟",
+    "q": "جنس \"il treno\" ما؟",
     "options": [
      "جمع",
      "محايد",
@@ -1894,12 +1894,12 @@ const LESSON_IO = [
    },
    {
     "wordIt": "quando",
-    "q": "\"quando\" بمعنى إيه هنا؟",
+    "q": "\"quando\" بمعنى ما هنا؟",
     "options": [
      "ولو",
-     "لما / عندما",
+     "عندما",
      "لكن",
-     "عشان"
+     "لكي"
     ],
     "correct": 1
    },
@@ -1916,7 +1916,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "partito",
-    "q": "الزمن اللي اتصرف فيه \"partito\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"partito\" ما؟",
     "options": [
      "Passato Prossimo",
      "Imperfetto",
@@ -1927,7 +1927,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "partito",
-    "q": "الفعل المساعد اللي بيجي مع \"Partire\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Partire\" في الـ Passato Prossimo ما؟",
     "options": [
      "ho",
      "sono",
@@ -1938,7 +1938,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "il mio amico",
-    "q": "جنس \"il mio amico\" إيه؟",
+    "q": "جنس \"il mio amico\" ما؟",
     "options": [
      "محايد",
      "مذكر",
@@ -1949,7 +1949,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "in macchina",
-    "q": "ليه استخدمنا حرف الجر في \"in macchina\"؟ الأصل إيه؟",
+    "q": "لماذا استخدمنا حرف الجر في \"in macchina\"؟ الأصل ما؟",
     "options": [
      "in",
      "con",
@@ -1986,7 +1986,7 @@ const LESSON_IO = [
     "transitive": false,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -2006,7 +2006,7 @@ const LESSON_IO = [
       "correct": 1
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"restato\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"restato\" ما؟",
       "options": [
        "Imperativo",
        "Presente",
@@ -2016,7 +2016,7 @@ const LESSON_IO = [
       "correct": 2
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Restare\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Restare\" في الماضي ما؟",
       "options": [
        "essere",
        "avere"
@@ -2025,7 +2025,7 @@ const LESSON_IO = [
      }
     ],
     "transitivity": "intransitive",
-    "transitivityNote": "بيحتاج حرف جر (غالباً a أو di) عشان يوصل للمفعول"
+    "transitivityNote": "يحتاج حرف جر (غالباً a أو di) لكي يوصل للمفعول"
    },
    {
     "it": "a letto",
@@ -2033,10 +2033,10 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "a",
-    "prepNote": "بيدل على اتجاه أو مكان أو زمن (لـ / في / على حسب السياق) — مفيش أداة تعريف هنا لأن الاسم بيعبّر عن مفهوم عام مش حاجة محددة",
+    "prepNote": "يدل على اتجاه أو مكان أو زمن (لـ / في / على حسب السياق) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
     "quiz": [
      {
-      "q": "ليه استخدمنا حرف الجر في \"a letto\"؟ الأصل إيه؟",
+      "q": "لماذا استخدمنا حرف الجر في \"a letto\"؟ الأصل ما؟",
       "options": [
        "a",
        "con",
@@ -2052,16 +2052,16 @@ const LESSON_IO = [
     "ar": "وأنا",
     "note": null,
     "type": "congiunzione",
-    "meaning": "بينما / في نفس الوقت اللي",
+    "meaning": "بينما / في الوقت نفسه الذي",
     "grammarId": "mentre",
     "quiz": [
      {
-      "q": "\"mentre\" بمعنى إيه هنا؟",
+      "q": "\"mentre\" بمعنى ما هنا؟",
       "options": [
-       "لما / عندما",
+       "عندما",
        "لكن",
-       "عشان",
-       "بينما / في نفس الوقت اللي"
+       "لكي",
+       "بينما / في الوقت نفسه الذي"
       ],
       "correct": 3
      }
@@ -2081,7 +2081,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -2101,7 +2101,7 @@ const LESSON_IO = [
       "correct": 2
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"sognavo\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"sognavo\" ما؟",
       "options": [
        "Imperfetto",
        "Imperativo",
@@ -2123,7 +2123,7 @@ const LESSON_IO = [
     "plural": "i viaggii",
     "quiz": [
      {
-      "q": "جنس \"un viaggio\" إيه؟",
+      "q": "جنس \"un viaggio\" ما؟",
       "options": [
        "محايد",
        "مذكر",
@@ -2150,7 +2150,7 @@ const LESSON_IO = [
     },
     "quiz": [
      {
-      "q": "\"lontano\" هنا بيشتغل كـ إيه في الجملة؟",
+      "q": "\"lontano\" هنا يعمل كـ ما في الجملة؟",
       "options": [
        "فعل",
        "اسم",
@@ -2160,7 +2160,7 @@ const LESSON_IO = [
       "correct": 2
      }
     ],
-    "usage": "بيجي بعد الاسم كصفة، وبيتغيّر حسب جنس وعدد الاسم اللي بتوصفه"
+    "usage": "يأتي بعد الاسم كصفة، وبيتغيّر حسب جنس وعدد الاسم الذي بتوصفه"
    }
   ],
   "conj": {
@@ -2185,11 +2185,11 @@ const LESSON_IO = [
      "form": "È restata"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Siamo restati/e"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Siete restati/e"
     },
     {
@@ -2212,7 +2212,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "restato",
-    "q": "الزمن اللي اتصرف فيه \"restato\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"restato\" ما؟",
     "options": [
      "Imperfetto",
      "Imperativo",
@@ -2223,7 +2223,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "restato",
-    "q": "الفعل المساعد اللي بيجي مع \"Restare\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Restare\" في الـ Passato Prossimo ما؟",
     "options": [
      "sono",
      "avere",
@@ -2234,7 +2234,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "a letto",
-    "q": "ليه استخدمنا حرف الجر في \"a letto\"؟ الأصل إيه؟",
+    "q": "لماذا استخدمنا حرف الجر في \"a letto\"؟ الأصل ما؟",
     "options": [
      "a",
      "in",
@@ -2245,12 +2245,12 @@ const LESSON_IO = [
    },
    {
     "wordIt": "mentre",
-    "q": "\"mentre\" بمعنى إيه هنا؟",
+    "q": "\"mentre\" بمعنى ما هنا؟",
     "options": [
      "لكن",
-     "عشان",
+     "لكي",
      "ولو",
-     "بينما / في نفس الوقت اللي"
+     "بينما / في الوقت نفسه الذي"
     ],
     "correct": 3
    },
@@ -2267,7 +2267,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "sognavo",
-    "q": "الزمن اللي اتصرف فيه \"sognavo\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"sognavo\" ما؟",
     "options": [
      "Imperativo",
      "Presente",
@@ -2278,7 +2278,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "un viaggio",
-    "q": "جنس \"un viaggio\" إيه؟",
+    "q": "جنس \"un viaggio\" ما؟",
     "options": [
      "مذكر",
      "مؤنث",
@@ -2289,7 +2289,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "lontano",
-    "q": "\"lontano\" هنا بيشتغل كـ إيه في الجملة؟",
+    "q": "\"lontano\" هنا يعمل كـ ما في الجملة؟",
     "options": [
      "اسم",
      "صفة/ظرف",
@@ -2319,7 +2319,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -2339,7 +2339,7 @@ const LESSON_IO = [
       "correct": 3
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"Sognavo\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"Sognavo\" ما؟",
       "options": [
        "Passato Prossimo",
        "Imperfetto",
@@ -2361,7 +2361,7 @@ const LESSON_IO = [
     "plural": "le mia città",
     "quiz": [
      {
-      "q": "جنس \"la mia città\" إيه؟",
+      "q": "جنس \"la mia città\" ما؟",
       "options": [
        "جمع",
        "محايد",
@@ -2379,15 +2379,15 @@ const LESSON_IO = [
     "ar": "لما",
     "note": null,
     "type": "congiunzione",
-    "meaning": "لما / عندما",
+    "meaning": "عندما",
     "grammarId": "interrogativi",
     "quiz": [
      {
-      "q": "\"quando\" بمعنى إيه هنا؟",
+      "q": "\"quando\" بمعنى ما هنا؟",
       "options": [
-       "عشان",
-       "لما / عندما",
-       "بينما / في نفس الوقت اللي",
+       "لكي",
+       "عندما",
+       "بينما / في الوقت نفسه الذي",
        "لكن"
       ],
       "correct": 1
@@ -2415,7 +2415,7 @@ const LESSON_IO = [
     "transitive": false,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -2435,7 +2435,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"restato\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"restato\" ما؟",
       "options": [
        "Presente",
        "Passato Prossimo",
@@ -2445,7 +2445,7 @@ const LESSON_IO = [
       "correct": 1
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Restare\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Restare\" في الماضي ما؟",
       "options": [
        "avere",
        "essere"
@@ -2454,7 +2454,7 @@ const LESSON_IO = [
      }
     ],
     "transitivity": "intransitive",
-    "transitivityNote": "بيحتاج حرف جر (غالباً a أو di) عشان يوصل للمفعول"
+    "transitivityNote": "يحتاج حرف جر (غالباً a أو di) لكي يوصل للمفعول"
    },
    {
     "it": "bloccato",
@@ -2470,7 +2470,7 @@ const LESSON_IO = [
     },
     "quiz": [
      {
-      "q": "\"bloccato\" هنا بيشتغل كـ إيه في الجملة؟",
+      "q": "\"bloccato\" هنا يعمل كـ ما في الجملة؟",
       "options": [
        "اسم",
        "صفة/ظرف",
@@ -2480,7 +2480,7 @@ const LESSON_IO = [
       "correct": 1
      }
     ],
-    "usage": "بيجي بعد الاسم كصفة، وبيتغيّر حسب جنس وعدد الاسم اللي بتوصفه"
+    "usage": "يأتي بعد الاسم كصفة، وبيتغيّر حسب جنس وعدد الاسم الذي بتوصفه"
    },
    {
     "it": "in aeroporto",
@@ -2488,10 +2488,10 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "in",
-    "prepNote": "بيدل على مكان جوه حاجة أو وسيلة مواصلة (في / بـ) — مفيش أداة تعريف هنا لأن الاسم بيعبّر عن مفهوم عام مش حاجة محددة",
+    "prepNote": "يدل على مكان داخل شيء أو وسيلة مواصلة (في / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
     "quiz": [
      {
-      "q": "ليه استخدمنا حرف الجر في \"in aeroporto\"؟ الأصل إيه؟",
+      "q": "لماذا استخدمنا حرف الجر في \"in aeroporto\"؟ الأصل ما؟",
       "options": [
        "fra",
        "a",
@@ -2525,11 +2525,11 @@ const LESSON_IO = [
      "form": "È restata"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Siamo restati/e"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Siete restati/e"
     },
     {
@@ -2552,7 +2552,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "Sognavo",
-    "q": "الزمن اللي اتصرف فيه \"Sognavo\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"Sognavo\" ما؟",
     "options": [
      "Imperativo",
      "Presente",
@@ -2563,7 +2563,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "la mia città",
-    "q": "جنس \"la mia città\" إيه؟",
+    "q": "جنس \"la mia città\" ما؟",
     "options": [
      "مذكر",
      "مؤنث",
@@ -2574,12 +2574,12 @@ const LESSON_IO = [
    },
    {
     "wordIt": "quando",
-    "q": "\"quando\" بمعنى إيه هنا؟",
+    "q": "\"quando\" بمعنى ما هنا؟",
     "options": [
      "لكن",
-     "عشان",
+     "لكي",
      "ولو",
-     "لما / عندما"
+     "عندما"
     ],
     "correct": 3
    },
@@ -2596,7 +2596,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "restato",
-    "q": "الزمن اللي اتصرف فيه \"restato\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"restato\" ما؟",
     "options": [
      "Imperativo",
      "Presente",
@@ -2607,7 +2607,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "restato",
-    "q": "الفعل المساعد اللي بيجي مع \"Restare\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Restare\" في الـ Passato Prossimo ما؟",
     "options": [
      "avere",
      "essere",
@@ -2618,7 +2618,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "bloccato",
-    "q": "\"bloccato\" هنا بيشتغل كـ إيه في الجملة؟",
+    "q": "\"bloccato\" هنا يعمل كـ ما في الجملة؟",
     "options": [
      "اسم",
      "صفة/ظرف",
@@ -2629,7 +2629,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "in aeroporto",
-    "q": "ليه استخدمنا حرف الجر في \"in aeroporto\"؟ الأصل إيه؟",
+    "q": "لماذا استخدمنا حرف الجر في \"in aeroporto\"؟ الأصل ما؟",
     "options": [
      "fra",
      "a",
@@ -2642,7 +2642,7 @@ const LESSON_IO = [
  },
  {
   "it": "Ho pagato il conto mentre lavoravo ancora al progetto",
-  "ar": "دفعت الحساب وأنا كنت لسة باشتغل في المشروع.",
+  "ar": "دفعت الحساب وأنا كنت لسة باشتغل في الليسروع.",
   "en": "I paid the bill while I was still working on the project.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -2666,7 +2666,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -2686,7 +2686,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"pagato\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"pagato\" ما؟",
       "options": [
        "Presente",
        "Passato Prossimo",
@@ -2696,7 +2696,7 @@ const LESSON_IO = [
       "correct": 1
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Pagare\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Pagare\" في الماضي ما؟",
       "options": [
        "avere",
        "essere"
@@ -2716,7 +2716,7 @@ const LESSON_IO = [
     "plural": "i conti",
     "quiz": [
      {
-      "q": "جنس \"il conto\" إيه؟",
+      "q": "جنس \"il conto\" ما؟",
       "options": [
        "مؤنث",
        "جمع",
@@ -2734,16 +2734,16 @@ const LESSON_IO = [
     "ar": "وأنا",
     "note": null,
     "type": "congiunzione",
-    "meaning": "بينما / في نفس الوقت اللي",
+    "meaning": "بينما / في الوقت نفسه الذي",
     "grammarId": "mentre",
     "quiz": [
      {
-      "q": "\"mentre\" بمعنى إيه هنا؟",
+      "q": "\"mentre\" بمعنى ما هنا؟",
       "options": [
        "لكن",
-       "عشان",
-       "بينما / في نفس الوقت اللي",
-       "لما / عندما"
+       "لكي",
+       "بينما / في الوقت نفسه الذي",
+       "عندما"
       ],
       "correct": 2
      }
@@ -2763,7 +2763,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -2783,7 +2783,7 @@ const LESSON_IO = [
       "correct": 1
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"lavoravo\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"lavoravo\" ما؟",
       "options": [
        "Imperativo",
        "Presente",
@@ -2810,7 +2810,7 @@ const LESSON_IO = [
     },
     "quiz": [
      {
-      "q": "\"ancora\" هنا بيشتغل كـ إيه في الجملة؟",
+      "q": "\"ancora\" هنا يعمل كـ ما في الجملة؟",
       "options": [
        "فعل",
        "اسم",
@@ -2820,18 +2820,18 @@ const LESSON_IO = [
       "correct": 2
      }
     ],
-    "usage": "بيجي بعد الفعل كظرف، وشكله بيفضل يفضل ثابت مش بيتغيّر حسب الجنس أو العدد"
+    "usage": "يأتي بعد الفعل كظرف، وشكله بيفضل يفضل ثابت ليس بيتغيّر حسب الجنس أو العدد"
    },
    {
     "it": "al progetto",
-    "ar": "في المشروع",
+    "ar": "في الليسروع",
     "note": null,
     "type": "sintagma_prep",
     "prep": "a",
-    "prepNote": "بيدل على اتجاه أو مكان أو زمن (لـ / في / على حسب السياق)",
+    "prepNote": "يدل على اتجاه أو مكان أو زمن (لـ / في / على حسب السياق)",
     "quiz": [
      {
-      "q": "ليه استخدمنا حرف الجر في \"al progetto\"؟ الأصل إيه؟",
+      "q": "لماذا استخدمنا حرف الجر في \"al progetto\"؟ الأصل ما؟",
       "options": [
        "per",
        "tra",
@@ -2865,11 +2865,11 @@ const LESSON_IO = [
      "form": "Ha pagato"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Abbiamo pagato"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Avete pagato"
     },
     {
@@ -2892,7 +2892,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "pagato",
-    "q": "الزمن اللي اتصرف فيه \"pagato\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"pagato\" ما؟",
     "options": [
      "Presente",
      "Passato Prossimo",
@@ -2903,7 +2903,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "pagato",
-    "q": "الفعل المساعد اللي بيجي مع \"Pagare\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Pagare\" في الـ Passato Prossimo ما؟",
     "options": [
      "essere",
      "ho",
@@ -2914,7 +2914,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "il conto",
-    "q": "جنس \"il conto\" إيه؟",
+    "q": "جنس \"il conto\" ما؟",
     "options": [
      "جمع",
      "محايد",
@@ -2925,12 +2925,12 @@ const LESSON_IO = [
    },
    {
     "wordIt": "mentre",
-    "q": "\"mentre\" بمعنى إيه هنا؟",
+    "q": "\"mentre\" بمعنى ما هنا؟",
     "options": [
      "ولو",
-     "بينما / في نفس الوقت اللي",
+     "بينما / في الوقت نفسه الذي",
      "لكن",
-     "عشان"
+     "لكي"
     ],
     "correct": 1
    },
@@ -2947,7 +2947,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "lavoravo",
-    "q": "الزمن اللي اتصرف فيه \"lavoravo\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"lavoravo\" ما؟",
     "options": [
      "Passato Prossimo",
      "Imperfetto",
@@ -2958,7 +2958,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "ancora",
-    "q": "\"ancora\" هنا بيشتغل كـ إيه في الجملة؟",
+    "q": "\"ancora\" هنا يعمل كـ ما في الجملة؟",
     "options": [
      "صفة/ظرف",
      "حرف جر",
@@ -2969,7 +2969,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "al progetto",
-    "q": "ليه استخدمنا حرف الجر في \"al progetto\"؟ الأصل إيه؟",
+    "q": "لماذا استخدمنا حرف الجر في \"al progetto\"؟ الأصل ما؟",
     "options": [
      "di",
      "a",
@@ -2999,7 +2999,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto بتبدأ بإيه؟",
+      "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
       "options": [
        "-avo...",
        "-evo...",
@@ -3019,7 +3019,7 @@ const LESSON_IO = [
       "correct": 2
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"Lavoravo\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"Lavoravo\" ما؟",
       "options": [
        "Imperfetto",
        "Imperativo",
@@ -3038,10 +3038,10 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "da",
-    "prepNote": "بيدل على مصدر الحركة أو مكان (من / عند) — مفيش أداة تعريف هنا لأن الاسم بيعبّر عن مفهوم عام مش حاجة محددة",
+    "prepNote": "يدل على مصدر الحركة أو مكان (من / عند) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
     "quiz": [
      {
-      "q": "ليه استخدمنا حرف الجر في \"da casa\"؟ الأصل إيه؟",
+      "q": "لماذا استخدمنا حرف الجر في \"da casa\"؟ الأصل ما؟",
       "options": [
        "in",
        "da",
@@ -3057,16 +3057,16 @@ const LESSON_IO = [
     "ar": "لما",
     "note": null,
     "type": "congiunzione",
-    "meaning": "لما / عندما",
+    "meaning": "عندما",
     "grammarId": "interrogativi",
     "quiz": [
      {
-      "q": "\"quando\" بمعنى إيه هنا؟",
+      "q": "\"quando\" بمعنى ما هنا؟",
       "options": [
-       "لما / عندما",
-       "بينما / في نفس الوقت اللي",
+       "عندما",
+       "بينما / في الوقت نفسه الذي",
        "لكن",
-       "عشان"
+       "لكي"
       ],
       "correct": 0
      }
@@ -3093,7 +3093,7 @@ const LESSON_IO = [
     "transitive": true,
     "quiz": [
      {
-      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo بتكون إيه؟",
+      "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
       "options": [
        "-ato",
        "-uto",
@@ -3113,7 +3113,7 @@ const LESSON_IO = [
       "correct": 3
      },
      {
-      "q": "الزمن اللي اتصرف بيه \"pagato\" إيه؟",
+      "q": "الزمن الذي صُرِّف به \"pagato\" ما؟",
       "options": [
        "Passato Prossimo",
        "Imperfetto",
@@ -3123,7 +3123,7 @@ const LESSON_IO = [
       "correct": 0
      },
      {
-      "q": "الفعل المساعد اللي بيجي مع \"Pagare\" في الماضي إيه؟",
+      "q": "الفعل المساعد الذي يأتي مع \"Pagare\" في الماضي ما؟",
       "options": [
        "essere",
        "avere"
@@ -3143,7 +3143,7 @@ const LESSON_IO = [
     "plural": "le bolletti",
     "quiz": [
      {
-      "q": "جنس \"le bollette\" إيه؟",
+      "q": "جنس \"le bollette\" ما؟",
       "options": [
        "جمع",
        "محايد",
@@ -3170,7 +3170,7 @@ const LESSON_IO = [
     },
     "quiz": [
      {
-      "q": "\"online\" هنا بيشتغل كـ إيه في الجملة؟",
+      "q": "\"online\" هنا يعمل كـ ما في الجملة؟",
       "options": [
        "حرف جر",
        "فعل",
@@ -3180,7 +3180,7 @@ const LESSON_IO = [
       "correct": 3
      }
     ],
-    "usage": "بيجي بعد الفعل كظرف، وشكله بيفضل يفضل ثابت مش بيتغيّر حسب الجنس أو العدد"
+    "usage": "يأتي بعد الفعل كظرف، وشكله بيفضل يفضل ثابت ليس بيتغيّر حسب الجنس أو العدد"
    }
   ],
   "conj": {
@@ -3205,11 +3205,11 @@ const LESSON_IO = [
      "form": "Ha pagato"
     },
     {
-     "person": "Noi (احنا)",
+     "person": "Noi (نحن)",
      "form": "Abbiamo pagato"
     },
     {
-     "person": "Voi (انتم)",
+     "person": "Voi (أنتم)",
      "form": "Avete pagato"
     },
     {
@@ -3232,7 +3232,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "Lavoravo",
-    "q": "الزمن اللي اتصرف فيه \"Lavoravo\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"Lavoravo\" ما؟",
     "options": [
      "Passato Prossimo",
      "Imperfetto",
@@ -3243,7 +3243,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "da casa",
-    "q": "ليه استخدمنا حرف الجر في \"da casa\"؟ الأصل إيه؟",
+    "q": "لماذا استخدمنا حرف الجر في \"da casa\"؟ الأصل ما؟",
     "options": [
      "su",
      "con",
@@ -3254,12 +3254,12 @@ const LESSON_IO = [
    },
    {
     "wordIt": "quando",
-    "q": "\"quando\" بمعنى إيه هنا؟",
+    "q": "\"quando\" بمعنى ما هنا؟",
     "options": [
      "ولو",
-     "لما / عندما",
+     "عندما",
      "لكن",
-     "عشان"
+     "لكي"
     ],
     "correct": 1
    },
@@ -3276,7 +3276,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "pagato",
-    "q": "الزمن اللي اتصرف فيه \"pagato\" إيه؟",
+    "q": "الزمن الذي صُرِّف فيه \"pagato\" ما؟",
     "options": [
      "Passato Prossimo",
      "Imperfetto",
@@ -3287,7 +3287,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "pagato",
-    "q": "الفعل المساعد اللي بيجي مع \"Pagare\" في الـ Passato Prossimo إيه؟",
+    "q": "الفعل المساعد الذي يأتي مع \"Pagare\" في الـ Passato Prossimo ما؟",
     "options": [
      "ho",
      "sono",
@@ -3298,7 +3298,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "le bollette",
-    "q": "جنس \"le bollette\" إيه؟",
+    "q": "جنس \"le bollette\" ما؟",
     "options": [
      "محايد",
      "مذكر",
@@ -3309,7 +3309,7 @@ const LESSON_IO = [
    },
    {
     "wordIt": "online",
-    "q": "\"online\" هنا بيشتغل كـ إيه في الجملة؟",
+    "q": "\"online\" هنا يعمل كـ ما في الجملة؟",
     "options": [
      "فعل",
      "اسم",
