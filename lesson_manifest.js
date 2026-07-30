@@ -1,3 +1,22 @@
+function buildPrepositionQuestionOptions(focus,fallback){
+  const correct=focus?.title||fallback.meaning;
+  let pool=[];
+  if(focus?.base){
+    const sameBase=PREPOSITION_USAGE_PROFILES.filter(x=>x.base===focus.base&&x.id!==focus.id).map(x=>x.title);
+    const wider=PREPOSITION_USAGE_PROFILES.filter(x=>x.id!==focus.id).map(x=>x.title);
+    pool=[...new Set(sameBase)].length>=3?sameBase:[...sameBase,...wider];
+  }else{
+    const sameKind=INTEGRATED_PREPOSITION_BANK.filter(x=>x!==fallback&&x.kind===fallback.kind).map(x=>x.meaning);
+    const wider=INTEGRATED_PREPOSITION_BANK.filter(x=>x!==fallback).map(x=>x.meaning);
+    pool=[...new Set(sameKind)].length>=3?sameKind:[...sameKind,...wider];
+  }
+  const unique=[...new Set(pool)].filter(x=>x&&x!==correct);
+  const key=focus?.id||fallback.form;
+  const seed=[...key].reduce((sum,ch)=>sum+ch.charCodeAt(0),0);
+  const distractors=[];
+  for(let i=0;i<unique.length&&distractors.length<3;i++)distractors.push(unique[(seed+i)%unique.length]);
+  return [correct,...distractors];
+}
 const LESSON_NORMAL_SENTENCES = [].concat(LESSON_IO, LESSON_TU, LESSON_LUI, LESSON_LEI, LESSON_NOI, LESSON_VOI, LESSON_LORO);
 const LESSON_SENTENCES = (() => {
   const merged=[]; let normalIndex=0, imperativeIndex=0;
@@ -14,7 +33,7 @@ const LESSON_SENTENCES = (() => {
     sentence.prepositionExposure={form:prep.form,meaning:prep.meaning,example:prep.example,kind:prep.kind};
     sentence.quiz=[...(sentence.quiz||[]),
       {wordIt:topic.focus,q:`📚 ${topic.topic}: ${topic.example}\n${topic.q}`,options:topic.options,correct:topic.correct,grammarId:topic.grammarId},
-      {wordIt:(sentence.prepositionFocus||prep).form,q:`🎨 حرف الجر ${(sentence.prepositionFocus||prep).form}: في المثال «${(sentence.prepositionFocus||prep).it||prep.example}» ما الاستخدام المقصود؟`,options:[(sentence.prepositionFocus||prep).title||prep.meaning,'استخدام مكاني عام','أداة تعريف','زمن فعل'],correct:0,grammarId:(sentence.prepositionFocus||prep).grammarId||(prep.kind==='حرف جر غير أصلي'?'improprie':'prep_semplici')}
+      {wordIt:(sentence.prepositionFocus||prep).form,q:`🎨 حرف الجر ${(sentence.prepositionFocus||prep).form}: في المثال «${(sentence.prepositionFocus||prep).it||prep.example}» ما الاستخدام المقصود؟`,options:buildPrepositionQuestionOptions(sentence.prepositionFocus,prep),correct:0,grammarId:(sentence.prepositionFocus||prep).grammarId||(prep.kind==='حرف جر غير أصلي'?'improprie':'prep_semplici')}
     ];
   });
   return merged;

@@ -17,7 +17,7 @@ const INTEGRATED_TOPIC_BANK = [
  {topic:'أيام الأسبوع',grammarId:'giorni_settimana',focus:'lunedì…domenica',example:'Studio dal lunedì al venerdì e riposo ogni domenica.',q:'«ogni domenica» معناها إيه؟',options:['كل يوم أحد','من الأحد','إلى الأحد','الأحد الماضي'],correct:0,status:'complete'}
 ];
 const INTEGRATED_PREPOSITION_BANK = [];
-function prep(form,meaning,example,kind='حرف جر'){INTEGRATED_PREPOSITION_BANK.push({form,meaning,example,kind,q:`في المثال «${example}»، معنى «${form}» إيه؟`,options:[meaning,'قبل','بدون','ضد'],correct:0});}
+function prep(form,meaning,example,kind='حرف جر'){INTEGRATED_PREPOSITION_BANK.push({form,meaning,example,kind,q:`في المثال «${example}»، معنى «${form}» إيه؟`,options:[],correct:0});}
 [['di','من / خاص بـ','Parliamo di grammatica.'],['a','إلى / في','Vado a scuola.'],['da','من / منذ','Studio da lunedì.'],['in','في / إلى','Sono in ufficio.'],['con','مع / بواسطة','Parlo con Marco.'],['su','على / عن','Il libro è su questo tavolo.'],['per','لـ / لمدة','Studio per due ore.'],['tra','بين / خلال','Sono tra amici.'],['fra','بين / بعد','Parto fra due giorni.']].forEach(x=>prep(...x,'حرف جر أصلي'));
 [
  ['del','di + il','Il libro del professore.'],['dello','di + lo','La penna dello studente.'],['della','di + la','La porta della scuola.'],['dei','di + i / بعض','I quaderni dei ragazzi.'],['degli','di + gli / بعض','Gli zaini degli studenti.'],['delle','di + le / بعض','Le chiavi delle stanze.'],
@@ -29,3 +29,18 @@ function prep(form,meaning,example,kind='حرف جر'){INTEGRATED_PREPOSITION_BA
 [
  ['a destra','على اليمين','La banca è a destra.'],['a sinistra','على اليسار','La farmacia è a sinistra.'],['sopra','فوق','Il libro è sopra il tavolo.'],['sotto','تحت','Il gatto è sotto il letto.'],['dentro','داخل','Sono dentro la casa.'],['fuori','خارج','Aspetto fuori dall’ufficio.'],['dietro','خلف','La macchina è dietro l’autobus.'],['davanti a','أمام','Aspetto davanti al cinema.'],['lungo','بمحاذاة','Cammino lungo il fiume.'],['vicino a','قريب من','È vicino a me.'],['lontano da','بعيد عن','È lontano da casa.'],['prima di','قبل','Studio prima della lezione.'],['dopo','بعد','Torno dopo la scuola.'],['durante','أثناء','Ascolto durante la lezione.'],['verso','حوالي','Arrivo verso le otto.'],['fino a','حتى','Lavoro fino alle sei.'],['senza','بدون','Esco senza il telefono.'],['contro','ضد','Sono contro questa idea.'],['secondo','بحسب','Secondo me, è giusto.'],['oltre','بعد / وراء','La scuola è oltre il ponte.'],['nonostante','على الرغم من','Esco nonostante la pioggia.'],['tranne','ما عدا','Sono arrivati tutti tranne Marco.'],['eccetto','باستثناء','Mangio tutto eccetto il pesce.'],['salvo','باستثناء / ما عدا','Erano presenti tutti salvo Anna.'],['mediante','بواسطة','Pago mediante bonifico.'],['tramite','عن طريق','Invio il file tramite e-mail.']
 ].forEach(x=>prep(...x,'حرف جر غير أصلي'));
+
+// Build plausible distractors from other prepositions in the same grammatical family.
+function pickPrepDistractors(pool,correct,seed,count=3){
+ const unique=[...new Set(pool)].filter(x=>x&&x!==correct);
+ if(!unique.length)return [];
+ const start=Math.abs(seed)%unique.length,out=[];
+ for(let i=0;i<unique.length&&out.length<count;i++)out.push(unique[(start+i)%unique.length]);
+ return out;
+}
+INTEGRATED_PREPOSITION_BANK.forEach((item,index,bank)=>{
+ const sameKind=bank.filter(x=>x!==item&&x.kind===item.kind).map(x=>x.meaning);
+ const wider=bank.filter(x=>x!==item).map(x=>x.meaning);
+ const distractors=pickPrepDistractors([...sameKind,...wider],item.meaning,index*7+item.form.length,3);
+ item.options=[item.meaning,...distractors];
+});
