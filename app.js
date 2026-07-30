@@ -1022,30 +1022,48 @@ function wpRetryWordThenReask(wordIt){
 // بعد انتهاء تقييم الجملة — الجملة لكن الذي بتتفتح تلقائي في تبويب الدرس الإنفينيتي،
 // من غير ما نشد المستخدم من تبويب نطق الكلمات — هو اللي يقرر يكمّل جمل أخرى هنا ولا يروح للدرس حينما يحب.
 function wpFinishSentenceQuiz(){
+  const completedSentenceIdx=wpSentenceIdx;
   wpChainActive=true;
-  if(!wpUnlockedIndices.includes(wpSentenceIdx))wpUnlockedIndices.push(wpSentenceIdx);
+
+  if(!wpUnlockedIndices.includes(completedSentenceIdx)){
+    wpUnlockedIndices.push(completedSentenceIdx);
+  }
+  wpUnlockedIndices=[...new Set(wpUnlockedIndices)].sort((a,b)=>a-b);
   saveUnlockedSentences();
-  const unlockedTarget=LESSON_SENTENCES[wpSentenceIdx];
-  if(lDeck&&lDeck.length>0&&lDeck.indexOf(unlockedTarget)<0)lDeck.push(unlockedTarget);
-  wpShowStage('word');
-  document.getElementById('wpProgress').textContent='🎉 هذه الجملة فُتحت في تبويب "الدرس الإنفينيتي" — كمّل جملة أخرى هنا ولا روح ذاكرها هناك حينما تحب';
+
+  // جهّز جملة نطق الكلمات التالية في الخلفية، لكن افتح فورًا نفس الجملة
+  // التي أنهاها المستخدم داخل الدرس الإنفينيتي.
+  const nextSentenceIdx=completedSentenceIdx+1;
+  try{
+    localStorage.setItem('parlaWordProgress',JSON.stringify({sentenceIdx:nextSentenceIdx,wordPos:0}));
+  }catch(e){}
+  if(nextSentenceIdx<LESSON_SENTENCES.length)wpLoadSentence(nextSentenceIdx);
+
+  lPassed=0;lAttempts=0;lStreak=0;
+  wpSyncLessonDeckToSentence(completedSentenceIdx);
+  switchMode('lesson');
+  setStudyMode('speak');
+
+  document.getElementById('lBadge').innerHTML='🎉 فتحت نفس الجملة هنا — ابدأ بنطق الجملة كاملة';
+  document.getElementById('lBadge').className='badge ok show';
   floatEmoji('🎉');
-  try{localStorage.setItem('parlaWordProgress',JSON.stringify({sentenceIdx:wpSentenceIdx+1,wordPos:0}));}catch(e){}
-  setTimeout(()=>wpLoadSentence(wpSentenceIdx+1),1400);
 }
 function wpSyncLessonDeckToSentence(sentenceIdx){
-  const target=LESSON_SENTENCES[sentenceIdx];
+  if(!Number.isInteger(sentenceIdx)||sentenceIdx<0||sentenceIdx>=LESSON_SENTENCES.length)return;
+
   if(!wpUnlockedIndices.includes(sentenceIdx))wpUnlockedIndices.push(sentenceIdx);
+  wpUnlockedIndices=[...new Set(wpUnlockedIndices)]
+    .filter(i=>Number.isInteger(i)&&i>=0&&i<LESSON_SENTENCES.length)
+    .sort((a,b)=>a-b);
   saveUnlockedSentences();
-  if(!lDeck||lDeck.length===0){lDeck=wpUnlockedIndices.map(i=>LESSON_SENTENCES[i]);}
-  let foundIdx=lDeck.indexOf(target);
-  if(foundIdx<0)foundIdx=lDeck.findIndex(s=>s.it===target.it&&s.ar===target.ar);
-  if(foundIdx<0){
-    lDeck=wpUnlockedIndices.map(i=>LESSON_SENTENCES[i]);
-    foundIdx=lDeck.indexOf(target);
-    if(foundIdx<0)foundIdx=lDeck.length-1;
-  }
-  lIdx=foundIdx;
+
+  // ابنِ الـ deck دائمًا من الفهارس المفتوحة، ثم اختَر نفس فهرس الجملة
+  // بدل الاعتماد على object identity أو تقدّم قديم محفوظ.
+  lDeck=wpUnlockedIndices.map(i=>LESSON_SENTENCES[i]);
+  lIdx=wpUnlockedIndices.indexOf(sentenceIdx);
+  if(lIdx<0)lIdx=0;
+  saveLessonProgress();
+
   hideLessonLocked();
   lRender();
 }
@@ -1356,6 +1374,9 @@ function restartLesson(){lStart();}
 function lRender(){
   drillMode=false;sentenceAnswered=false;sentenceFails=0;
   pipelineSeenWords=new Set();
+  const isSp=currentStudyMode==='speak';
+  const isLi=currentStudyMode==='listen';
+  const isWr=currentStudyMode==='write';
   const s=lDeck[lIdx];
   tokenStates=s.words.map(w=>(w.type==='omesso'||isAutoSkipWord(w.it))?'auto':'pending');
 
@@ -1419,9 +1440,6 @@ function lRender(){
   lRenderTokens();
 
   // Show the correct panel for current study mode
-  const isSp=currentStudyMode==='speak';
-  const isLi=currentStudyMode==='listen';
-  const isWr=currentStudyMode==='write';
   document.getElementById('lTokens').style.display=isSp?'flex':'none';
   document.getElementById('listenPanel').style.display=isLi?'block':'none';
   if(!isLi)hideListenQuestion();
