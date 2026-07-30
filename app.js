@@ -2,7 +2,7 @@ let deck=[],idx=0,answered=false;
 let totalScore=0,passedCount=0,bestScore=0,totalAttempts=0,failCount=0;
 const PASS=80;
 
-function shuffle(a){return [...a].sort(()=>Math.random()-.5);}
+function shuffle(a){const out=[...a];for(let i=out.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[out[i],out[j]]=[out[j],out[i]];}return out;}
 function norm(s){
   return s.toLowerCase()
     .replace(/[àá]/g,'a').replace(/[èéê]/g,'e')
@@ -950,7 +950,7 @@ function wpShowInfo(w){
 // ── تقييم MCQ على مستوى الجملة (sentence.quiz) ──
 function wpStartQuiz(){
   const s=LESSON_SENTENCES[wpSentenceIdx];
-  wpQuizList=(s.quiz||[]).slice();
+  wpQuizList=(s.quiz||[]).map(item=>({...item,_optionOrder:shuffle(item.options.map((_,i)=>i))}));
   wpQuizIdx=0;
   if(wpQuizList.length===0){wpFinishSentenceQuiz();return;}
   wpShowStage('quiz');
@@ -970,10 +970,11 @@ function wpRenderQuizQuestion(){
     lessonBtn.onclick=()=>openGrammarModal(item.grammarId);
     wrap.appendChild(lessonBtn);
   }
-  item.options.forEach((opt,oi)=>{
+  if(!item._optionOrder)item._optionOrder=shuffle(item.options.map((_,i)=>i));
+  item._optionOrder.forEach(oi=>{
     const btn=document.createElement('button');
     btn.className='write-check-btn';
-    btn.textContent=opt;
+    btn.textContent=item.options[oi];
     btn.onclick=()=>wpQuizAnswer(oi);
     wrap.appendChild(btn);
   });
