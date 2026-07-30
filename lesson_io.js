@@ -2,7 +2,7 @@
 const LESSON_IO = [
  {
   "it": "Ho mangiato un panino mentre guardavo la TV",
-  "ar": "أكلت ساندويتش وأنا كنت باتفرج على التليفمثلون.",
+  "ar": "أكلت ساندويتش وأنا كنت بتفرج على التليفيزيون.",
   "en": "I ate a sandwich while I was watching TV.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -112,7 +112,7 @@ const LESSON_IO = [
    },
    {
     "it": "guardavo",
-    "ar": "كنت باتفرج",
+    "ar": "كنت بتفرج",
     "note": "Guardare، Imperfetto",
     "type": "verbo",
     "verbInfinitive": "Guardare",
@@ -158,7 +158,7 @@ const LESSON_IO = [
    },
    {
     "it": "la TV",
-    "ar": "التلفمثلون",
+    "ar": "التلفزيون",
     "note": null,
     "type": "nome_unit",
     "gender": "f",
@@ -772,7 +772,7 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "con",
-    "prepNote": "يدل على مصاحبة أو أداة (مع / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
+    "prepNote": "يدل على مصاحبة أو أداة (مع / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
     "quiz": [
      {
       "q": "لماذا استخدمنا حرف الجر في \"con\"؟ الأصل ما؟",
@@ -1004,7 +1004,7 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "con",
-    "prepNote": "يدل على مصاحبة أو أداة (مع / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
+    "prepNote": "يدل على مصاحبة أو أداة (مع / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
     "quiz": [
      {
       "q": "لماذا استخدمنا حرف الجر في \"con\"؟ الأصل ما؟",
@@ -1284,7 +1284,7 @@ const LESSON_IO = [
  },
  {
   "it": "Sono partito presto mentre gli altri aspettavano il taxi",
-  "ar": "أنا ليسيت بدري والباقيين كانوا مستنيين التاكسي.",
+  "ar": "أنا مشيت بدري والباقيين كانوا مستنيين التاكسي.",
   "en": "I left early while the others were waiting for the taxi.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -1297,7 +1297,7 @@ const LESSON_IO = [
    },
    {
     "it": "partito",
-    "ar": "ليسيت",
+    "ar": "مشيت",
     "note": "Partire، Passato Prossimo",
     "type": "verbo",
     "verbInfinitive": "Partire",
@@ -1373,7 +1373,7 @@ const LESSON_IO = [
       "correct": 3
      }
     ],
-    "usage": "يأتي بعد الفعل كظرف، وشكله بيفضل يفضل ثابت ليس بيتغيّر حسب الجنس أو العدد"
+    "usage": "يأتي بعد الفعل كظرف، وشكله بيفضل ثابت مش بيتغيّر حسب الجنس أو العدد"
    },
    {
     "it": "mentre",
@@ -1626,7 +1626,7 @@ const LESSON_IO = [
  },
  {
   "it": "Aspettavo il treno quando è partito il mio amico in macchina",
-  "ar": "كنت مستني القطر لما صاحبي ليسى بالعربية.",
+  "ar": "كنت مستني القطر لما صاحبي مشى بالعربية.",
   "en": "I was waiting for the train when my friend left by car.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -1728,7 +1728,7 @@ const LESSON_IO = [
    },
    {
     "it": "partito",
-    "ar": "ليسى",
+    "ar": "مشى",
     "note": "Partire، Passato Prossimo",
     "type": "verbo",
     "verbInfinitive": "Partire",
@@ -1808,7 +1808,7 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "in",
-    "prepNote": "يدل على مكان داخل شيء أو وسيلة مواصلة (في / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
+    "prepNote": "يدل على مكان داخل شيء أو وسيلة مواصلة (في / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
     "quiz": [
      {
       "q": "لماذا استخدمنا حرف الجر في \"in macchina\"؟ الأصل ما؟",
@@ -2033,7 +2033,7 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "a",
-    "prepNote": "يدل على اتجاه أو مكان أو زمن (لـ / في / على حسب السياق) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
+    "prepNote": "يدل على اتجاه أو مكان أو زمن (لـ / في / على حسب السياق) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
     "quiz": [
      {
       "q": "لماذا استخدمنا حرف الجر في \"a letto\"؟ الأصل ما؟",
@@ -2160,7 +2160,7 @@ const LESSON_IO = [
       "correct": 2
      }
     ],
-    "usage": "يأتي بعد الاسم كصفة، وبيتغيّر حسب جنس وعدد الاسم الذي بتوصفه"
+    "usage": "يأتي بعد الاسم كصفة، وبيتغيّر حسب جنس وعدد الاسم اللي بتوصفه"
    }
   ],
   "conj": {
@@ -2480,7 +2480,7 @@ const LESSON_IO = [
       "correct": 1
      }
     ],
-    "usage": "يأتي بعد الاسم كصفة، وبيتغيّر حسب جنس وعدد الاسم الذي بتوصفه"
+    "usage": "يأتي بعد الاسم كصفة، وبيتغيّر حسب جنس وعدد الاسم اللي بتوصفه"
    },
    {
     "it": "in aeroporto",
@@ -2488,7 +2488,7 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "in",
-    "prepNote": "يدل على مكان داخل شيء أو وسيلة مواصلة (في / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
+    "prepNote": "يدل على مكان داخل شيء أو وسيلة مواصلة (في / بـ) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
     "quiz": [
      {
       "q": "لماذا استخدمنا حرف الجر في \"in aeroporto\"؟ الأصل ما؟",
@@ -2642,7 +2642,7 @@ const LESSON_IO = [
  },
  {
   "it": "Ho pagato il conto mentre lavoravo ancora al progetto",
-  "ar": "دفعت الحساب وأنا كنت لسة باشتغل في الليسروع.",
+  "ar": "دفعت الحساب وأنا كنت لسة باشتغل في المشروع.",
   "en": "I paid the bill while I was still working on the project.",
   "pronoun": "Io (أنا)",
   "words": [
@@ -2820,11 +2820,11 @@ const LESSON_IO = [
       "correct": 2
      }
     ],
-    "usage": "يأتي بعد الفعل كظرف، وشكله بيفضل يفضل ثابت ليس بيتغيّر حسب الجنس أو العدد"
+    "usage": "يأتي بعد الفعل كظرف، وشكله بيفضل ثابت مش بيتغيّر حسب الجنس أو العدد"
    },
    {
     "it": "al progetto",
-    "ar": "في الليسروع",
+    "ar": "في المشروع",
     "note": null,
     "type": "sintagma_prep",
     "prep": "a",
@@ -3038,7 +3038,7 @@ const LESSON_IO = [
     "note": null,
     "type": "sintagma_prep",
     "prep": "da",
-    "prepNote": "يدل على مصدر الحركة أو مكان (من / عند) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محددة",
+    "prepNote": "يدل على مصدر الحركة أو مكان (من / عند) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
     "quiz": [
      {
       "q": "لماذا استخدمنا حرف الجر في \"da casa\"؟ الأصل ما؟",
@@ -3180,7 +3180,7 @@ const LESSON_IO = [
       "correct": 3
      }
     ],
-    "usage": "يأتي بعد الفعل كظرف، وشكله بيفضل يفضل ثابت ليس بيتغيّر حسب الجنس أو العدد"
+    "usage": "يأتي بعد الفعل كظرف، وشكله بيفضل ثابت مش بيتغيّر حسب الجنس أو العدد"
    }
   ],
   "conj": {

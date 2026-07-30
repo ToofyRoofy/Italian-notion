@@ -1,72 +1,109 @@
-// Parla Italiano — Service Worker v4
-const SHELL_CACHE = 'parla-shell-v9';  // يتغير مع كل إصدار جديد
-const MODEL_CACHE = 'parla-models-v1'; // ثابت — مش بيتمسح أبدًا
+// Parla Italiano — Service Worker v10
+const SHELL_CACHE = 'parla-shell-v10';
+// نحافظ على كاش الموديلات بين إصدارات واجهة التطبيق لتجنب إعادة تنزيلها.
+const MODEL_CACHE = 'parla-models-v1';
 
-// ⚠️ Bug: كان مكتوب هنا 'parla.html' بس اسم الملف الفعلي 'index.html' —
-// caches.open(...).add() كان بيفشل بصمت (بسبب .catch(()=>{}) تحت) ومايخزّنش
-// صفحة الشِل الأساسية في أول تثبيت، وده كان بيضعف ضمان الأوفلاين الحقيقي.
-const CORE_FILES = ['./index.html', './sentences.js', './verbs.js', './grammar.js'];
-const CDN = ['cdn.jsdelivr.net', 'huggingface.co', 'fonts.googleapis.com', 'fonts.gstatic.com'];
+// كل الملفات اللازمة لتشغيل التطبيق والدروس بدون إنترنت.
+const CORE_FILES = [
+  './',
+  './index.html',
+  './styles.css',
+  './app.js',
+  './sentences.js',
+  './verbs.js',
+  './grammar.js',
+  './lesson_io.js',
+  './lesson_tu.js',
+  './lesson_lui.js',
+  './lesson_lei.js',
+  './lesson_noi.js',
+  './lesson_voi.js',
+  './lesson_loro.js',
+  './lesson_manifest.js'
+];
 
-// ===== INSTALL: خزّن الملفات الأساسية =====
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(SHELL_CACHE).then(c =>
-      Promise.all(CORE_FILES.map(f => c.add(f).catch(() => {})))
-    )
+const CDN_HOSTS = [
+  'cdn.jsdelivr.net',
+  'huggingface.co',
+  'fonts.googleapis.com',
+  'fonts.gstatic.com'
+];
+
+function isTrustedCdn(hostname) {
+  return CDN_HOSTS.some(host => hostname === host || hostname.endsWith(`.${host}`));
+}
+
+// ===== INSTALL: خزّن الشِل كاملًا، وافشل التثبيت لو ملف أساسي ناقص =====
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(SHELL_CACHE)
+      .then(cache => cache.addAll(CORE_FILES))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
-// ===== ACTIVATE: امسح الشِل القديم بس، واحمي كاش الموديلات =====
-self.addEventListener('activate', e => {
-  e.waitUntil(
+// ===== ACTIVATE: امسح إصدارات شِل Parla القديمة فقط =====
+self.addEventListener('activate', event => {
+  event.waitUntil(
     caches.keys()
       .then(keys => Promise.all(
         keys
-          .filter(k => k !== SHELL_CACHE && k !== MODEL_CACHE)
-          .map(k => caches.delete(k))
+          .filter(key => key.startsWith('parla-shell-') && key !== SHELL_CACHE)
+          .map(key => caches.delete(key))
       ))
       .then(() => self.clients.claim())
   );
 });
 
 // ===== FETCH =====
-self.addEventListener('fetch', e => {
-  if (e.request.method !== 'GET') return;
+self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') return;
 
-  const url = new URL(e.request.url);
+  const url = new URL(event.request.url);
 
-  // ① نفس المصدر (HTML + JS): نت أول، لو مفيش نت → الكاش
-  if (url.hostname === self.location.hostname) {
-    e.respondWith(
-      fetch(e.request)
-        .then(resp => {
-          if (resp.ok) caches.open(SHELL_CACHE).then(c => c.put(e.request, resp.clone()));
-          return resp;
-        })
-        .catch(() =>
-          caches.match(e.request).then(cached =>
-            // لو الطلب ده كان تنقّل صفحة (navigation) ومفيش نسخة مخزّنة بنفس الـ
-            // URL بالضبط (زي اختلاف query string)، رجّع صفحة الشِل الأساسية
-            // المخزّنة بدل فشل كامل في الأوفلاين.
-            cached || (e.request.mode === 'navigate' ? caches.match('./index.html') : undefined)
-          )
-        )
-    );
+  // نفس المصدر: الشبكة أولًا لضمان أحدث محتوى، ثم الكاش عند انقطاع الاتصال.
+  if (url.origin === self.location.origin) {
+    event.respondWith((async () => {
+      try {
+        const response = await fetch(event.request);
+        if (response.ok && response.status === 200) {
+          const cache = await caches.open(SHELL_CACHE);
+          await cache.put(event.request, response.clone());
+        }
+        return response;
+      } catch (error) {
+        const cached = await caches.match(event.request, {
+          ignoreSearch: event.request.mode === 'navigate'
+        });
+        if (cached) return cached;
+
+        if (event.request.mode === 'navigate') {
+          const shell = await caches.match('./index.html', { ignoreSearch: true });
+          if (shell) return shell;
+        }
+
+        return Response.error();
+      }
+    })());
     return;
   }
 
-  // ② CDN (Whisper + مكتبات + خطوط): كاش أول، لو مفيش → نزّل وخزّن في MODEL_CACHE
-  if (CDN.some(h => url.hostname.includes(h))) {
-    e.respondWith(
-      caches.match(e.request).then(cached => {
-        if (cached) return cached;
-        return fetch(e.request).then(resp => {
-          if (resp.ok) caches.open(MODEL_CACHE).then(c => c.put(e.request, resp.clone()));
-          return resp;
-        });
-      })
-    );
+  // مكتبات Whisper والموديلات والخطوط: الكاش أولًا، ثم الشبكة.
+  if (isTrustedCdn(url.hostname)) {
+    event.respondWith((async () => {
+      const cached = await caches.match(event.request);
+      if (cached) return cached;
+
+      try {
+        const response = await fetch(event.request);
+        if ((response.ok || response.type === 'opaque') && response.status !== 206) {
+          const cache = await caches.open(MODEL_CACHE);
+          await cache.put(event.request, response.clone());
+        }
+        return response;
+      } catch (error) {
+        return Response.error();
+      }
+    })());
   }
 });

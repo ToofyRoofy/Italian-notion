@@ -1,11 +1,11 @@
-// ===== GRAMMAR: مكتبة القواعد الجرامرية (تُفتح بالاضغط على كلمة رابطة داخل الجُمل) =====
+// ===== GRAMMAR: مكتبة القواعد الجرامرية (تُفتح بالضغط على كلمة رابطة داخل الجُمل) =====
 const GRAMMAR = [
 {
  id:"interrogativi",
  it:"Aggettivi e pronomi interrogativi",
- ar:"الصفات والضمائر الإستفهامية",
+ ar:"الصفات والضمائر الاستفهامية",
  icon:"❓",
- triggers:["quando","quanto","quanta","quanti","quante","chi","quale","quali"],
+ triggers:["quando","quanto","quanta","quanti","quante","chi","quale","quali","che","cosa"],
  blocks:[
   {type:"item", it:"Quando", ar:"متى / عندما", note:"أداة استفهام للزمن، شكلها ثابت مع كل الأشخاص ومع المفرد والجمع", examples:[
    {it:"Quando lavoravi?", ar:"متى كنت تعمل؟"},
@@ -14,7 +14,7 @@ const GRAMMAR = [
   {type:"table", title:"Quanto — تتغير حسب الجنس والعدد (الكمية)", headers:["الصيغة","الاستخدام","مثال"], rows:[
    ["Quanto","مذكر مفرد (كمية غير معدودة)","Quanto pane hai comprato? — كم خبز اشتريت؟"],
    ["Quanta","مؤنث مفرد (كمية غير معدودة)","Quanta acqua bevi? — كم بتشرب مياه؟"],
-   ["Quanti","مذكر جمع (أشياء معدودة)","Quanti libri hai letto? — كم كتبويب قريت؟"],
+   ["Quanti","مذكر جمع (أشياء معدودة)","Quanti libri hai letto? — قريت كام كتاب؟"],
    ["Quante","مؤنث جمع (أشياء معدودة)","Quante volte gli hai telefonato? — كم مرة اتصلتي بيه؟"]
   ]},
   {type:"item", it:"Chi", ar:"مَن / مَن", note:"تُستخدم مع الأشخاص فقط (للعاقل)، وشكلها ثابت مع المفرد والجمع", examples:[
@@ -25,13 +25,13 @@ const GRAMMAR = [
    {it:"Da chi viene?", ar:"جاي من عند مَن؟"}
   ]},
   {type:"table", title:"Quale / Quali", headers:["الصيغة","الاستخدام","مثال"], rows:[
-   ["Quale","مذكر ومؤنث مفرد — أيّ واحد","Quale libro preferisci? — بتفضل أي كتبويب؟"],
+   ["Quale","مذكر ومؤنث مفرد — أيّ واحد","Quale libro preferisci? — بتفضل أي كتاب؟"],
    ["Quali","مذكر ومؤنث جمع — أيّ (جمع)","Quali film hai visto? — شفت أي أفلام؟"]
   ]},
   {type:"item", it:"Che / Cosa / Che cosa", ar:"ما / ماذا", note:"الثلاثة معناهم واحد، وCosa هي الأكثر استخدام في المحادثة اليومية", examples:[
    {it:"Che ore sono?", ar:"الساعة كم؟"},
-   {it:"Cosa fai stasera?", ar:"كيف حالك الذيلة؟"},
-   {it:"Che cosa vuoi?", ar:"تريد ما؟"}
+   {it:"Cosa fai stasera?", ar:"هتعمل إيه الليلة؟"},
+   {it:"Che cosa vuoi?", ar:"ماذا تريد؟"}
   ]},
   {type:"note", ar:"⚠️ Quando ليست فقط أداة سؤال — تُستخدم أيضًا كأداة ربط زمنية داخل الجملة (مثل mentre تقريباً) لكي تقول 'حينما / لما': تأتي غالباً مع Imperfetto للدلالة على الحدث الذي كان مستمرًا، والفعل الآخر يكون Passato Prossimo للحدث الذي قاطعه أو حصل في نفس اللحظة."},
   {type:"item", it:"Quando كأداة ربط (ليس سؤال)", ar:"", examples:[
@@ -47,7 +47,7 @@ const GRAMMAR = [
  icon:"👪",
  triggers:["mio","mia","miei","mie","tuo","tua","tuoi","tue","suo","sua","suoi","sue","nostro","nostra","nostri","nostre","vostro","vostra","vostri","vostre","loro"],
  blocks:[
-  {type:"table", title:"جدول الصفات الملكية الكمل", headers:["الشخص","مذكر مفرد","مؤنث مفرد","مذكر جمع","مؤنث جمع"], rows:[
+  {type:"table", title:"جدول الصفات الملكية الكامل", headers:["الشخص","مذكر مفرد","مؤنث مفرد","مذكر جمع","مؤنث جمع"], rows:[
    ["Io (أنا)","il mio","la mia","i miei","le mie"],
    ["Tu (أنت)","il tuo","la tua","i tuoi","le tue"],
    ["Lui/Lei (هو/هي)","il suo","la sua","i suoi","le sue"],
@@ -78,15 +78,15 @@ const GRAMMAR = [
    ["Del","مذكر مفرد","Ho comprato del pane — اشتريت قليل خبز"],
    ["Dello","مذكر مفرد بيبدأ بـ s+ساكن / z / gn / ps","Metto dello zucchero — بضيف قليل سكر"],
    ["Della","مؤنث مفرد","Compro della pasta — بشتري قليل معكرونة"],
-   ["Dell'","مفرد (مذكر أو مؤنث) بيبدأ بحرف متحرك","Vorrei dell'acqua — تريد قليل مياه"]
+   ["Dell'","مفرد (مذكر أو مؤنث) بيبدأ بحرف متحرك","Vorrei dell'acqua — عايز شوية مية"]
   ]},
   {type:"table", title:"مع أسماء معدودة (جمع)", headers:["الصيغة","تُستخدم قبل","مثال"], rows:[
    ["Dei","جمع مذكر (الحالة العادية)","Ho dei libri — عندي كتب (قليل كتب)"],
-   ["Degli","جمع مذكر بيبدأ بـ s+ساكن / z / gn / ps أو حرف متحرك","Ho degli zaini — عندي شنط ظهر / Ho degli amici — عندي أصحيحاب"],
+   ["Degli","جمع مذكر بيبدأ بـ s+ساكن / z / gn / ps أو حرف متحرك","Ho degli zaini — عندي شنط ظهر / Ho degli amici — عندي أصحاب"],
    ["Delle","جمع مؤنث","Ho delle mele — عندي تفاح (قليل تفاح)"]
   ]},
   {type:"item", it:"مقارنة سريعة (un/una ← جمعها dei/degli/delle)", ar:"", examples:[
-   {it:"Ho un libro → Ho dei libri", ar:"عندي كتبويب ← عندي كتب"},
+   {it:"Ho un libro → Ho dei libri", ar:"عندي كتاب ← عندي كتب"},
    {it:"Ho una mela → Ho delle mele", ar:"عندي تفاحة ← عندي تفاح"},
    {it:"Ho uno zaino → Ho degli zaini", ar:"عندي شنطة ظهر ← عندي شنط ظهر"}
   ]}
@@ -99,22 +99,22 @@ const GRAMMAR = [
  icon:"👉",
  triggers:["questo","questa","questi","queste","quello","quella","quegli","quelle","quel"],
  blocks:[
-  {type:"note", ar:"الفرق بين Aggettivo dimostrativo (صفة إشارة تأتي قبل الاسم) و Pronome dimostrativo (ضمير إشارة يحل محل الاسم):\n• Questo libro è buono = هذا الكتاب جيد (صفة قبل اسم)\n• Questo è bello = هذا حلو (ضمير بدل الاسم)\n(ملحوظة: buono هي الصفة الصحيحة الذي توصف الاسم؛ bene ظرف يصف الفعل مثل 'sto bene' ليس الاسم مباشرة)."},
+  {type:"note", ar:"الفرق بين Aggettivo dimostrativo (صفة إشارة تأتي قبل الاسم) و Pronome dimostrativo (ضمير إشارة يحل محل الاسم):\n• Questo libro è buono = هذا الكتاب جيد (صفة قبل اسم)\n• Questo è bello = هذا حلو (ضمير بدل الاسم)\n(ملحوظة: buono هي الصفة الصحيحة التي تصف الاسم؛ bene ظرف يصف الفعل مثل 'sto bene' ليس الاسم مباشرة)."},
   {type:"table", title:"Questo — للقريب (هذا / هذه / هؤلاء / هؤلاء)", headers:["","مفرد","جمع"], rows:[
    ["مذكر","Questo (هذا)","Questi (هؤلاء)"],
    ["مؤنث","Questa (هذه)","Queste (هؤلاء)"]
   ]},
   {type:"item", it:"أمثلة", ar:"", examples:[
-   {it:"Questo libro è interessante", ar:"هذا الكتاب مثير للاهممتاز"},
+   {it:"Questo libro è interessante", ar:"هذا الكتاب شيّق"},
    {it:"Questa casa è bella", ar:"البيت هذا جميل"},
-   {it:"Questi ragazzi sono semplici", ar:"الشباب هؤلاء لكنطاء"},
-   {it:"Queste scarpe sono nuove", ar:"الجزم هذا جديد"}
+   {it:"Questi ragazzi sono simpatici", ar:"هؤلاء الشباب لطفاء"},
+   {it:"Queste scarpe sono nuove", ar:"الجزم دي جديدة"}
   ]},
   {type:"note", ar:"⚠️ لو questo/questa جت قبل كلمة تبدأ بحرف متحرك (a,e,i,o,u)، بنحذف الـ o أو الـ a ونضيف علامة ': Quest'uomo (الراجل هذا) وليس Questo uomo — Quest'amica (الصاحبة هذه) وليس Questa amica."},
   {type:"table", title:"Quello — للبعيد (بيتغيّر شكله مثل أداة التعريف)", headers:["الحالة","مذكر","مؤنث"], rows:[
-   ["عادي (قبل حرف ساكن)","Quel (هذا) — Quei (هؤلاء)","Quella (هذه) — Quelle (هؤلاء)"],
-   ["قبل s+ساكن / z / gn / ps","Quello (هذا) — Quegli (هؤلاء)","Quella (هذه) — Quelle (هؤلاء)"],
-   ["قبل حرف متحرك","Quell' (هذا) — Quegli (هؤلاء)","Quell' (هذه) — Quelle (هؤلاء)"]
+   ["عادي (قبل حرف ساكن)","Quel (ذلك) — Quei (أولئك)","Quella (تلك) — Quelle (أولئك)"],
+   ["قبل s+ساكن / z / gn / ps","Quello (ذلك) — Quegli (أولئك)","Quella (تلك) — Quelle (أولئك)"],
+   ["قبل حرف متحرك","Quell' (ذلك) — Quegli (أولئك)","Quell' (تلك) — Quelle (أولئك)"]
   ]},
   {type:"item", it:"أمثلة", ar:"", examples:[
    {it:"Quel ragazzo è alto", ar:"الشاب هذا طويل"},
@@ -127,10 +127,10 @@ const GRAMMAR = [
    {it:"Quegli studenti studiano", ar:"الطلبة هؤلاء بيذاكروا"},
    {it:"Quell'amica è gentile", ar:"الصاحبة هذه ذوق"}
   ]},
-  {type:"item", it:"Pronome (لما questo/quello يحلّوا محل الاسم بالكمل)", ar:"", examples:[
+  {type:"item", it:"Pronome (لما questo/quello يحلّوا محل الاسم بالكامل)", ar:"", examples:[
    {it:"Quale preferisci? Questo o quello?", ar:"بتفضل ما؟ هذا ولا ده؟"},
    {it:"Questa è la mia borsa", ar:"هذه شنطتي"},
-   {it:"Quelli sono i miei amici", ar:"هؤلاء أصحيحابي"},
+   {it:"Quelli sono i miei amici", ar:"هؤلاء أصحابي"},
    {it:"Prendo quella", ar:"هاخد هذه"}
   ]}
  ]
@@ -140,7 +140,7 @@ const GRAMMAR = [
  it:"I pronomi indefiniti",
  ar:"الضمائر غير المحددة (المجهولة)",
  icon:"🔹",
- triggers:["qualcosa","qualcuno","chiunque","ognuno","nulla","niente","tutto","tutta","tutti","tutte","nessuno","nessuna","alcuno","alcuna","alcuni","alcune","molto","molta","molti","molte","poco","poca","pochi","poche","troppa","troppi","troppe","tanto","tanta","tanti","tante","parecchio","parecchia","parecchi","parecche","altro","altra","altri","altre","certo","certa","certi","certe"],
+ triggers:["qualcosa","qualcuno","chiunque","ognuno","nulla","niente","tutto","tutta","tutti","tutte","nessuno","nessuna","alcuno","alcuna","alcuni","alcune","molto","molta","molti","molte","poco","poca","pochi","poche","troppa","troppi","troppe","tanto","tanta","tanti","tante","parecchio","parecchia","parecchi","parecchie","altro","altra","altri","altre","certo","certa","certi","certe"],
  blocks:[
   {type:"item", it:"أولاً — ضمائر ثابتة (لا تتغير)", ar:"", examples:[
    {it:"Qualcosa (شيء ما)", ar:"Ho comprato qualcosa per te — اشتريت شيء لكيك"},
@@ -151,8 +151,8 @@ const GRAMMAR = [
   ]},
   {type:"table", title:"ثانياً — تتغير حسب الجنس والعدد", headers:["مذكر مفرد","مؤنث مفرد","مذكر جمع","مؤنث جمع","المعنى"], rows:[
    ["Tutto","Tutta","Tutti","Tutte","كل / الجميع"],
-   ["—","—","Nessuno","Nessuna","لا أحد / محدش"],
-   ["Alcuno","Alcuna","Alcuni","Alcune","بعض / قليل"]
+   ["Nessuno","Nessuna","—","—","لا أحد / محدش"],
+   ["Alcuno","Alcuna","Alcuni","Alcune","بعض / أيّ (المفرد غالبًا مع النفي)"]
   ]},
   {type:"item", it:"أمثلة", ar:"", examples:[
    {it:"Ho capito tutto", ar:"فهمت كل شيء"},
@@ -160,14 +160,14 @@ const GRAMMAR = [
    {it:"Alcuni pensano diversamente", ar:"البعض بيفكر بشكل مختلف"}
   ]},
   {type:"table", title:"ثالثاً — ضمائر الكمية المبهمة", headers:["الصيغة (مذكر مفرد/مؤنث مفرد/مذكر جمع/مؤنث جمع)","المعنى","مثال"], rows:[
-   ["Molto/Molta/Molti/Molte","كثيرًا","Ho molti amici in Italia — عندي أصحيحاب كثيرًا في إيطاليا"],
+   ["Molto/Molta/Molti/Molte","كثيرًا","Ho molti amici in Italia — عندي أصحاب كثيرًا في إيطاليا"],
    ["Poco/Poca/Pochi/Poche","قليل","Ho pochi soldi oggi — معايا فلوس قليلة النهاردة"],
    ["Troppo/Troppa/Troppi/Troppe","أكتر من اللازم","Non mangiare troppo — ماتاكلش أكتر من اللازم"],
-   ["Tanto/Tanta/Tanti/Tante","كثيرًا جداً","Ho passato tanti guai — مريت بليساكل كثيرًا جداً"],
-   ["Parecchio/Parecchia/Parecchi/Parecche","كذا واحد / كثيرًا نوعاً ما","Ho studiato parecchio oggi — ذاكرت كثيرًا النهاردة"]
+   ["Tanto/Tanta/Tanti/Tante","كثيرًا جداً","Ho passato tanti guai — مريت بمشاكل كثيرًا جداً"],
+   ["Parecchio/Parecchia/Parecchi/Parecchie","كذا واحد / كثيرًا نوعاً ما","Ho studiato parecchio oggi — ذاكرت كثيرًا النهاردة"]
   ]},
   {type:"table", title:"رابعاً — ضمائر التمييز والتحديد", headers:["الصيغة","المعنى","مثال"], rows:[
-   ["Altro/Altra/Altri/Altre","شيء/واحد مرة أخرى/غيره","Questa penna non scrive, ne voglio un'altra — القلم هذا ليس يكتب، تريد واحد غيره"],
+   ["Altro/Altra/Altri/Altre","شيء/واحد مرة أخرى/غيره","Questa penna non scrive, ne voglio un'altra — القلم ده لا يكتب، عايز قلمًا غيره"],
    ["Certo/Certa/Certi/Certe","معيّن/بعض (وأيضًا تُستخدم كتعبير 'طبعاً!' لوحدها)","Certi dicono la verità — البعض بيقول الحقيقة / Certo! — طبعاً!"]
   ]}
  ]
@@ -179,18 +179,18 @@ const GRAMMAR = [
  icon:"🧭",
  triggers:["dove","destra","sinistra","sopra","sotto","dentro","fuori","dietro","davanti","lungo","vicino","lontano","prima","dopo","durante","verso","fino","senza","contro","secondo","oltre","nonostante","tranne","eccetto","salvo","mediante","tramite"],
  blocks:[
-  {type:"note", ar:"'حروف الجر غير الأصلية' هي كلمات أصلها ظرف أو صفة أو اسم، لكنها بقت تُستخدم كحرف جر مع كلمة مرة أخرىة (مثل vicino a, davanti a, dietro a...). هذه أهمها:"},
+  {type:"note", ar:"'حروف الجر غير الأصلية' هي كلمات أصلها ظرف أو صفة أو اسم، لكنها بقت تُستخدم كحرف جر مع كلمة أخرى (مثل vicino a, davanti a, dietro a...). هذه أهمها:"},
   {type:"item", it:"1) المكان والاتجاهات", ar:"", examples:[
-   {it:"Dove (فين) — ظرف/ضمير استفهامي للمكان", ar:"Non sa ancora dove andare — ما زال معرفش يروح فين"},
-   {it:"a Destra (على اليمَن)", ar:"La banca è a destra — البنك على اليمَن"},
+   {it:"Dove (فين) — ظرف استفهامي/ظرف مكان، وليس حرف جر", ar:"Non sa ancora dove andare — لسه مش عارف يروح فين"},
+   {it:"a Destra (على اليمين)", ar:"La banca è a destra — البنك على اليمين"},
    {it:"a Sinistra (على اليسار)", ar:"La farmacia è a sinistra — الصيدلية على اليسار"},
-   {it:"Sopra (فوق)", ar:"Il libro è sopra il tavolo — الكتبويب فوق الترابيزة"},
+   {it:"Sopra (فوق)", ar:"Il libro è sopra il tavolo — الكتاب فوق الترابيزة"},
    {it:"Sotto (تحت)", ar:"Il gatto è sotto il letto — القطة تحت السرير"},
    {it:"Dentro (جوّة)", ar:"Entra dentro la casa — ادخل جوة البيت"},
    {it:"Fuori (برّة)", ar:"Lui è fuori ufficio — هو برة المكتب"},
    {it:"Dietro (ورا/خلف)", ar:"La macchina è dietro il bus — السيارة ورا الأتوبيس"},
    {it:"Davanti (قدام/أمام)", ar:"Fermati davanti al cinema — قف قدام السينما"},
-   {it:"Lungo (على طول/بمحاذاة)", ar:"Camminiamo lungo il fiume — بنليسي على طول النهر"},
+   {it:"Lungo (على طول/بمحاذاة)", ar:"Camminiamo lungo il fiume — بنمشي على طول النهر"},
    {it:"Vicino (a) (جنب/قريب من)", ar:"Vicino a me — جنبي/قريب مني"},
    {it:"Lontano (da) (بعيد عن)", ar:"Lontano da te — بعيد عنك"}
   ]},
@@ -222,18 +222,18 @@ const GRAMMAR = [
  icon:"➕",
  triggers:["anche","pure"],
  blocks:[
-  {type:"note", ar:"Anche و Pure كلاهما معناهم 'أيضًا / أيضاً' وممكن نستخدمهم بدل بعض في أغلب الكلام العادي، وبيتحطوا عادةً قبل الكلمة الذي تريدين نأكد علماذاا مباشرة."},
+  {type:"note", ar:"Anche و Pure كلاهما معناهم 'أيضًا / أيضاً' وممكن نستخدمهم بدل بعض في أغلب الكلام العادي، وبيتحطوا عادةً قبل الكلمة التي تريدين نأكد عليها مباشرة."},
   {type:"item", it:"Anche (أيضًا / أيضاً) — أكتر استخدام وحيادية", ar:"", examples:[
    {it:"Anche Marco viene alla festa", ar:"ماركو أيضًا جاي الحفلة"},
    {it:"Vengo anch'io", ar:"أنا أيضًا جاي (anche+io = بتتدمج وتصبح anch'io)"},
    {it:"Ho anche fame", ar:"أنا أيضًا جعان"}
   ]},
-  {type:"item", it:"Pure (أيضًا / أيضاً) — نفس المعنى، ولماذاا استخدام مثلادة كتعبير عن الإذن/التشجيع", ar:"", examples:[
-   {it:"Pure io voglio venire", ar:"أنا أيضًا تريد أجي"},
+  {type:"item", it:"Pure (أيضًا / أيضاً) — نفس المعنى، ولها استخدام عادة كتعبير عن الإذن/التشجيع", ar:"", examples:[
+   {it:"Pure io voglio venire", ar:"أنا أيضًا عايز أجي"},
    {it:"Puoi pure restare", ar:"تقدر أيضًا تفضل هنا (بمعنى: خليك، لا توجد ليسكلة)"},
    {it:"Vai pure!", ar:"يلا اتفضل / روح على راحتك! (تعبير عن السماح)"}
   ]},
-  {type:"note", ar:"💡 ملحوظة: anche وpure بيتحطوا قبل الكلمة الذي تريدين نأكد علماذاا: 'Anche tu hai ragione' (أنت أيضًا معاك حق) غير 'Hai ragione anche tu' (ما زال أنت معاك حق برضو) — المعنى قريب لكن مكان الكلمة بيغيّر التوكيد."}
+  {type:"note", ar:"💡 ملحوظة: anche وpure بيتحطوا قبل الكلمة التي تريدين نأكد عليها: 'Anche tu hai ragione' (أنت أيضًا معاك حق) غير 'Hai ragione anche tu' (لسه أنت معاك حق برضو) — المعنى قريب لكن مكان الكلمة بيغيّر التوكيد."}
  ]
 },
 {
@@ -246,11 +246,11 @@ const GRAMMAR = [
   {type:"note", ar:"Mentre تربط بين حدثين حدثا في نفس الوقت في الماضي. النمط الأكثر شيوعاً: حدث مستمر بالـ Imperfetto (كان مستمرًا في الخلفية) + حدث آخر بالـ Passato Prossimo (حصل فجأة أو قاطعه) — لكن يمكن أيضًا كلاهما يكون Imperfetto لو الحدثين مستمرين معًا بنفس الدرجة."},
   {type:"table", title:"النمط الشائع", headers:["الجزء","الزمن الغالب","المثال"], rows:[
    ["الحدث المستمر (الذي كان مستمرًا)","Imperfetto","mentre guardavo la TV — وأنا كنت أشاهد التلفاز"],
-   ["الحدث الذي قاطعه / حصل فجأة","Passato Prossimo","ho mangiato un panino — أكلت شطيرة"]
+   ["الحدث الذي قطعه / حصل فجأة","Passato Prossimo","ho mangiato un panino — أكلت شطيرة"]
   ]},
   {type:"item", it:"أمثلة", ar:"", examples:[
    {it:"Ho mangiato un panino mentre guardavo la TV", ar:"أكلت شطيرة وأنا كنت أشاهد التلفاز"},
-   {it:"Mangiavo la pasta mentre ho guardato il telefono", ar:"كنت آكل المعكرونة وأنا نظرت إلى الهاتف"},
+   {it:"Mangiavo la pasta mentre guardavo il telefono", ar:"كنت آكل المعكرونة وأنا كنت أنظر إلى الهاتف"},
    {it:"Hai studiato la lezione mentre ascoltavi la radio", ar:"ذاكرت الدرس وأنت كنت تسمع المذياع"}
   ]},
   {type:"note", ar:"⚠️ الفرق بين Mentre و Quando: Mentre تركّز على استمرارية الحدثين معًا (مثل 'في نفس اللحظة هذه')، أما Quando غالباً تقدّم لحظة معينة وقف عندها فعل مرة أخرى (مثل 'عندما حدث كذا'). في الكلام العادي كثيرًا لا يفرّق المتحدثون بينهما، لكن هذه القاعدة الأساسية."}
@@ -284,7 +284,7 @@ const GRAMMAR = [
   {type:"item", it:"أمثلة", ar:"", examples:[
    {it:"Ho mangiato un panino", ar:"أكلت شطيرة"},
    {it:"Siamo andati al parco", ar:"رحنا الحديقة"},
-   {it:"Hanno comprato la spesa", ar:"اشتروا الليستريات"}
+   {it:"Hanno comprato la spesa", ar:"اشتروا المشتريات"}
   ]}
  ]
 },
@@ -304,7 +304,7 @@ const GRAMMAR = [
    ["Voi","انتو"],
    ["Loro","هم"]
   ]},
-  {type:"note", ar:"في الإيطالي عادةً بنشيل الضمير لأن تصريف الفعل بنفسه يدل على الفاعل (Ho mangiato = أكلت، ليس لازم أقول Io ho mangiato). لكن بنستخدم الضمير في حالتين: للتوكيد أو المقارنة (Io sì, ma lui no)، أو لو التصريف نفسه ممكن يللكن مثل Lui/Lei في بعض الأزمنة."},
+  {type:"note", ar:"في الإيطالي عادةً بنشيل الضمير لأن تصريف الفعل بنفسه يدل على الفاعل (Ho mangiato = أكلت، ليس لازم أقول Io ho mangiato). لكن بنستخدم الضمير في حالتين: للتوكيد أو المقارنة (Io sì, ma lui no)، أو لو التصريف نفسه ممكن يلتبس مثل Lui/Lei في بعض الأزمنة."},
   {type:"item", it:"أمثلة", ar:"", examples:[
    {it:"Lui ha telefonato, non lei", ar:"هو الذي اتصل، ليس هي"},
    {it:"Noi eravamo a casa mentre loro erano fuori", ar:"نحن كنا في البيت وهم كانوا برة"}
@@ -314,7 +314,7 @@ const GRAMMAR = [
 {
  id:"prep_semplici",
  it:"Preposizioni semplici",
- ar:"حروف الجر اللكنيطة",
+ ar:"حروف الجر البسيطة",
  icon:"🔗",
  triggers:["a","in","con","di","da","su","per","tra","fra"],
  blocks:[
@@ -322,10 +322,10 @@ const GRAMMAR = [
    ["A","لـ / في / إلى (مكان محدد أو زمن)","Vado a scuola — رايح المدرسة"],
    ["In","في (داخل مكان/مدينة/بلد)","Sono in ufficio — أنا في المكتب"],
    ["Con","مع","Parlo con Marco — بتكلم مع ماركو"],
-   ["Di","بتاع / من (ملكية أو أصل)","Il libro di Marco — كتبويب ماركو"],
+   ["Di","بتاع / من (ملكية أو أصل)","Il libro di Marco — كتاب ماركو"],
    ["Da","من (مصدر) / عند (شخص)","Vengo da casa — جاي من البيت"],
-   ["Su","على / فوق","Il libro è su tavolo — الكتبويب على الترابيزة"],
-   ["Per","لكي / لمدة","Studio per un'ora — باذاكر لمدة ساعة"],
+   ["Su","على / فوق","Il libro è sul tavolo — الكتاب على الترابيزة"],
+   ["Per","لكي / لمدة","Studio per un'ora — بذاكر لمدة ساعة"],
    ["Tra / Fra","بين / خلال (نفس المعنى، بيتختاروا حسب سهولة النطق)","Tra dieci minuti — بعد عشر دقايق"]
   ]},
   {type:"note", ar:"⚠️ لما حرف الجر (مثل a, di, da, in, su) يقابل أداة تعريف (il, lo, la, i, gli, le) بيندمجوا في كلمة واحدة، مثل: a+il=al, di+la=della, in+il=nel, su+il=sul... هذه بتتسمى Preposizioni articolate."}
@@ -344,7 +344,7 @@ const GRAMMAR = [
    ["La","مؤنث مفرد (الحالة العادية)","Le"],
    ["L'","مفرد (مذكر أو مؤنث) بيبدأ بحرف متحرك (a,e,i,o,u)","Gli (مذكر) / Le (مؤنث)"]
   ]},
-  {type:"note", ar:"القاعدة الأساسية: نوع وشكل الأداة بيتحدد حسب أول حرف في الكلمة الذي جاية بعدها مباشرة، ليس حسب معنى الكلمة."}
+  {type:"note", ar:"القاعدة الأساسية: نوع وشكل الأداة بيتحدد حسب أول حرف في الكلمة التي جاية بعدها مباشرة، ليس حسب معنى الكلمة."}
  ]
 },
 {
@@ -356,11 +356,11 @@ const GRAMMAR = [
  blocks:[
   {type:"note", ar:"ظرف الحال يصف طريقة أداء الفعل (حصل إزاي؟)، وشكله ثابت ليس بيتأثر بجنس ولا عدد ولا زمن. بيتكوّن غالباً بإضافة mente لآخر الصفة."},
   {type:"item", it:"أمثلة", ar:"", examples:[
-   {it:"Lui guida velocemente", ar:"هو بيسوق لكنرعة"},
+   {it:"Lui guida velocemente", ar:"هو بيسوق بسرعة"},
    {it:"Lei parla lentamente", ar:"هي تتحدث ببطء"},
    {it:"Ho fatto colazione in fretta", ar:"أكلت فطار على عجلة"}
   ]},
-  {type:"note", ar:"💡 في الكلام العامي كثيرًا بيستخدموا الصفة نفسها كظرف بدل الصيغة الرسمية: Fai veloce! (أنجز/أسرع!) بدل Fai velocemente. وفي صيغ المقارنة: più velocemente di... (لكنرعة أكتر من...)، والتفضيل: il più velocemente possibile (بأسرع ما يمكن)."}
+  {type:"note", ar:"💡 في الكلام العامي كثيرًا بيستخدموا الصفة نفسها كظرف بدل الصيغة الرسمية: Fai veloce! (أنجز/أسرع!) بدل Fai velocemente. وفي صيغ المقارنة: più velocemente di... (بسرعة أكتر من...)، والتفضيل: il più velocemente possibile (بأسرع ما يمكن)."}
  ]
 },
 {
@@ -380,9 +380,9 @@ const GRAMMAR = [
   ]},
   {type:"table", title:"نفس الظرف من غير نفي — معنى مختلف", headers:["الظرف","المعنى","مثال"], rows:[
    ["Già","صحيح / فعلاً (كتعبير)","Già, hai ragione — صحيح، عندك حق"],
-   ["Ancora (من غير نفي)","لسة / أيضًا","Studio ancora — ما زال بادرس / Vuoi ancora caffè? — تريد قهوة أيضًا؟"],
+   ["Ancora (من غير نفي)","لسة / أيضًا","Studio ancora — لسه بدرس / Vuoi ancora caffè? — تريد قهوة أيضًا؟"],
    ["Appena (بعد الفعل الماضي)","ما زال حالاً / للتو","Ahmed è appena arrivato — أول ما أحمد وصل"],
-   ["Più (من غير نفي)","أكتر / مثلادة","Voglio più tempo — تريد وقت أكتر"]
+   ["Più (من غير نفي)","أكتر / عادة","Voglio più tempo — عايز وقت أكتر"]
   ]},
   {type:"note", ar:"⚠️ الكلمات هذه (già / ancora / appena / mai / sempre / più) لما تأتي في الـ Passato Prossimo بتتحشر بالظبط بين الفعل المساعد (Avere/Essere) والـ Participio Passato: Ho già mangiato — ليس Ho mangiato già."}
  ]
@@ -430,8 +430,8 @@ const GRAMMAR = [
    ["Il pomeriggio","بعد الظهر / العصر"],
    ["Il tramonto","الغروب"],
    ["La sera","المساء"],
-   ["La notte","الذيل"],
-   ["La mezzanotte","منتصف الذيل"]
+   ["La notte","الليل"],
+   ["La mezzanotte","منتصف الليل"]
   ]},
   {type:"note", ar:"للعادة: Ogni + الوقت (Ogni mattina = كل صباح). للمدى الزمني: Dalla...alla (Dalla mattina alla sera = من الصبح للمسا)."}
  ]
@@ -443,13 +443,13 @@ const GRAMMAR = [
  icon:"📥",
  triggers:["mi","ti","ci","vi","si","li","me","te"],
  blocks:[
-  {type:"note", ar:"هذه ضمائر تحل محل المفعول به لكي الكلام يبقى طبيعي أكتر: Vedo la ragazza (أشاهد الفتاة) ← La vedo (أشاهدها) أطبع من تكرار الاسم."},
+  {type:"note", ar:"هذه ضمائر تحل محل المفعول به لكي الكلام يبقى طبيعي أكتر: Vedo la ragazza (أشاهد الفتاة) ← La vedo (أشاهدها) أطبع من ناحية الأسلوب من تكرار الاسم."},
   {type:"table", title:"ضمائر المفعول المباشر الضعيفة (Pronomi diretti)", headers:["مفرد","الجمع"], rows:[
    ["Mi (ـني)","Ci (ـنا)"],
    ["Ti (ـك)","Vi (ـكم)"],
    ["Lo (ه) / La (ها)","Li (هم) / Le (هن)"]
   ]},
-  {type:"note", ar:"⚠️ الضمير الضعيف بييجي قبل الفعل (ليس مثل العربي): Ogni mattina il professore mi vede (كل يوم الأستاذ ياعرضني)، ليس vede me."},
+  {type:"note", ar:"⚠️ الضمير الضعيف بييجي قبل الفعل (ليس مثل العربي): Ogni mattina il professore mi vede (كل يوم الأستاذ يراني)، ليس vede me."},
   {type:"table", title:"ضمائر المفعول الغير مباشر (Pronomi indiretti)", headers:["مفرد","الجمع"], rows:[
    ["Mi (لي)","Ci (لنا)"],
    ["Ti (لك)","Vi (لكم)"],
@@ -459,8 +459,8 @@ const GRAMMAR = [
    ["Mi (نفسي)","Ti (نفسك)","Si (نفسه/نفسها)","Ci (أنفسنا)","Vi (أنفسكم)","Si (أنفسهم)"]
   ]},
   {type:"item", it:"أمثلة على الانعكاسي", ar:"", examples:[
-   {it:"Ti svegli", ar:"بتصحيحى (بتصحيحي نفسك)"},
-   {it:"Si veste", ar:"هو بيللكن / هي بتللكن"},
+   {it:"Ti svegli", ar:"بتصحى (بتصحي نفسك)"},
+   {it:"Si veste", ar:"هو بيلتبس / هي تلبس"},
    {it:"Vi sedete", ar:"بتقعدوا"}
   ]},
   {type:"table", title:"ضمائر التوكيد Tonici/Forti (بعد حروف الجر: di, a, da, con, per, su...)", headers:["مفرد","الجمع"], rows:[
@@ -515,20 +515,21 @@ const GRAMMAR = [
  icon:"⭐",
  triggers:["migliore","veloce","diverso"],
  blocks:[
-  {type:"item", it:"Migliore", ar:"أفضل", note:"صفة مريحة (بتنتهي بـ e) — لا تتغير في الجنس، لكن تتغير في الجمع: Migliori. لو جت بعد أداة تعريف + صفة ملكية تصبح Superlativo relativo (الأفضل/الأعز): il mio migliore amico", examples:[
+  {type:"item", it:"Migliore", ar:"أفضل", note:"صفة تنتهي بـ e — لا تتغير في الجنس، لكن تتغير في الجمع: Migliori. لو جت بعد أداة تعريف + صفة ملكية تصبح Superlativo relativo (الأفضل/الأعز): il mio migliore amico", examples:[
    {it:"Il mio migliore amico", ar:"أعز أصدقائي"}
   ]},
-  {type:"item", it:"Veloce", ar:"سريع", note:"من المجموعة الذي بتنتهي بـ e، وتصف الاسم وتأتي بعده. بتتستخدم أيضًا كظرف بمعنى 'لكنرعة' بدل Velocemente في الكلام العامي (Fai veloce! = أسرع!)", examples:[
+  {type:"item", it:"Veloce", ar:"سريع", note:"من المجموعة التي بتنتهي بـ e، وتصف الاسم وتأتي بعده. بتتستخدم أيضًا كظرف بمعنى 'بسرعة' بدل Velocemente في الكلام العامي (Fai veloce! = أسرع!)", examples:[
    {it:"Un treno veloce", ar:"قطر سريع"},
    {it:"Macchine veloci", ar:"عربيات سريعة (جمع)"},
    {it:"Più veloce di...", ar:"أسرع من... (مقارنة)"},
    {it:"Il più veloce", ar:"الأسرع (تفضيل)"}
   ]},
-  {type:"item", it:"Diverso", ar:"مختلف / متنوع / آخر", note:"من المجموعة الذي بتنتهي بـ o، فتتغير حسب الجنس والعدد. لو جت قبل الاسم في صيغة الجمع بتاخد معنى 'عدة/عديد من' بدل 'مختلف'", examples:[
+  {type:"item", it:"Diverso", ar:"مختلف / متنوع / آخر", note:"من المجموعة التي بتنتهي بـ o، فتتغير حسب الجنس والعدد. لو جت قبل الاسم في صيغة الجمع بتاخد معنى 'عدة/عديد من' بدل 'مختلف'", examples:[
    {it:"Un modo diverso", ar:"طريقة مختلفة"},
-   {it:"Qualcosa di diverso", ar:"شيء مختلفة (تعبير شائع)"},
+   {it:"Qualcosa di diverso", ar:"شيء مختلف (تعبير شائع)"},
    {it:"Diverse cose", ar:"عدة حاجات (ليس 'حاجات مختلفة')"}
   ]}
  ]
 }
 ];
+
