@@ -1,4 +1,3 @@
-// ===== VERBS: مكتبة الأفعال المرجعية — نسخة مُراجعة =====
 const VERBS = [
   {
     "it": "Aiutare",
@@ -7556,6 +7555,510 @@ const VERBS = [
         {
           "person": "Loro (هم)",
           "form": "Stiano"
+        }
+      ]
+    }
+  },
+  {
+    "it": "Bere",
+    "ar": "يشرب",
+    "presente": [
+      {
+        "person": "Io (أنا)",
+        "form": "Bevo"
+      },
+      {
+        "person": "Tu (أنت)",
+        "form": "Bevi"
+      },
+      {
+        "person": "Lui (هو)",
+        "form": "Beve"
+      },
+      {
+        "person": "Lei (هي)",
+        "form": "Beve"
+      },
+      {
+        "person": "Noi (إحنا)",
+        "form": "Beviamo"
+      },
+      {
+        "person": "Voi (أنتم)",
+        "form": "Bevete"
+      },
+      {
+        "person": "Loro (هم)",
+        "form": "Bevono"
+      }
+    ],
+    "passato": {
+      "aux": "avere",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho bevuto"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai bevuto"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha bevuto"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha bevuto"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo bevuto"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete bevuto"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno bevuto"
+        }
+      ]
+    },
+    "imperfetto": {
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Bevevo"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Bevevi"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Beveva"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Beveva"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Bevevamo"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Bevevate"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Bevevano"
+        }
+      ]
+    },
+    "imperativo": {
+      "note": null,
+      "rows": [
+        {
+          "person": "Tu (أنت)",
+          "form": "Bevi"
+        },
+        {
+          "person": "Lei (رسمي - هو/هي)",
+          "form": "Beva"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Beviamo"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Bevete"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Bevano"
+        }
+      ]
+    }
+  },
+  {
+    "it": "Porre",
+    "ar": "يضع / يطرح",
+    "presente": [
+      {
+        "person": "Io (أنا)",
+        "form": "Pongo"
+      },
+      {
+        "person": "Tu (أنت)",
+        "form": "Poni"
+      },
+      {
+        "person": "Lui (هو)",
+        "form": "Pone"
+      },
+      {
+        "person": "Lei (هي)",
+        "form": "Pone"
+      },
+      {
+        "person": "Noi (إحنا)",
+        "form": "Poniamo"
+      },
+      {
+        "person": "Voi (أنتم)",
+        "form": "Ponete"
+      },
+      {
+        "person": "Loro (هم)",
+        "form": "Pongono"
+      }
+    ],
+    "passato": {
+      "aux": "avere",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho posto"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai posto"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha posto"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha posto"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo posto"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete posto"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno posto"
+        }
+      ]
+    },
+    "imperfetto": {
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ponevo"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Ponevi"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Poneva"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Poneva"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Ponevamo"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Ponevate"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Ponevano"
+        }
+      ]
+    },
+    "imperativo": {
+      "note": null,
+      "rows": [
+        {
+          "person": "Tu (أنت)",
+          "form": "Poni"
+        },
+        {
+          "person": "Lei (رسمي - هو/هي)",
+          "form": "Ponga"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Poniamo"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Ponete"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Pongano"
+        }
+      ]
+    }
+  },
+  {
+    "it": "Tradurre",
+    "ar": "يترجم",
+    "presente": [
+      {
+        "person": "Io (أنا)",
+        "form": "Traduco"
+      },
+      {
+        "person": "Tu (أنت)",
+        "form": "Traduci"
+      },
+      {
+        "person": "Lui (هو)",
+        "form": "Traduce"
+      },
+      {
+        "person": "Lei (هي)",
+        "form": "Traduce"
+      },
+      {
+        "person": "Noi (إحنا)",
+        "form": "Traduciamo"
+      },
+      {
+        "person": "Voi (أنتم)",
+        "form": "Traducete"
+      },
+      {
+        "person": "Loro (هم)",
+        "form": "Traducono"
+      }
+    ],
+    "passato": {
+      "aux": "avere",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho tradotto"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai tradotto"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha tradotto"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha tradotto"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo tradotto"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete tradotto"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno tradotto"
+        }
+      ]
+    },
+    "imperfetto": {
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Traducevo"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Traducevi"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Traduceva"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Traduceva"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Traducevamo"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Traducevate"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Traducevano"
+        }
+      ]
+    },
+    "imperativo": {
+      "note": null,
+      "rows": [
+        {
+          "person": "Tu (أنت)",
+          "form": "Traduci"
+        },
+        {
+          "person": "Lei (رسمي - هو/هي)",
+          "form": "Traduca"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Traduciamo"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Traducete"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Traducano"
+        }
+      ]
+    }
+  },
+  {
+    "it": "Produrre",
+    "ar": "ينتج",
+    "presente": [
+      {
+        "person": "Io (أنا)",
+        "form": "Produco"
+      },
+      {
+        "person": "Tu (أنت)",
+        "form": "Produci"
+      },
+      {
+        "person": "Lui (هو)",
+        "form": "Produce"
+      },
+      {
+        "person": "Lei (هي)",
+        "form": "Produce"
+      },
+      {
+        "person": "Noi (إحنا)",
+        "form": "Produciamo"
+      },
+      {
+        "person": "Voi (أنتم)",
+        "form": "Producete"
+      },
+      {
+        "person": "Loro (هم)",
+        "form": "Producono"
+      }
+    ],
+    "passato": {
+      "aux": "avere",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho prodotto"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai prodotto"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha prodotto"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha prodotto"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo prodotto"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete prodotto"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno prodotto"
+        }
+      ]
+    },
+    "imperfetto": {
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Producevo"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Producevi"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Produceva"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Produceva"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Producevamo"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Producevate"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Producevano"
+        }
+      ]
+    },
+    "imperativo": {
+      "note": null,
+      "rows": [
+        {
+          "person": "Tu (أنت)",
+          "form": "Produci"
+        },
+        {
+          "person": "Lei (رسمي - هو/هي)",
+          "form": "Produca"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Produciamo"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Producete"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Producano"
         }
       ]
     }

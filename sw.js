@@ -1,5 +1,5 @@
-// Parla Italiano — Service Worker v11
-const SHELL_CACHE = 'parla-shell-v11';
+// Parla Italiano — Service Worker v20
+const SHELL_CACHE = 'parla-shell-v20';
 // نحافظ على كاش الموديلات بين إصدارات واجهة التطبيق لتجنب إعادة تنزيلها.
 const MODEL_CACHE = 'parla-models-v1';
 
@@ -19,6 +19,9 @@ const CORE_FILES = [
   './lesson_noi.js',
   './lesson_voi.js',
   './lesson_loro.js',
+  './lesson_imperativo.js',
+  './lesson_topics.js',
+  './preposition_profiles.js',
   './lesson_manifest.js'
 ];
 

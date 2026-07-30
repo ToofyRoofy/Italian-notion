@@ -963,6 +963,13 @@ function wpRenderQuizQuestion(){
   document.getElementById('wpQuizFeedback').textContent='';
   const wrap=document.getElementById('wpQuizOptions');
   wrap.innerHTML='';
+  if(item.grammarId&&getGrammarTopic(item.grammarId)){
+    const lessonBtn=document.createElement('button');
+    lessonBtn.className='tts-btn';
+    lessonBtn.textContent='📘 افتح الدرس الكامل';
+    lessonBtn.onclick=()=>openGrammarModal(item.grammarId);
+    wrap.appendChild(lessonBtn);
+  }
   item.options.forEach((opt,oi)=>{
     const btn=document.createElement('button');
     btn.className='write-check-btn';
@@ -1284,6 +1291,13 @@ function renderGrammarBlocks(blocks){
       html+='</div>';
       return html;
     }
+    if(b.type==='usage'){
+      let html='<div style="border:1px solid '+escGm(b.color||'#64748b')+';border-right:6px solid '+escGm(b.color||'#64748b')+';border-radius:12px;padding:10px;margin:10px 0;background:color-mix(in srgb,'+escGm(b.color||'#64748b')+' 9%,transparent)">';
+      html+='<div style="font-weight:900;color:'+escGm(b.color||'#64748b')+'">'+escGm(b.title)+' — '+escGm(b.meaning)+'</div>';
+      html+='<div style="margin:5px 0">'+escGm(b.description||'')+'</div>';
+      (b.examples||[]).forEach(ex=>{let txt=escGm(ex.it);const target=escGm(ex.form||b.form||'');if(target)txt=txt.replace(target,'<span style="color:'+escGm(b.color||'#64748b')+';font-weight:900;text-decoration:underline;text-decoration-thickness:3px">'+target+'</span>');html+='<div class="gm-ex-row" onclick="speakWord(\''+escGm(ex.it).replace(/'/g,"\\'")+'\')"><span class="gm-ex-it">'+txt+'</span><span class="gm-ex-ar">'+escGm(ex.ar)+'</span></div>';});
+      return html+'</div>';
+    }
     if(b.type==='table'){
       let html='<div class="gm-table-title">'+escGm(b.title||'')+'</div><table class="gm-table">';
       html+='<tr>'+(b.headers||[]).map(h=>'<th>'+escGm(h)+'</th>').join('')+'</tr>';
@@ -1393,10 +1407,11 @@ function lRender(){
     const row=document.createElement('div');
     row.className='bd-row';
     const wordSpan=document.createElement('span');
-    const gTopicId=findGrammarTopicId(w.it);
+    const gTopicId=w.grammarId||findGrammarTopicId(w.it);
     const vInfo=findVerbFromNote(w.note);
     wordSpan.className='bd-word word-tap'+(gTopicId?' has-grammar':'')+(vInfo?' has-verb':'');
     wordSpan.textContent=w.it;
+    if(w.prepUsage){wordSpan.style.color=w.prepUsage.color;wordSpan.style.fontWeight='900';wordSpan.style.background=w.prepUsage.color+'18';wordSpan.style.borderBottom='3px solid '+w.prepUsage.color;wordSpan.style.borderRadius='6px';wordSpan.style.padding='1px 4px';}
     wordSpan.onclick=()=>speakWord(w.it);
     row.appendChild(wordSpan);
     if(gTopicId){
@@ -1458,6 +1473,7 @@ function lRenderTokens(){
     const span=document.createElement('span');
     span.className='token '+tokenStates[i];
     span.textContent=w.it;
+    if(w.prepUsage){span.style.color=w.prepUsage.color;span.style.fontWeight='900';span.style.borderColor=w.prepUsage.color;span.style.background=w.prepUsage.color+'18';}
     span.title=tokenStates[i]==='auto'?w.ar+' (ليس لازم تتنطق لوحدها)':w.ar;
     span.onclick=()=>speakWord(w.it);
     wrap.appendChild(span);

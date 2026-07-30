@@ -1,660 +1,1707 @@
-// جمل ضمير NOI من درس Parla Italiano — نسخة مُراجعة
 const LESSON_NOI = [
   {
-    "it": "Noi siamo usciti di casa mentre parlavamo al telefono",
-    "ar": "نحن خرجنا من البيت وكنا بنتكلم على التليفون.",
-    "en": "We left home while we were talking on the phone.",
+    "it": "Abbiamo visto il film mentre eravamo a casa; Il tavolo è di legno",
+    "ar": "إحنا شفنا الفيلم بينما كنا في البيت.؛ الطاولة من الخشب",
+    "en": "We saw il film while were a casa.; The table is made of wood",
     "pronoun": "Noi (نحن)",
     "words": [
       {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "pronome"
-      },
-      {
-        "it": "siamo",
+        "it": "Abbiamo",
         "ar": "",
         "note": "جزء من الفعل المساعد",
         "type": "omesso",
         "skipReason": "ausiliare"
       },
       {
-        "it": "usciti",
-        "ar": "خرجنا",
-        "note": "Uscire، Passato Prossimo",
+        "it": "visto",
+        "ar": "شفنا",
+        "note": "Vedere، Passato Prossimo",
         "type": "verbo",
-        "verbInfinitive": "Uscire",
-        "group": "ire",
+        "verbInfinitive": "Vedere",
+        "group": "ere",
         "regular": false,
-        "aux": "essere",
+        "aux": "avere",
         "tense": "passato",
-        "transitive": false,
+        "transitive": true,
         "quiz": [
           {
-            "q": "الفعل \"Uscire\" منتمي لأي مجموعة؟",
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Vedere» في Passato Prossimo؟",
             "options": [
-              "-are",
-              "-ere",
-              "-ire",
-              "شاذ"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"usciti\" ما؟",
-            "options": [
-              "Presente",
-              "Passato Prossimo",
-              "Imperfetto",
-              "Imperativo"
+              "Ho visto",
+              "Abbiamo visto",
+              "Hai visto",
+              "Ha visto"
             ],
             "correct": 1
           },
           {
-            "q": "الفعل المساعد الذي يأتي مع \"Uscire\" في الماضي ما؟",
+            "q": "التصريف «Abbiamo visto» في Passato Prossimo يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الفعل المساعد مع «Vedere» في Passato Prossimo إيه؟",
             "options": [
               "avere",
               "essere"
             ],
-            "correct": 1
+            "correct": 0
+          },
+          {
+            "q": "الزمن المستخدم في «Abbiamo visto» إيه؟",
+            "options": [
+              "Presente",
+              "Imperfetto",
+              "Passato Prossimo",
+              "Imperativo"
+            ],
+            "correct": 2
           }
         ],
-        "transitivity": "intransitive",
-        "transitivityNote": "يحتاج حرف جر (غالباً a أو di) لكي يوصل للمفعول"
+        "transitivity": "transitive",
+        "transitivityNote": null
       },
       {
-        "it": "di casa",
-        "ar": "من البيت",
+        "it": "il film",
+        "ar": "الفيلم",
         "note": null,
-        "type": "sintagma_prep",
-        "prep": "di",
-        "prepNote": "يدل على ملكية أو أصل أو موضوع (بتاع / من / عن) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"di casa\"؟ الأصل ما؟",
-            "options": [
-              "in",
-              "da",
-              "su",
-              "di"
-            ],
-            "correct": 3
-          }
-        ]
+        "type": "altro",
+        "quiz": []
       },
       {
         "it": "mentre",
-        "ar": "وكنا",
+        "ar": "بينما",
         "note": null,
         "type": "congiunzione",
-        "meaning": "بينما / في الوقت نفسه الذي",
+        "meaning": "بينما",
         "grammarId": "mentre",
         "quiz": [
           {
-            "q": "\"mentre\" بمعنى ما هنا؟",
+            "q": "«mentre» معناها إيه هنا؟",
             "options": [
               "لكن",
-              "لكي",
-              "بينما / في الوقت نفسه الذي",
-              "عندما"
-            ],
-            "correct": 2
-          }
-        ],
-        "kind": "أداة ربط زمنية"
-      },
-      {
-        "it": "parlavamo",
-        "ar": "بنتكلم",
-        "note": "Parlare، Imperfetto",
-        "type": "verbo",
-        "verbInfinitive": "Parlare",
-        "group": "are",
-        "regular": true,
-        "aux": null,
-        "tense": "imperfetto",
-        "transitive": false,
-        "quiz": [
-          {
-            "q": "نهايات الفعل المنتظم من مجموعة -ire في Imperfetto تبدأ بما؟",
-            "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الفعل \"Parlare\" منتمي لأي مجموعة؟",
-            "options": [
-              "شاذ",
-              "-are",
-              "-ere",
-              "-ire"
-            ],
-            "correct": 1
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"parlavamo\" ما؟",
-            "options": [
-              "Imperativo",
-              "Presente",
-              "Passato Prossimo",
-              "Imperfetto"
-            ],
-            "correct": 3
-          }
-        ],
-        "transitivity": "intransitive",
-        "transitivityNote": "يُستخدم مع حروف جر مثل di أو a بحسب المعنى"
-      },
-      {
-        "it": "al telefono",
-        "ar": "على التليفون",
-        "note": null,
-        "type": "sintagma_prep",
-        "prep": "a",
-        "prepNote": "يدل على اتجاه أو مكان أو زمن (لـ / في / على حسب السياق)",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"al telefono\"؟ الأصل ما؟",
-            "options": [
-              "a",
-              "con",
-              "per",
-              "tra"
-            ],
-            "correct": 0
-          }
-        ]
-      }
-    ],
-    "conj": {
-      "verb": "Uscire",
-      "tense": "Passato Prossimo",
-      "regular": false,
-      "rows": [
-        {
-          "person": "Io (أنا)",
-          "form": "Sono uscito/a"
-        },
-        {
-          "person": "Tu (أنت)",
-          "form": "Sei uscito/a"
-        },
-        {
-          "person": "Lui (هو)",
-          "form": "È uscito"
-        },
-        {
-          "person": "Lei (هي)",
-          "form": "È uscita"
-        },
-        {
-          "person": "Noi (نحن)",
-          "form": "Siamo usciti/e"
-        },
-        {
-          "person": "Voi (أنتم)",
-          "form": "Siete usciti/e"
-        },
-        {
-          "person": "Loro (هم)",
-          "form": "Sono usciti/e"
-        }
-      ]
-    },
-    "quiz": [
-      {
-        "wordIt": "usciti",
-        "q": "الفعل \"usciti\" — منتمي لأي مجموعة؟",
-        "options": [
-          "-ere",
-          "-ire",
-          "شاذ",
-          "-are"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "usciti",
-        "q": "الزمن الذي صُرِّف فيه \"usciti\" ما؟",
-        "options": [
-          "Imperfetto",
-          "Imperativo",
-          "Presente",
-          "Passato Prossimo"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "usciti",
-        "q": "الفعل المساعد الذي يأتي مع \"Uscire\" في الـ Passato Prossimo ما؟",
-        "options": [
-          "sono",
-          "avere",
-          "essere",
-          "ho"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "di casa",
-        "q": "لماذا استخدمنا حرف الجر في \"di casa\"؟ الأصل ما؟",
-        "options": [
-          "di",
-          "a",
-          "in",
-          "da"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "mentre",
-        "q": "\"mentre\" بمعنى ما هنا؟",
-        "options": [
-          "لكن",
-          "لكي",
-          "ولو",
-          "بينما / في الوقت نفسه الذي"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "parlavamo",
-        "q": "الفعل \"parlavamo\" — منتمي لأي مجموعة؟",
-        "options": [
-          "-ire",
-          "شاذ",
-          "-are",
-          "-ere"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "parlavamo",
-        "q": "الزمن الذي صُرِّف فيه \"parlavamo\" ما؟",
-        "options": [
-          "Imperativo",
-          "Presente",
-          "Passato Prossimo",
-          "Imperfetto"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "al telefono",
-        "q": "لماذا استخدمنا حرف الجر في \"al telefono\"؟ الأصل ما؟",
-        "options": [
-          "a",
-          "con",
-          "per",
-          "tra"
-        ],
-        "correct": 0
-      }
-    ]
-  },
-  {
-    "it": "Noi parlavamo di lavoro quando è uscito il direttore dall'ufficio",
-    "ar": "نحن كنا بنتكلم عن الشغل لما المدير خرج من المكتب.",
-    "en": "We were talking about work when the manager left the office.",
-    "pronoun": "Noi (نحن)",
-    "words": [
-      {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "pronome"
-      },
-      {
-        "it": "parlavamo",
-        "ar": "كنا بنتكلم",
-        "note": "Parlare، Imperfetto",
-        "type": "verbo",
-        "verbInfinitive": "Parlare",
-        "group": "are",
-        "regular": true,
-        "aux": null,
-        "tense": "imperfetto",
-        "transitive": false,
-        "quiz": [
-          {
-            "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
-            "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الفعل \"Parlare\" منتمي لأي مجموعة؟",
-            "options": [
-              "-ere",
-              "-ire",
-              "شاذ",
-              "-are"
-            ],
-            "correct": 3
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"parlavamo\" ما؟",
-            "options": [
-              "Passato Prossimo",
-              "Imperfetto",
-              "Imperativo",
-              "Presente"
+              "بينما",
+              "لأن",
+              "بعدما"
             ],
             "correct": 1
           }
         ],
-        "transitivity": "intransitive",
-        "transitivityNote": "يُستخدم مع حروف جر مثل di أو a بحسب المعنى"
+        "kind": "أداة ربط"
       },
       {
-        "it": "di lavoro",
-        "ar": "عن الشغل",
-        "note": null,
-        "type": "sintagma_prep",
-        "prep": "di",
-        "prepNote": "يدل على ملكية أو أصل أو موضوع (بتاع / من / عن) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"di lavoro\"؟ الأصل ما؟",
-            "options": [
-              "fra",
-              "a",
-              "di",
-              "tra"
-            ],
-            "correct": 2
-          }
-        ]
-      },
-      {
-        "it": "quando",
-        "ar": "لما",
-        "note": null,
-        "type": "congiunzione",
-        "meaning": "عندما",
-        "grammarId": "interrogativi",
-        "quiz": [
-          {
-            "q": "\"quando\" بمعنى ما هنا؟",
-            "options": [
-              "لكي",
-              "عندما",
-              "بينما / في الوقت نفسه الذي",
-              "لكن"
-            ],
-            "correct": 1
-          }
-        ],
-        "kind": "أداة ربط زمنية"
-      },
-      {
-        "it": "è",
-        "ar": "",
-        "note": "جزء من الفعل المساعد",
-        "type": "omesso",
-        "skipReason": "ausiliare"
-      },
-      {
-        "it": "uscito",
-        "ar": "خرج",
-        "note": "Uscire، Passato Prossimo",
+        "it": "eravamo",
+        "ar": "كنا",
+        "note": "Essere، Imperfetto",
         "type": "verbo",
-        "verbInfinitive": "Uscire",
-        "group": "ire",
+        "verbInfinitive": "Essere",
+        "group": "ere",
         "regular": false,
-        "aux": "essere",
-        "tense": "passato",
+        "aux": null,
+        "tense": "imperfetto",
         "transitive": false,
         "quiz": [
           {
-            "q": "الفعل \"Uscire\" منتمي لأي مجموعة؟",
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Essere» في Imperfetto؟",
             "options": [
-              "-are",
-              "-ere",
-              "-ire",
-              "شاذ"
+              "Ero",
+              "Eravamo",
+              "Eri",
+              "Era"
             ],
-            "correct": 2
+            "correct": 1
           },
           {
-            "q": "الزمن الذي صُرِّف به \"uscito\" ما؟",
+            "q": "التصريف «Eravamo» في Imperfetto يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Eravamo» إيه؟",
             "options": [
               "Presente",
               "Passato Prossimo",
               "Imperfetto",
               "Imperativo"
             ],
-            "correct": 1
+            "correct": 2
           },
           {
-            "q": "الفعل المساعد الذي يأتي مع \"Uscire\" في الماضي ما؟",
+            "q": "الفعل «Essere» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
             "options": [
-              "avere",
-              "essere"
+              "منتظم",
+              "شاذ/ذو جذر خاص"
             ],
             "correct": 1
           }
         ],
         "transitivity": "intransitive",
-        "transitivityNote": "يحتاج حرف جر (غالباً a أو di) لكي يوصل للمفعول"
+        "transitivityNote": null
       },
       {
-        "it": "il direttore",
-        "ar": "المدير",
+        "it": "a casa",
+        "ar": "في البيت",
         "note": null,
-        "type": "nome_unit",
-        "gender": "m",
-        "plural": "i direttori",
-        "quiz": [
-          {
-            "q": "جنس \"il direttore\" ما؟",
-            "options": [
-              "مؤنث",
-              "جمع",
-              "محايد",
-              "مذكر"
-            ],
-            "correct": 3
-          }
-        ],
-        "nounIt": "direttore",
-        "relatedWords": []
+        "type": "altro",
+        "quiz": []
       },
       {
-        "it": "dall'ufficio",
-        "ar": "من المكتب",
+        "it": ";",
+        "ar": "",
         "note": null,
-        "type": "sintagma_prep",
-        "prep": "da",
-        "prepNote": "يدل على مصدر الحركة أو مكان (من / عند) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"dall'ufficio\"؟ الأصل ما؟",
-            "options": [
-              "su",
-              "con",
-              "da",
-              "di"
-            ],
-            "correct": 2
-          }
-        ]
+        "type": "omesso",
+        "quiz": []
+      },
+      {
+        "it": "Il tavolo è",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "di",
+        "ar": "من",
+        "note": "المادة المصنوع منها: يبين المادة التي صُنع منها الشيء.",
+        "type": "preposizione",
+        "grammarId": "prep_di",
+        "prepUsage": {
+          "id": "di_materiale",
+          "title": "المادة المصنوع منها",
+          "meaning": "من",
+          "color": "#8e24aa",
+          "base": "di"
+        },
+        "quiz": []
+      },
+      {
+        "it": "legno",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
       }
     ],
     "conj": {
-      "verb": "Uscire",
+      "verb": "Vedere",
       "tense": "Passato Prossimo",
       "regular": false,
       "rows": [
         {
           "person": "Io (أنا)",
-          "form": "Sono uscito/a"
+          "form": "Ho visto"
         },
         {
           "person": "Tu (أنت)",
-          "form": "Sei uscito/a"
+          "form": "Hai visto"
         },
         {
           "person": "Lui (هو)",
-          "form": "È uscito"
+          "form": "Ha visto"
         },
         {
           "person": "Lei (هي)",
-          "form": "È uscita"
+          "form": "Ha visto"
         },
         {
-          "person": "Noi (نحن)",
-          "form": "Siamo usciti/e"
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo visto"
         },
         {
           "person": "Voi (أنتم)",
-          "form": "Siete usciti/e"
+          "form": "Avete visto"
         },
         {
           "person": "Loro (هم)",
-          "form": "Sono usciti/e"
+          "form": "Hanno visto"
         }
       ]
     },
     "quiz": [
       {
-        "wordIt": "parlavamo",
-        "q": "الفعل \"parlavamo\" — منتمي لأي مجموعة؟",
+        "wordIt": "visto",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Vedere» في Passato Prossimo؟",
         "options": [
-          "-ere",
-          "-ire",
-          "شاذ",
-          "-are"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "parlavamo",
-        "q": "الزمن الذي صُرِّف فيه \"parlavamo\" ما؟",
-        "options": [
-          "Imperfetto",
-          "Imperativo",
-          "Presente",
-          "Passato Prossimo"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "di lavoro",
-        "q": "لماذا استخدمنا حرف الجر في \"di lavoro\"؟ الأصل ما؟",
-        "options": [
-          "in",
-          "di",
-          "fra",
-          "a"
+          "Ho visto",
+          "Abbiamo visto",
+          "Hai visto",
+          "Ha visto"
         ],
         "correct": 1
       },
       {
-        "wordIt": "quando",
-        "q": "\"quando\" بمعنى ما هنا؟",
+        "wordIt": "visto",
+        "q": "التصريف «Abbiamo visto» في Passato Prossimo يعود إلى أي ضمير؟",
         "options": [
-          "عندما",
-          "لكن",
-          "لكي",
-          "ولو"
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
         ],
-        "correct": 0
+        "correct": 1
       },
       {
-        "wordIt": "uscito",
-        "q": "الفعل \"uscito\" — منتمي لأي مجموعة؟",
+        "wordIt": "visto",
+        "q": "الفعل المساعد مع «Vedere» في Passato Prossimo إيه؟",
         "options": [
-          "-ere",
-          "-ire",
-          "شاذ",
-          "-are"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "uscito",
-        "q": "الزمن الذي صُرِّف فيه \"uscito\" ما؟",
-        "options": [
-          "Imperfetto",
-          "Imperativo",
-          "Presente",
-          "Passato Prossimo"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "uscito",
-        "q": "الفعل المساعد الذي يأتي مع \"Uscire\" في الـ Passato Prossimo ما؟",
-        "options": [
-          "sono",
           "avere",
-          "essere",
-          "ho"
+          "essere"
+        ],
+        "correct": 0
+      },
+      {
+        "wordIt": "visto",
+        "q": "الزمن المستخدم في «Abbiamo visto» إيه؟",
+        "options": [
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
         ],
         "correct": 2
       },
       {
-        "wordIt": "il direttore",
-        "q": "جنس \"il direttore\" ما؟",
+        "wordIt": "mentre",
+        "q": "«mentre» معناها إيه هنا؟",
         "options": [
-          "مذكر",
-          "مؤنث",
-          "جمع",
-          "محايد"
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
         ],
-        "correct": 0
+        "correct": 1
       },
       {
-        "wordIt": "dall'",
-        "q": "لماذا استخدمنا حرف الجر في \"dall'\"؟ الأصل ما؟",
+        "wordIt": "eravamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Essere» في Imperfetto؟",
         "options": [
-          "per",
-          "tra",
-          "fra",
-          "da"
+          "Ero",
+          "Eravamo",
+          "Eri",
+          "Era"
         ],
-        "correct": 3
+        "correct": 1
       },
       {
-        "wordIt": "ufficio",
-        "q": "\"ufficio\" هنا يعمل كـ ما في الجملة؟",
+        "wordIt": "eravamo",
+        "q": "التصريف «Eravamo» في Imperfetto يعود إلى أي ضمير؟",
         "options": [
-          "صفة/ظرف",
-          "حرف جر",
-          "فعل",
-          "اسم"
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
         ],
-        "correct": 0
+        "correct": 1
+      },
+      {
+        "wordIt": "eravamo",
+        "q": "الزمن المستخدم في «Eravamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "eravamo",
+        "q": "الفعل «Essere» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+        "options": [
+          "منتظم",
+          "شاذ/ذو جذر خاص"
+        ],
+        "correct": 1
       }
-    ]
+    ],
+    "prepositionFocus": {
+      "base": "di",
+      "id": "di_materiale",
+      "title": "المادة المصنوع منها",
+      "meaning": "من",
+      "description": "يبين المادة التي صُنع منها الشيء.",
+      "form": "di",
+      "it": "Il tavolo è di legno",
+      "ar": "الطاولة من الخشب",
+      "en": "The table is made of wood",
+      "color": "#8e24aa",
+      "grammarId": "prep_di"
+    }
   },
   {
-    "it": "Noi siamo andati in ufficio mentre lavoravano gli altri da casa",
-    "ar": "نحن رحنا المكتب والباقيين كانوا شغالين من البيت.",
-    "en": "We went to the office while the others were working from home.",
+    "it": "Abbiamo preso appunti mentre facevamo l'esercizio; Parliamo di calcio",
+    "ar": "إحنا أخدنا ملاحظات بينما كنا بنعمل التمرين.؛ نتحدث عن كرة القدم",
+    "en": "We took appunti while were doing l'esercizio.; We talk about football",
     "pronoun": "Noi (نحن)",
     "words": [
       {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
+        "it": "Abbiamo",
+        "ar": "",
+        "note": "جزء من الفعل المساعد",
         "type": "omesso",
-        "skipReason": "pronome"
+        "skipReason": "ausiliare"
       },
       {
-        "it": "siamo",
+        "it": "preso",
+        "ar": "أخدنا",
+        "note": "Prendere، Passato Prossimo",
+        "type": "verbo",
+        "verbInfinitive": "Prendere",
+        "group": "ere",
+        "regular": false,
+        "aux": "avere",
+        "tense": "passato",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Prendere» في Passato Prossimo؟",
+            "options": [
+              "Ho preso",
+              "Abbiamo preso",
+              "Hai preso",
+              "Ha preso"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Abbiamo preso» في Passato Prossimo يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الفعل المساعد مع «Prendere» في Passato Prossimo إيه؟",
+            "options": [
+              "avere",
+              "essere"
+            ],
+            "correct": 0
+          },
+          {
+            "q": "الزمن المستخدم في «Abbiamo preso» إيه؟",
+            "options": [
+              "Presente",
+              "Imperfetto",
+              "Passato Prossimo",
+              "Imperativo"
+            ],
+            "correct": 2
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "appunti",
+        "ar": "ملاحظات",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "mentre",
+        "ar": "بينما",
+        "note": null,
+        "type": "congiunzione",
+        "meaning": "بينما",
+        "grammarId": "mentre",
+        "quiz": [
+          {
+            "q": "«mentre» معناها إيه هنا؟",
+            "options": [
+              "لكن",
+              "بينما",
+              "لأن",
+              "بعدما"
+            ],
+            "correct": 1
+          }
+        ],
+        "kind": "أداة ربط"
+      },
+      {
+        "it": "facevamo",
+        "ar": "كنا بنعمل",
+        "note": "Fare، Imperfetto",
+        "type": "verbo",
+        "verbInfinitive": "Fare",
+        "group": "are",
+        "regular": false,
+        "aux": null,
+        "tense": "imperfetto",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Fare» في Imperfetto؟",
+            "options": [
+              "Facevo",
+              "Facevamo",
+              "Facevi",
+              "Faceva"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Facevamo» في Imperfetto يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Facevamo» إيه؟",
+            "options": [
+              "Presente",
+              "Passato Prossimo",
+              "Imperfetto",
+              "Imperativo"
+            ],
+            "correct": 2
+          },
+          {
+            "q": "الفعل «Fare» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+            "options": [
+              "منتظم",
+              "شاذ/ذو جذر خاص"
+            ],
+            "correct": 1
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "l'esercizio",
+        "ar": "التمرين",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": ";",
+        "ar": "",
+        "note": null,
+        "type": "omesso",
+        "quiz": []
+      },
+      {
+        "it": "Parliamo",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "di",
+        "ar": "عن",
+        "note": "الموضوع: مع الكلام والكتابة والحديث عن موضوع.",
+        "type": "preposizione",
+        "grammarId": "prep_di",
+        "prepUsage": {
+          "id": "di_argomento",
+          "title": "الموضوع",
+          "meaning": "عن",
+          "color": "#00897b",
+          "base": "di"
+        },
+        "quiz": []
+      },
+      {
+        "it": "calcio",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      }
+    ],
+    "conj": {
+      "verb": "Prendere",
+      "tense": "Passato Prossimo",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho preso"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai preso"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha preso"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha preso"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo preso"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete preso"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno preso"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "wordIt": "preso",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Prendere» في Passato Prossimo؟",
+        "options": [
+          "Ho preso",
+          "Abbiamo preso",
+          "Hai preso",
+          "Ha preso"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "preso",
+        "q": "التصريف «Abbiamo preso» في Passato Prossimo يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "preso",
+        "q": "الفعل المساعد مع «Prendere» في Passato Prossimo إيه؟",
+        "options": [
+          "avere",
+          "essere"
+        ],
+        "correct": 0
+      },
+      {
+        "wordIt": "preso",
+        "q": "الزمن المستخدم في «Abbiamo preso» إيه؟",
+        "options": [
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "mentre",
+        "q": "«mentre» معناها إيه هنا؟",
+        "options": [
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "facevamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Fare» في Imperfetto؟",
+        "options": [
+          "Facevo",
+          "Facevamo",
+          "Facevi",
+          "Faceva"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "facevamo",
+        "q": "التصريف «Facevamo» في Imperfetto يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "facevamo",
+        "q": "الزمن المستخدم في «Facevamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "facevamo",
+        "q": "الفعل «Fare» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+        "options": [
+          "منتظم",
+          "شاذ/ذو جذر خاص"
+        ],
+        "correct": 1
+      }
+    ],
+    "prepositionFocus": {
+      "base": "di",
+      "id": "di_argomento",
+      "title": "الموضوع",
+      "meaning": "عن",
+      "description": "مع الكلام والكتابة والحديث عن موضوع.",
+      "form": "di",
+      "it": "Parliamo di calcio",
+      "ar": "نتحدث عن كرة القدم",
+      "en": "We talk about football",
+      "color": "#00897b",
+      "grammarId": "prep_di"
+    }
+  },
+  {
+    "it": "Abbiamo scritto le istruzioni mentre dicevamo cosa fare; Studio di notte",
+    "ar": "إحنا كتبنا التعليمات بينما كنا بنقول نعمل إيه.؛ أذاكر في الليل",
+    "en": "We wrote le istruzioni while were saying cosa fare.; I study at night",
+    "pronoun": "Noi (نحن)",
+    "words": [
+      {
+        "it": "Abbiamo",
+        "ar": "",
+        "note": "جزء من الفعل المساعد",
+        "type": "omesso",
+        "skipReason": "ausiliare"
+      },
+      {
+        "it": "scritto",
+        "ar": "كتبنا",
+        "note": "Scrivere، Passato Prossimo",
+        "type": "verbo",
+        "verbInfinitive": "Scrivere",
+        "group": "ere",
+        "regular": false,
+        "aux": "avere",
+        "tense": "passato",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Scrivere» في Passato Prossimo؟",
+            "options": [
+              "Ho scritto",
+              "Abbiamo scritto",
+              "Hai scritto",
+              "Ha scritto"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Abbiamo scritto» في Passato Prossimo يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الفعل المساعد مع «Scrivere» في Passato Prossimo إيه؟",
+            "options": [
+              "avere",
+              "essere"
+            ],
+            "correct": 0
+          },
+          {
+            "q": "الزمن المستخدم في «Abbiamo scritto» إيه؟",
+            "options": [
+              "Presente",
+              "Imperfetto",
+              "Passato Prossimo",
+              "Imperativo"
+            ],
+            "correct": 2
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "le istruzioni",
+        "ar": "التعليمات",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "mentre",
+        "ar": "بينما",
+        "note": null,
+        "type": "congiunzione",
+        "meaning": "بينما",
+        "grammarId": "mentre",
+        "quiz": [
+          {
+            "q": "«mentre» معناها إيه هنا؟",
+            "options": [
+              "لكن",
+              "بينما",
+              "لأن",
+              "بعدما"
+            ],
+            "correct": 1
+          }
+        ],
+        "kind": "أداة ربط"
+      },
+      {
+        "it": "dicevamo",
+        "ar": "كنا بنقول",
+        "note": "Dire، Imperfetto",
+        "type": "verbo",
+        "verbInfinitive": "Dire",
+        "group": "ire",
+        "regular": false,
+        "aux": null,
+        "tense": "imperfetto",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Dire» في Imperfetto؟",
+            "options": [
+              "Dicevo",
+              "Dicevamo",
+              "Dicevi",
+              "Diceva"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Dicevamo» في Imperfetto يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Dicevamo» إيه؟",
+            "options": [
+              "Presente",
+              "Passato Prossimo",
+              "Imperfetto",
+              "Imperativo"
+            ],
+            "correct": 2
+          },
+          {
+            "q": "الفعل «Dire» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+            "options": [
+              "منتظم",
+              "شاذ/ذو جذر خاص"
+            ],
+            "correct": 1
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "cosa fare",
+        "ar": "نعمل إيه",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": ";",
+        "ar": "",
+        "note": null,
+        "type": "omesso",
+        "quiz": []
+      },
+      {
+        "it": "Stu",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "di",
+        "ar": "في / أثناء",
+        "note": "التعبير الزمني: يستخدم مع أجزاء اليوم مثل di notte وdi giorno.",
+        "type": "preposizione",
+        "grammarId": "prep_di",
+        "prepUsage": {
+          "id": "di_tempo",
+          "title": "التعبير الزمني",
+          "meaning": "في / أثناء",
+          "color": "#43a047",
+          "base": "di"
+        },
+        "quiz": []
+      },
+      {
+        "it": "o di notte",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      }
+    ],
+    "conj": {
+      "verb": "Scrivere",
+      "tense": "Passato Prossimo",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho scritto"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai scritto"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha scritto"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha scritto"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo scritto"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete scritto"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno scritto"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "wordIt": "scritto",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Scrivere» في Passato Prossimo؟",
+        "options": [
+          "Ho scritto",
+          "Abbiamo scritto",
+          "Hai scritto",
+          "Ha scritto"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "scritto",
+        "q": "التصريف «Abbiamo scritto» في Passato Prossimo يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "scritto",
+        "q": "الفعل المساعد مع «Scrivere» في Passato Prossimo إيه؟",
+        "options": [
+          "avere",
+          "essere"
+        ],
+        "correct": 0
+      },
+      {
+        "wordIt": "scritto",
+        "q": "الزمن المستخدم في «Abbiamo scritto» إيه؟",
+        "options": [
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "mentre",
+        "q": "«mentre» معناها إيه هنا؟",
+        "options": [
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "dicevamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Dire» في Imperfetto؟",
+        "options": [
+          "Dicevo",
+          "Dicevamo",
+          "Dicevi",
+          "Diceva"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "dicevamo",
+        "q": "التصريف «Dicevamo» في Imperfetto يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "dicevamo",
+        "q": "الزمن المستخدم في «Dicevamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "dicevamo",
+        "q": "الفعل «Dire» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+        "options": [
+          "منتظم",
+          "شاذ/ذو جذر خاص"
+        ],
+        "correct": 1
+      }
+    ],
+    "prepositionFocus": {
+      "base": "di",
+      "id": "di_tempo",
+      "title": "التعبير الزمني",
+      "meaning": "في / أثناء",
+      "description": "يستخدم مع أجزاء اليوم مثل di notte وdi giorno.",
+      "form": "di",
+      "it": "Studio di notte",
+      "ar": "أذاكر في الليل",
+      "en": "I study at night",
+      "color": "#43a047",
+      "grammarId": "prep_di"
+    }
+  },
+  {
+    "it": "Abbiamo letto il menu mentre bevevamo del vino; Bevo una tazza di caffè",
+    "ar": "إحنا قرينا القائمة بينما كنا بنشرب نبيذ.؛ أشرب فنجانًا من القهوة",
+    "en": "We read il menu while were drinking del vino.; I drink a cup of coffee",
+    "pronoun": "Noi (نحن)",
+    "words": [
+      {
+        "it": "Abbiamo",
+        "ar": "",
+        "note": "جزء من الفعل المساعد",
+        "type": "omesso",
+        "skipReason": "ausiliare"
+      },
+      {
+        "it": "letto",
+        "ar": "قرينا",
+        "note": "Leggere، Passato Prossimo",
+        "type": "verbo",
+        "verbInfinitive": "Leggere",
+        "group": "ere",
+        "regular": false,
+        "aux": "avere",
+        "tense": "passato",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Leggere» في Passato Prossimo؟",
+            "options": [
+              "Ho letto",
+              "Abbiamo letto",
+              "Hai letto",
+              "Ha letto"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Abbiamo letto» في Passato Prossimo يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الفعل المساعد مع «Leggere» في Passato Prossimo إيه؟",
+            "options": [
+              "avere",
+              "essere"
+            ],
+            "correct": 0
+          },
+          {
+            "q": "الزمن المستخدم في «Abbiamo letto» إيه؟",
+            "options": [
+              "Presente",
+              "Imperfetto",
+              "Passato Prossimo",
+              "Imperativo"
+            ],
+            "correct": 2
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "il menu",
+        "ar": "القائمة",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "mentre",
+        "ar": "بينما",
+        "note": null,
+        "type": "congiunzione",
+        "meaning": "بينما",
+        "grammarId": "mentre",
+        "quiz": [
+          {
+            "q": "«mentre» معناها إيه هنا؟",
+            "options": [
+              "لكن",
+              "بينما",
+              "لأن",
+              "بعدما"
+            ],
+            "correct": 1
+          }
+        ],
+        "kind": "أداة ربط"
+      },
+      {
+        "it": "bevevamo",
+        "ar": "كنا بنشرب",
+        "note": "Bere، Imperfetto",
+        "type": "verbo",
+        "verbInfinitive": "Bere",
+        "group": "ere",
+        "regular": false,
+        "aux": null,
+        "tense": "imperfetto",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Bere» في Imperfetto؟",
+            "options": [
+              "Bevevo",
+              "Bevevamo",
+              "Bevevi",
+              "Beveva"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Bevevamo» في Imperfetto يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Bevevamo» إيه؟",
+            "options": [
+              "Presente",
+              "Passato Prossimo",
+              "Imperfetto",
+              "Imperativo"
+            ],
+            "correct": 2
+          },
+          {
+            "q": "الفعل «Bere» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+            "options": [
+              "منتظم",
+              "شاذ/ذو جذر خاص"
+            ],
+            "correct": 1
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "del vino",
+        "ar": "نبيذ",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": ";",
+        "ar": "",
+        "note": null,
+        "type": "omesso",
+        "quiz": []
+      },
+      {
+        "it": "Bevo una tazza",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "di",
+        "ar": "من",
+        "note": "الكمية أو الجزء: يأتي بعد كلمات الكمية أو الأوعية.",
+        "type": "preposizione",
+        "grammarId": "prep_di",
+        "prepUsage": {
+          "id": "di_quantita",
+          "title": "الكمية أو الجزء",
+          "meaning": "من",
+          "color": "#d81b60",
+          "base": "di"
+        },
+        "quiz": []
+      },
+      {
+        "it": "caffè",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      }
+    ],
+    "conj": {
+      "verb": "Leggere",
+      "tense": "Passato Prossimo",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho letto"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai letto"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha letto"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha letto"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo letto"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete letto"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno letto"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "wordIt": "letto",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Leggere» في Passato Prossimo؟",
+        "options": [
+          "Ho letto",
+          "Abbiamo letto",
+          "Hai letto",
+          "Ha letto"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "letto",
+        "q": "التصريف «Abbiamo letto» في Passato Prossimo يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "letto",
+        "q": "الفعل المساعد مع «Leggere» في Passato Prossimo إيه؟",
+        "options": [
+          "avere",
+          "essere"
+        ],
+        "correct": 0
+      },
+      {
+        "wordIt": "letto",
+        "q": "الزمن المستخدم في «Abbiamo letto» إيه؟",
+        "options": [
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "mentre",
+        "q": "«mentre» معناها إيه هنا؟",
+        "options": [
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "bevevamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Bere» في Imperfetto؟",
+        "options": [
+          "Bevevo",
+          "Bevevamo",
+          "Bevevi",
+          "Beveva"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "bevevamo",
+        "q": "التصريف «Bevevamo» في Imperfetto يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "bevevamo",
+        "q": "الزمن المستخدم في «Bevevamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "bevevamo",
+        "q": "الفعل «Bere» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+        "options": [
+          "منتظم",
+          "شاذ/ذو جذر خاص"
+        ],
+        "correct": 1
+      }
+    ],
+    "prepositionFocus": {
+      "base": "di",
+      "id": "di_quantita",
+      "title": "الكمية أو الجزء",
+      "meaning": "من",
+      "description": "يأتي بعد كلمات الكمية أو الأوعية.",
+      "form": "di",
+      "it": "Bevo una tazza di caffè",
+      "ar": "أشرب فنجانًا من القهوة",
+      "en": "I drink a cup of coffee",
+      "color": "#d81b60",
+      "grammarId": "prep_di"
+    }
+  },
+  {
+    "it": "Abbiamo promesso di tornare mentre ponevamo nuove domande; Tremo di freddo",
+    "ar": "إحنا وعدنا إننا نرجع بينما كنا بنطرح أسئلة جديدة.؛ أرتجف من البرد",
+    "en": "We promised di tornare while were posing nuove domande.; I shiver from the cold",
+    "pronoun": "Noi (نحن)",
+    "words": [
+      {
+        "it": "Abbiamo",
+        "ar": "",
+        "note": "جزء من الفعل المساعد",
+        "type": "omesso",
+        "skipReason": "ausiliare"
+      },
+      {
+        "it": "promesso",
+        "ar": "وعدنا",
+        "note": "Promettere، Passato Prossimo",
+        "type": "verbo",
+        "verbInfinitive": "Promettere",
+        "group": "ere",
+        "regular": false,
+        "aux": "avere",
+        "tense": "passato",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Promettere» في Passato Prossimo؟",
+            "options": [
+              "Ho promesso",
+              "Abbiamo promesso",
+              "Hai promesso",
+              "Ha promesso"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Abbiamo promesso» في Passato Prossimo يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الفعل المساعد مع «Promettere» في Passato Prossimo إيه؟",
+            "options": [
+              "avere",
+              "essere"
+            ],
+            "correct": 0
+          },
+          {
+            "q": "الزمن المستخدم في «Abbiamo promesso» إيه؟",
+            "options": [
+              "Presente",
+              "Imperfetto",
+              "Passato Prossimo",
+              "Imperativo"
+            ],
+            "correct": 2
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "di tornare",
+        "ar": "إننا نرجع",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "mentre",
+        "ar": "بينما",
+        "note": null,
+        "type": "congiunzione",
+        "meaning": "بينما",
+        "grammarId": "mentre",
+        "quiz": [
+          {
+            "q": "«mentre» معناها إيه هنا؟",
+            "options": [
+              "لكن",
+              "بينما",
+              "لأن",
+              "بعدما"
+            ],
+            "correct": 1
+          }
+        ],
+        "kind": "أداة ربط"
+      },
+      {
+        "it": "ponevamo",
+        "ar": "كنا بنطرح",
+        "note": "Porre، Imperfetto",
+        "type": "verbo",
+        "verbInfinitive": "Porre",
+        "group": "irregolare",
+        "regular": false,
+        "aux": null,
+        "tense": "imperfetto",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Porre» في Imperfetto؟",
+            "options": [
+              "Ponevo",
+              "Ponevamo",
+              "Ponevi",
+              "Poneva"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Ponevamo» في Imperfetto يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Ponevamo» إيه؟",
+            "options": [
+              "Presente",
+              "Passato Prossimo",
+              "Imperfetto",
+              "Imperativo"
+            ],
+            "correct": 2
+          },
+          {
+            "q": "الفعل «Porre» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+            "options": [
+              "منتظم",
+              "شاذ/ذو جذر خاص"
+            ],
+            "correct": 1
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "nuove domande",
+        "ar": "أسئلة جديدة",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": ";",
+        "ar": "",
+        "note": null,
+        "type": "omesso",
+        "quiz": []
+      },
+      {
+        "it": "Tremo",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "di",
+        "ar": "من / بسبب",
+        "note": "السبب: يعبّر عن سبب شعور أو حالة.",
+        "type": "preposizione",
+        "grammarId": "prep_di",
+        "prepUsage": {
+          "id": "di_causa",
+          "title": "السبب",
+          "meaning": "من / بسبب",
+          "color": "#5e35b1",
+          "base": "di"
+        },
+        "quiz": []
+      },
+      {
+        "it": "freddo",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      }
+    ],
+    "conj": {
+      "verb": "Promettere",
+      "tense": "Passato Prossimo",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho promesso"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai promesso"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha promesso"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha promesso"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo promesso"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete promesso"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno promesso"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "wordIt": "promesso",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Promettere» في Passato Prossimo؟",
+        "options": [
+          "Ho promesso",
+          "Abbiamo promesso",
+          "Hai promesso",
+          "Ha promesso"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "promesso",
+        "q": "التصريف «Abbiamo promesso» في Passato Prossimo يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "promesso",
+        "q": "الفعل المساعد مع «Promettere» في Passato Prossimo إيه؟",
+        "options": [
+          "avere",
+          "essere"
+        ],
+        "correct": 0
+      },
+      {
+        "wordIt": "promesso",
+        "q": "الزمن المستخدم في «Abbiamo promesso» إيه؟",
+        "options": [
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "mentre",
+        "q": "«mentre» معناها إيه هنا؟",
+        "options": [
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "ponevamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Porre» في Imperfetto؟",
+        "options": [
+          "Ponevo",
+          "Ponevamo",
+          "Ponevi",
+          "Poneva"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "ponevamo",
+        "q": "التصريف «Ponevamo» في Imperfetto يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "ponevamo",
+        "q": "الزمن المستخدم في «Ponevamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "ponevamo",
+        "q": "الفعل «Porre» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+        "options": [
+          "منتظم",
+          "شاذ/ذو جذر خاص"
+        ],
+        "correct": 1
+      }
+    ],
+    "prepositionFocus": {
+      "base": "di",
+      "id": "di_causa",
+      "title": "السبب",
+      "meaning": "من / بسبب",
+      "description": "يعبّر عن سبب شعور أو حالة.",
+      "form": "di",
+      "it": "Tremo di freddo",
+      "ar": "أرتجف من البرد",
+      "en": "I shiver from the cold",
+      "color": "#5e35b1",
+      "grammarId": "prep_di"
+    }
+  },
+  {
+    "it": "Siamo andati alla conferenza mentre traducevamo le istruzioni; Ho deciso di partire",
+    "ar": "إحنا رحنا المؤتمر بينما كنا بنترجم التعليمات.؛ قررت أن أغادر",
+    "en": "We went alla conferenza while were translating le istruzioni.; I decided to leave",
+    "pronoun": "Noi (نحن)",
+    "words": [
+      {
+        "it": "Siamo",
         "ar": "",
         "note": "جزء من الفعل المساعد",
         "type": "omesso",
@@ -670,140 +1717,174 @@ const LESSON_NOI = [
         "regular": false,
         "aux": "essere",
         "tense": "passato",
-        "transitive": false,
+        "transitive": true,
         "quiz": [
           {
-            "q": "الفعل \"Andare\" منتمي لأي مجموعة؟",
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Andare» في Passato Prossimo؟",
             "options": [
-              "-are",
-              "-ere",
-              "-ire",
-              "شاذ"
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"andati\" ما؟",
-            "options": [
-              "Presente",
-              "Passato Prossimo",
-              "Imperfetto",
-              "Imperativo"
+              "Sono andato",
+              "Siamo andati",
+              "Sei andato",
+              "È andato"
             ],
             "correct": 1
           },
           {
-            "q": "الفعل المساعد الذي يأتي مع \"Andare\" في الماضي ما؟",
+            "q": "التصريف «Siamo andati» في Passato Prossimo يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الفعل المساعد مع «Andare» في Passato Prossimo إيه؟",
             "options": [
               "avere",
               "essere"
             ],
             "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Siamo andati» إيه؟",
+            "options": [
+              "Presente",
+              "Imperfetto",
+              "Passato Prossimo",
+              "Imperativo"
+            ],
+            "correct": 2
           }
         ],
-        "transitivity": "intransitive",
-        "transitivityNote": "يحتاج حرف جر (غالباً a أو di) لكي يوصل للمفعول"
+        "transitivity": "transitive",
+        "transitivityNote": null
       },
       {
-        "it": "in ufficio",
-        "ar": "في المكتب",
+        "it": "alla conferenza",
+        "ar": "المؤتمر",
         "note": null,
-        "type": "sintagma_prep",
+        "type": "altro",
         "quiz": []
       },
       {
         "it": "mentre",
-        "ar": "والباقيين",
+        "ar": "بينما",
         "note": null,
         "type": "congiunzione",
-        "meaning": "بينما / في الوقت نفسه الذي",
+        "meaning": "بينما",
         "grammarId": "mentre",
         "quiz": [
           {
-            "q": "\"mentre\" بمعنى ما هنا؟",
+            "q": "«mentre» معناها إيه هنا؟",
             "options": [
               "لكن",
-              "لكي",
-              "بينما / في الوقت نفسه الذي",
-              "عندما"
+              "بينما",
+              "لأن",
+              "بعدما"
             ],
-            "correct": 2
+            "correct": 1
           }
         ],
-        "kind": "أداة ربط زمنية"
+        "kind": "أداة ربط"
       },
       {
-        "it": "lavoravano",
-        "ar": "كانوا شغالين",
-        "note": "Lavorare، Imperfetto",
+        "it": "traducevamo",
+        "ar": "كنا بنترجم",
+        "note": "Tradurre، Imperfetto",
         "type": "verbo",
-        "verbInfinitive": "Lavorare",
-        "group": "are",
-        "regular": true,
+        "verbInfinitive": "Tradurre",
+        "group": "irregolare",
+        "regular": false,
         "aux": null,
         "tense": "imperfetto",
-        "transitive": false,
+        "transitive": true,
         "quiz": [
           {
-            "q": "نهايات الفعل المنتظم من مجموعة -ire في Imperfetto تبدأ بما؟",
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Tradurre» في Imperfetto؟",
             "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الفعل \"Lavorare\" منتمي لأي مجموعة؟",
-            "options": [
-              "شاذ",
-              "-are",
-              "-ere",
-              "-ire"
+              "Traducevo",
+              "Traducevamo",
+              "Traducevi",
+              "Traduceva"
             ],
             "correct": 1
           },
           {
-            "q": "الزمن الذي صُرِّف به \"lavoravano\" ما؟",
+            "q": "التصريف «Traducevamo» في Imperfetto يعود إلى أي ضمير؟",
             "options": [
-              "Imperativo",
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Traducevamo» إيه؟",
+            "options": [
               "Presente",
               "Passato Prossimo",
-              "Imperfetto"
+              "Imperfetto",
+              "Imperativo"
             ],
-            "correct": 3
+            "correct": 2
+          },
+          {
+            "q": "الفعل «Tradurre» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+            "options": [
+              "منتظم",
+              "شاذ/ذو جذر خاص"
+            ],
+            "correct": 1
           }
         ],
-        "transitivity": "intransitive",
-        "transitivityNote": "فعل لازم هنا بمعنى يعمل/يشتغل"
+        "transitivity": "transitive",
+        "transitivityNote": null
       },
       {
-        "it": "gli altri",
+        "it": "le istruzioni",
+        "ar": "التعليمات",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": ";",
         "ar": "",
         "note": null,
         "type": "omesso",
-        "skipReason": "ausiliare"
+        "quiz": []
       },
       {
-        "it": "da casa",
-        "ar": "من البيت",
+        "it": "Ho deciso",
+        "ar": "",
         "note": null,
-        "type": "sintagma_prep",
-        "prep": "da",
-        "prepNote": "يدل على مصدر الحركة أو مكان (من / عند) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"da casa\"؟ الأصل ما؟",
-            "options": [
-              "da",
-              "a",
-              "in",
-              "di"
-            ],
-            "correct": 0
-          }
-        ]
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "di",
+        "ar": "أن / بـ",
+        "note": "تكملة الفعل بالمصدر: بعض الأفعال تحتاج di قبل المصدر.",
+        "type": "preposizione",
+        "grammarId": "prep_di",
+        "prepUsage": {
+          "id": "di_infinito",
+          "title": "تكملة الفعل بالمصدر",
+          "meaning": "أن / بـ",
+          "color": "#6d4c41",
+          "base": "di"
+        },
+        "quiz": []
+      },
+      {
+        "it": "partire",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
       }
     ],
     "conj": {
@@ -828,7 +1909,7 @@ const LESSON_NOI = [
           "form": "È andata"
         },
         {
-          "person": "Noi (نحن)",
+          "person": "Noi (إحنا)",
           "form": "Siamo andati/e"
         },
         {
@@ -844,2065 +1925,173 @@ const LESSON_NOI = [
     "quiz": [
       {
         "wordIt": "andati",
-        "q": "الفعل \"andati\" — منتمي لأي مجموعة؟",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Andare» في Passato Prossimo؟",
         "options": [
-          "شاذ",
-          "-are",
-          "-ere",
-          "-ire"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "andati",
-        "q": "الزمن الذي صُرِّف فيه \"andati\" ما؟",
-        "options": [
-          "Presente",
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo"
+          "Sono andato",
+          "Siamo andati",
+          "Sei andato",
+          "È andato"
         ],
         "correct": 1
       },
       {
         "wordIt": "andati",
-        "q": "الفعل المساعد الذي يأتي مع \"Andare\" في الـ Passato Prossimo ما؟",
+        "q": "التصريف «Siamo andati» في Passato Prossimo يعود إلى أي ضمير؟",
         "options": [
-          "essere",
-          "ho",
-          "sono",
-          "avere"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "ufficio",
-        "q": "\"ufficio\" هنا يعمل كـ ما في الجملة؟",
-        "options": [
-          "صفة/ظرف",
-          "حرف جر",
-          "فعل",
-          "اسم"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "mentre",
-        "q": "\"mentre\" بمعنى ما هنا؟",
-        "options": [
-          "ولو",
-          "بينما / في الوقت نفسه الذي",
-          "لكن",
-          "لكي"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "lavoravano",
-        "q": "الفعل \"lavoravano\" — منتمي لأي مجموعة؟",
-        "options": [
-          "-are",
-          "-ere",
-          "-ire",
-          "شاذ"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "lavoravano",
-        "q": "الزمن الذي صُرِّف فيه \"lavoravano\" ما؟",
-        "options": [
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo",
-          "Presente"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "da casa",
-        "q": "لماذا استخدمنا حرف الجر في \"da casa\"؟ الأصل ما؟",
-        "options": [
-          "fra",
-          "a",
-          "da",
-          "tra"
-        ],
-        "correct": 2
-      }
-    ]
-  },
-  {
-    "it": "Noi lavoravamo insieme quando sono andati via i colleghi",
-    "ar": "نحن كنا شغالين مع بعض لما الزمايل مشيوا.",
-    "en": "We were working together when the colleagues left.",
-    "pronoun": "Noi (نحن)",
-    "words": [
-      {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "pronome"
-      },
-      {
-        "it": "lavoravamo",
-        "ar": "كنا شغالين",
-        "note": "Lavorare، Imperfetto",
-        "type": "verbo",
-        "verbInfinitive": "Lavorare",
-        "group": "are",
-        "regular": true,
-        "aux": null,
-        "tense": "imperfetto",
-        "transitive": false,
-        "quiz": [
-          {
-            "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
-            "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الفعل \"Lavorare\" منتمي لأي مجموعة؟",
-            "options": [
-              "-ere",
-              "-ire",
-              "شاذ",
-              "-are"
-            ],
-            "correct": 3
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"lavoravamo\" ما؟",
-            "options": [
-              "Passato Prossimo",
-              "Imperfetto",
-              "Imperativo",
-              "Presente"
-            ],
-            "correct": 1
-          }
-        ],
-        "transitivity": "intransitive",
-        "transitivityNote": "فعل لازم هنا بمعنى يعمل/يشتغل"
-      },
-      {
-        "it": "insieme",
-        "ar": "مع بعض",
-        "note": null,
-        "type": "avverbio",
-        "invariant": true,
-        "forms": {
-          "ms": "insieme",
-          "fs": "insieme",
-          "mp": "insieme",
-          "fp": "insieme"
-        },
-        "quiz": [
-          {
-            "q": "\"insieme\" هنا يعمل كـ ما في الجملة؟",
-            "options": [
-              "صفة/ظرف",
-              "حرف جر",
-              "فعل",
-              "اسم"
-            ],
-            "correct": 0
-          }
-        ],
-        "usage": "ظرف بمعنى: معًا"
-      },
-      {
-        "it": "quando",
-        "ar": "لما",
-        "note": null,
-        "type": "congiunzione",
-        "meaning": "عندما",
-        "grammarId": "interrogativi",
-        "quiz": [
-          {
-            "q": "\"quando\" بمعنى ما هنا؟",
-            "options": [
-              "لكي",
-              "عندما",
-              "بينما / في الوقت نفسه الذي",
-              "لكن"
-            ],
-            "correct": 1
-          }
-        ],
-        "kind": "أداة ربط زمنية"
-      },
-      {
-        "it": "sono",
-        "ar": "",
-        "note": "جزء من الفعل المساعد",
-        "type": "omesso",
-        "skipReason": "ausiliare"
-      },
-      {
-        "it": "andati",
-        "ar": "مشيوا",
-        "note": "Andare، Passato Prossimo",
-        "type": "verbo",
-        "verbInfinitive": "Andare",
-        "group": "are",
-        "regular": false,
-        "aux": "essere",
-        "tense": "passato",
-        "transitive": false,
-        "quiz": [
-          {
-            "q": "الفعل \"Andare\" منتمي لأي مجموعة؟",
-            "options": [
-              "-are",
-              "-ere",
-              "-ire",
-              "شاذ"
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"andati\" ما؟",
-            "options": [
-              "Presente",
-              "Passato Prossimo",
-              "Imperfetto",
-              "Imperativo"
-            ],
-            "correct": 1
-          },
-          {
-            "q": "الفعل المساعد الذي يأتي مع \"Andare\" في الماضي ما؟",
-            "options": [
-              "avere",
-              "essere"
-            ],
-            "correct": 1
-          }
-        ],
-        "transitivity": "intransitive",
-        "transitivityNote": "يحتاج حرف جر (غالباً a أو di) لكي يوصل للمفعول"
-      },
-      {
-        "it": "via",
-        "ar": "",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "ausiliare"
-      },
-      {
-        "it": "i colleghi",
-        "ar": "الزمايل",
-        "note": null,
-        "type": "nome_unit",
-        "gender": "m",
-        "plural": "i colleghi",
-        "quiz": [
-          {
-            "q": "جنس \"i colleghi\" ما؟",
-            "options": [
-              "مؤنث",
-              "جمع",
-              "محايد",
-              "مذكر"
-            ],
-            "correct": 3
-          }
-        ],
-        "nounIt": "colleghi",
-        "relatedWords": []
-      }
-    ],
-    "conj": {
-      "verb": "Andare",
-      "tense": "Passato Prossimo",
-      "regular": false,
-      "rows": [
-        {
-          "person": "Io (أنا)",
-          "form": "Sono andato/a"
-        },
-        {
-          "person": "Tu (أنت)",
-          "form": "Sei andato/a"
-        },
-        {
-          "person": "Lui (هو)",
-          "form": "È andato"
-        },
-        {
-          "person": "Lei (هي)",
-          "form": "È andata"
-        },
-        {
-          "person": "Noi (نحن)",
-          "form": "Siamo andati/e"
-        },
-        {
-          "person": "Voi (أنتم)",
-          "form": "Siete andati/e"
-        },
-        {
-          "person": "Loro (هم)",
-          "form": "Sono andati/e"
-        }
-      ]
-    },
-    "quiz": [
-      {
-        "wordIt": "lavoravamo",
-        "q": "الفعل \"lavoravamo\" — منتمي لأي مجموعة؟",
-        "options": [
-          "شاذ",
-          "-are",
-          "-ere",
-          "-ire"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "lavoravamo",
-        "q": "الزمن الذي صُرِّف فيه \"lavoravamo\" ما؟",
-        "options": [
-          "Presente",
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "insieme",
-        "q": "\"insieme\" هنا يعمل كـ ما في الجملة؟",
-        "options": [
-          "اسم",
-          "صفة/ظرف",
-          "حرف جر",
-          "فعل"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "quando",
-        "q": "\"quando\" بمعنى ما هنا؟",
-        "options": [
-          "لكي",
-          "ولو",
-          "عندما",
-          "لكن"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "andati",
-        "q": "الفعل \"andati\" — منتمي لأي مجموعة؟",
-        "options": [
-          "شاذ",
-          "-are",
-          "-ere",
-          "-ire"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "andati",
-        "q": "الزمن الذي صُرِّف فيه \"andati\" ما؟",
-        "options": [
-          "Presente",
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo"
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
         ],
         "correct": 1
       },
       {
         "wordIt": "andati",
-        "q": "الفعل المساعد الذي يأتي مع \"Andare\" في الـ Passato Prossimo ما؟",
+        "q": "الفعل المساعد مع «Andare» في Passato Prossimo إيه؟",
         "options": [
-          "essere",
-          "ho",
-          "sono",
-          "avere"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "i colleghi",
-        "q": "جنس \"i colleghi\" ما؟",
-        "options": [
-          "جمع",
-          "محايد",
-          "مذكر",
-          "مؤنث"
-        ],
-        "correct": 2
-      }
-    ]
-  },
-  {
-    "it": "Noi abbiamo pulito la casa mentre ascoltavamo la musica",
-    "ar": "نحن نضفنا البيت وكنا بنسمع الموسيقى.",
-    "en": "We cleaned the house while we were listening to music.",
-    "pronoun": "Noi (نحن)",
-    "words": [
-      {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "pronome"
-      },
-      {
-        "it": "abbiamo",
-        "ar": "",
-        "note": "جزء من الفعل المساعد",
-        "type": "omesso",
-        "skipReason": "ausiliare"
-      },
-      {
-        "it": "pulito",
-        "ar": "نضفنا",
-        "note": "Pulire، Passato Prossimo",
-        "type": "verbo",
-        "verbInfinitive": "Pulire",
-        "group": "ire",
-        "regular": true,
-        "aux": "avere",
-        "tense": "passato",
-        "transitive": true,
-        "quiz": [
-          {
-            "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
-            "options": [
-              "-ato",
-              "-uto",
-              "-ito",
-              "-ando"
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الفعل \"Pulire\" منتمي لأي مجموعة؟",
-            "options": [
-              "شاذ",
-              "-are",
-              "-ere",
-              "-ire"
-            ],
-            "correct": 3
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"pulito\" ما؟",
-            "options": [
-              "Imperativo",
-              "Presente",
-              "Passato Prossimo",
-              "Imperfetto"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الفعل المساعد الذي يأتي مع \"Pulire\" في الماضي ما؟",
-            "options": [
-              "essere",
-              "avere"
-            ],
-            "correct": 1
-          }
-        ],
-        "transitivity": "transitive",
-        "transitivityNote": null
-      },
-      {
-        "it": "la casa",
-        "ar": "البيت",
-        "note": null,
-        "type": "nome_unit",
-        "gender": "f",
-        "plural": "le case",
-        "quiz": [
-          {
-            "q": "جنس \"la casa\" ما؟",
-            "options": [
-              "مذكر",
-              "مؤنث",
-              "جمع",
-              "محايد"
-            ],
-            "correct": 1
-          }
-        ],
-        "nounIt": "casa",
-        "relatedWords": []
-      },
-      {
-        "it": "mentre",
-        "ar": "وكنا",
-        "note": null,
-        "type": "congiunzione",
-        "meaning": "بينما / في الوقت نفسه الذي",
-        "grammarId": "mentre",
-        "quiz": [
-          {
-            "q": "\"mentre\" بمعنى ما هنا؟",
-            "options": [
-              "عندما",
-              "لكن",
-              "لكي",
-              "بينما / في الوقت نفسه الذي"
-            ],
-            "correct": 3
-          }
-        ],
-        "kind": "أداة ربط زمنية"
-      },
-      {
-        "it": "ascoltavamo",
-        "ar": "بنسمع",
-        "note": "Ascoltare، Imperfetto",
-        "type": "verbo",
-        "verbInfinitive": "Ascoltare",
-        "group": "are",
-        "regular": true,
-        "aux": null,
-        "tense": "imperfetto",
-        "transitive": true,
-        "quiz": [
-          {
-            "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
-            "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الفعل \"Ascoltare\" منتمي لأي مجموعة؟",
-            "options": [
-              "-ire",
-              "شاذ",
-              "-are",
-              "-ere"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"ascoltavamo\" ما؟",
-            "options": [
-              "Imperfetto",
-              "Imperativo",
-              "Presente",
-              "Passato Prossimo"
-            ],
-            "correct": 0
-          }
-        ],
-        "transitivity": "transitive",
-        "transitivityNote": null
-      },
-      {
-        "it": "la musica",
-        "ar": "موسيقى",
-        "note": null,
-        "type": "nome_unit",
-        "gender": "f",
-        "plural": "le musice",
-        "quiz": [
-          {
-            "q": "جنس \"la musica\" ما؟",
-            "options": [
-              "محايد",
-              "مذكر",
-              "مؤنث",
-              "جمع"
-            ],
-            "correct": 2
-          }
-        ],
-        "nounIt": "musica",
-        "relatedWords": []
-      }
-    ],
-    "conj": {
-      "verb": "Pulire",
-      "tense": "Passato Prossimo",
-      "regular": true,
-      "rows": [
-        {
-          "person": "Io (أنا)",
-          "form": "Ho pulito"
-        },
-        {
-          "person": "Tu (أنت)",
-          "form": "Hai pulito"
-        },
-        {
-          "person": "Lui (هو)",
-          "form": "Ha pulito"
-        },
-        {
-          "person": "Lei (هي)",
-          "form": "Ha pulito"
-        },
-        {
-          "person": "Noi (نحن)",
-          "form": "Abbiamo pulito"
-        },
-        {
-          "person": "Voi (أنتم)",
-          "form": "Avete pulito"
-        },
-        {
-          "person": "Loro (هم)",
-          "form": "Hanno pulito"
-        }
-      ]
-    },
-    "quiz": [
-      {
-        "wordIt": "pulito",
-        "q": "الفعل \"pulito\" — منتمي لأي مجموعة؟",
-        "options": [
-          "شاذ",
-          "-are",
-          "-ere",
-          "-ire"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "pulito",
-        "q": "الزمن الذي صُرِّف فيه \"pulito\" ما؟",
-        "options": [
-          "Presente",
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "pulito",
-        "q": "الفعل المساعد الذي يأتي مع \"Pulire\" في الـ Passato Prossimo ما؟",
-        "options": [
-          "essere",
-          "ho",
-          "sono",
-          "avere"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "la casa",
-        "q": "جنس \"la casa\" ما؟",
-        "options": [
-          "جمع",
-          "محايد",
-          "مذكر",
-          "مؤنث"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "mentre",
-        "q": "\"mentre\" بمعنى ما هنا؟",
-        "options": [
-          "ولو",
-          "بينما / في الوقت نفسه الذي",
-          "لكن",
-          "لكي"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "ascoltavamo",
-        "q": "الفعل \"ascoltavamo\" — منتمي لأي مجموعة؟",
-        "options": [
-          "-are",
-          "-ere",
-          "-ire",
-          "شاذ"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "ascoltavamo",
-        "q": "الزمن الذي صُرِّف فيه \"ascoltavamo\" ما؟",
-        "options": [
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo",
-          "Presente"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "la musica",
-        "q": "جنس \"la musica\" ما؟",
-        "options": [
-          "جمع",
-          "محايد",
-          "مذكر",
-          "مؤنث"
-        ],
-        "correct": 3
-      }
-    ]
-  },
-  {
-    "it": "Noi ascoltavamo le notizie quando abbiamo pulito la cucina",
-    "ar": "نحن كنا بنسمع الأخبار لما نضفنا المطبخ.",
-    "en": "We were listening to the news when we cleaned the kitchen.",
-    "pronoun": "Noi (نحن)",
-    "words": [
-      {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "pronome"
-      },
-      {
-        "it": "ascoltavamo",
-        "ar": "كنا بنسمع",
-        "note": "Ascoltare، Imperfetto",
-        "type": "verbo",
-        "verbInfinitive": "Ascoltare",
-        "group": "are",
-        "regular": true,
-        "aux": null,
-        "tense": "imperfetto",
-        "transitive": true,
-        "quiz": [
-          {
-            "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
-            "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الفعل \"Ascoltare\" منتمي لأي مجموعة؟",
-            "options": [
-              "-are",
-              "-ere",
-              "-ire",
-              "شاذ"
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"ascoltavamo\" ما؟",
-            "options": [
-              "Presente",
-              "Passato Prossimo",
-              "Imperfetto",
-              "Imperativo"
-            ],
-            "correct": 2
-          }
-        ],
-        "transitivity": "transitive",
-        "transitivityNote": null
-      },
-      {
-        "it": "le notizie",
-        "ar": "الأخبار",
-        "note": null,
-        "type": "nome_unit",
-        "gender": "f",
-        "plural": "le notizii",
-        "quiz": [
-          {
-            "q": "جنس \"le notizie\" ما؟",
-            "options": [
-              "مؤنث",
-              "جمع",
-              "محايد",
-              "مذكر"
-            ],
-            "correct": 0
-          }
-        ],
-        "nounIt": "notizie",
-        "relatedWords": []
-      },
-      {
-        "it": "quando",
-        "ar": "لما",
-        "note": null,
-        "type": "congiunzione",
-        "meaning": "عندما",
-        "grammarId": "interrogativi",
-        "quiz": [
-          {
-            "q": "\"quando\" بمعنى ما هنا؟",
-            "options": [
-              "لكن",
-              "لكي",
-              "عندما",
-              "بينما / في الوقت نفسه الذي"
-            ],
-            "correct": 2
-          }
-        ],
-        "kind": "أداة ربط زمنية"
-      },
-      {
-        "it": "abbiamo",
-        "ar": "",
-        "note": "جزء من الفعل المساعد",
-        "type": "omesso",
-        "skipReason": "ausiliare"
-      },
-      {
-        "it": "pulito",
-        "ar": "نضفنا",
-        "note": "Pulire، Passato Prossimo",
-        "type": "verbo",
-        "verbInfinitive": "Pulire",
-        "group": "ire",
-        "regular": true,
-        "aux": "avere",
-        "tense": "passato",
-        "transitive": true,
-        "quiz": [
-          {
-            "q": "النهاية القياسية للفعل المنتظم من مجموعة -ire في Passato Prossimo تكون ما؟",
-            "options": [
-              "-ato",
-              "-uto",
-              "-ito",
-              "-ando"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الفعل \"Pulire\" منتمي لأي مجموعة؟",
-            "options": [
-              "شاذ",
-              "-are",
-              "-ere",
-              "-ire"
-            ],
-            "correct": 3
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"pulito\" ما؟",
-            "options": [
-              "Imperativo",
-              "Presente",
-              "Passato Prossimo",
-              "Imperfetto"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الفعل المساعد الذي يأتي مع \"Pulire\" في الماضي ما؟",
-            "options": [
-              "essere",
-              "avere"
-            ],
-            "correct": 1
-          }
-        ],
-        "transitivity": "transitive",
-        "transitivityNote": null
-      },
-      {
-        "it": "la cucina",
-        "ar": "المطبخ",
-        "note": null,
-        "type": "nome_unit",
-        "gender": "f",
-        "plural": "le cucine",
-        "quiz": [
-          {
-            "q": "جنس \"la cucina\" ما؟",
-            "options": [
-              "مذكر",
-              "مؤنث",
-              "جمع",
-              "محايد"
-            ],
-            "correct": 1
-          }
-        ],
-        "nounIt": "cucina",
-        "relatedWords": []
-      }
-    ],
-    "conj": {
-      "verb": "Pulire",
-      "tense": "Passato Prossimo",
-      "regular": true,
-      "rows": [
-        {
-          "person": "Io (أنا)",
-          "form": "Ho pulito"
-        },
-        {
-          "person": "Tu (أنت)",
-          "form": "Hai pulito"
-        },
-        {
-          "person": "Lui (هو)",
-          "form": "Ha pulito"
-        },
-        {
-          "person": "Lei (هي)",
-          "form": "Ha pulito"
-        },
-        {
-          "person": "Noi (نحن)",
-          "form": "Abbiamo pulito"
-        },
-        {
-          "person": "Voi (أنتم)",
-          "form": "Avete pulito"
-        },
-        {
-          "person": "Loro (هم)",
-          "form": "Hanno pulito"
-        }
-      ]
-    },
-    "quiz": [
-      {
-        "wordIt": "ascoltavamo",
-        "q": "الفعل \"ascoltavamo\" — منتمي لأي مجموعة؟",
-        "options": [
-          "شاذ",
-          "-are",
-          "-ere",
-          "-ire"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "ascoltavamo",
-        "q": "الزمن الذي صُرِّف فيه \"ascoltavamo\" ما؟",
-        "options": [
-          "Presente",
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "le notizie",
-        "q": "جنس \"le notizie\" ما؟",
-        "options": [
-          "مؤنث",
-          "جمع",
-          "محايد",
-          "مذكر"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "quando",
-        "q": "\"quando\" بمعنى ما هنا؟",
-        "options": [
-          "لكي",
-          "ولو",
-          "عندما",
-          "لكن"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "pulito",
-        "q": "الفعل \"pulito\" — منتمي لأي مجموعة؟",
-        "options": [
-          "شاذ",
-          "-are",
-          "-ere",
-          "-ire"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "pulito",
-        "q": "الزمن الذي صُرِّف فيه \"pulito\" ما؟",
-        "options": [
-          "Presente",
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "pulito",
-        "q": "الفعل المساعد الذي يأتي مع \"Pulire\" في الـ Passato Prossimo ما؟",
-        "options": [
-          "essere",
-          "ho",
-          "sono",
-          "avere"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "la cucina",
-        "q": "جنس \"la cucina\" ما؟",
-        "options": [
-          "جمع",
-          "محايد",
-          "مذكر",
-          "مؤنث"
-        ],
-        "correct": 3
-      }
-    ]
-  },
-  {
-    "it": "Noi abbiamo promesso di tornare mentre speravamo in un futuro migliore",
-    "ar": "نحن وعدنا بالرجوع وكنا بنتمنى مستقبل أفضل.",
-    "en": "We promised to come back while we were hoping for a better future.",
-    "pronoun": "Noi (نحن)",
-    "words": [
-      {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "pronome"
-      },
-      {
-        "it": "abbiamo",
-        "ar": "",
-        "note": "جزء من الفعل المساعد",
-        "type": "omesso",
-        "skipReason": "ausiliare"
-      },
-      {
-        "it": "promesso",
-        "ar": "وعدنا",
-        "note": "Promettere، Passato Prossimo",
-        "type": "verbo",
-        "verbInfinitive": "Promettere",
-        "group": "ere",
-        "regular": false,
-        "aux": "avere",
-        "tense": "passato",
-        "transitive": true,
-        "quiz": [
-          {
-            "q": "الفعل \"Promettere\" منتمي لأي مجموعة؟",
-            "options": [
-              "شاذ",
-              "-are",
-              "-ere",
-              "-ire"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"promesso\" ما؟",
-            "options": [
-              "Imperativo",
-              "Presente",
-              "Passato Prossimo",
-              "Imperfetto"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الفعل المساعد الذي يأتي مع \"Promettere\" في الماضي ما؟",
-            "options": [
-              "essere",
-              "avere"
-            ],
-            "correct": 1
-          }
-        ],
-        "transitivity": "transitive",
-        "transitivityNote": null
-      },
-      {
-        "it": "di tornare",
-        "ar": "بالرجوع",
-        "note": null,
-        "type": "sintagma_prep",
-        "prep": "di",
-        "prepNote": "يدل على ملكية أو أصل أو موضوع (بتاع / من / عن) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"di tornare\"؟ الأصل ما؟",
-            "options": [
-              "di",
-              "a",
-              "in",
-              "da"
-            ],
-            "correct": 0
-          }
-        ]
-      },
-      {
-        "it": "mentre",
-        "ar": "وكنا",
-        "note": null,
-        "type": "congiunzione",
-        "meaning": "بينما / في الوقت نفسه الذي",
-        "grammarId": "mentre",
-        "quiz": [
-          {
-            "q": "\"mentre\" بمعنى ما هنا؟",
-            "options": [
-              "عندما",
-              "لكن",
-              "لكي",
-              "بينما / في الوقت نفسه الذي"
-            ],
-            "correct": 3
-          }
-        ],
-        "kind": "أداة ربط زمنية"
-      },
-      {
-        "it": "speravamo",
-        "ar": "بنتمنى",
-        "note": "Sperare، Imperfetto",
-        "type": "verbo",
-        "verbInfinitive": "Sperare",
-        "group": "are",
-        "regular": true,
-        "aux": null,
-        "tense": "imperfetto",
-        "transitive": false,
-        "quiz": [
-          {
-            "q": "نهايات الفعل المنتظم من مجموعة -ere في Imperfetto تبدأ بما؟",
-            "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 1
-          },
-          {
-            "q": "الفعل \"Sperare\" منتمي لأي مجموعة؟",
-            "options": [
-              "-ire",
-              "شاذ",
-              "-are",
-              "-ere"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"speravamo\" ما؟",
-            "options": [
-              "Imperfetto",
-              "Imperativo",
-              "Presente",
-              "Passato Prossimo"
-            ],
-            "correct": 0
-          }
-        ],
-        "transitivity": "intransitive",
-        "transitivityNote": "يأتي هنا مع in أو di، مثل sperare in un futuro و sperare di vincere"
-      },
-      {
-        "it": "in un futuro",
-        "ar": "في مستقبل",
-        "note": null,
-        "type": "sintagma_prep",
-        "prep": "in",
-        "prepNote": "يدل على مكان داخل شيء أو وسيلة مواصلة (في / بـ)",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"in un futuro\"؟ الأصل ما؟",
-            "options": [
-              "per",
-              "in",
-              "su",
-              "con"
-            ],
-            "correct": 1
-          }
-        ]
-      },
-      {
-        "it": "migliore",
-        "ar": "أفضل",
-        "note": null,
-        "type": "aggettivo",
-        "invariant": false,
-        "forms": {
-          "ms": "migliore",
-          "fs": "migliore",
-          "mp": "migliori",
-          "fp": "migliori"
-        },
-        "quiz": [
-          {
-            "q": "\"migliore\" هنا يعمل كـ ما في الجملة؟",
-            "options": [
-              "فعل",
-              "اسم",
-              "صفة/ظرف",
-              "حرف جر"
-            ],
-            "correct": 2
-          }
-        ],
-        "usage": "يأتي بعد الاسم كصفة، وبيتغيّر حسب جنس وعدد الاسم اللي بتوصفه"
-      }
-    ],
-    "conj": {
-      "verb": "Promettere",
-      "tense": "Passato Prossimo",
-      "regular": false,
-      "rows": [
-        {
-          "person": "Io (أنا)",
-          "form": "Ho promesso"
-        },
-        {
-          "person": "Tu (أنت)",
-          "form": "Hai promesso"
-        },
-        {
-          "person": "Lui (هو)",
-          "form": "Ha promesso"
-        },
-        {
-          "person": "Lei (هي)",
-          "form": "Ha promesso"
-        },
-        {
-          "person": "Noi (نحن)",
-          "form": "Abbiamo promesso"
-        },
-        {
-          "person": "Voi (أنتم)",
-          "form": "Avete promesso"
-        },
-        {
-          "person": "Loro (هم)",
-          "form": "Hanno promesso"
-        }
-      ]
-    },
-    "quiz": [
-      {
-        "wordIt": "promesso",
-        "q": "الفعل \"promesso\" — منتمي لأي مجموعة؟",
-        "options": [
-          "شاذ",
-          "-are",
-          "-ere",
-          "-ire"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "promesso",
-        "q": "الزمن الذي صُرِّف فيه \"promesso\" ما؟",
-        "options": [
-          "Presente",
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "promesso",
-        "q": "الفعل المساعد الذي يأتي مع \"Promettere\" في الـ Passato Prossimo ما؟",
-        "options": [
-          "essere",
-          "ho",
-          "sono",
-          "avere"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "di tornare",
-        "q": "لماذا استخدمنا حرف الجر في \"di tornare\"؟ الأصل ما؟",
-        "options": [
-          "su",
-          "con",
-          "di",
-          "da"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "mentre",
-        "q": "\"mentre\" بمعنى ما هنا؟",
-        "options": [
-          "ولو",
-          "بينما / في الوقت نفسه الذي",
-          "لكن",
-          "لكي"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "speravamo",
-        "q": "الفعل \"speravamo\" — منتمي لأي مجموعة؟",
-        "options": [
-          "-are",
-          "-ere",
-          "-ire",
-          "شاذ"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "speravamo",
-        "q": "الزمن الذي صُرِّف فيه \"speravamo\" ما؟",
-        "options": [
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo",
-          "Presente"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "in un futuro",
-        "q": "لماذا استخدمنا حرف الجر في \"in un futuro\"؟ الأصل ما؟",
-        "options": [
-          "fra",
-          "a",
-          "in",
-          "tra"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "migliore",
-        "q": "\"migliore\" هنا يعمل كـ ما في الجملة؟",
-        "options": [
-          "حرف جر",
-          "فعل",
-          "اسم",
-          "صفة/ظرف"
-        ],
-        "correct": 3
-      }
-    ]
-  },
-  {
-    "it": "Noi speravamo di vincere quando abbiamo promesso una festa a tutti",
-    "ar": "نحن كنا بنتمنى الفوز لما وعدنا بحفلة للكل.",
-    "en": "We were hoping to win when we promised a party to everyone.",
-    "pronoun": "Noi (نحن)",
-    "words": [
-      {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "pronome"
-      },
-      {
-        "it": "speravamo",
-        "ar": "كنا بنتمنى",
-        "note": "Sperare، Imperfetto",
-        "type": "verbo",
-        "verbInfinitive": "Sperare",
-        "group": "are",
-        "regular": true,
-        "aux": null,
-        "tense": "imperfetto",
-        "transitive": false,
-        "quiz": [
-          {
-            "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
-            "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الفعل \"Sperare\" منتمي لأي مجموعة؟",
-            "options": [
-              "-ere",
-              "-ire",
-              "شاذ",
-              "-are"
-            ],
-            "correct": 3
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"speravamo\" ما؟",
-            "options": [
-              "Passato Prossimo",
-              "Imperfetto",
-              "Imperativo",
-              "Presente"
-            ],
-            "correct": 1
-          }
-        ],
-        "transitivity": "intransitive",
-        "transitivityNote": "يأتي هنا مع in أو di، مثل sperare in un futuro و sperare di vincere"
-      },
-      {
-        "it": "di vincere",
-        "ar": "الفوز",
-        "note": null,
-        "type": "sintagma_prep",
-        "prep": "di",
-        "prepNote": "يدل على ملكية أو أصل أو موضوع (بتاع / من / عن) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"di vincere\"؟ الأصل ما؟",
-            "options": [
-              "fra",
-              "a",
-              "di",
-              "tra"
-            ],
-            "correct": 2
-          }
-        ]
-      },
-      {
-        "it": "quando",
-        "ar": "لما",
-        "note": null,
-        "type": "congiunzione",
-        "meaning": "عندما",
-        "grammarId": "interrogativi",
-        "quiz": [
-          {
-            "q": "\"quando\" بمعنى ما هنا؟",
-            "options": [
-              "لكي",
-              "عندما",
-              "بينما / في الوقت نفسه الذي",
-              "لكن"
-            ],
-            "correct": 1
-          }
-        ],
-        "kind": "أداة ربط زمنية"
-      },
-      {
-        "it": "abbiamo",
-        "ar": "",
-        "note": "جزء من الفعل المساعد",
-        "type": "omesso",
-        "skipReason": "ausiliare"
-      },
-      {
-        "it": "promesso",
-        "ar": "وعدنا",
-        "note": "Promettere، Passato Prossimo",
-        "type": "verbo",
-        "verbInfinitive": "Promettere",
-        "group": "ere",
-        "regular": false,
-        "aux": "avere",
-        "tense": "passato",
-        "transitive": true,
-        "quiz": [
-          {
-            "q": "الفعل \"Promettere\" منتمي لأي مجموعة؟",
-            "options": [
-              "-are",
-              "-ere",
-              "-ire",
-              "شاذ"
-            ],
-            "correct": 1
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"promesso\" ما؟",
-            "options": [
-              "Presente",
-              "Passato Prossimo",
-              "Imperfetto",
-              "Imperativo"
-            ],
-            "correct": 1
-          },
-          {
-            "q": "الفعل المساعد الذي يأتي مع \"Promettere\" في الماضي ما؟",
-            "options": [
-              "avere",
-              "essere"
-            ],
-            "correct": 0
-          }
-        ],
-        "transitivity": "transitive",
-        "transitivityNote": null
-      },
-      {
-        "it": "una festa",
-        "ar": "حفلة",
-        "note": null,
-        "type": "nome_unit",
-        "gender": "f",
-        "plural": "le feste",
-        "quiz": [
-          {
-            "q": "جنس \"una festa\" ما؟",
-            "options": [
-              "مؤنث",
-              "جمع",
-              "محايد",
-              "مذكر"
-            ],
-            "correct": 0
-          }
-        ],
-        "nounIt": "festa",
-        "relatedWords": []
-      },
-      {
-        "it": "a tutti",
-        "ar": "للكل",
-        "note": null,
-        "type": "sintagma_prep",
-        "prep": "a",
-        "prepNote": "يدل على اتجاه أو مكان أو زمن (لـ / في / على حسب السياق) — لا توجد أداة تعريف هنا لأن الاسم يعبّر عن مفهوم عام ليس شيء محدد",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"a tutti\"؟ الأصل ما؟",
-            "options": [
-              "su",
-              "con",
-              "a",
-              "da"
-            ],
-            "correct": 2
-          }
-        ]
-      }
-    ],
-    "conj": {
-      "verb": "Promettere",
-      "tense": "Passato Prossimo",
-      "regular": false,
-      "rows": [
-        {
-          "person": "Io (أنا)",
-          "form": "Ho promesso"
-        },
-        {
-          "person": "Tu (أنت)",
-          "form": "Hai promesso"
-        },
-        {
-          "person": "Lui (هو)",
-          "form": "Ha promesso"
-        },
-        {
-          "person": "Lei (هي)",
-          "form": "Ha promesso"
-        },
-        {
-          "person": "Noi (نحن)",
-          "form": "Abbiamo promesso"
-        },
-        {
-          "person": "Voi (أنتم)",
-          "form": "Avete promesso"
-        },
-        {
-          "person": "Loro (هم)",
-          "form": "Hanno promesso"
-        }
-      ]
-    },
-    "quiz": [
-      {
-        "wordIt": "speravamo",
-        "q": "الفعل \"speravamo\" — منتمي لأي مجموعة؟",
-        "options": [
-          "-are",
-          "-ere",
-          "-ire",
-          "شاذ"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "speravamo",
-        "q": "الزمن الذي صُرِّف فيه \"speravamo\" ما؟",
-        "options": [
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo",
-          "Presente"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "di vincere",
-        "q": "لماذا استخدمنا حرف الجر في \"di vincere\"؟ الأصل ما؟",
-        "options": [
-          "su",
-          "con",
-          "di",
-          "da"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "quando",
-        "q": "\"quando\" بمعنى ما هنا؟",
-        "options": [
-          "ولو",
-          "عندما",
-          "لكن",
-          "لكي"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "promesso",
-        "q": "الفعل \"promesso\" — منتمي لأي مجموعة؟",
-        "options": [
-          "-are",
-          "-ere",
-          "-ire",
-          "شاذ"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "promesso",
-        "q": "الزمن الذي صُرِّف فيه \"promesso\" ما؟",
-        "options": [
-          "Passato Prossimo",
-          "Imperfetto",
-          "Imperativo",
-          "Presente"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "promesso",
-        "q": "الفعل المساعد الذي يأتي مع \"Promettere\" في الـ Passato Prossimo ما؟",
-        "options": [
-          "ho",
-          "sono",
           "avere",
           "essere"
         ],
-        "correct": 2
+        "correct": 1
       },
       {
-        "wordIt": "una festa",
-        "q": "جنس \"una festa\" ما؟",
+        "wordIt": "andati",
+        "q": "الزمن المستخدم في «Siamo andati» إيه؟",
         "options": [
-          "محايد",
-          "مذكر",
-          "مؤنث",
-          "جمع"
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
         ],
         "correct": 2
       },
       {
-        "wordIt": "a tutti",
-        "q": "لماذا استخدمنا حرف الجر في \"a tutti\"؟ الأصل ما؟",
+        "wordIt": "mentre",
+        "q": "«mentre» معناها إيه هنا؟",
         "options": [
-          "a",
-          "in",
-          "di",
-          "da"
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
         ],
-        "correct": 0
+        "correct": 1
+      },
+      {
+        "wordIt": "traducevamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Tradurre» في Imperfetto؟",
+        "options": [
+          "Traducevo",
+          "Traducevamo",
+          "Traducevi",
+          "Traduceva"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "traducevamo",
+        "q": "التصريف «Traducevamo» في Imperfetto يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "traducevamo",
+        "q": "الزمن المستخدم في «Traducevamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "traducevamo",
+        "q": "الفعل «Tradurre» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+        "options": [
+          "منتظم",
+          "شاذ/ذو جذر خاص"
+        ],
+        "correct": 1
       }
-    ]
+    ],
+    "prepositionFocus": {
+      "base": "di",
+      "id": "di_infinito",
+      "title": "تكملة الفعل بالمصدر",
+      "meaning": "أن / بـ",
+      "description": "بعض الأفعال تحتاج di قبل المصدر.",
+      "form": "di",
+      "it": "Ho deciso di partire",
+      "ar": "قررت أن أغادر",
+      "en": "I decided to leave",
+      "color": "#6d4c41",
+      "grammarId": "prep_di"
+    }
   },
   {
-    "it": "Noi abbiamo ringraziato il medico mentre ci aiutava con la ricetta",
-    "ar": "نحن شكرنا الدكتور وهو كان بيساعدنا في الروشتة.",
-    "en": "We thanked the doctor while he was helping us with the prescription.",
+    "it": "Siamo usciti dallo studio perché producevamo un podcast; Vado a Milano",
+    "ar": "إحنا خرجنا من الاستوديو لأن كنا بننتج بودكاست.؛ أذهب إلى ميلانو",
+    "en": "We went out dallo studio because were producing un podcast.; I go to Milan",
     "pronoun": "Noi (نحن)",
     "words": [
       {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "pronome"
-      },
-      {
-        "it": "abbiamo",
+        "it": "Siamo",
         "ar": "",
         "note": "جزء من الفعل المساعد",
         "type": "omesso",
         "skipReason": "ausiliare"
       },
       {
-        "it": "ringraziato",
-        "ar": "شكرنا",
-        "note": "Ringraziare، Passato Prossimo",
+        "it": "usciti",
+        "ar": "خرجنا",
+        "note": "Uscire، Passato Prossimo",
         "type": "verbo",
-        "verbInfinitive": "Ringraziare",
-        "group": "are",
-        "regular": true,
-        "aux": "avere",
+        "verbInfinitive": "Uscire",
+        "group": "ire",
+        "regular": false,
+        "aux": "essere",
         "tense": "passato",
         "transitive": true,
         "quiz": [
           {
-            "q": "النهاية القياسية للفعل المنتظم من مجموعة -ere في Passato Prossimo تكون ما؟",
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Uscire» في Passato Prossimo؟",
             "options": [
-              "-ato",
-              "-uto",
-              "-ito",
-              "-ando"
+              "Sono uscito",
+              "Siamo usciti",
+              "Sei uscito",
+              "È uscito"
             ],
             "correct": 1
           },
           {
-            "q": "الفعل \"Ringraziare\" منتمي لأي مجموعة؟",
+            "q": "التصريف «Siamo usciti» في Passato Prossimo يعود إلى أي ضمير؟",
             "options": [
-              "شاذ",
-              "-are",
-              "-ere",
-              "-ire"
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
             ],
             "correct": 1
           },
           {
-            "q": "الزمن الذي صُرِّف به \"ringraziato\" ما؟",
+            "q": "الفعل المساعد مع «Uscire» في Passato Prossimo إيه؟",
             "options": [
-              "Imperativo",
+              "avere",
+              "essere"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Siamo usciti» إيه؟",
+            "options": [
               "Presente",
-              "Passato Prossimo",
-              "Imperfetto"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الفعل المساعد الذي يأتي مع \"Ringraziare\" في الماضي ما؟",
-            "options": [
-              "essere",
-              "avere"
-            ],
-            "correct": 1
-          }
-        ],
-        "transitivity": "transitive",
-        "transitivityNote": null
-      },
-      {
-        "it": "il medico",
-        "ar": "الدكتور",
-        "note": null,
-        "type": "nome_unit",
-        "gender": "m",
-        "plural": "i medici",
-        "quiz": [
-          {
-            "q": "جنس \"il medico\" ما؟",
-            "options": [
-              "مذكر",
-              "مؤنث",
-              "جمع",
-              "محايد"
-            ],
-            "correct": 0
-          }
-        ],
-        "nounIt": "medico",
-        "relatedWords": []
-      },
-      {
-        "it": "mentre",
-        "ar": "وهو",
-        "note": null,
-        "type": "congiunzione",
-        "meaning": "بينما / في الوقت نفسه الذي",
-        "grammarId": "mentre",
-        "quiz": [
-          {
-            "q": "\"mentre\" بمعنى ما هنا؟",
-            "options": [
-              "عندما",
-              "لكن",
-              "لكي",
-              "بينما / في الوقت نفسه الذي"
-            ],
-            "correct": 3
-          }
-        ],
-        "kind": "أداة ربط زمنية"
-      },
-      {
-        "it": "ci",
-        "ar": "نا",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "particella"
-      },
-      {
-        "it": "aiutava",
-        "ar": "كان بيساعد",
-        "note": "Aiutare، Imperfetto",
-        "type": "verbo",
-        "verbInfinitive": "Aiutare",
-        "group": "are",
-        "regular": true,
-        "aux": null,
-        "tense": "imperfetto",
-        "transitive": true,
-        "quiz": [
-          {
-            "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
-            "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الفعل \"Aiutare\" منتمي لأي مجموعة؟",
-            "options": [
-              "-ire",
-              "شاذ",
-              "-are",
-              "-ere"
-            ],
-            "correct": 2
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"aiutava\" ما؟",
-            "options": [
               "Imperfetto",
-              "Imperativo",
-              "Presente",
-              "Passato Prossimo"
-            ],
-            "correct": 0
-          }
-        ],
-        "transitivity": "transitive",
-        "transitivityNote": null
-      },
-      {
-        "it": "con la ricetta",
-        "ar": "في الروشتة",
-        "note": null,
-        "type": "sintagma_prep",
-        "prep": "con",
-        "prepNote": "يدل على مصاحبة أو أداة (مع / بـ)",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"con la ricetta\"؟ الأصل ما؟",
-            "options": [
-              "in",
-              "con",
-              "fra",
-              "a"
-            ],
-            "correct": 1
-          }
-        ]
-      }
-    ],
-    "conj": {
-      "verb": "Ringraziare",
-      "tense": "Passato Prossimo",
-      "regular": true,
-      "rows": [
-        {
-          "person": "Io (أنا)",
-          "form": "Ho ringraziato"
-        },
-        {
-          "person": "Tu (أنت)",
-          "form": "Hai ringraziato"
-        },
-        {
-          "person": "Lui (هو)",
-          "form": "Ha ringraziato"
-        },
-        {
-          "person": "Lei (هي)",
-          "form": "Ha ringraziato"
-        },
-        {
-          "person": "Noi (نحن)",
-          "form": "Abbiamo ringraziato"
-        },
-        {
-          "person": "Voi (أنتم)",
-          "form": "Avete ringraziato"
-        },
-        {
-          "person": "Loro (هم)",
-          "form": "Hanno ringraziato"
-        }
-      ]
-    },
-    "quiz": [
-      {
-        "wordIt": "ringraziato",
-        "q": "الفعل \"ringraziato\" — منتمي لأي مجموعة؟",
-        "options": [
-          "-ere",
-          "-ire",
-          "شاذ",
-          "-are"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "ringraziato",
-        "q": "الزمن الذي صُرِّف فيه \"ringraziato\" ما؟",
-        "options": [
-          "Imperfetto",
-          "Imperativo",
-          "Presente",
-          "Passato Prossimo"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "ringraziato",
-        "q": "الفعل المساعد الذي يأتي مع \"Ringraziare\" في الـ Passato Prossimo ما؟",
-        "options": [
-          "sono",
-          "avere",
-          "essere",
-          "ho"
-        ],
-        "correct": 1
-      },
-      {
-        "wordIt": "il medico",
-        "q": "جنس \"il medico\" ما؟",
-        "options": [
-          "مذكر",
-          "مؤنث",
-          "جمع",
-          "محايد"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "mentre",
-        "q": "\"mentre\" بمعنى ما هنا؟",
-        "options": [
-          "لكن",
-          "لكي",
-          "ولو",
-          "بينما / في الوقت نفسه الذي"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "aiutava",
-        "q": "الفعل \"aiutava\" — منتمي لأي مجموعة؟",
-        "options": [
-          "-ire",
-          "شاذ",
-          "-are",
-          "-ere"
-        ],
-        "correct": 2
-      },
-      {
-        "wordIt": "aiutava",
-        "q": "الزمن الذي صُرِّف فيه \"aiutava\" ما؟",
-        "options": [
-          "Imperativo",
-          "Presente",
-          "Passato Prossimo",
-          "Imperfetto"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "con la ricetta",
-        "q": "لماذا استخدمنا حرف الجر في \"con la ricetta\"؟ الأصل ما؟",
-        "options": [
-          "con",
-          "a",
-          "in",
-          "di"
-        ],
-        "correct": 0
-      }
-    ]
-  },
-  {
-    "it": "Noi aiutavamo il vicino quando ha ringraziato tutti per la sorpresa",
-    "ar": "نحن كنا بنساعد الجار لما شكر الكل على المفاجأة.",
-    "en": "We were helping the neighbor when he thanked everyone for the surprise.",
-    "pronoun": "Noi (نحن)",
-    "words": [
-      {
-        "it": "Noi",
-        "ar": "نحن",
-        "note": null,
-        "type": "omesso",
-        "skipReason": "pronome"
-      },
-      {
-        "it": "aiutavamo",
-        "ar": "كنا بنساعد",
-        "note": "Aiutare، Imperfetto",
-        "type": "verbo",
-        "verbInfinitive": "Aiutare",
-        "group": "are",
-        "regular": true,
-        "aux": null,
-        "tense": "imperfetto",
-        "transitive": true,
-        "quiz": [
-          {
-            "q": "نهايات الفعل المنتظم من مجموعة -are في Imperfetto تبدأ بما؟",
-            "options": [
-              "-avo...",
-              "-evo...",
-              "-ivo...",
-              "-erò..."
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الفعل \"Aiutare\" منتمي لأي مجموعة؟",
-            "options": [
-              "-are",
-              "-ere",
-              "-ire",
-              "شاذ"
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الزمن الذي صُرِّف به \"aiutavamo\" ما؟",
-            "options": [
-              "Presente",
               "Passato Prossimo",
-              "Imperfetto",
               "Imperativo"
             ],
             "correct": 2
@@ -2912,102 +2101,80 @@ const LESSON_NOI = [
         "transitivityNote": null
       },
       {
-        "it": "il vicino",
-        "ar": "الجار",
+        "it": "dallo studio",
+        "ar": "من الاستوديو",
         "note": null,
-        "type": "nome_unit",
-        "gender": "m",
-        "plural": "i vicini",
-        "quiz": [
-          {
-            "q": "جنس \"il vicino\" ما؟",
-            "options": [
-              "مؤنث",
-              "جمع",
-              "محايد",
-              "مذكر"
-            ],
-            "correct": 3
-          }
-        ],
-        "nounIt": "vicino",
-        "relatedWords": []
+        "type": "altro",
+        "quiz": []
       },
       {
-        "it": "quando",
-        "ar": "لما",
+        "it": "perché",
+        "ar": "لأن",
         "note": null,
         "type": "congiunzione",
-        "meaning": "عندما",
-        "grammarId": "interrogativi",
+        "meaning": "لأن",
         "quiz": [
           {
-            "q": "\"quando\" بمعنى ما هنا؟",
+            "q": "«perché» معناها إيه هنا؟",
             "options": [
               "لكن",
-              "لكي",
-              "عندما",
-              "بينما / في الوقت نفسه الذي"
+              "بينما",
+              "لأن",
+              "بعدما"
             ],
             "correct": 2
           }
         ],
-        "kind": "أداة ربط زمنية"
+        "kind": "أداة ربط",
+        "grammarId": "congiunzioni"
       },
       {
-        "it": "ha",
-        "ar": "",
-        "note": "جزء من الفعل المساعد",
-        "type": "omesso",
-        "skipReason": "ausiliare"
-      },
-      {
-        "it": "ringraziato",
-        "ar": "شكر",
-        "note": "Ringraziare، Passato Prossimo",
+        "it": "producevamo",
+        "ar": "كنا بننتج",
+        "note": "Produrre، Imperfetto",
         "type": "verbo",
-        "verbInfinitive": "Ringraziare",
-        "group": "are",
-        "regular": true,
-        "aux": "avere",
-        "tense": "passato",
+        "verbInfinitive": "Produrre",
+        "group": "irregolare",
+        "regular": false,
+        "aux": null,
+        "tense": "imperfetto",
         "transitive": true,
         "quiz": [
           {
-            "q": "النهاية القياسية للفعل المنتظم من مجموعة -are في Passato Prossimo تكون ما؟",
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Produrre» في Imperfetto؟",
             "options": [
-              "-ato",
-              "-uto",
-              "-ito",
-              "-ando"
-            ],
-            "correct": 0
-          },
-          {
-            "q": "الفعل \"Ringraziare\" منتمي لأي مجموعة؟",
-            "options": [
-              "شاذ",
-              "-are",
-              "-ere",
-              "-ire"
+              "Producevo",
+              "Producevamo",
+              "Producevi",
+              "Produceva"
             ],
             "correct": 1
           },
           {
-            "q": "الزمن الذي صُرِّف به \"ringraziato\" ما؟",
+            "q": "التصريف «Producevamo» في Imperfetto يعود إلى أي ضمير؟",
             "options": [
-              "Imperativo",
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Producevamo» إيه؟",
+            "options": [
               "Presente",
               "Passato Prossimo",
-              "Imperfetto"
+              "Imperfetto",
+              "Imperativo"
             ],
             "correct": 2
           },
           {
-            "q": "الفعل المساعد الذي يأتي مع \"Ringraziare\" في الماضي ما؟",
+            "q": "الفعل «Produrre» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
             "options": [
-              "essere",
-              "avere"
+              "منتظم",
+              "شاذ/ذو جذر خاص"
             ],
             "correct": 1
           }
@@ -3016,187 +2183,1222 @@ const LESSON_NOI = [
         "transitivityNote": null
       },
       {
-        "it": "tutti",
-        "ar": "الكل",
+        "it": "un podcast",
+        "ar": "بودكاست",
         "note": null,
-        "type": "pronome",
-        "invariant": false,
-        "forms": {
-          "ms": "tutto",
-          "fs": "tutta",
-          "mp": "tutti",
-          "fp": "tutte"
-        },
-        "quiz": [
-          {
-            "q": "\"tutti\" هنا يعمل كـ ما في الجملة؟",
-            "options": [
-              "فعل",
-              "اسم",
-              "صفة/ظرف",
-              "حرف جر"
-            ],
-            "correct": 2
-          }
-        ],
-        "usage": "ضمير غير محدد بمعنى: الجميع"
+        "type": "altro",
+        "quiz": []
       },
       {
-        "it": "per la sorpresa",
-        "ar": "على المفاجأة",
+        "it": ";",
+        "ar": "",
         "note": null,
-        "type": "sintagma_prep",
-        "prep": "per",
-        "prepNote": "يدل على غرض أو مدة أو مسار (لكي / لمدة / عن طريق)",
-        "quiz": [
-          {
-            "q": "لماذا استخدمنا حرف الجر في \"per la sorpresa\"؟ الأصل ما؟",
-            "options": [
-              "con",
-              "tra",
-              "fra",
-              "per"
-            ],
-            "correct": 3
-          }
-        ]
+        "type": "omesso",
+        "quiz": []
+      },
+      {
+        "it": "V",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "a",
+        "ar": "إلى",
+        "note": "الاتجاه إلى مدينة أو مكان: يستخدم للحركة نحو مدينة أو مكان محدد.",
+        "type": "preposizione",
+        "grammarId": "prep_a",
+        "prepUsage": {
+          "id": "a_direzione",
+          "title": "الاتجاه إلى مدينة أو مكان",
+          "meaning": "إلى",
+          "color": "#e53935",
+          "base": "a"
+        },
+        "quiz": []
+      },
+      {
+        "it": "do a Milano",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
       }
     ],
     "conj": {
-      "verb": "Ringraziare",
+      "verb": "Uscire",
       "tense": "Passato Prossimo",
-      "regular": true,
+      "regular": false,
       "rows": [
         {
           "person": "Io (أنا)",
-          "form": "Ho ringraziato"
+          "form": "Sono uscito/a"
         },
         {
           "person": "Tu (أنت)",
-          "form": "Hai ringraziato"
+          "form": "Sei uscito/a"
         },
         {
           "person": "Lui (هو)",
-          "form": "Ha ringraziato"
+          "form": "È uscito"
         },
         {
           "person": "Lei (هي)",
-          "form": "Ha ringraziato"
+          "form": "È uscita"
         },
         {
-          "person": "Noi (نحن)",
-          "form": "Abbiamo ringraziato"
+          "person": "Noi (إحنا)",
+          "form": "Siamo usciti/e"
         },
         {
           "person": "Voi (أنتم)",
-          "form": "Avete ringraziato"
+          "form": "Siete usciti/e"
         },
         {
           "person": "Loro (هم)",
-          "form": "Hanno ringraziato"
+          "form": "Sono usciti/e"
         }
       ]
     },
     "quiz": [
       {
-        "wordIt": "aiutavamo",
-        "q": "الفعل \"aiutavamo\" — منتمي لأي مجموعة؟",
+        "wordIt": "usciti",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Uscire» في Passato Prossimo؟",
         "options": [
-          "-ere",
-          "-ire",
-          "شاذ",
-          "-are"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "aiutavamo",
-        "q": "الزمن الذي صُرِّف فيه \"aiutavamo\" ما؟",
-        "options": [
-          "Imperfetto",
-          "Imperativo",
-          "Presente",
-          "Passato Prossimo"
-        ],
-        "correct": 0
-      },
-      {
-        "wordIt": "il vicino",
-        "q": "جنس \"il vicino\" ما؟",
-        "options": [
-          "محايد",
-          "مذكر",
-          "مؤنث",
-          "جمع"
+          "Sono uscito",
+          "Siamo usciti",
+          "Sei uscito",
+          "È uscito"
         ],
         "correct": 1
       },
       {
-        "wordIt": "quando",
-        "q": "\"quando\" بمعنى ما هنا؟",
+        "wordIt": "usciti",
+        "q": "التصريف «Siamo usciti» في Passato Prossimo يعود إلى أي ضمير؟",
         "options": [
-          "عندما",
-          "لكن",
-          "لكي",
-          "ولو"
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
         ],
-        "correct": 0
+        "correct": 1
       },
       {
-        "wordIt": "ringraziato",
-        "q": "الفعل \"ringraziato\" — منتمي لأي مجموعة؟",
+        "wordIt": "usciti",
+        "q": "الفعل المساعد مع «Uscire» في Passato Prossimo إيه؟",
         "options": [
-          "-ere",
-          "-ire",
-          "شاذ",
-          "-are"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "ringraziato",
-        "q": "الزمن الذي صُرِّف فيه \"ringraziato\" ما؟",
-        "options": [
-          "Imperfetto",
-          "Imperativo",
-          "Presente",
-          "Passato Prossimo"
-        ],
-        "correct": 3
-      },
-      {
-        "wordIt": "ringraziato",
-        "q": "الفعل المساعد الذي يأتي مع \"Ringraziare\" في الـ Passato Prossimo ما؟",
-        "options": [
-          "sono",
           "avere",
-          "essere",
-          "ho"
+          "essere"
         ],
         "correct": 1
       },
       {
-        "wordIt": "tutti",
-        "q": "\"tutti\" هنا يعمل كـ ما في الجملة؟",
+        "wordIt": "usciti",
+        "q": "الزمن المستخدم في «Siamo usciti» إيه؟",
         "options": [
-          "فعل",
-          "اسم",
-          "صفة/ظرف",
-          "حرف جر"
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
         ],
         "correct": 2
       },
       {
-        "wordIt": "per la sorpresa",
-        "q": "لماذا استخدمنا حرف الجر في \"per la sorpresa\"؟ الأصل ما؟",
+        "wordIt": "perché",
+        "q": "«perché» معناها إيه هنا؟",
         "options": [
-          "in",
-          "di",
-          "da",
-          "per"
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
         ],
-        "correct": 3
+        "correct": 2
+      },
+      {
+        "wordIt": "producevamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Produrre» في Imperfetto؟",
+        "options": [
+          "Producevo",
+          "Producevamo",
+          "Producevi",
+          "Produceva"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "producevamo",
+        "q": "التصريف «Producevamo» في Imperfetto يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "producevamo",
+        "q": "الزمن المستخدم في «Producevamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "producevamo",
+        "q": "الفعل «Produrre» في Imperfetto منتظم ولا شاذ/ذو جذر خاص؟",
+        "options": [
+          "منتظم",
+          "شاذ/ذو جذر خاص"
+        ],
+        "correct": 1
       }
-    ]
+    ],
+    "prepositionFocus": {
+      "base": "a",
+      "id": "a_direzione",
+      "title": "الاتجاه إلى مدينة أو مكان",
+      "meaning": "إلى",
+      "description": "يستخدم للحركة نحو مدينة أو مكان محدد.",
+      "form": "a",
+      "it": "Vado a Milano",
+      "ar": "أذهب إلى ميلانو",
+      "en": "I go to Milan",
+      "color": "#e53935",
+      "grammarId": "prep_a"
+    }
+  },
+  {
+    "it": "Abbiamo avuto un'idea mentre parlavamo del progetto; Vivo a Roma",
+    "ar": "إحنا كان عندنا فكرة بينما كنا بنتكلم عن المشروع.؛ أعيش في روما",
+    "en": "We had un'idea while were speaking del progetto.; I live in Rome",
+    "pronoun": "Noi (نحن)",
+    "words": [
+      {
+        "it": "Abbiamo",
+        "ar": "",
+        "note": "جزء من الفعل المساعد",
+        "type": "omesso",
+        "skipReason": "ausiliare"
+      },
+      {
+        "it": "avuto",
+        "ar": "كان عندنا",
+        "note": "Avere، Passato Prossimo",
+        "type": "verbo",
+        "verbInfinitive": "Avere",
+        "group": "ere",
+        "regular": false,
+        "aux": "avere",
+        "tense": "passato",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Avere» في Passato Prossimo؟",
+            "options": [
+              "Ho avuto",
+              "Abbiamo avuto",
+              "Hai avuto",
+              "Ha avuto"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Abbiamo avuto» في Passato Prossimo يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الفعل المساعد مع «Avere» في Passato Prossimo إيه؟",
+            "options": [
+              "avere",
+              "essere"
+            ],
+            "correct": 0
+          },
+          {
+            "q": "الزمن المستخدم في «Abbiamo avuto» إيه؟",
+            "options": [
+              "Presente",
+              "Imperfetto",
+              "Passato Prossimo",
+              "Imperativo"
+            ],
+            "correct": 2
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "un'idea",
+        "ar": "فكرة",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "mentre",
+        "ar": "بينما",
+        "note": null,
+        "type": "congiunzione",
+        "meaning": "بينما",
+        "grammarId": "mentre",
+        "quiz": [
+          {
+            "q": "«mentre» معناها إيه هنا؟",
+            "options": [
+              "لكن",
+              "بينما",
+              "لأن",
+              "بعدما"
+            ],
+            "correct": 1
+          }
+        ],
+        "kind": "أداة ربط"
+      },
+      {
+        "it": "parlavamo",
+        "ar": "كنا بنتكلم",
+        "note": "Parlare، Imperfetto",
+        "type": "verbo",
+        "verbInfinitive": "Parlare",
+        "group": "are",
+        "regular": true,
+        "aux": null,
+        "tense": "imperfetto",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Parlare» في Imperfetto؟",
+            "options": [
+              "Parlavo",
+              "Parlavamo",
+              "Parlavi",
+              "Parlava"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Parlavamo» في Imperfetto يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Parlavamo» إيه؟",
+            "options": [
+              "Presente",
+              "Passato Prossimo",
+              "Imperfetto",
+              "Imperativo"
+            ],
+            "correct": 2
+          },
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما نهاية مجموعة -are في Imperfetto؟",
+            "options": [
+              "-evamo",
+              "-avamo",
+              "-ivamo",
+              "—"
+            ],
+            "correct": 1
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "del progetto",
+        "ar": "عن المشروع",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": ";",
+        "ar": "",
+        "note": null,
+        "type": "omesso",
+        "quiz": []
+      },
+      {
+        "it": "Vivo",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "a",
+        "ar": "في",
+        "note": "المكان مع مدينة: يستخدم للإقامة أو الوجود في مدينة.",
+        "type": "preposizione",
+        "grammarId": "prep_a",
+        "prepUsage": {
+          "id": "a_stato",
+          "title": "المكان مع مدينة",
+          "meaning": "في",
+          "color": "#1e88e5",
+          "base": "a"
+        },
+        "quiz": []
+      },
+      {
+        "it": "Roma",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      }
+    ],
+    "conj": {
+      "verb": "Avere",
+      "tense": "Passato Prossimo",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho avuto"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai avuto"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha avuto"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha avuto"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo avuto"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete avuto"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno avuto"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "wordIt": "avuto",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Avere» في Passato Prossimo؟",
+        "options": [
+          "Ho avuto",
+          "Abbiamo avuto",
+          "Hai avuto",
+          "Ha avuto"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "avuto",
+        "q": "التصريف «Abbiamo avuto» في Passato Prossimo يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "avuto",
+        "q": "الفعل المساعد مع «Avere» في Passato Prossimo إيه؟",
+        "options": [
+          "avere",
+          "essere"
+        ],
+        "correct": 0
+      },
+      {
+        "wordIt": "avuto",
+        "q": "الزمن المستخدم في «Abbiamo avuto» إيه؟",
+        "options": [
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "mentre",
+        "q": "«mentre» معناها إيه هنا؟",
+        "options": [
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "parlavamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Parlare» في Imperfetto؟",
+        "options": [
+          "Parlavo",
+          "Parlavamo",
+          "Parlavi",
+          "Parlava"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "parlavamo",
+        "q": "التصريف «Parlavamo» في Imperfetto يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "parlavamo",
+        "q": "الزمن المستخدم في «Parlavamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "parlavamo",
+        "q": "مع الضمير «Noi (نحن)»، ما نهاية مجموعة -are في Imperfetto؟",
+        "options": [
+          "-evamo",
+          "-avamo",
+          "-ivamo",
+          "—"
+        ],
+        "correct": 1
+      }
+    ],
+    "prepositionFocus": {
+      "base": "a",
+      "id": "a_stato",
+      "title": "المكان مع مدينة",
+      "meaning": "في",
+      "description": "يستخدم للإقامة أو الوجود في مدينة.",
+      "form": "a",
+      "it": "Vivo a Roma",
+      "ar": "أعيش في روما",
+      "en": "I live in Rome",
+      "color": "#1e88e5",
+      "grammarId": "prep_a"
+    }
+  },
+  {
+    "it": "Abbiamo potuto trovare la soluzione perché credevamo nel progetto; Vado a piedi",
+    "ar": "إحنا قدرنا نلاقي الحل لأن كنا فاكرين في المشروع.؛ أذهب مشيًا",
+    "en": "We could trovare la soluzione because were believing nel progetto.; I go on foot",
+    "pronoun": "Noi (نحن)",
+    "words": [
+      {
+        "it": "Abbiamo",
+        "ar": "",
+        "note": "جزء من الفعل المساعد",
+        "type": "omesso",
+        "skipReason": "ausiliare"
+      },
+      {
+        "it": "potuto",
+        "ar": "قدرنا",
+        "note": "Potere، Passato Prossimo",
+        "type": "verbo",
+        "verbInfinitive": "Potere",
+        "group": "ere",
+        "regular": false,
+        "aux": "avere",
+        "tense": "passato",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Potere» في Passato Prossimo؟",
+            "options": [
+              "Ho potuto",
+              "Abbiamo potuto",
+              "Hai potuto",
+              "Ha potuto"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Abbiamo potuto» في Passato Prossimo يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الفعل المساعد مع «Potere» في Passato Prossimo إيه؟",
+            "options": [
+              "avere",
+              "essere"
+            ],
+            "correct": 0
+          },
+          {
+            "q": "الزمن المستخدم في «Abbiamo potuto» إيه؟",
+            "options": [
+              "Presente",
+              "Imperfetto",
+              "Passato Prossimo",
+              "Imperativo"
+            ],
+            "correct": 2
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "trovare la soluzione",
+        "ar": "نلاقي الحل",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "perché",
+        "ar": "لأن",
+        "note": null,
+        "type": "congiunzione",
+        "meaning": "لأن",
+        "quiz": [
+          {
+            "q": "«perché» معناها إيه هنا؟",
+            "options": [
+              "لكن",
+              "بينما",
+              "لأن",
+              "بعدما"
+            ],
+            "correct": 2
+          }
+        ],
+        "kind": "أداة ربط",
+        "grammarId": "congiunzioni"
+      },
+      {
+        "it": "credevamo",
+        "ar": "كنا فاكرين",
+        "note": "Credere، Imperfetto",
+        "type": "verbo",
+        "verbInfinitive": "Credere",
+        "group": "ere",
+        "regular": true,
+        "aux": null,
+        "tense": "imperfetto",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Credere» في Imperfetto؟",
+            "options": [
+              "Credevo",
+              "Credevamo",
+              "Credevi",
+              "Credeva"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Credevamo» في Imperfetto يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Credevamo» إيه؟",
+            "options": [
+              "Presente",
+              "Passato Prossimo",
+              "Imperfetto",
+              "Imperativo"
+            ],
+            "correct": 2
+          },
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما نهاية مجموعة -ere في Imperfetto؟",
+            "options": [
+              "-avamo",
+              "-evamo",
+              "-ivamo",
+              "—"
+            ],
+            "correct": 1
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "nel progetto",
+        "ar": "في المشروع",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": ";",
+        "ar": "",
+        "note": null,
+        "type": "omesso",
+        "quiz": []
+      },
+      {
+        "it": "V",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "a",
+        "ar": "بـ / على",
+        "note": "الطريقة: يصف طريقة الحركة أو أداء الفعل.",
+        "type": "preposizione",
+        "grammarId": "prep_a",
+        "prepUsage": {
+          "id": "a_modo",
+          "title": "الطريقة",
+          "meaning": "بـ / على",
+          "color": "#00897b",
+          "base": "a"
+        },
+        "quiz": []
+      },
+      {
+        "it": "do a piedi",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      }
+    ],
+    "conj": {
+      "verb": "Potere",
+      "tense": "Passato Prossimo",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho potuto"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai potuto"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha potuto"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha potuto"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo potuto"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete potuto"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno potuto"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "wordIt": "potuto",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Potere» في Passato Prossimo؟",
+        "options": [
+          "Ho potuto",
+          "Abbiamo potuto",
+          "Hai potuto",
+          "Ha potuto"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "potuto",
+        "q": "التصريف «Abbiamo potuto» في Passato Prossimo يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "potuto",
+        "q": "الفعل المساعد مع «Potere» في Passato Prossimo إيه؟",
+        "options": [
+          "avere",
+          "essere"
+        ],
+        "correct": 0
+      },
+      {
+        "wordIt": "potuto",
+        "q": "الزمن المستخدم في «Abbiamo potuto» إيه؟",
+        "options": [
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "perché",
+        "q": "«perché» معناها إيه هنا؟",
+        "options": [
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "credevamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Credere» في Imperfetto؟",
+        "options": [
+          "Credevo",
+          "Credevamo",
+          "Credevi",
+          "Credeva"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "credevamo",
+        "q": "التصريف «Credevamo» في Imperfetto يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "credevamo",
+        "q": "الزمن المستخدم في «Credevamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "credevamo",
+        "q": "مع الضمير «Noi (نحن)»، ما نهاية مجموعة -ere في Imperfetto؟",
+        "options": [
+          "-avamo",
+          "-evamo",
+          "-ivamo",
+          "—"
+        ],
+        "correct": 1
+      }
+    ],
+    "prepositionFocus": {
+      "base": "a",
+      "id": "a_modo",
+      "title": "الطريقة",
+      "meaning": "بـ / على",
+      "description": "يصف طريقة الحركة أو أداء الفعل.",
+      "form": "a",
+      "it": "Vado a piedi",
+      "ar": "أذهب مشيًا",
+      "en": "I go on foot",
+      "color": "#00897b",
+      "grammarId": "prep_a"
+    }
+  },
+  {
+    "it": "Abbiamo voluto fare una pausa perché dormivamo molto poco; Chiudo la porta a chiave",
+    "ar": "إحنا حبينا ناخد راحة لأن كنا بننام قليل جدًا.؛ أغلق الباب بالمفتاح",
+    "en": "We wanted fare una pausa because were sleeping molto poco.; I lock the door with a key",
+    "pronoun": "Noi (نحن)",
+    "words": [
+      {
+        "it": "Abbiamo",
+        "ar": "",
+        "note": "جزء من الفعل المساعد",
+        "type": "omesso",
+        "skipReason": "ausiliare"
+      },
+      {
+        "it": "voluto",
+        "ar": "حبينا",
+        "note": "Volere، Passato Prossimo",
+        "type": "verbo",
+        "verbInfinitive": "Volere",
+        "group": "ere",
+        "regular": false,
+        "aux": "avere",
+        "tense": "passato",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Volere» في Passato Prossimo؟",
+            "options": [
+              "Ho voluto",
+              "Abbiamo voluto",
+              "Hai voluto",
+              "Ha voluto"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Abbiamo voluto» في Passato Prossimo يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الفعل المساعد مع «Volere» في Passato Prossimo إيه؟",
+            "options": [
+              "avere",
+              "essere"
+            ],
+            "correct": 0
+          },
+          {
+            "q": "الزمن المستخدم في «Abbiamo voluto» إيه؟",
+            "options": [
+              "Presente",
+              "Imperfetto",
+              "Passato Prossimo",
+              "Imperativo"
+            ],
+            "correct": 2
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "fare una pausa",
+        "ar": "ناخد راحة",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "perché",
+        "ar": "لأن",
+        "note": null,
+        "type": "congiunzione",
+        "meaning": "لأن",
+        "quiz": [
+          {
+            "q": "«perché» معناها إيه هنا؟",
+            "options": [
+              "لكن",
+              "بينما",
+              "لأن",
+              "بعدما"
+            ],
+            "correct": 2
+          }
+        ],
+        "kind": "أداة ربط",
+        "grammarId": "congiunzioni"
+      },
+      {
+        "it": "dormivamo",
+        "ar": "كنا بننام",
+        "note": "Dormire، Imperfetto",
+        "type": "verbo",
+        "verbInfinitive": "Dormire",
+        "group": "ire",
+        "regular": true,
+        "aux": null,
+        "tense": "imperfetto",
+        "transitive": true,
+        "quiz": [
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Dormire» في Imperfetto؟",
+            "options": [
+              "Dormivo",
+              "Dormivamo",
+              "Dormivi",
+              "Dormiva"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "التصريف «Dormivamo» في Imperfetto يعود إلى أي ضمير؟",
+            "options": [
+              "Io (أنا)",
+              "Noi (نحن)",
+              "Tu (أنت)",
+              "Lui/Lei (هو/هي)"
+            ],
+            "correct": 1
+          },
+          {
+            "q": "الزمن المستخدم في «Dormivamo» إيه؟",
+            "options": [
+              "Presente",
+              "Passato Prossimo",
+              "Imperfetto",
+              "Imperativo"
+            ],
+            "correct": 2
+          },
+          {
+            "q": "مع الضمير «Noi (نحن)»، ما نهاية مجموعة -ire في Imperfetto؟",
+            "options": [
+              "-avamo",
+              "-ivamo",
+              "-evamo",
+              "—"
+            ],
+            "correct": 1
+          }
+        ],
+        "transitivity": "transitive",
+        "transitivityNote": null
+      },
+      {
+        "it": "molto poco",
+        "ar": "قليل جدًا",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": ";",
+        "ar": "",
+        "note": null,
+        "type": "omesso",
+        "quiz": []
+      },
+      {
+        "it": "Chiudo l",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      },
+      {
+        "it": "a",
+        "ar": "بـ",
+        "note": "الأداة في تعبير ثابت: يستخدم في بعض تعبيرات الوسيلة والأداة.",
+        "type": "preposizione",
+        "grammarId": "prep_a",
+        "prepUsage": {
+          "id": "a_strumento",
+          "title": "الأداة في تعبير ثابت",
+          "meaning": "بـ",
+          "color": "#fb8c00",
+          "base": "a"
+        },
+        "quiz": []
+      },
+      {
+        "it": "porta a chiave",
+        "ar": "",
+        "note": null,
+        "type": "altro",
+        "quiz": []
+      }
+    ],
+    "conj": {
+      "verb": "Volere",
+      "tense": "Passato Prossimo",
+      "regular": false,
+      "rows": [
+        {
+          "person": "Io (أنا)",
+          "form": "Ho voluto"
+        },
+        {
+          "person": "Tu (أنت)",
+          "form": "Hai voluto"
+        },
+        {
+          "person": "Lui (هو)",
+          "form": "Ha voluto"
+        },
+        {
+          "person": "Lei (هي)",
+          "form": "Ha voluto"
+        },
+        {
+          "person": "Noi (إحنا)",
+          "form": "Abbiamo voluto"
+        },
+        {
+          "person": "Voi (أنتم)",
+          "form": "Avete voluto"
+        },
+        {
+          "person": "Loro (هم)",
+          "form": "Hanno voluto"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "wordIt": "voluto",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Volere» في Passato Prossimo؟",
+        "options": [
+          "Ho voluto",
+          "Abbiamo voluto",
+          "Hai voluto",
+          "Ha voluto"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "voluto",
+        "q": "التصريف «Abbiamo voluto» في Passato Prossimo يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "voluto",
+        "q": "الفعل المساعد مع «Volere» في Passato Prossimo إيه؟",
+        "options": [
+          "avere",
+          "essere"
+        ],
+        "correct": 0
+      },
+      {
+        "wordIt": "voluto",
+        "q": "الزمن المستخدم في «Abbiamo voluto» إيه؟",
+        "options": [
+          "Presente",
+          "Imperfetto",
+          "Passato Prossimo",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "perché",
+        "q": "«perché» معناها إيه هنا؟",
+        "options": [
+          "لكن",
+          "بينما",
+          "لأن",
+          "بعدما"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "dormivamo",
+        "q": "مع الضمير «Noi (نحن)»، ما التصريف الصحيح للفعل «Dormire» في Imperfetto؟",
+        "options": [
+          "Dormivo",
+          "Dormivamo",
+          "Dormivi",
+          "Dormiva"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "dormivamo",
+        "q": "التصريف «Dormivamo» في Imperfetto يعود إلى أي ضمير؟",
+        "options": [
+          "Io (أنا)",
+          "Noi (نحن)",
+          "Tu (أنت)",
+          "Lui/Lei (هو/هي)"
+        ],
+        "correct": 1
+      },
+      {
+        "wordIt": "dormivamo",
+        "q": "الزمن المستخدم في «Dormivamo» إيه؟",
+        "options": [
+          "Presente",
+          "Passato Prossimo",
+          "Imperfetto",
+          "Imperativo"
+        ],
+        "correct": 2
+      },
+      {
+        "wordIt": "dormivamo",
+        "q": "مع الضمير «Noi (نحن)»، ما نهاية مجموعة -ire في Imperfetto؟",
+        "options": [
+          "-avamo",
+          "-ivamo",
+          "-evamo",
+          "—"
+        ],
+        "correct": 1
+      }
+    ],
+    "prepositionFocus": {
+      "base": "a",
+      "id": "a_strumento",
+      "title": "الأداة في تعبير ثابت",
+      "meaning": "بـ",
+      "description": "يستخدم في بعض تعبيرات الوسيلة والأداة.",
+      "form": "a",
+      "it": "Chiudo la porta a chiave",
+      "ar": "أغلق الباب بالمفتاح",
+      "en": "I lock the door with a key",
+      "color": "#fb8c00",
+      "grammarId": "prep_a"
+    }
   }
 ];
